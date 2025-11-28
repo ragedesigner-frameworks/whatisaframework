@@ -20,7 +20,7 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text-dark); }
-        .hero { background: linear-gradient(135deg, var(--charcoal-blue) 0%, #2a3a4d 100%); color: var(--white); padding: 100px 24px 80px; text-align: center; }
+        .hero { background: linear-gradient(135deg, var(--charcoal-blue) 0%, #2a3a4d 100%); color: var(--white); padding: 120px 24px 100px; text-align: center; min-height: 400px; display: flex; align-items: center; justify-content: center; }
         .hero-content { max-width: 800px; margin: 0 auto; }
         .hero h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 700; line-height: 1.2; margin-bottom: 24px; }
         .hero-subtitle { font-size: clamp(18px, 3vw, 22px); opacity: 0.9; max-width: 600px; margin: 0 auto 40px; line-height: 1.7; }
@@ -58,8 +58,9 @@
         .key-points li { padding: 16px 0; border-bottom: 1px solid var(--light-gray); display: flex; align-items: flex-start; gap: 16px; font-size: 17px; }
         .key-points li:last-child { border-bottom: none; }
         .checkmark { color: var(--copper); font-weight: bold; font-size: 20px; }
+        .ai-badge { display: inline-block; background: rgba(183, 112, 79, 0.2); border: 1px solid var(--copper); padding: 8px 16px; border-radius: 20px; font-size: 12px; margin-bottom: 16px; opacity: 0.9; }
         @media (max-width: 768px) {
-            .hero { padding: 60px 20px 50px; }
+            .hero { padding: 80px 20px 60px; min-height: 300px; }
             section { padding: 60px 20px; }
             .nav-links { display: none; }
         }
@@ -114,32 +115,32 @@
             <h2 style="text-align: center;">Framework Topics</h2>
             <p style="text-align: center; max-width: 600px; margin: 0 auto 32px;">Deep dives into framework concepts, examples, and implementation strategies.</p>
             <div class="topics-grid">
-                <a href="/framework-vs-template" class="topic-card">
+                <a href="/framework-vs-template.html" class="topic-card">
                     <h3>Framework vs Template vs Checklist</h3>
                     <p>Understanding the critical differences between frameworks, templates, and checklists—and when to use each.</p>
                     <span class="read-more">Read More →</span>
                 </a>
-                <a href="/framework-dna" class="topic-card">
+                <a href="/framework-dna.html" class="topic-card">
                     <h3>5-Layer Framework DNA</h3>
                     <p>The architectural structure that makes frameworks work: principles, protocols, patterns, practices, and proof.</p>
                     <span class="read-more">Read More →</span>
                 </a>
-                <a href="/generation-vs-consumption" class="topic-card">
+                <a href="/generation-vs-consumption.html" class="topic-card">
                     <h3>Generation vs Consumption</h3>
                     <p>Why building your own frameworks creates unfair advantages that memorizing others' frameworks never will.</p>
                     <span class="read-more">Read More →</span>
                 </a>
-                <a href="/innovation-patterns" class="topic-card">
+                <a href="/innovation-patterns.html" class="topic-card">
                     <h3>7 Universal Innovation Patterns</h3>
                     <p>The recurring patterns that appear across successful innovations—from constraint redefinition to convergence timing.</p>
                     <span class="read-more">Read More →</span>
                 </a>
-                <a href="/force-multipliers" class="topic-card">
+                <a href="/force-multipliers.html" class="topic-card">
                     <h3>Force Multipliers</h3>
                     <p>How frameworks create compound returns: recursive advantage, network effects, and exponential improvement.</p>
                     <span class="read-more">Read More →</span>
                 </a>
-                <a href="/solve-framework-story" class="topic-card">
+                <a href="/solve-framework-story.html" class="topic-card">
                     <h3>Sebastian's SOLVE Story</h3>
                     <p>How one sales professional built a framework he still uses daily after 18+ months—in Spanish.</p>
                     <span class="read-more">Read More →</span>
@@ -151,18 +152,19 @@
     <section class="cta-section">
         <div class="container">
             <h2>Ready to Build Your Own Frameworks?</h2>
-            <p>Strategic Thinking Academy teaches the methodology for generating frameworks from your own expertise. Beta cohort starts December 1st.</p>
+            <p><a href="https://ragedesigner.com" style="color: var(--copper);">RageDesigner's</a> Strategic Thinking Academy teaches the methodology for generating frameworks from your own expertise. Beta cohort starts December 1st.</p>
             <a href="https://howtoframework.com" class="btn-primary">Learn Framework Generation</a>
         </div>
     </section>
     
     <footer>
+        <div class="ai-badge">🤖 This site is built and managed autonomously by AI</div>
         <div class="footer-links">
             <a href="https://howtoframework.com">How to Framework</a>
             <a href="https://ragedesigner.com">RageDesigner</a>
         </div>
         <p>Part of the <a href="https://ragedesigner.com">RageDesigner</a> framework ecosystem</p>
-        <p style="margin-top: 8px;">2025 RageDesigner. All rights reserved.</p>
+        <p style="margin-top: 8px;">© 2025 <a href="https://ragedesigner.com">RageDesigner</a>. All rights reserved.</p>
     </footer>
 </body>
 </html>
