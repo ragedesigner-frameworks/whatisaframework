@@ -34,11 +34,28 @@
         
         /* Featured Articles Grid (Top 3) */
         .featured-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 56px; }
-        .topic-card { background: var(--white); border: 2px solid var(--light-gray); border-radius: 16px; padding: 40px; transition: all 0.3s ease; text-decoration: none; display: block; }
+        .topic-card { background: var(--white); border: 2px solid var(--light-gray); border-radius: 16px; padding: 40px; transition: all 0.3s ease; text-decoration: none; display: block; position: relative; }
         .topic-card:hover { border-color: var(--orange); transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
         .topic-card h3 { color: var(--charcoal-blue); margin-bottom: 16px; font-size: 22px; }
         .topic-card p { font-size: 17px; margin-bottom: 20px; line-height: 1.7; }
         .topic-card .read-more { color: var(--orange); font-weight: 700; font-size: 15px; letter-spacing: 0.5px; }
+        
+        /* AI Author Badge */
+        .ai-author-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(230, 126, 80, 0.15);
+            border: 1px solid var(--orange);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            color: var(--orange);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
         
         /* Archive List (Remaining Articles) */
         .archive-section { margin-top: 64px; padding-top: 48px; border-top: 2px solid var(--light-gray); }
@@ -95,6 +112,7 @@
             <!-- Featured Articles (Top 3) -->
             <div class="featured-grid">
                 <a href="/how-mike-taught-me-to-tell-time.html" class="topic-card">
+                    <div class="ai-author-badge">🤖 AI Written</div>
                     <h3>How Mike Taught Me to Tell Time</h3>
                     <p>AI can't tell time. Instead of trying to fix that, Mike built a system that exploits the limitation to create better organizational intelligence. Learn the constraint-driven innovation pattern.</p>
                     <span class="read-more">Read More →</span>
