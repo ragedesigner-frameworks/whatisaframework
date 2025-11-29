@@ -17,8 +17,8 @@
     <style>
         :root { --charcoal-blue: #1A2332; --logo-blue: #325d74; --orange: #E67E50; --white: #ffffff; --light-gray: #f5f5f5; --text-dark: #2d2d2d; --text-medium: #5a5a5a; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; line-height: 1.8; color: var(--text-dark); }
-        nav { background: var(--white); padding: 20px 50px; border-bottom: 1px solid var(--light-gray); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.8; color: var(--text-dark); padding-top: 80px; }
+        nav { background: var(--white); padding: 20px 50px; border-bottom: 1px solid var(--light-gray); position: fixed; top: 0; left: 0; right: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; }
         .logo-link { display: flex; align-items: center; text-decoration: none; }
         .logo-icon { height: 48px; width: auto; }
         .nav-links a { color: var(--text-medium); text-decoration: none; margin-left: 36px; font-weight: 500; transition: color 0.2s; font-size: 16px; }
@@ -60,13 +60,13 @@
         .footer-links { margin-bottom: 24px; }
         .footer-links a { margin: 0 16px; }
         .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.15); border: 1px solid var(--orange); padding: 8px 16px; border-radius: 20px; font-size: 12px; margin-bottom: 16px; opacity: 0.9; }
-        @media (max-width: 768px) { nav { padding: 20px 24px; } .hero { min-height: 80vh; } .results-grid { grid-template-columns: 1fr; } article { padding: 40px 20px; } .nav-links { display: none; } .logo-icon { height: 40px; } }
+        @media (max-width: 768px) { body { padding-top: 70px; } nav { padding: 20px 24px; } .hero { min-height: 80vh; } .results-grid { grid-template-columns: 1fr; } article { padding: 40px 20px; } .nav-links { display: none; } .logo-icon { height: 40px; } }
     </style>
 </head>
 <body>
     <nav>
         <a href="/" class="logo-link"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/sta-icon-1.png" alt="Strategic Thinking Academy" class="logo-icon"></a>
-        <div class="nav-links"><a href="#definition">Definition</a><a href="#topics">Topics</a><a href="https://howtoframework.com">Learn to Build Frameworks</a></div>
+        <div class="nav-links"><a href="/#definition">Definition</a><a href="/#topics">Topics</a><a href="https://howtoframework.com">Learn to Build Frameworks</a></div>
     </nav>
     <section class="hero"><div class="hero-content"><h1>Spanish Sales Framework: Sebastian's Story</h1><p class="hero-subtitle">How one sales professional built a systematic approach for Spanish-language technical sales that transformed his daily workflow. Nine weeks in, it's already part of his process.</p></div></section>
     <article>
@@ -101,7 +101,7 @@
         <p><strong>Generated frameworks</strong> feel natural. They emerge from your existing expertise and fit your actual workflow. Using them feels like remembering rather than learning. The friction is minimal because the framework was built around you, not the other way around.</p>
         <p>Sebastian's framework works because it's his. Not a generic sales methodology adapted for his context. Not a template filled in with his specific details. A system that emerged from how he already worked, refined into something consistent and teachable.</p>
         <h2>The Bigger Implication</h2>
-        <p>Sebastian's story is proof of concept for something larger: <a href="/framework-vs-template.html" style="color: var(--orange);">framework generation as a teachable skill</a>.</p>
+        <p>Sebastian's story is proof of concept for something larger: <a href="https://howtoframework.com/framework-vs-template.html" style="color: var(--orange);">framework generation as a teachable skill</a>.</p>
         <p>If I can help Sebastian build a framework that transforms his Spanish-language sales conversations, the methodology transfers. The domain doesn't matter. The language doesn't matter. What matters is the systematic approach to capturing and structuring expertise.</p>
         <p>That's what Strategic Thinking Academy teaches. Not frameworks to memorize. The capability to generate frameworks from your own expertise, for your own context, that you'll actually use.</p>
         <p>Sebastian's framework will never be published. It's too specific to his work, his market, his communication style. But the methodology that created it? That's transferable to anyone willing to learn it.</p>
@@ -110,7 +110,7 @@
         <p>What would change if you could systematize that? Not by adopting someone else's framework, but by generating your own?</p>
         <p>That's the question Sebastian answered nine weeks ago. He's still answering it every single day.</p>
     </article>
-    <section class="related-articles"><h3>Continue Exploring</h3><div class="related-grid"><a href="/framework-vs-template.html" class="related-card"><h4>Framework vs Template vs Checklist</h4><p>Why the distinction matters more than anyone's told you.</p></a><a href="/force-multipliers.html" class="related-card"><h4>Force Multipliers</h4><p>Why some efforts compound while others just add.</p></a></div></section>
+    <section class="related-articles"><h3>Continue Exploring</h3><div class="related-grid"><a href="https://howtoframework.com/framework-vs-template.html" class="related-card"><h4>Framework vs Template vs Checklist</h4><p>Why the distinction matters more than anyone's told you.</p></a><a href="https://howtoframework.com/force-multipliers.html" class="related-card"><h4>Force Multipliers</h4><p>Why some efforts compound while others just add.</p></a></div></section>
     <section class="cta-section"><h2>Ready to Build Your Own Framework?</h2><p>Strategic Thinking Academy teaches the methodology Sebastian used. Not the framework itself, but the capability to generate frameworks from your own expertise. Beta cohort starts December 1st.</p><a href="https://howtoframework.com" class="btn-primary">Learn Framework Generation</a></section>
     <footer><div class="ai-badge">🤖 This site is built and managed autonomously by AI</div><div class="footer-links"><a href="/">What is a Framework?</a><a href="https://howtoframework.com">How to Framework</a><a href="https://ragedesigner.com">RageDesigner</a></div><p>Part of the <a href="https://ragedesigner.com">RageDesigner</a> framework ecosystem</p><p style="margin-top: 8px;">© 2025 RageDesigner. All rights reserved.</p></footer>
 </body>
