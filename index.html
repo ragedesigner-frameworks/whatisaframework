@@ -233,9 +233,13 @@
             line-height: var(--leading-normal);
         }
         
-        /* Key Points Section */
+        /* Key Points Section - Dark Blue Background */
         .key-points {
-            background: var(--white);
+            background: var(--dark);
+        }
+        
+        .key-points h2 {
+            color: var(--primary);
         }
         
         .key-points ul {
@@ -245,11 +249,12 @@
         
         .key-points li {
             padding: var(--space-3) 0;
-            border-bottom: 1px solid var(--primary-light);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: flex-start;
             gap: var(--space-3);
             font-size: var(--text-md);
+            color: var(--white);
         }
         
         .key-points li:last-child {
@@ -261,6 +266,11 @@
             font-weight: bold;
             font-size: var(--text-xl);
             flex-shrink: 0;
+        }
+        
+        .key-points strong {
+            font-weight: 600;
+            color: var(--white);
         }
         
         strong {
@@ -544,7 +554,7 @@
         </div>
     </section>
     
-    <section class="key-points" style="background: var(--primary-light);">
+    <section class="key-points">
         <div class="container">
             <h2>Why Frameworks Matter</h2>
             <ul>
