@@ -12,12 +12,12 @@
         :root { --charcoal-blue: #1A2332; --logo-blue: #325d74; --orange: #E67E50; --white: #ffffff; --light-gray: #f5f5f5; --text-dark: #2d2d2d; --text-medium: #5a5a5a; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text-dark); }
-        nav { background: var(--white); padding: 20px 50px; border-bottom: 1px solid var(--light-gray); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; }
+        nav { background: var(--white); padding: 20px 50px; border-bottom: 1px solid var(--light-gray); position: fixed; top: 0; left: 0; right: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; }
         .logo-link { display: flex; align-items: center; text-decoration: none; }
         .logo-icon { height: 48px; width: auto; }
         .nav-links a { color: var(--text-medium); text-decoration: none; margin-left: 36px; font-weight: 500; transition: color 0.2s; font-size: 16px; }
         .nav-links a:hover { color: var(--orange); }
-        .hero { background: linear-gradient(rgba(26, 35, 50, 0.7), rgba(26, 35, 50, 0.7)), url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png'); background-size: cover; background-position: center; color: var(--white); padding: 160px 24px 140px; text-align: center; min-height: 600px; display: flex; align-items: center; justify-content: center; }
+        .hero { background: linear-gradient(rgba(26, 35, 50, 0.7), rgba(26, 35, 50, 0.7)), url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png'); background-size: cover; background-position: center; color: var(--white); padding: 160px 24px 140px; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
         .hero-content { max-width: 820px; margin: 0 auto; }
         .hero h1 { font-size: clamp(38px, 6vw, 56px); font-weight: 700; line-height: 1.2; margin-bottom: 32px; }
         .hero-subtitle { font-size: clamp(19px, 3vw, 23px); color: rgba(255,255,255,0.95); max-width: 680px; margin: 0 auto 48px; line-height: 1.65; font-weight: 400; }
@@ -52,7 +52,7 @@
         .key-points li:last-child { border-bottom: none; }
         .checkmark { color: var(--orange); font-weight: bold; font-size: 24px; }
         .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.15); border: 1px solid var(--orange); padding: 10px 20px; border-radius: 24px; font-size: 12px; margin-bottom: 20px; opacity: 0.9; }
-        @media (max-width: 768px) { nav { padding: 20px 24px; } .hero { padding: 120px 20px 100px; min-height: 500px; } section { padding: 80px 20px; } .nav-links { display: none; } .footer-logo { max-width: 240px; } .logo-icon { height: 40px; } }
+        @media (max-width: 768px) { nav { padding: 20px 24px; } .hero { padding: 120px 20px 100px; min-height: 100vh; } section { padding: 80px 20px; } .nav-links { display: none; } .footer-logo { max-width: 240px; } .logo-icon { height: 40px; } }
     </style>
 </head>
 <body>
