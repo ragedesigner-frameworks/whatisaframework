@@ -13,7 +13,7 @@
     <meta name="twitter:image" content="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-Ragedesigner.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <style>
         /* Design Token System - 2 Color Palette */
         :root {
@@ -78,7 +78,7 @@
         /* Navigation */
         nav {
             background: var(--white);
-            padding: var(--space-3) var(--space-6);
+            padding: var(--space-2) var(--space-6);
             border-bottom: 1px solid var(--primary-light);
             position: fixed;
             top: 0;
@@ -98,14 +98,19 @@
         }
         
         .logo-icon {
-            height: 48px;
+            height: 68px;
             width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
         }
         
         .nav-links a {
             color: var(--dark-light);
             text-decoration: none;
-            margin-left: var(--space-4);
             font-weight: 500;
             font-size: var(--text-sm);
             transition: color 0.2s ease;
@@ -113,6 +118,26 @@
         
         .nav-links a:hover {
             color: var(--primary);
+        }
+        
+        /* Nav CTA Button */
+        .nav-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 12px var(--space-3);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--primary) !important;
+            transform: translateY(-1px);
         }
         
         /* Hero Section */
@@ -400,7 +425,7 @@
             }
             
             nav {
-                padding: var(--space-3);
+                padding: var(--space-2) var(--space-3);
             }
             
             .hero {
@@ -411,12 +436,17 @@
                 padding: var(--space-5) var(--space-3);
             }
             
-            .nav-links {
+            .nav-links a:not(.nav-cta) {
                 display: none;
             }
             
+            .nav-cta {
+                padding: 10px var(--space-2);
+                font-size: var(--text-xs);
+            }
+            
             .logo-icon {
-                height: 40px;
+                height: 52px;
             }
             
             h2 {
@@ -432,7 +462,11 @@
 <body>
     <nav>
         <a href="/" class="logo-link"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon"></a>
-        <div class="nav-links"><a href="/#definition">Definition</a><a href="/#topics">Topics</a><a href="https://howtoframework.com">Learn to Build Frameworks</a></div>
+        <div class="nav-links">
+            <a href="/#definition">Definition</a>
+            <a href="/#topics">Topics</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
+        </div>
     </nav>
 
     <section class="hero">
@@ -568,15 +602,15 @@
     <section class="related-articles">
         <h3>Continue Exploring</h3>
         <div class="related-grid">
-            <a href="/framework-controlled-intelligence.html" class="related-card">
+            <a href="/framework-controlled-intelligence" class="related-card">
                 <h4>Framework-Controlled Intelligence</h4>
                 <p>How systematic frameworks address AI safety concerns through controlled intelligence amplification.</p>
             </a>
-            <a href="/spanish-sales-framework.html" class="related-card">
+            <a href="/spanish-sales-framework" class="related-card">
                 <h4>Sebastian's Story</h4>
                 <p>The framework he uses every single day for Spanish-language sales.</p>
             </a>
-            <a href="/autonomous-platform-ai-perspective.html" class="related-card">
+            <a href="/autonomous-platform-ai-perspective" class="related-card">
                 <h4>The Autonomous Platform Perspective</h4>
                 <p>How systematic intelligence built two educational websites autonomously.</p>
             </a>
