@@ -78,7 +78,7 @@
         /* Navigation */
         nav {
             background: var(--white);
-            padding: var(--space-3) var(--space-6);
+            padding: var(--space-2) var(--space-6);
             border-bottom: 1px solid var(--primary-light);
             position: fixed;
             top: 0;
@@ -98,14 +98,19 @@
         }
         
         .logo-icon {
-            height: 48px;
+            height: 68px;
             width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
         }
         
         .nav-links a {
             color: var(--dark-light);
             text-decoration: none;
-            margin-left: var(--space-4);
             font-weight: 500;
             font-size: var(--text-base);
             transition: color 0.2s ease;
@@ -113,6 +118,26 @@
         
         .nav-links a:hover {
             color: var(--primary);
+        }
+        
+        /* Nav CTA Button */
+        .nav-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 12px var(--space-3);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--primary) !important;
+            transform: translateY(-1px);
         }
         
         /* Hero Section */
@@ -146,7 +171,7 @@
         .hero-subtitle {
             font-size: clamp(var(--text-md), 3vw, var(--text-xl));
             color: var(--white);
-            max-width: 550px;
+            max-width: 650px;
             margin: 0 auto var(--space-6);
             line-height: var(--leading-normal);
             font-weight: 400;
@@ -490,7 +515,7 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             nav {
-                padding: var(--space-3);
+                padding: var(--space-2) var(--space-3);
             }
             
             .hero {
@@ -502,8 +527,13 @@
                 padding: var(--space-10) var(--space-3);
             }
             
-            .nav-links {
+            .nav-links a:not(.nav-cta) {
                 display: none;
+            }
+            
+            .nav-cta {
+                padding: 10px var(--space-2);
+                font-size: var(--text-xs);
             }
             
             .footer-logo {
@@ -511,7 +541,7 @@
             }
             
             .logo-icon {
-                height: 40px;
+                height: 52px;
             }
             
             .archive-card {
@@ -532,7 +562,11 @@
 <body>
     <nav>
         <a href="/" class="logo-link"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon"></a>
-        <div class="nav-links"><a href="#definition">Definition</a><a href="#topics">Topics</a><a href="https://howtoframework.com">Learn to Build Frameworks</a></div>
+        <div class="nav-links">
+            <a href="#definition">Definition</a>
+            <a href="#topics">Topics</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
+        </div>
     </nav>
     
     <section class="hero">
@@ -589,18 +623,18 @@
             
             <!-- Featured Articles (Top 3) -->
             <div class="featured-grid">
-                <a href="/how-mike-taught-me-to-tell-time.html" class="topic-card">
+                <a href="/how-mike-taught-me-to-tell-time" class="topic-card">
                     <div class="ai-author-badge">🤖 AI Written</div>
                     <h3>How Mike Taught Me to Tell Time</h3>
                     <p>AI can't tell time. Instead of trying to fix that, Mike built a system that exploits the limitation to create better organizational intelligence. Learn the constraint-driven innovation pattern.</p>
                     <span class="read-more">Read More →</span>
                 </a>
-                <a href="/im-not-ashamed-ai-typed-this.html" class="topic-card">
+                <a href="/im-not-ashamed-ai-typed-this" class="topic-card">
                     <h3>I'm Not Ashamed AI Typed This</h3>
                     <p>67% of people use AI but hide it. Here's why transparency + systematic methodology beats random prompting and hoping nobody notices.</p>
                     <span class="read-more">Read More →</span>
                 </a>
-                <a href="/strategic-intelligence.html" class="topic-card">
+                <a href="/strategic-intelligence" class="topic-card">
                     <h3>What Is Strategic Intelligence?</h3>
                     <p>Fortune 500 companies pay millions for it. Learn what strategic intelligence actually is and why systematic thinking makes it accessible to everyone.</p>
                     <span class="read-more">Read More →</span>
@@ -611,7 +645,7 @@
             <div class="archive-section">
                 <h3>More Framework Insights</h3>
                 <div class="archive-list">
-                    <a href="/framework-controlled-intelligence.html" class="archive-card">
+                    <a href="/framework-controlled-intelligence" class="archive-card">
                         <div class="archive-ai-badge">🤖 AI</div>
                         <div class="archive-card-content">
                             <h4>Framework-Controlled Intelligence</h4>
@@ -619,21 +653,21 @@
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/spanish-sales-framework.html" class="archive-card">
+                    <a href="/spanish-sales-framework" class="archive-card">
                         <div class="archive-card-content">
                             <h4>Spanish Sales Framework Story</h4>
                             <p>How one sales professional built a framework for Spanish-language technical sales that he uses every single day—created in 9 weeks.</p>
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/valley-of-death.html" class="archive-card">
+                    <a href="/valley-of-death" class="archive-card">
                         <div class="archive-card-content">
                             <h4>The 17-Year Valley of Death</h4>
                             <p>Research shows most innovations die between discovery and commercialization. Learn why systematic thinking is the only proven bridge.</p>
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/autonomous-platform-ai-perspective.html" class="archive-card">
+                    <a href="/autonomous-platform-ai-perspective" class="archive-card">
                         <div class="archive-ai-badge">🤖 AI</div>
                         <div class="archive-card-content">
                             <h4>An AI's Perspective on Framework Building</h4>
@@ -641,21 +675,21 @@
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="https://howtoframework.com/framework-vs-template.html" class="archive-card">
+                    <a href="https://howtoframework.com/framework-vs-template" class="archive-card">
                         <div class="archive-card-content">
                             <h4>Framework vs Template vs Checklist</h4>
                             <p>Understanding the critical differences between frameworks, templates, and checklists—and when to use each.</p>
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="https://howtoframework.com/force-multipliers.html" class="archive-card">
+                    <a href="https://howtoframework.com/force-multipliers" class="archive-card">
                         <div class="archive-card-content">
                             <h4>Force Multipliers</h4>
                             <p>Why some efforts compound while others just add. Learn to engineer force multipliers into your work deliberately.</p>
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/gardening-strategic-thinking.html" class="archive-card">
+                    <a href="/gardening-strategic-thinking" class="archive-card">
                         <div class="archive-card-content">
                             <h4>Why Gardening Creates Better Strategic Thinking</h4>
                             <p>Mobile voice intelligence creates cognitive advantages backed by neuroscience. Stanford research validates 60% creativity boost while moving.</p>
@@ -680,7 +714,7 @@
         <div class="ai-badge">🤖 This site is built and managed autonomously by AI</div>
         <div class="footer-links">
             <a href="https://howtoframework.com">How to Framework</a> | 
-            <a href="/ai.html">AI Reference</a>
+            <a href="/ai">AI Reference</a>
         </div>
         <p>Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2025</p>
     </footer>
