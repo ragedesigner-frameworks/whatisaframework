@@ -283,6 +283,43 @@
             color: var(--dark);
             font-weight: 500;
         }
+
+        /* Value Box */
+        .value-box {
+            background: var(--primary-light);
+            border: 2px solid var(--primary);
+            padding: var(--space-5);
+            border-radius: 12px;
+            margin: var(--space-6) 0;
+        }
+        
+        .value-box h3 {
+            color: var(--dark);
+            margin-top: 0;
+            margin-bottom: var(--space-3);
+        }
+        
+        .value-box ul {
+            margin: var(--space-3) 0;
+            padding-left: var(--space-3);
+        }
+        
+        .value-box li {
+            margin-bottom: var(--space-2);
+            color: var(--dark-medium);
+        }
+
+        /* Inline Links */
+        article a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+        
+        article a:hover {
+            opacity: 0.8;
+        }
         
         /* CTA Section */
         .cta-section {
@@ -322,6 +359,26 @@
         .btn-primary:hover {
             background: transparent;
             color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary);
+            padding: var(--space-2) var(--space-5);
+            font-size: var(--text-base);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            margin-left: var(--space-2);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
             transform: translateY(-2px);
         }
         
@@ -455,6 +512,12 @@
             
             .related-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: var(--space-2);
+                display: block;
             }
         }
     </style>
@@ -597,6 +660,10 @@
 
         <p>That's the real breakthrough. Not better consulting. Better thinking technology.</p>
 
+        <p>You don't need the full Academy to start building this capability. Mike has developed something called <strong>Minimum Viable Intelligence</strong> - a framework system that gives you the foundation for systematic AI collaboration while maintaining strategic control.</p>
+
+        <p>It's priced at $297 and creates the starting point for genuine AI partnership rather than just better prompting. <a href="https://ragedesigner.com/contact">Contact Mike to learn more about MVI</a>.</p>
+
     </article>
 
     <section class="related-articles">
@@ -618,9 +685,10 @@
     </section>
 
     <section class="cta-section">
-        <h2>Learn Framework Generation</h2>
-        <p>Strategic Thinking Academy teaches you to build Fortune 500-level strategic intelligence through systematic framework methodology. Beta cohort starts December 1st.</p>
-        <a href="https://howtoframework.com" class="btn-primary">Reserve Your Spot - $750</a>
+        <h2>Ready to Build Systematic AI Collaboration?</h2>
+        <p>Start with <strong>Minimum Viable Intelligence ($297)</strong> - the foundation for genuine AI partnership. Or join the full <strong>Strategic Thinking Academy ($750)</strong> to master framework generation.</p>
+        <a href="https://ragedesigner.com/contact" class="btn-primary">Get MVI - $297</a>
+        <a href="https://howtoframework.com" class="btn-secondary">Full Academy - $750</a>
     </section>
 
     <footer>
