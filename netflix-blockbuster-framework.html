@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS7JGCYKT1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GS7JGCYKT1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Framework Archaeology: How Netflix Actually Beat Blockbuster | WhatIsAFramework</title>
@@ -16,6 +24,7 @@
         :root {
             --primary: #E67E50;
             --dark: #1A2332;
+            --charcoal-blue: #1A2332;
             --white: #ffffff;
             --primary-light: rgba(230, 126, 80, 0.1);
             --primary-medium: rgba(230, 126, 80, 0.8);
@@ -53,32 +62,61 @@
             font-size: var(--text-base);
             line-height: var(--leading-relaxed);
             color: var(--dark);
-            padding-top: var(--space-10);
+            padding-top: 80px;
             background: var(--white);
         }
         
-        nav {
+        /* Dynamic Header System */
+        nav#main-header {
             background: var(--white);
-            padding: var(--space-2) var(--space-6);
-            border-bottom: 1px solid var(--primary-light);
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(230, 126, 80, 0.1);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 100;
-            box-shadow: var(--shadow-sm);
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: all 0.3s ease;
         }
+        nav#main-header.scrolled {
+            padding: 12px 24px;
+            box-shadow: 0 2px 20px rgba(26, 35, 50, 0.08);
+        }
+        .logo-link { display: inline-block; transition: transform 0.3s ease; }
+        .logo-link:hover { transform: scale(1.05); }
+        .logo-icon { height: 68px; width: auto; transition: height 0.3s ease; }
+        nav#main-header.scrolled .logo-icon { height: 56px; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-link { color: var(--dark-light); text-decoration: none; font-weight: 500; transition: color 0.3s ease; position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease; }
+        .nav-link:hover { color: var(--primary); }
+        .nav-link:hover::after { width: 100%; }
+        .nav-cta { background: var(--primary); color: white !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(230, 126, 80, 0.3); }
         
-        .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .logo-icon { height: 68px; width: auto; }
-        .nav-links { display: flex; align-items: center; gap: var(--space-4); }
-        .nav-links a { color: var(--dark-light); text-decoration: none; font-weight: 500; font-size: var(--text-sm); transition: color 0.2s ease; }
-        .nav-links a:hover { color: var(--primary); }
-        .nav-cta { display: inline-block; background: var(--primary); color: var(--white) !important; padding: 12px var(--space-3); font-size: var(--text-sm); font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--primary); }
-        .nav-cta:hover { background: transparent; color: var(--primary) !important; transform: translateY(-1px); }
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
+        .hamburger-line { width: 28px; height: 3px; background: var(--charcoal-blue); border-radius: 2px; transition: all 0.3s ease; }
+        .mobile-menu-toggle:hover .hamburger-line { background: var(--primary); }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translateY(9px); }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translateY(-9px); }
+        
+        .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--charcoal-blue); padding: 48px 40px; transition: right 0.4s ease; z-index: 1002; }
+        .mobile-nav-drawer.active { right: 0; }
+        .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--primary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; transition: transform 0.3s ease; }
+        .mobile-nav-close:hover { transform: rotate(90deg); }
+        .mobile-nav { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
+        .mobile-nav-link { color: white; text-decoration: none; font-size: 18px; font-weight: 500; padding: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; position: relative; }
+        .mobile-nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--primary); transform: translateX(-4px); transition: transform 0.3s ease; }
+        .mobile-nav-link:hover { padding-left: 24px; color: var(--primary); }
+        .mobile-nav-link:hover::before { transform: translateX(0); }
+        .mobile-nav-cta { margin-top: 24px; background: var(--primary); color: white !important; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .mobile-nav-cta:hover { background: transparent; transform: translateY(-2px); }
+        .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.8); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1001; }
+        .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
         
         .hero {
             background: linear-gradient(rgba(26, 35, 50, 0.88), rgba(26, 35, 50, 0.88)), url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-Jack-of-all-trades.png');
@@ -162,12 +200,12 @@
         
         @media (max-width: 768px) {
             body { padding-top: 70px; }
-            nav { padding: var(--space-2) var(--space-3); }
+            .desktop-nav { display: none; }
+            .mobile-menu-toggle { display: flex; }
+            .logo-icon { height: 52px; }
+            nav#main-header.scrolled .logo-icon { height: 44px; }
             .hero { min-height: 80vh; }
             article { padding: var(--space-5) var(--space-3); }
-            .nav-links a:not(.nav-cta) { display: none; }
-            .nav-cta { padding: 10px var(--space-2); font-size: var(--text-xs); }
-            .logo-icon { height: 52px; }
             h2 { margin: var(--space-5) 0 var(--space-2); }
             .related-grid { grid-template-columns: 1fr; }
             .btn-secondary { margin-left: 0; margin-top: var(--space-2); display: block; }
@@ -175,14 +213,31 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/" class="logo-link"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon"></a>
-        <div class="nav-links">
-            <a href="/#definition">Definition</a>
-            <a href="/#topics">Topics</a>
+    <nav id="main-header">
+        <a href="/" class="logo-link">
+            <img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon">
+        </a>
+        <div class="nav-links desktop-nav">
+            <a href="/#definition" class="nav-link">Definition</a>
+            <a href="/#topics" class="nav-link">Topics</a>
             <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
         </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </nav>
+
+    <div class="mobile-nav-drawer">
+        <button class="mobile-nav-close" aria-label="Close menu">×</button>
+        <nav class="mobile-nav">
+            <a href="/#definition" class="mobile-nav-link">Definition</a>
+            <a href="/#topics" class="mobile-nav-link">Topics</a>
+            <a href="https://howtoframework.com" class="mobile-nav-cta">Learn to Build Frameworks</a>
+        </nav>
+    </div>
+    <div class="mobile-nav-overlay"></div>
 
     <section class="hero">
         <div class="hero-content">
@@ -320,5 +375,55 @@
         <p>Part of the <a href="https://ragedesigner.com">RageDesigner</a> framework ecosystem</p>
         <p style="margin-top: 8px;">© 2025 RageDesigner. All rights reserved.</p>
     </footer>
+
+    <script>
+    (function() {
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileDrawer = document.querySelector('.mobile-nav-drawer');
+        const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+        const mobileClose = document.querySelector('.mobile-nav-close');
+        
+        let lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
+            lastScroll = currentScroll;
+        });
+        
+        function openMobileMenu() {
+            mobileToggle.classList.add('active');
+            mobileDrawer.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileToggle.classList.remove('active');
+            mobileDrawer.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function() {
+                if (mobileDrawer.classList.contains('active')) { closeMobileMenu(); }
+                else { openMobileMenu(); }
+            });
+        }
+        if (mobileClose) { mobileClose.addEventListener('click', closeMobileMenu); }
+        if (mobileOverlay) { mobileOverlay.addEventListener('click', closeMobileMenu); }
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+        
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta');
+        mobileNavLinks.forEach(function(link) { link.addEventListener('click', closeMobileMenu); });
+    })();
+    </script>
 </body>
 </html>
