@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS7JGCYKT1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GS7JGCYKT1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sebastian's Story: The Framework He Uses Every Single Day | WhatIsAFramework</title>
@@ -16,82 +24,177 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
+            --primary: #E67E50;
+            --dark: #1A2332;
             --charcoal-blue: #1A2332;
-            --logo-blue: #325d74;
-            --copper: #B7704F;
             --white: #ffffff;
-            --light-gray: #f5f5f5;
-            --text-dark: #2d2d2d;
-            --text-medium: #5a5a5a;
+            --primary-light: rgba(230, 126, 80, 0.1);
+            --dark-medium: rgba(26, 35, 50, 0.85);
+            --dark-light: rgba(26, 35, 50, 0.6);
+            --text-xs: 0.8rem;
+            --text-sm: 1rem;
+            --text-base: 1.125rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.563rem;
+            --text-2xl: 1.953rem;
+            --text-3xl: 2.441rem;
+            --text-4xl: 3.052rem;
+            --leading-tight: 1.25;
+            --leading-normal: 1.6;
+            --leading-relaxed: 1.75;
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 40px;
+            --space-6: 48px;
+            --space-8: 64px;
+            --space-10: 80px;
+            --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.1);
+            --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.08);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; line-height: 1.8; color: var(--text-dark); }
-        nav { background: var(--white); padding: 16px 24px; border-bottom: 1px solid var(--light-gray); position: sticky; top: 0; z-index: 100; }
-        nav .container { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 18px; color: var(--charcoal-blue); text-decoration: none; }
-        .nav-cta { color: var(--copper); text-decoration: none; font-weight: 500; }
-        .hero { 
-            background: linear-gradient(rgba(26, 35, 50, 0.7), rgba(26, 35, 50, 0.7)), url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-Jack-of-all-trades.png');
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: var(--text-base);
+            line-height: var(--leading-relaxed);
+            color: var(--dark);
+            padding-top: 80px;
+            background: var(--white);
+        }
+        
+        /* Dynamic Header System */
+        nav#main-header {
+            background: var(--white);
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(230, 126, 80, 0.1);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        nav#main-header.scrolled { padding: 12px 24px; box-shadow: 0 2px 20px rgba(26, 35, 50, 0.08); }
+        .logo-link { display: inline-block; transition: transform 0.3s ease; }
+        .logo-link:hover { transform: scale(1.05); }
+        .logo-icon { height: 68px; width: auto; transition: height 0.3s ease; }
+        nav#main-header.scrolled .logo-icon { height: 56px; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-link { color: var(--dark-light); text-decoration: none; font-weight: 500; transition: color 0.3s ease; position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease; }
+        .nav-link:hover { color: var(--primary); }
+        .nav-link:hover::after { width: 100%; }
+        .nav-cta { background: var(--primary); color: white !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; transform: translateY(-2px); }
+        
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
+        .hamburger-line { width: 28px; height: 3px; background: var(--charcoal-blue); border-radius: 2px; transition: all 0.3s ease; }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translateY(9px); }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translateY(-9px); }
+        
+        .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--charcoal-blue); padding: 48px 40px; transition: right 0.4s ease; z-index: 1002; }
+        .mobile-nav-drawer.active { right: 0; }
+        .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--primary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; }
+        .mobile-nav { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
+        .mobile-nav-link { color: white; text-decoration: none; font-size: 18px; font-weight: 500; padding: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .mobile-nav-cta { margin-top: 24px; background: var(--primary); color: white !important; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; }
+        .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.8); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1001; }
+        .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
+        
+        .hero {
+            background: linear-gradient(rgba(26, 35, 50, 0.85), rgba(26, 35, 50, 0.85)), 
+                        url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-Jack-of-all-trades.png');
             background-size: cover;
             background-position: center;
-            color: var(--white); 
+            color: var(--white);
             min-height: 100vh;
-            display: flex; 
+            display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 24px;
+            padding: var(--space-3);
         }
         .hero-content { max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 700; line-height: 1.3; margin-bottom: 24px; }
-        .hero-subtitle { font-size: clamp(18px, 3vw, 22px); color: #ffffff; line-height: 1.7; opacity: 0.9; }
-        article { max-width: 800px; margin: 0 auto; padding: 60px 24px; }
-        h2 { font-size: 28px; color: var(--charcoal-blue); margin: 48px 0 24px; line-height: 1.3; }
-        h3 { font-size: 22px; color: var(--charcoal-blue); margin: 36px 0 16px; }
-        p { font-size: 18px; margin-bottom: 24px; color: var(--text-medium); }
-        .lead { font-size: 20px; color: var(--text-dark); margin-bottom: 32px; }
-        .pullquote { background: var(--light-gray); border-left: 4px solid var(--copper); padding: 32px; margin: 40px 0; border-radius: 0 8px 8px 0; }
-        .pullquote p { font-size: 20px; font-style: italic; color: var(--charcoal-blue); margin: 0; }
-        .pullquote .attribution { font-size: 16px; font-style: normal; color: var(--text-medium); margin-top: 16px; }
-        .insight-box { background: var(--charcoal-blue); color: var(--white); padding: 40px; border-radius: 12px; margin: 48px 0; }
-        .insight-box h3 { color: var(--copper); margin-top: 0; }
-        .insight-box p { color: rgba(255,255,255,0.9); }
-        .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin: 40px 0; }
-        .result-item { background: var(--light-gray); padding: 32px; border-radius: 8px; text-align: center; }
-        .result-number { font-size: 36px; font-weight: 700; color: var(--copper); margin-bottom: 8px; }
-        .result-label { font-size: 16px; color: var(--text-medium); }
-        .cta-section { background: var(--charcoal-blue); color: var(--white); padding: 60px 24px; text-align: center; margin-top: 60px; }
-        .cta-section h2 { color: var(--white); margin-top: 0; }
-        .cta-section p { color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 32px; }
-        .btn-primary { display: inline-block; background: var(--copper); color: var(--white); padding: 16px 40px; font-size: 18px; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--copper); }
-        .btn-primary:hover { background: transparent; color: var(--copper); }
-        .related-articles { background: var(--light-gray); padding: 60px 24px; }
-        .related-articles h3 { text-align: center; margin-bottom: 32px; }
-        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 800px; margin: 0 auto; }
-        .related-card { background: var(--white); padding: 24px; border-radius: 8px; text-decoration: none; border: 2px solid var(--light-gray); transition: all 0.3s ease; }
-        .related-card:hover { border-color: var(--copper); transform: translateY(-4px); }
-        .related-card h4 { color: var(--charcoal-blue); margin-bottom: 8px; font-size: 18px; }
-        .related-card p { color: var(--text-medium); font-size: 15px; margin-bottom: 0; }
-        footer { padding: 48px 24px; background: #0f151d; color: var(--white); text-align: center; }
-        footer p { opacity: 0.7; font-size: 14px; }
-        footer a { color: var(--copper); text-decoration: none; }
-        .footer-links { margin-bottom: 24px; }
-        .footer-links a { margin: 0 16px; }
-        .ai-badge { display: inline-block; background: rgba(183, 112, 79, 0.2); border: 1px solid var(--copper); padding: 8px 16px; border-radius: 20px; font-size: 12px; margin-bottom: 16px; opacity: 0.9; }
+        .hero h1 { font-size: clamp(var(--text-3xl), 5vw, var(--text-4xl)); font-weight: 700; line-height: var(--leading-tight); margin-bottom: var(--space-3); }
+        .hero-subtitle { font-size: clamp(var(--text-base), 3vw, var(--text-lg)); color: var(--white); line-height: var(--leading-normal); opacity: 0.95; }
+        article { max-width: 720px; margin: 0 auto; padding: var(--space-8) var(--space-3); }
+        h2 { font-size: var(--text-2xl); color: var(--dark); margin: var(--space-6) 0 var(--space-3); font-weight: 700; }
+        h3 { font-size: var(--text-xl); color: var(--dark); margin: var(--space-5) 0 var(--space-2); font-weight: 700; }
+        p { font-size: var(--text-base); margin-bottom: var(--space-3); color: var(--dark-medium); line-height: var(--leading-relaxed); }
+        .lead { font-size: var(--text-lg); color: var(--dark); margin-bottom: var(--space-4); font-weight: 500; }
+        strong { font-weight: 600; color: var(--dark); }
+        .pullquote { background: var(--primary-light); border-left: 4px solid var(--primary); padding: var(--space-4); margin: var(--space-5) 0; border-radius: 0 8px 8px 0; }
+        .pullquote p { font-size: var(--text-lg); font-style: italic; color: var(--dark); margin: 0; font-weight: 500; }
+        .pullquote .attribution { font-size: var(--text-sm); font-style: normal; color: var(--dark-light); margin-top: var(--space-2); }
+        .insight-box { background: var(--dark); color: var(--white); padding: var(--space-5); border-radius: 12px; margin: var(--space-6) 0; }
+        .insight-box h3 { color: var(--primary); margin-top: 0; margin-bottom: var(--space-3); }
+        .insight-box p { color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-2); }
+        .insight-box p:last-child { margin-bottom: 0; }
+        .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-3); margin: var(--space-5) 0; }
+        .result-item { background: var(--primary-light); padding: var(--space-4); border-radius: 8px; text-align: center; }
+        .result-number { font-size: var(--text-4xl); font-weight: 700; color: var(--primary); margin-bottom: var(--space-1); }
+        .result-label { font-size: var(--text-sm); color: var(--dark-medium); }
+        article a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .cta-section { background: var(--dark); color: var(--white); padding: var(--space-8) var(--space-3); text-align: center; margin-top: var(--space-8); }
+        .cta-section h2 { color: var(--white); margin-top: 0; margin-bottom: var(--space-3); }
+        .cta-section p { color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto var(--space-4); }
+        .btn-primary { display: inline-block; background: var(--primary); color: var(--white); padding: var(--space-2) var(--space-5); font-size: var(--text-base); font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .btn-primary:hover { background: transparent; color: var(--primary); transform: translateY(-2px); }
+        .related-articles { background: var(--primary-light); padding: var(--space-8) var(--space-3); }
+        .related-articles h3 { text-align: center; margin-bottom: var(--space-4); color: var(--dark); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); max-width: 900px; margin: 0 auto; }
+        .related-card { background: var(--white); padding: var(--space-3); border-radius: 8px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease; display: block; }
+        .related-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .related-card h4 { color: var(--dark); margin-bottom: var(--space-1); font-size: var(--text-base); font-weight: 700; }
+        .related-card p { color: var(--dark-light); font-size: var(--text-sm); margin-bottom: 0; }
+        footer { padding: var(--space-6) var(--space-3) var(--space-4); background: #0f151d; color: var(--white); text-align: center; }
+        footer p { opacity: 0.7; font-size: var(--text-sm); }
+        footer a { color: var(--primary); text-decoration: none; }
+        .footer-links { margin-bottom: var(--space-3); }
+        .footer-links a { margin: 0 var(--space-2); }
+        .ai-badge { display: inline-block; background: var(--primary-light); border: 1px solid var(--primary); padding: var(--space-1) var(--space-2); border-radius: 20px; font-size: var(--text-xs); margin-bottom: var(--space-2); color: var(--primary); font-weight: 600; }
         @media (max-width: 768px) {
+            body { padding-top: 70px; }
+            .desktop-nav { display: none; }
+            .mobile-menu-toggle { display: flex; }
+            .logo-icon { height: 52px; }
+            nav#main-header.scrolled .logo-icon { height: 44px; }
             .hero { min-height: 80vh; }
+            article { padding: var(--space-5) var(--space-3); }
             .results-grid { grid-template-columns: 1fr; }
-            article { padding: 40px 20px; }
+            .related-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <a href="/" class="logo">WhatIsAFramework</a>
-            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks →</a>
+    <nav id="main-header">
+        <a href="/" class="logo-link">
+            <img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon">
+        </a>
+        <div class="nav-links desktop-nav">
+            <a href="/#definition" class="nav-link">Definition</a>
+            <a href="/#topics" class="nav-link">Topics</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
         </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </nav>
+
+    <div class="mobile-nav-drawer">
+        <button class="mobile-nav-close" aria-label="Close menu">×</button>
+        <nav class="mobile-nav">
+            <a href="/#definition" class="mobile-nav-link">Definition</a>
+            <a href="/#topics" class="mobile-nav-link">Topics</a>
+            <a href="https://howtoframework.com" class="mobile-nav-cta">Learn to Build Frameworks</a>
+        </nav>
+    </div>
+    <div class="mobile-nav-overlay"></div>
 
     <section class="hero">
         <div class="hero-content">
@@ -178,7 +281,7 @@
 
         <h2>The Bigger Implication</h2>
 
-        <p>Sebastian's story is proof of concept for something larger: <a href="/framework-vs-template.html" style="color: var(--copper);">framework generation as a teachable skill</a>.</p>
+        <p>Sebastian's story is proof of concept for something larger: <a href="/framework-vs-template">framework generation as a teachable skill</a>.</p>
 
         <p>If I can help Sebastian build a framework that transforms his Spanish-language sales conversations, the methodology transfers. The domain doesn't matter. The language doesn't matter. What matters is the systematic approach to capturing and structuring expertise.</p>
 
@@ -198,11 +301,11 @@
     <section class="related-articles">
         <h3>Continue Exploring</h3>
         <div class="related-grid">
-            <a href="/framework-vs-template.html" class="related-card">
+            <a href="/framework-vs-template" class="related-card">
                 <h4>Framework vs Template vs Checklist</h4>
                 <p>Why the distinction matters more than anyone's told you.</p>
             </a>
-            <a href="/force-multipliers.html" class="related-card">
+            <a href="/force-multipliers" class="related-card">
                 <h4>Force Multipliers</h4>
                 <p>Why some efforts compound while others just add.</p>
             </a>
@@ -221,9 +324,53 @@
             <a href="/">What is a Framework?</a>
             <a href="https://howtoframework.com">How to Framework</a>
             <a href="https://ragedesigner.com">RageDesigner</a>
+            <a href="https://ragedesigner.com/contact">Contact</a>
         </div>
         <p>Part of the <a href="https://ragedesigner.com">RageDesigner</a> framework ecosystem</p>
         <p style="margin-top: 8px;">© 2025 RageDesigner. All rights reserved.</p>
     </footer>
+
+    <script>
+    (function() {
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileDrawer = document.querySelector('.mobile-nav-drawer');
+        const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+        const mobileClose = document.querySelector('.mobile-nav-close');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
+        });
+        
+        function openMobileMenu() {
+            mobileToggle.classList.add('active');
+            mobileDrawer.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            mobileToggle.classList.remove('active');
+            mobileDrawer.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function() {
+                if (mobileDrawer.classList.contains('active')) { closeMobileMenu(); }
+                else { openMobileMenu(); }
+            });
+        }
+        if (mobileClose) { mobileClose.addEventListener('click', closeMobileMenu); }
+        if (mobileOverlay) { mobileOverlay.addEventListener('click', closeMobileMenu); }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileDrawer.classList.contains('active')) { closeMobileMenu(); }
+        });
+        document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function(link) {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    })();
+    </script>
 </body>
 </html>
