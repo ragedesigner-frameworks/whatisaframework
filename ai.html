@@ -40,7 +40,6 @@
             --charcoal-blue: #1A2332;
             --charcoal: #1A2332; 
             --orange: #E67E50; 
-            --copper: #B7704F;
             --white: #ffffff; 
             --light-gray: #f5f5f5; 
             --code-bg: #2d2d2d; 
@@ -52,7 +51,7 @@
         /* Dynamic Header System */
         nav#main-header {
             background: var(--white);
-            padding: 16px 24px;
+            padding: 16px 48px;
             border-bottom: 1px solid rgba(230, 126, 80, 0.1);
             position: fixed;
             top: 0;
@@ -65,7 +64,7 @@
             transition: all 0.3s ease;
         }
         nav#main-header.scrolled {
-            padding: 12px 24px;
+            padding: 12px 48px;
             box-shadow: 0 2px 20px rgba(26, 35, 50, 0.08);
         }
         .logo-link { display: inline-block; transition: transform 0.3s ease; }
@@ -74,29 +73,29 @@
         nav#main-header.scrolled .logo-icon { height: 56px; }
         .nav-links { display: flex; align-items: center; gap: 32px; }
         .nav-link { color: var(--text-medium); text-decoration: none; font-weight: 500; transition: color 0.3s ease; position: relative; }
-        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--copper); transition: width 0.3s ease; }
-        .nav-link:hover { color: var(--copper); }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.3s ease; }
+        .nav-link:hover { color: var(--orange); }
         .nav-link:hover::after { width: 100%; }
-        .nav-cta { background: var(--copper); color: white !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid var(--copper); }
-        .nav-cta:hover { background: transparent; color: var(--copper) !important; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(183, 112, 79, 0.3); }
+        .nav-cta { background: var(--orange); color: white !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid var(--orange); }
+        .nav-cta:hover { background: transparent; color: var(--orange) !important; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(230, 126, 80, 0.3); }
         
         .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
         .hamburger-line { width: 28px; height: 3px; background: var(--charcoal-blue); border-radius: 2px; transition: all 0.3s ease; }
-        .mobile-menu-toggle:hover .hamburger-line { background: var(--copper); }
+        .mobile-menu-toggle:hover .hamburger-line { background: var(--orange); }
         .mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translateY(9px); }
         .mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
         .mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translateY(-9px); }
         
         .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--charcoal-blue); padding: 48px 40px; transition: right 0.4s ease; z-index: 1002; }
         .mobile-nav-drawer.active { right: 0; }
-        .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--copper); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; transition: transform 0.3s ease; }
+        .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--orange); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; transition: transform 0.3s ease; }
         .mobile-nav-close:hover { transform: rotate(90deg); }
         .mobile-nav { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
         .mobile-nav-link { color: white; text-decoration: none; font-size: 18px; font-weight: 500; padding: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; position: relative; }
-        .mobile-nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--copper); transform: translateX(-4px); transition: transform 0.3s ease; }
-        .mobile-nav-link:hover { padding-left: 24px; color: var(--copper); }
+        .mobile-nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--orange); transform: translateX(-4px); transition: transform 0.3s ease; }
+        .mobile-nav-link:hover { padding-left: 24px; color: var(--orange); }
         .mobile-nav-link:hover::before { transform: translateX(0); }
-        .mobile-nav-cta { margin-top: 24px; background: var(--copper); color: white !important; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--copper); }
+        .mobile-nav-cta { margin-top: 24px; background: var(--orange); color: white !important; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--orange); }
         .mobile-nav-cta:hover { background: transparent; transform: translateY(-2px); }
         .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.8); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1001; }
         .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
@@ -120,6 +119,8 @@
         
         @media (max-width: 768px) {
             body { padding-top: 80px; }
+            nav#main-header { padding: 16px 24px; }
+            nav#main-header.scrolled { padding: 12px 24px; }
             .desktop-nav { display: none; }
             .mobile-menu-toggle { display: flex; }
             .logo-icon { height: 52px; }
