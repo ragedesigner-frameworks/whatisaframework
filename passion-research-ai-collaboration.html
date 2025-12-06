@@ -64,7 +64,7 @@
         /* Dynamic Header System */
         nav#main-header {
             background: var(--white);
-            padding: 16px 24px;
+            padding: 16px 48px;
             border-bottom: 1px solid rgba(230, 126, 80, 0.1);
             position: fixed;
             top: 0;
@@ -77,7 +77,7 @@
             transition: all 0.3s ease;
         }
         nav#main-header.scrolled {
-            padding: 12px 24px;
+            padding: 12px 48px;
             box-shadow: 0 2px 20px rgba(26, 35, 50, 0.08);
         }
         .logo-link { display: inline-block; transition: transform 0.3s ease; }
@@ -121,18 +121,8 @@
             padding: var(--space-3);
         }
         .hero-content { max-width: 800px; margin: 0 auto; }
-        .hero h1 {
-            font-size: clamp(var(--text-3xl), 5vw, var(--text-4xl));
-            font-weight: 700;
-            line-height: var(--leading-tight);
-            margin-bottom: var(--space-3);
-        }
-        .hero-subtitle {
-            font-size: clamp(var(--text-base), 3vw, var(--text-lg));
-            color: var(--white);
-            line-height: var(--leading-normal);
-            opacity: 0.95;
-        }
+        .hero h1 { font-size: clamp(var(--text-3xl), 5vw, var(--text-4xl)); font-weight: 700; line-height: var(--leading-tight); margin-bottom: var(--space-3); }
+        .hero-subtitle { font-size: clamp(var(--text-base), 3vw, var(--text-lg)); color: var(--white); line-height: var(--leading-normal); opacity: 0.95; }
         article { max-width: 720px; margin: 0 auto; padding: var(--space-8) var(--space-3); }
         h2 { font-size: var(--text-2xl); color: var(--dark); margin: var(--space-6) 0 var(--space-3); font-weight: 700; }
         p { font-size: var(--text-base); margin-bottom: var(--space-3); color: var(--dark-medium); line-height: var(--leading-relaxed); }
