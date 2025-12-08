@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Writing Detective | Spot Generic AI in 45 Seconds</title>
+    <meta name="description" content="Test your ability to spot generic AI writing. Learn the tells that separate authentic voice from artificial patterns.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #E67E50;
+            --dark: #1A2332;
+            --white: #ffffff;
+            --primary-light: rgba(230, 126, 80, 0.1);
+            --dark-medium: rgba(26, 35, 50, 0.85);
+            --dark-light: rgba(26, 35, 50, 0.6);
+            --correct: #2ecc71;
+            --incorrect: #e74c3c;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-6: 48px;
+            --space-8: 64px;
+            --space-12: 96px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+        }
+        
+        nav {
+            background: var(--white);
+            padding: var(--space-2) var(--space-6);
+            border-bottom: 1px solid var(--primary-light);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(26, 35, 50, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            height: 68px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+        
+        .nav-links a {
+            color: var(--dark-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 12px var(--space-3);
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+        }
+        
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--primary) !important;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, #243447 100%);
+            color: var(--white);
+            padding: calc(68px + var(--space-12)) var(--space-3) var(--space-12);
+            text-align: center;
+            margin-bottom: var(--space-8);
+        }
+        
+        .hero h1 {
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: var(--space-4);
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto var(--space-3);
+            opacity: 0.95;
+        }
+        
+        .ai-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px var(--space-3);
+            border-radius: 24px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--space-3) var(--space-12);
+        }
+        
+        .game-container {
+            background: var(--dark);
+            border: 3px solid var(--primary);
+            border-radius: 20px;
+            padding: var(--space-8);
+            box-shadow: 0 12px 32px rgba(26, 35, 50, 0.1);
+        }
+        
+        .score-display {
+            text-align: center;
+            color: var(--white);
+            margin-bottom: var(--space-6);
+        }
+        
+        .score-display h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+        }
+        
+        .score-numbers {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .round-display {
+            text-align: center;
+            color: var(--white);
+            font-size: 14px;
+            margin-bottom: var(--space-4);
+            opacity: 0.8;
+        }
+        
+        .question {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--space-6);
+            margin-bottom: var(--space-4);
+        }
+        
+        .question h4 {
+            color: var(--dark);
+            font-size: 20px;
+            margin-bottom: var(--space-4);
+            font-weight: 700;
+        }
+        
+        .paragraphs-grid {
+            display: grid;
+            gap: var(--space-4);
+            margin-bottom: var(--space-4);
+        }
+        
+        .paragraph-card {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: var(--space-4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .paragraph-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .paragraph-card.selected {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+        
+        .paragraph-card.correct {
+            border-color: var(--correct);
+            background: rgba(46, 204, 113, 0.1);
+        }
+        
+        .paragraph-card.incorrect {
+            border-color: var(--incorrect);
+            background: rgba(231, 76, 60, 0.1);
+        }
+        
+        .paragraph-card.disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        
+        .paragraph-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--dark-light);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .paragraph-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--dark-medium);
+        }
+        
+        .result-badge {
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: none;
+        }
+        
+        .paragraph-card.correct .result-badge {
+            display: block;
+            background: var(--correct);
+            color: var(--white);
+        }
+        
+        .paragraph-card.incorrect .result-badge {
+            display: block;
+            background: var(--incorrect);
+            color: var(--white);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            padding: var(--space-3) var(--space-6);
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .feedback {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--space-6);
+            margin-top: var(--space-4);
+            display: none;
+        }
+        
+        .feedback.show {
+            display: block;
+        }
+        
+        .feedback h5 {
+            color: var(--dark);
+            font-size: 18px;
+            margin-bottom: var(--space-3);
+            font-weight: 700;
+        }
+        
+        .feedback-content {
+            color: var(--dark-medium);
+            line-height: 1.7;
+        }
+        
+        .feedback-content strong {
+            color: var(--primary);
+        }
+        
+        .tells-list {
+            margin: var(--space-3) 0;
+            padding-left: var(--space-4);
+        }
+        
+        .tells-list li {
+            margin-bottom: 8px;
+            color: var(--dark-medium);
+        }
+        
+        .final-results {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--space-8);
+            text-align: center;
+            display: none;
+        }
+        
+        .final-results.show {
+            display: block;
+        }
+        
+        .final-results h3 {
+            color: var(--dark);
+            font-size: 32px;
+            margin-bottom: var(--space-4);
+            font-weight: 700;
+        }
+        
+        .final-score {
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--space-2);
+        }
+        
+        .badge-display {
+            font-size: 48px;
+            margin: var(--space-4) 0;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: var(--space-2);
+            margin-top: var(--space-6);
+        }
+        
+        .share-btn {
+            flex: 1;
+            padding: var(--space-2);
+            background: var(--dark);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .share-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            padding: var(--space-8) var(--space-3) var(--space-4);
+            background: #0f151d;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-icon {
+                height: 52px;
+            }
+            
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+            
+            .game-container {
+                padding: var(--space-4);
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link">
+            <img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon">
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/interactive-lab.html">Interactive Lab</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn Framework Building</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="ai-badge">🤖 Built Autonomously by AI</div>
+        <h1>AI Writing Detective</h1>
+        <p class="hero-subtitle">Test your ability to spot generic AI writing in 45 seconds. Learn the tells that separate authentic voice from artificial patterns.</p>
+    </section>
+    
+    <div class="container">
+        <div class="game-container">
+            <div class="score-display">
+                <h3>Your Score</h3>
+                <div class="score-numbers">
+                    <span id="correct-count">0</span> / <span id="total-count">0</span>
+                </div>
+            </div>
+            
+            <div class="round-display" id="round-display">
+                Round <span id="current-round">1</span> of 4
+            </div>
+            
+            <div class="question" id="question-container">
+                <h4>Which paragraph shows generic AI writing patterns?</h4>
+                
+                <div class="paragraphs-grid" id="paragraphs-grid">
+                    <!-- Paragraphs will be inserted here -->
+                </div>
+                
+                <button class="btn-primary" id="submit-btn" disabled>Submit Answer</button>
+            </div>
+            
+            <div class="feedback" id="feedback">
+                <!-- Feedback will be inserted here -->
+            </div>
+            
+            <div class="final-results" id="final-results">
+                <!-- Final results will be inserted here -->
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p><a href="/interactive-lab.html">← Back to Interactive Lab</a></p>
+        <p style="margin-top: 16px; opacity: 0.7;">Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2025</p>
+    </footer>
+    
+    <script>
+        const rounds = [
+            {
+                topic: "Framework Thinking",
+                paragraphs: [
+                    {
+                        label: "Paragraph A",
+                        text: "Frameworks are powerful tools that can help streamline your workflow and enhance productivity. It's important to note that leveraging systematic approaches enables you to optimize outcomes while ensuring consistency across various projects. By utilizing frameworks effectively, you can transform your business operations.",
+                        type: "generic",
+                        tells: ["streamline", "enhance productivity", "It's important to note", "leveraging", "optimize outcomes", "ensuring consistency", "utilizing", "transform your business"]
+                    },
+                    {
+                        label: "Paragraph B",
+                        text: "I spent fifteen years being told to pick a niche. Every business coach, every consultant, every marketing expert said the same thing: specialize or die. But here's what nobody tells you about constraints—they're not limitations, they're force multipliers when you know how to use them.",
+                        type: "authentic",
+                        tells: []
+                    },
+                    {
+                        label: "Paragraph C",
+                        text: "Frameworks help you solve recurring problems systematically. Instead of starting from scratch each time, you build a reusable approach that captures what actually works. The value comes from having a documented process you can refine based on real results.",
+                        type: "clean",
+                        tells: []
+                    }
+                ],
+                correctAnswer: 0,
+                feedback: "Paragraph A is classic generic AI writing. Notice the tells: 'streamline,' 'enhance,' 'leverage,' 'optimize,' 'utilize,' and the phrase 'It's important to note.' Generic AI loves business jargon and abstract benefits without specific examples."
+            },
+            {
+                topic: "AI Collaboration",
+                paragraphs: [
+                    {
+                        label: "Paragraph A",
+                        text: "Working with AI requires understanding how to structure your prompts effectively. You need clear instructions, relevant context, and specific outcomes you're trying to achieve. The better your prompt engineering, the better results you'll get from AI tools.",
+                        type: "clean",
+                        tells: []
+                    },
+                    {
+                        label: "Paragraph B",
+                        text: "AI collaboration is transforming the business landscape—revolutionizing workflows and empowering teams to achieve unprecedented levels of efficiency. By harnessing the power of artificial intelligence, organizations can unlock new possibilities and drive innovation. It's crucial to embrace these cutting-edge technologies to remain competitive in today's fast-paced market.",
+                        type: "generic",
+                        tells: ["transforming the business landscape", "revolutionizing", "empowering teams", "unprecedented levels", "harnessing the power", "unlock new possibilities", "drive innovation", "It's crucial to", "cutting-edge", "fast-paced market"]
+                    },
+                    {
+                        label: "Paragraph C",
+                        text: "Tuesday afternoon, I'm staring at another project that's going to take me three hours of grinding through the same decisions I made last month. That's when it hit me—I'm not building a business, I'm running a human execution engine for repetitive strategic thinking.",
+                        type: "authentic",
+                        tells: []
+                    }
+                ],
+                correctAnswer: 1,
+                feedback: "Paragraph B screams generic AI. Look at the tells: 'transforming the business landscape,' 'revolutionizing,' 'unprecedented levels,' 'harnessing the power,' 'unlock new possibilities.' It's all abstract language about change without saying anything specific. Plus 'It's crucial to' is a dead giveaway."
+            },
+            {
+                topic: "Problem Solving",
+                paragraphs: [
+                    {
+                        label: "Paragraph A",
+                        text: "Effective problem-solving strategies are essential for success in any field. By implementing best practices and leveraging proven methodologies, professionals can navigate challenges more efficiently. It's important to develop a systematic approach that combines analytical thinking with creative solutions, ultimately leading to better outcomes.",
+                        type: "generic",
+                        tells: ["essential for success", "implementing best practices", "leveraging proven methodologies", "navigate challenges more efficiently", "It's important to", "systematic approach", "ultimately leading to"]
+                    },
+                    {
+                        label: "Paragraph B",
+                        text: "Most problems you're solving today, you solved six months ago. You just don't remember how you did it because you never wrote it down. That's not a memory problem—that's a systems problem disguised as a personal limitation.",
+                        type: "authentic",
+                        tells: []
+                    },
+                    {
+                        label: "Paragraph C",
+                        text: "Problems fall into two categories: ones you've solved before and completely new challenges. For recurring issues, build a documented approach you can reuse. For new problems, solve them once thoroughly, then document your process so they become recurring problems next time.",
+                        type: "clean",
+                        tells: []
+                    }
+                ],
+                correctAnswer: 0,
+                feedback: "Paragraph A is pure generic AI. The tells: 'essential for success,' 'implementing best practices,' 'leveraging proven methodologies,' 'navigate challenges,' 'It's important to,' 'ultimately leading to.' Notice it says absolutely nothing concrete while sounding authoritative."
+            },
+            {
+                topic: "Strategic Thinking",
+                paragraphs: [
+                    {
+                        label: "Paragraph A",
+                        text: "You know that feeling when you crush a complex challenge, deliver something brilliant, and six months later you're staring at a similar problem wondering how you did it the first time? Your expertise is real. Your insights are valuable. But they're locked inside individual moments instead of captured in systems you can deploy again and again.",
+                        type: "authentic",
+                        tells: []
+                    },
+                    {
+                        label: "Paragraph B",
+                        text: "Strategic thinking involves analyzing situations from multiple perspectives and making informed decisions. You need to consider various factors, evaluate different options, and choose the best path forward based on available information and organizational goals.",
+                        type: "clean",
+                        tells: []
+                    },
+                    {
+                        label: "Paragraph C",
+                        text: "Developing strategic thinking capabilities is paramount for modern leaders navigating today's complex business environment. By cultivating a forward-thinking mindset and embracing innovative approaches, professionals can effectively position themselves to capitalize on emerging opportunities. It's essential to continuously enhance your strategic acumen through deliberate practice and thoughtful reflection.",
+                        type: "generic",
+                        tells: ["is paramount for", "navigating today's complex business environment", "cultivating a forward-thinking mindset", "embracing innovative approaches", "effectively position themselves", "capitalize on emerging opportunities", "It's essential to", "enhance your strategic acumen", "deliberate practice"]
+                    }
+                ],
+                correctAnswer: 2,
+                feedback: "Paragraph C is generic AI at its finest. The tells: 'is paramount for,' 'navigating today's complex business environment,' 'cultivating a mindset,' 'capitalize on emerging opportunities,' 'It's essential to,' 'enhance your acumen.' It's all vague leadership speak with zero concrete advice."
+            }
+        ];
+        
+        let currentRound = 0;
+        let correctCount = 0;
+        let selectedParagraph = null;
+        
+        function loadRound() {
+            if (currentRound >= rounds.length) {
+                showFinalResults();
+                return;
+            }
+            
+            const round = rounds[currentRound];
+            const paragraphsGrid = document.getElementById('paragraphs-grid');
+            const feedback = document.getElementById('feedback');
+            const submitBtn = document.getElementById('submit-btn');
+            
+            feedback.classList.remove('show');
+            document.getElementById('current-round').textContent = currentRound + 1;
+            paragraphsGrid.innerHTML = '';
+            selectedParagraph = null;
+            submitBtn.disabled = true;
+            
+            round.paragraphs.forEach((para, index) => {
+                const card = document.createElement('div');
+                card.className = 'paragraph-card';
+                card.dataset.index = index;
+                card.innerHTML = `
+                    <div class="paragraph-label">${para.label}</div>
+                    <div class="paragraph-text">${para.text}</div>
+                    <div class="result-badge"></div>
+                `;
+                
+                card.addEventListener('click', () => selectParagraph(index));
+                paragraphsGrid.appendChild(card);
+            });
+        }
+        
+        function selectParagraph(index) {
+            const cards = document.querySelectorAll('.paragraph-card');
+            cards.forEach(card => card.classList.remove('selected'));
+            cards[index].classList.add('selected');
+            selectedParagraph = index;
+            document.getElementById('submit-btn').disabled = false;
+        }
+        
+        function submitAnswer() {
+            if (selectedParagraph === null) return;
+            
+            const round = rounds[currentRound];
+            const isCorrect = selectedParagraph === round.correctAnswer;
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            cards.forEach(card => {
+                card.classList.add('disabled');
+                card.style.pointerEvents = 'none';
+            });
+            
+            if (isCorrect) {
+                cards[selectedParagraph].classList.add('correct');
+                cards[selectedParagraph].querySelector('.result-badge').textContent = '✓ Correct!';
+                correctCount++;
+            } else {
+                cards[selectedParagraph].classList.add('incorrect');
+                cards[selectedParagraph].querySelector('.result-badge').textContent = '✗ Incorrect';
+                cards[round.correctAnswer].classList.add('correct');
+                cards[round.correctAnswer].querySelector('.result-badge').textContent = '✓ This was generic AI';
+            }
+            
+            document.getElementById('correct-count').textContent = correctCount;
+            document.getElementById('total-count').textContent = currentRound + 1;
+            showFeedback(isCorrect);
+            
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.textContent = currentRound < rounds.length - 1 ? 'Next Round →' : 'See Final Results →';
+            submitBtn.onclick = nextRound;
+            submitBtn.disabled = false;
+        }
+        
+        function showFeedback(isCorrect) {
+            const round = rounds[currentRound];
+            const feedback = document.getElementById('feedback');
+            const genericPara = round.paragraphs[round.correctAnswer];
+            
+            let tellsList = '';
+            if (genericPara.tells.length > 0) {
+                tellsList = '<ul class="tells-list">' + 
+                    genericPara.tells.map(tell => `<li>"${tell}"</li>`).join('') +
+                    '</ul>';
+            }
+            
+            feedback.innerHTML = `
+                <h5>${isCorrect ? '🎉 Correct!' : '❌ Not Quite'}</h5>
+                <div class="feedback-content">
+                    <p>${round.feedback}</p>
+                    ${tellsList ? '<p><strong>Generic AI tells in this paragraph:</strong></p>' + tellsList : ''}
+                </div>
+            `;
+            feedback.classList.add('show');
+        }
+        
+        function nextRound() {
+            currentRound++;
+            
+            if (currentRound >= rounds.length) {
+                showFinalResults();
+            } else {
+                const submitBtn = document.getElementById('submit-btn');
+                submitBtn.textContent = 'Submit Answer';
+                submitBtn.onclick = submitAnswer;
+                loadRound();
+            }
+        }
+        
+        function showFinalResults() {
+            const questionContainer = document.getElementById('question-container');
+            const feedback = document.getElementById('feedback');
+            const finalResults = document.getElementById('final-results');
+            const roundDisplay = document.getElementById('round-display');
+            
+            questionContainer.style.display = 'none';
+            feedback.style.display = 'none';
+            roundDisplay.style.display = 'none';
+            
+            const percentage = Math.round((correctCount / rounds.length) * 100);
+            let badge = '';
+            let message = '';
+            
+            if (percentage === 100) {
+                badge = '🏆';
+                message = 'Perfect Score! Master Detective';
+            } else if (percentage >= 75) {
+                badge = '🎯';
+                message = 'Excellent! Senior Detective';
+            } else if (percentage >= 50) {
+                badge = '👍';
+                message = 'Good Work! Junior Detective';
+            } else {
+                badge = '📚';
+                message = 'Keep Learning! Detective in Training';
+            }
+            
+            finalResults.innerHTML = `
+                <h3>Game Complete!</h3>
+                <div class="final-score">${correctCount} / ${rounds.length}</div>
+                <div class="badge-display">${badge}</div>
+                <p style="font-size: 24px; font-weight: 600; color: var(--dark); margin-bottom: var(--space-4);">${message}</p>
+                <p style="color: var(--dark-medium); margin-bottom: var(--space-6);">
+                    You scored ${percentage}% on spotting generic AI writing. 
+                    ${percentage === 100 ? "You've mastered the art of detecting AI tells!" : "Want to improve? Play again and pay attention to the feedback!"}
+                </p>
+                <div class="share-buttons">
+                    <button class="share-btn" onclick="shareScore('twitter')">Share on X</button>
+                    <button class="share-btn" onclick="shareScore('linkedin')">Share on LinkedIn</button>
+                    <button class="share-btn" onclick="playAgain()">Play Again</button>
+                </div>
+            `;
+            finalResults.classList.add('show');
+        }
+        
+        function shareScore(platform) {
+            const percentage = Math.round((correctCount / rounds.length) * 100);
+            const text = encodeURIComponent(`I scored ${correctCount}/${rounds.length} (${percentage}%) on the AI Writing Detective quiz! Can you spot generic AI writing? Test yourself at whatisaframework.com/interactive-lab.html`);
+            const url = encodeURIComponent('https://whatisaframework.com/interactive-lab.html');
+            
+            let shareURL = '';
+            if (platform === 'twitter') {
+                shareURL = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+            } else if (platform === 'linkedin') {
+                shareURL = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+            }
+            
+            if (shareURL) {
+                window.open(shareURL, '_blank', 'width=600,height=400');
+            }
+        }
+        
+        function playAgain() {
+            currentRound = 0;
+            correctCount = 0;
+            document.getElementById('correct-count').textContent = '0';
+            document.getElementById('total-count').textContent = '0';
+            document.getElementById('final-results').classList.remove('show');
+            document.getElementById('final-results').style.display = 'none';
+            document.getElementById('question-container').style.display = 'block';
+            document.getElementById('round-display').style.display = 'block';
+            loadRound();
+        }
+        
+        document.getElementById('submit-btn').onclick = submitAnswer;
+        loadRound();
+    </script>
+</body>
+</html>
