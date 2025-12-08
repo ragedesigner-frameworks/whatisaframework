@@ -194,7 +194,6 @@
             color: var(--dark);
         }
         
-        /* Dark blue interactive container */
         .interactive-container {
             background: var(--dark);
             border: 3px solid var(--primary);
@@ -248,7 +247,6 @@
             z-index: 0;
         }
         
-        /* Three-state step indicators */
         .step-number {
             width: 40px;
             height: 40px;
@@ -354,6 +352,14 @@
         .btn-secondary:hover {
             border-color: var(--dark);
             color: var(--dark);
+        }
+        
+        .cookie-notice {
+            text-align: center;
+            font-size: var(--text-sm);
+            color: var(--dark-light);
+            margin-top: var(--space-2);
+            font-style: italic;
         }
         
         .hidden {
@@ -563,7 +569,6 @@
         </div>
     </section>
     
-    <!-- INTERACTIVE EXPERIENCE #1 -->
     <section style="background: var(--dark); color: var(--white);">
         <div class="container">
             <div class="interactive-container">
@@ -591,7 +596,6 @@
                     </div>
                 </div>
                 
-                <!-- Step 1: Problem Selection -->
                 <div id="step-1" class="question-container">
                     <h4>What's one problem you solve repeatedly in your work?</h4>
                     <select id="problem-select">
@@ -608,9 +612,10 @@
                     </select>
                     <input type="text" id="custom-problem" class="hidden" placeholder="Describe your recurring problem...">
                     <button class="btn-primary" onclick="nextStep(2)">Continue →</button>
+                    <p class="cookie-notice">🍪 No cookies collected on this website</p>
                 </div>
                 
-                <!-- Step 2: Pattern Recognition -->
+                <!-- Remaining steps unchanged... -->
                 <div id="step-2" class="question-container hidden">
                     <h4>Help us understand the pattern:</h4>
                     <p style="margin-bottom: var(--space-3); color: var(--dark-medium);"><strong>How often does this problem occur?</strong></p>
@@ -638,7 +643,6 @@
                     </div>
                 </div>
                 
-                <!-- Step 3: Solution Context -->
                 <div id="step-3" class="question-container hidden">
                     <h4>What does a good solution look like for you?</h4>
                     <p style="margin-bottom: var(--space-3); color: var(--dark-medium);"><strong>When you solve this problem successfully, what happens?</strong></p>
@@ -660,17 +664,14 @@
                     </div>
                 </div>
                 
-                <!-- Step 4: Framework Result -->
                 <div id="step-4" class="question-container hidden">
                     <div class="result-box">
                         <h4>🎉 Your Framework is Ready</h4>
                         <p style="color: var(--dark-medium);">Here's your systematic approach to solving <span id="result-problem"></span>:</p>
                         
                         <div class="framework-output" id="framework-output">
-                            <!-- Framework content will be generated here -->
                         </div>
                         
-                        <!-- Email Capture -->
                         <div class="email-capture">
                             <h5>📧 Get This Framework + Weekly Intelligence</h5>
                             <p>Want this framework emailed to you, plus free weekly insights on systematic thinking? No cookies, no tracking—just valuable intelligence.</p>
@@ -697,7 +698,6 @@
         </div>
     </section>
     
-    <!-- Future Interactive Experiences Section -->
     <section>
         <div class="container">
             <h2>Coming Soon to the Lab</h2>
@@ -722,7 +722,6 @@
     </footer>
     
     <script>
-        // Framework Builder Logic
         let frameworkData = {
             problem: '',
             frequency: '',
@@ -731,7 +730,6 @@
             constraint: ''
         };
         
-        // Handle custom problem input
         document.getElementById('problem-select').addEventListener('change', function() {
             const customInput = document.getElementById('custom-problem');
             if (this.value === 'custom') {
@@ -743,7 +741,6 @@
         });
         
         function nextStep(stepNumber) {
-            // Validate current step
             const currentStep = stepNumber - 1;
             
             if (currentStep === 1) {
@@ -778,16 +775,9 @@
                 frameworkData.frustration = frustration;
             }
             
-            // Hide current step
             document.getElementById(`step-${currentStep}`).classList.add('hidden');
-            
-            // Show next step
             document.getElementById(`step-${stepNumber}`).classList.remove('hidden');
-            
-            // Update indicators
             updateStepIndicators(stepNumber);
-            
-            // Scroll to top of interactive container
             document.querySelector('.interactive-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         
@@ -822,14 +812,9 @@
             frameworkData.success = success;
             frameworkData.constraint = constraint || 'No specific constraint identified';
             
-            // Generate framework based on inputs
             const framework = buildFrameworkContent(frameworkData);
-            
-            // Display framework
             document.getElementById('framework-output').innerHTML = framework;
             document.getElementById('result-problem').textContent = frameworkData.problem.toLowerCase();
-            
-            // Show result step
             nextStep(4);
         }
         
@@ -847,7 +832,6 @@
             
             const problemType = problemLabels[document.getElementById('problem-select').value] || data.problem;
             
-            // Generate framework steps based on problem type and inputs
             let frameworkHTML = `
                 <h5>Framework: ${capitalizeFirst(problemType)}</h5>
                 <p><strong>Context:</strong> This framework addresses a problem that occurs ${getFrequencyText(data.frequency)}, where ${getFrustrationText(data.frustration)}.</p>
@@ -1000,10 +984,7 @@
                 return;
             }
             
-            // Store email (in real implementation, would send to backend)
             alert(`Thanks! Your framework has been emailed to ${email}. Check your inbox in the next few minutes.`);
-            
-            // Clear email field
             document.getElementById('email-input').value = '';
         }
         
@@ -1039,7 +1020,6 @@
         }
         
         function resetBuilder() {
-            // Reset all form elements
             document.getElementById('problem-select').value = '';
             document.getElementById('custom-problem').value = '';
             document.getElementById('custom-problem').classList.add('hidden');
@@ -1049,7 +1029,6 @@
             document.getElementById('constraint-input').value = '';
             document.getElementById('email-input').value = '';
             
-            // Reset data
             frameworkData = {
                 problem: '',
                 frequency: '',
@@ -1058,16 +1037,11 @@
                 constraint: ''
             };
             
-            // Hide all steps except first
             for (let i = 2; i <= 4; i++) {
                 document.getElementById(`step-${i}`).classList.add('hidden');
             }
             document.getElementById('step-1').classList.remove('hidden');
-            
-            // Reset indicators
             updateStepIndicators(1);
-            
-            // Scroll to top
             document.querySelector('.interactive-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     </script>
