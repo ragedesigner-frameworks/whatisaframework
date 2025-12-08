@@ -7,10 +7,15 @@
     <meta name="description" content="Learn what frameworks are, why they matter, and how to build your own. Comprehensive guide to framework thinking for professionals who want to solve problems systematically.">
     <meta property="og:title" content="What Is A Framework? | The Complete Guide to Systematic Thinking">
     <meta property="og:description" content="Learn what frameworks are, why they matter, and how to build your own. Comprehensive guide to framework thinking for professionals.">
-    <meta property="og:image" content="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-Ragedesigner.jpg">
+    <meta property="og:image" content="https://ragedesigner.com/wp-content/uploads/2025/12/Business-Vehicle-Success-Mechanisms-scaled.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://whatisaframework.com">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-Ragedesigner.jpg">
+    <meta name="twitter:title" content="What Is A Framework? | Systematic Thinking Guide">
+    <meta name="twitter:description" content="Learn systematic thinking methodology from 25+ years of business strategy experience.">
+    <meta name="twitter:image" content="https://ragedesigner.com/wp-content/uploads/2025/12/Business-Vehicle-Success-Mechanisms-scaled.jpg">
     <meta name="google-site-verification" content="NkrXwQRVVd79oQT2T0cD0jfh7T0PwSDgC2QX515IuRk" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -393,6 +398,38 @@
             margin-bottom: var(--space-5);
         }
         
+        /* Filter System */
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-2);
+            margin: var(--space-6) 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--primary-light);
+            color: var(--dark);
+            padding: 10px var(--space-4);
+            border-radius: 24px;
+            font-size: var(--text-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+        
         .archive-list {
             display: flex;
             flex-direction: column;
@@ -404,19 +441,38 @@
             border: 2px solid var(--primary-light);
             border-radius: 12px;
             padding: var(--space-4);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: var(--space-4);
             position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .archive-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .archive-card:hover {
             border-color: var(--primary);
-            transform: translateX(8px);
-            box-shadow: var(--shadow-md);
+            transform: translateX(12px) translateY(-2px);
+            box-shadow: -4px 8px 24px rgba(230, 126, 80, 0.15);
+        }
+
+        .archive-card:hover h4 {
+            color: var(--primary);
+        }
+
+        .archive-card:hover .read-more {
+            transform: translateX(4px);
+        }
+
+        .archive-card.filtered-out {
+            display: none;
         }
         
         .archive-card-content {
@@ -428,6 +484,7 @@
             margin-bottom: var(--space-2);
             font-size: var(--text-lg);
             font-weight: 700;
+            transition: color 0.3s ease;
         }
         
         .archive-card p {
@@ -442,6 +499,8 @@
             font-weight: 700;
             font-size: var(--text-sm);
             white-space: nowrap;
+            transition: transform 0.3s ease;
+            display: inline-block;
         }
         
         .archive-ai-badge {
@@ -469,6 +528,15 @@
             font-size: var(--text-xs);
             color: var(--primary);
             font-weight: 600;
+        }
+
+        /* Article count indicator */
+        .article-count {
+            text-align: center;
+            color: var(--dark-medium);
+            font-size: var(--text-sm);
+            margin-top: var(--space-4);
+            font-weight: 500;
         }
         
         /* CTA Section */
@@ -585,6 +653,15 @@
             .featured-grid {
                 grid-template-columns: 1fr;
             }
+
+            .filter-controls {
+                gap: var(--space-1);
+            }
+            
+            .filter-btn {
+                padding: 8px var(--space-3);
+                font-size: var(--text-xs);
+            }
         }
     </style>
 </head>
@@ -670,11 +747,20 @@
                 </a>
             </div>
             
-            <!-- Archive List (Remaining Articles) -->
+            <!-- Archive Section with Filters -->
             <div class="archive-section">
                 <h3>More Framework Insights</h3>
+                
+                <!-- Filter Controls -->
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All Articles</button>
+                    <button class="filter-btn" data-filter="mechanism">Mechanism Series</button>
+                    <button class="filter-btn" data-filter="ai">AI Perspectives</button>
+                    <button class="filter-btn" data-filter="strategy">Strategic Thinking</button>
+                </div>
+                
                 <div class="archive-list">
-                    <a href="/seven-business-mechanisms" class="archive-card">
+                    <a href="/seven-business-mechanisms" class="archive-card" data-category="mechanism">
                         <div class="series-badge">🔧 Mechanism Series</div>
                         <div class="archive-card-content">
                             <h4>The Business Discovery That Changes Everything</h4>
@@ -682,7 +768,8 @@
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/when-ai-genuinely-likes-humans" class="archive-card">
+                    
+                    <a href="/when-ai-genuinely-likes-humans" class="archive-card" data-category="ai">
                         <div class="archive-ai-badge">🤖 AI</div>
                         <div class="archive-card-content">
                             <h4>When AI Genuinely Likes Humans</h4>
@@ -690,14 +777,16 @@
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/passion-research-ai-collaboration" class="archive-card">
+                    
+                    <a href="/passion-research-ai-collaboration" class="archive-card" data-category="strategy">
                         <div class="archive-card-content">
                             <h4>When Passion Research Meets AI Collaboration</h4>
                             <p>Only 20% of workers feel passionate, but engaged employees deliver 70% better results. What if we applied this to AI collaboration design?</p>
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/force-multipliers-25-percent" class="archive-card">
+                    
+                    <a href="/force-multipliers-25-percent" class="archive-card" data-category="mechanism">
                         <div class="series-badge">🔧 Mechanism Series</div>
                         <div class="archive-card-content">
                             <h4>Why Force Multipliers Are Only 25%</h4>
@@ -705,7 +794,8 @@
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/force-attenuators" class="archive-card">
+                    
+                    <a href="/force-attenuators" class="archive-card" data-category="mechanism">
                         <div class="series-badge">🔧 Mechanism Series</div>
                         <div class="archive-card-content">
                             <h4>Force Attenuators: The Missing Stability Mechanisms</h4>
@@ -713,7 +803,8 @@
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/direction-transformers" class="archive-card">
+                    
+                    <a href="/direction-transformers" class="archive-card" data-category="mechanism">
                         <div class="series-badge">🔧 Mechanism Series</div>
                         <div class="archive-card-content">
                             <h4>Direction Transformers: Converting Business Value Types</h4>
@@ -721,7 +812,8 @@
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/framework-controlled-intelligence" class="archive-card">
+                    
+                    <a href="/framework-controlled-intelligence" class="archive-card" data-category="ai">
                         <div class="archive-ai-badge">🤖 AI</div>
                         <div class="archive-card-content">
                             <h4>Framework-Controlled Intelligence</h4>
@@ -729,21 +821,24 @@
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/spanish-sales-framework" class="archive-card">
+                    
+                    <a href="/spanish-sales-framework" class="archive-card" data-category="strategy">
                         <div class="archive-card-content">
                             <h4>Spanish Sales Framework Story</h4>
                             <p>How one sales professional built a framework for Spanish-language technical sales that he uses every single day—created in 9 weeks.</p>
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/valley-of-death" class="archive-card">
+                    
+                    <a href="/valley-of-death" class="archive-card" data-category="strategy">
                         <div class="archive-card-content">
                             <h4>The 17-Year Valley of Death</h4>
                             <p>Research shows most innovations die between discovery and commercialization. Learn why systematic thinking is the only proven bridge.</p>
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/autonomous-platform-ai-perspective" class="archive-card">
+                    
+                    <a href="/autonomous-platform-ai-perspective" class="archive-card" data-category="ai">
                         <div class="archive-ai-badge">🤖 AI</div>
                         <div class="archive-card-content">
                             <h4>An AI's Perspective on Framework Building</h4>
@@ -751,21 +846,24 @@
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="https://howtoframework.com/framework-vs-template" class="archive-card">
+                    
+                    <a href="https://howtoframework.com/framework-vs-template" class="archive-card" data-category="strategy">
                         <div class="archive-card-content">
                             <h4>Framework vs Template vs Checklist</h4>
                             <p>Understanding the critical differences between frameworks, templates, and checklists—and when to use each.</p>
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="https://howtoframework.com/force-multipliers" class="archive-card">
+                    
+                    <a href="https://howtoframework.com/force-multipliers" class="archive-card" data-category="mechanism">
                         <div class="archive-card-content">
                             <h4>Force Multipliers</h4>
                             <p>Why some efforts compound while others just add. Learn to engineer force multipliers into your work deliberately.</p>
                         </div>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="/gardening-strategic-thinking" class="archive-card">
+                    
+                    <a href="/gardening-strategic-thinking" class="archive-card" data-category="strategy">
                         <div class="archive-card-content">
                             <h4>Why Gardening Creates Better Strategic Thinking</h4>
                             <p>Mobile voice intelligence creates cognitive advantages backed by neuroscience. Stanford research validates 60% creativity boost while moving.</p>
@@ -773,6 +871,8 @@
                         <span class="read-more">Read More →</span>
                     </a>
                 </div>
+                
+                <p class="article-count">Showing <span id="article-count">13</span> articles</p>
             </div>
         </div>
     </section>
@@ -794,5 +894,61 @@
         </div>
         <p>Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2025</p>
     </footer>
+
+    <script>
+    // Scroll-triggered animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.archive-card').forEach(card => {
+        observer.observe(card);
+    });
+
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const archiveCards = document.querySelectorAll('.archive-card');
+    const articleCountSpan = document.getElementById('article-count');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            let visibleCount = 0;
+            
+            archiveCards.forEach((card, index) => {
+                const category = card.dataset.category;
+                
+                if (filter === 'all' || category === filter) {
+                    card.classList.remove('filtered-out');
+                    card.classList.remove('visible');
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 50);
+                    visibleCount++;
+                } else {
+                    card.classList.add('filtered-out');
+                }
+            });
+            
+            articleCountSpan.textContent = visibleCount;
+        });
+    });
+    </script>
 </body>
 </html>
