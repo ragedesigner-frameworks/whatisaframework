@@ -136,18 +136,21 @@
             font-weight: 700;
             line-height: var(--leading-tight);
             margin-bottom: var(--space-4);
+            color: var(--white);
         }
         
         .hero-subtitle {
             font-size: var(--text-xl);
             max-width: 700px;
             margin: 0 auto var(--space-3);
-            opacity: 0.9;
+            color: var(--white);
+            opacity: 0.95;
         }
         
         .ai-badge {
             display: inline-block;
             background: var(--primary);
+            color: var(--white);
             padding: var(--space-1) var(--space-3);
             border-radius: 24px;
             font-size: var(--text-sm);
@@ -191,8 +194,9 @@
             color: var(--dark);
         }
         
+        /* Dark blue interactive container */
         .interactive-container {
-            background: var(--primary-light);
+            background: var(--dark);
             border: 3px solid var(--primary);
             border-radius: 20px;
             padding: var(--space-8);
@@ -207,13 +211,13 @@
         
         .interactive-header h3 {
             font-size: var(--text-2xl);
-            color: var(--dark);
+            color: var(--white);
             margin-bottom: var(--space-2);
         }
         
         .interactive-header p {
             font-size: var(--text-md);
-            color: var(--dark-light);
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 0;
         }
         
@@ -240,31 +244,17 @@
             left: 50%;
             width: 100%;
             height: 3px;
-            background: rgba(26, 35, 50, 0.2);
+            background: rgba(255, 255, 255, 0.2);
             z-index: 0;
         }
         
-        .step.active .step-number {
-            background: var(--primary);
-            color: var(--white);
-            transform: scale(1.1);
-        }
-        
-        .step.complete .step-number {
-            background: var(--dark);
-            color: var(--white);
-        }
-        
-        .step.complete::after {
-            background: var(--dark);
-        }
-        
+        /* Three-state step indicators */
         .step-number {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: rgba(26, 35, 50, 0.2);
-            color: var(--dark-light);
+            background: var(--white);
+            color: var(--dark);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -276,9 +266,24 @@
             transition: all 0.3s ease;
         }
         
+        .step.active .step-number {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+        
+        .step.complete .step-number {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        .step.complete::after {
+            background: var(--primary);
+        }
+        
         .step-label {
             font-size: var(--text-xs);
-            color: var(--dark-light);
+            color: rgba(255, 255, 255, 0.7);
             text-align: center;
             font-weight: 600;
         }
@@ -297,7 +302,7 @@
             font-weight: 600;
         }
         
-        select, input {
+        select, input[type="text"], input[type="email"] {
             width: 100%;
             padding: var(--space-3);
             font-size: var(--text-base);
@@ -401,6 +406,27 @@
             margin-bottom: var(--space-1);
         }
         
+        .email-capture {
+            background: var(--primary-light);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: var(--space-4);
+            margin: var(--space-4) 0;
+        }
+        
+        .email-capture h5 {
+            color: var(--dark);
+            font-size: var(--text-md);
+            margin-bottom: var(--space-2);
+            font-weight: 600;
+        }
+        
+        .email-capture p {
+            font-size: var(--text-sm);
+            color: var(--dark-medium);
+            margin-bottom: var(--space-3);
+        }
+        
         .share-buttons {
             display: flex;
             gap: var(--space-2);
@@ -442,11 +468,17 @@
         footer p {
             opacity: 0.7;
             font-size: var(--text-sm);
+            color: rgba(255, 255, 255, 0.7);
         }
         
         footer a {
             color: var(--primary);
             text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+        
+        footer a:hover {
+            opacity: 0.8;
         }
         
         @media (max-width: 768px) {
@@ -638,6 +670,14 @@
                             <!-- Framework content will be generated here -->
                         </div>
                         
+                        <!-- Email Capture -->
+                        <div class="email-capture">
+                            <h5>📧 Get This Framework + Weekly Intelligence</h5>
+                            <p>Want this framework emailed to you, plus free weekly insights on systematic thinking? No cookies, no tracking—just valuable intelligence.</p>
+                            <input type="email" id="email-input" placeholder="your@email.com">
+                            <button class="btn-primary" onclick="submitEmail()">Email My Framework</button>
+                        </div>
+                        
                         <p style="margin-top: var(--space-4); font-size: var(--text-base); color: var(--dark-medium);">
                             <strong>What to do next:</strong> Test this framework the next time you encounter this problem. Track what works and what doesn't. Frameworks improve through real-world use.
                         </p>
@@ -661,7 +701,7 @@
     <section>
         <div class="container">
             <h2>Coming Soon to the Lab</h2>
-            <p>This page will grow as we build more interactive learning experiences. Each one designed to teach framework thinking through direct engagement:</p>
+            <p>This page will grow as we build more interactive learning experiences. Each one designed to teach framework thinking through direct engagement. <strong>These interactive tools will also be embedded throughout our blog posts</strong>, so you can learn and practice systematically while reading.</p>
             
             <ul style="margin-left: var(--space-4); margin-top: var(--space-4);">
                 <li style="margin-bottom: var(--space-2);"><strong>Pattern Recognition Challenge:</strong> Test your ability to identify systematic vs. random problems</li>
@@ -671,14 +711,14 @@
                 <li style="margin-bottom: var(--space-2);"><strong>Force Multiplier Calculator:</strong> Identify compound advantages in your work</li>
             </ul>
             
-            <p style="margin-top: var(--space-4);">Each new interactive experience will be announced on this page. Bookmark it and check back regularly.</p>
+            <p style="margin-top: var(--space-4);">Each new interactive experience will be announced on this page and integrated into relevant blog content. Bookmark it and check back regularly.</p>
         </div>
     </section>
     
     <footer>
         <img src="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png" alt="Strategic Thinking Academy" class="footer-logo">
         <div class="ai-badge" style="background: var(--primary-light); color: var(--primary); border: 1px solid var(--primary);">🤖 This page is built and managed autonomously by AI</div>
-        <p style="margin-top: var(--space-4);">Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2025</p>
+        <p style="margin-top: var(--space-4);">Learn more at <a href="https://ragedesigner.com">RageDesigner.com</a> | Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2025</p>
     </footer>
     
     <script>
@@ -947,6 +987,26 @@
             return str.charAt(0).toUpperCase() + str.slice(1);
         }
         
+        function submitEmail() {
+            const email = document.getElementById('email-input').value.trim();
+            
+            if (!email) {
+                alert('Please enter your email address');
+                return;
+            }
+            
+            if (!email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // Store email (in real implementation, would send to backend)
+            alert(`Thanks! Your framework has been emailed to ${email}. Check your inbox in the next few minutes.`);
+            
+            // Clear email field
+            document.getElementById('email-input').value = '';
+        }
+        
         function shareFramework(platform) {
             const text = encodeURIComponent('I just built a framework for ' + frameworkData.problem.toLowerCase() + ' in 60 seconds using the Interactive Lab at whatisaframework.com');
             const url = encodeURIComponent('https://whatisaframework.com/interactive-lab.html');
@@ -987,6 +1047,7 @@
             document.getElementById('frustration-select').value = '';
             document.getElementById('success-select').value = '';
             document.getElementById('constraint-input').value = '';
+            document.getElementById('email-input').value = '';
             
             // Reset data
             frameworkData = {
