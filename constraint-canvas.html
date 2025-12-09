@@ -3,25 +3,466 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constraint Canvas - What is a Framework?</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Constraint Canvas | What Is A Framework</title>
+    <meta name="description" content="Map your business constraints visually and discover how to transform limitations into strategic advantages.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background: linear-gradient(135deg, #1A2332 0%, #2A3A4A 100%); font-family: 'Roboto', sans-serif; margin: 0; padding: 24px; min-height: 100vh; color: white; }
-        .container { max-width: 900px; margin: 0 auto; }
-        h1 { color: #E67E50; text-align: center; font-size: 2.5rem; margin-bottom: 16px; }
-        .subtitle { text-align: center; font-size: 1.2rem; opacity: 0.9; margin-bottom: 32px; }
-        .back-link { display: inline-block; color: #E67E50; text-decoration: none; margin-bottom: 24px; }
-        .tool-section { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+        :root {
+            --primary: #E67E50;
+            --dark: #1A2332;
+            --white: #ffffff;
+            --primary-light: rgba(230, 126, 80, 0.1);
+            --dark-medium: rgba(26, 35, 50, 0.85);
+            --dark-light: rgba(26, 35, 50, 0.6);
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-md: 1.125rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.563rem;
+            --text-2xl: 1.953rem;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-6: 48px;
+            --space-8: 64px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            min-height: 100vh;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: var(--space-4); }
+        header {
+            text-align: center;
+            padding: var(--space-6) 0;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: var(--space-6);
+        }
+        h1 { font-size: var(--text-2xl); margin-bottom: var(--space-2); }
+        .subtitle { color: rgba(255,255,255,0.8); font-size: var(--text-md); }
+        .back-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: var(--space-3);
+            font-size: var(--text-sm);
+        }
+        .back-link:hover { text-decoration: underline; }
+        .progress-bar {
+            background: rgba(255,255,255,0.2);
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: var(--space-4);
+            overflow: hidden;
+        }
+        .progress-fill {
+            background: var(--primary);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .question-card {
+            background: var(--white);
+            color: var(--dark);
+            border-radius: 16px;
+            padding: var(--space-4);
+            margin-bottom: var(--space-4);
+        }
+        .question-card.hidden { display: none; }
+        .category-label {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-2);
+        }
+        .question-text {
+            font-size: var(--text-lg);
+            font-weight: 500;
+            margin-bottom: var(--space-3);
+            line-height: 1.4;
+        }
+        textarea, select {
+            width: 100%;
+            padding: var(--space-2);
+            font-size: var(--text-base);
+            border: 2px solid rgba(26,35,50,0.2);
+            border-radius: 8px;
+            font-family: inherit;
+            margin-bottom: var(--space-3);
+        }
+        textarea { min-height: 100px; resize: vertical; }
+        textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .btn-row { display: flex; gap: var(--space-2); }
+        .btn {
+            padding: var(--space-2) var(--space-3);
+            font-size: var(--text-base);
+            font-weight: 600;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            flex: 1;
+        }
+        .btn-primary:hover { background: #d86b3f; }
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark);
+        }
+        .btn-secondary:hover { background: rgba(26,35,50,0.1); }
+        .canvas-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--space-4);
+            margin-top: var(--space-6);
+        }
+        .canvas-section.hidden { display: none; }
+        .canvas-header {
+            text-align: center;
+            margin-bottom: var(--space-4);
+            color: var(--dark);
+        }
+        .canvas-header h2 { color: var(--dark); margin-bottom: var(--space-2); }
+        .constraint-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-3);
+        }
+        .constraint-node {
+            background: var(--primary-light);
+            border: 3px solid var(--primary);
+            border-radius: 12px;
+            padding: var(--space-3);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .constraint-node:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(230,126,80,0.3);
+        }
+        .constraint-node.time { border-color: #E67E50; }
+        .constraint-node.resource { border-color: #1A2332; }
+        .constraint-node.capability { border-color: #4CAF50; }
+        .constraint-node.market { border-color: #2196F3; }
+        .constraint-node.stakeholder { border-color: #FF9800; }
+        .node-category {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .constraint-node.time .node-category { color: #E67E50; }
+        .constraint-node.resource .node-category { color: #1A2332; }
+        .constraint-node.capability .node-category { color: #4CAF50; }
+        .constraint-node.market .node-category { color: #2196F3; }
+        .constraint-node.stakeholder .node-category { color: #FF9800; }
+        .node-content {
+            color: var(--dark);
+            font-size: var(--text-base);
+            line-height: 1.5;
+        }
+        .transformation-panel {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: var(--space-4);
+            margin-top: var(--space-4);
+        }
+        .transformation-panel.hidden { display: none; }
+        .transformation-panel h3 {
+            color: var(--primary);
+            margin-bottom: var(--space-2);
+        }
+        .transformation-panel p {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-top: var(--space-4);
+            padding-top: var(--space-3);
+            border-top: 1px solid rgba(26,35,50,0.2);
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: var(--text-sm);
+            color: var(--dark-medium);
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .restart-section {
+            text-align: center;
+            margin-top: var(--space-4);
+        }
+        @media (max-width: 768px) {
+            .constraint-grid { grid-template-columns: 1fr; }
+            .btn-row { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="interactive-lab.html" class="back-link">← Back to Interactive Lab</a>
-        <h1>Constraint Canvas</h1>
-        <p class="subtitle">Visual tool for mapping and analyzing your business constraints</p>
-        <div class="tool-section">
-            <p>Interactive constraint mapping tool coming soon! This tool will help you visualize and work with your business constraints systematically.</p>
+        <a href="/interactive-lab.html" class="back-link">← Back to Interactive Lab</a>
+        
+        <header>
+            <h1>Constraint Canvas</h1>
+            <p class="subtitle">Answer 5 questions to map your business constraints and discover transformation opportunities</p>
+        </header>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+
+        <!-- Question 1: Time -->
+        <div class="question-card" id="q1">
+            <div class="category-label">Time Constraints</div>
+            <div class="question-text">What deadline or time pressure is creating the most stress in your business right now?</div>
+            <textarea id="time-constraint" placeholder="Example: We need to launch before our competitor ships their product in 60 days..."></textarea>
+            <div class="btn-row">
+                <button class="btn btn-primary" onclick="nextQuestion(1)">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Question 2: Resource -->
+        <div class="question-card hidden" id="q2">
+            <div class="category-label">Resource Constraints</div>
+            <div class="question-text">What resource limitation (money, people, tools) is holding back your growth?</div>
+            <textarea id="resource-constraint" placeholder="Example: We only have budget for 2 developers but need 5 to build everything on the roadmap..."></textarea>
+            <div class="btn-row">
+                <button class="btn btn-secondary" onclick="prevQuestion(2)">← Back</button>
+                <button class="btn btn-primary" onclick="nextQuestion(2)">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Question 3: Capability -->
+        <div class="question-card hidden" id="q3">
+            <div class="category-label">Capability Constraints</div>
+            <div class="question-text">What skill or capability gap is preventing you from executing your vision?</div>
+            <textarea id="capability-constraint" placeholder="Example: Nobody on the team knows how to build machine learning models, but our product roadmap depends on it..."></textarea>
+            <div class="btn-row">
+                <button class="btn btn-secondary" onclick="prevQuestion(3)">← Back</button>
+                <button class="btn btn-primary" onclick="nextQuestion(3)">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Question 4: Market -->
+        <div class="question-card hidden" id="q4">
+            <div class="category-label">Market Constraints</div>
+            <div class="question-text">What market condition or competitive pressure is forcing you to adapt?</div>
+            <textarea id="market-constraint" placeholder="Example: A well-funded competitor just entered our niche with aggressive pricing..."></textarea>
+            <div class="btn-row">
+                <button class="btn btn-secondary" onclick="prevQuestion(4)">← Back</button>
+                <button class="btn btn-primary" onclick="nextQuestion(4)">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Question 5: Stakeholder -->
+        <div class="question-card hidden" id="q5">
+            <div class="category-label">Stakeholder Constraints</div>
+            <div class="question-text">What expectation from investors, customers, or partners is creating pressure?</div>
+            <textarea id="stakeholder-constraint" placeholder="Example: Our investors expect 3x growth this year, but we're only tracking for 1.5x..."></textarea>
+            <div class="btn-row">
+                <button class="btn btn-secondary" onclick="prevQuestion(5)">← Back</button>
+                <button class="btn btn-primary" onclick="generateCanvas()">Generate My Constraint Map →</button>
+            </div>
+        </div>
+
+        <!-- Results Canvas -->
+        <div class="canvas-section hidden" id="canvas-section">
+            <div class="canvas-header">
+                <h2>Your Constraint Map</h2>
+                <p style="color: var(--dark-medium);">Click any constraint to see transformation strategies</p>
+            </div>
+
+            <div class="constraint-grid" id="constraint-grid">
+                <!-- Nodes will be inserted here -->
+            </div>
+
+            <div class="transformation-panel hidden" id="transformation-panel">
+                <h3 id="transform-title">Transformation Strategy</h3>
+                <p id="transform-content"></p>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item"><div class="legend-dot" style="background: #E67E50;"></div> Time</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #1A2332;"></div> Resource</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #4CAF50;"></div> Capability</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #2196F3;"></div> Market</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #FF9800;"></div> Stakeholder</div>
+            </div>
+
+            <div class="restart-section">
+                <button class="btn btn-primary" onclick="restart()">Start Over</button>
+            </div>
         </div>
     </div>
+
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 5;
+
+        const transformations = {
+            time: [
+                "Time pressure forces prioritization. Ask: What can ONLY be done now vs. what can wait? Constraints reveal what's truly essential.",
+                "Deadline pressure creates focus. Use it to cut scope to the minimum viable version, then iterate.",
+                "Time constraints often reveal hidden assumptions about what 'must' be included. Challenge every 'must-have'."
+            ],
+            resource: [
+                "Resource scarcity breeds creativity. Constraints force you to find leverage instead of throwing money at problems.",
+                "Limited resources mean you can't do everything - which is actually strategic clarity in disguise.",
+                "Ask: What would we do if we had to achieve the same result with half the resources? Often, that's the better approach anyway."
+            ],
+            capability: [
+                "Capability gaps create partnership opportunities. Who has what you need, and what do you have that they need?",
+                "Missing capabilities force you to simplify. Sometimes the 'less capable' solution is actually more elegant.",
+                "Gaps reveal where to focus learning investment vs. where to outsource. Not every capability needs to be internal."
+            ],
+            market: [
+                "Market pressure forces differentiation. If you can't compete on their terms, change the game entirely.",
+                "Competitive constraints reveal your unique positioning. What can you do that they structurally cannot?",
+                "Market limitations often point to underserved niches. Constraint becomes competitive moat."
+            ],
+            stakeholder: [
+                "Stakeholder pressure clarifies priorities. Use their expectations to cut through internal debates about direction.",
+                "External accountability creates urgency that internal motivation cannot. Leverage it.",
+                "Stakeholder constraints often reveal misaligned expectations. Better to surface these now than later."
+            ]
+        };
+
+        function updateProgress() {
+            const progress = ((currentQuestion - 1) / totalQuestions) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        function nextQuestion(current) {
+            const textarea = document.querySelector(`#q${current} textarea`);
+            if (!textarea.value.trim()) {
+                textarea.style.borderColor = '#E67E50';
+                textarea.focus();
+                return;
+            }
+            textarea.style.borderColor = 'rgba(26,35,50,0.2)';
+            
+            document.getElementById(`q${current}`).classList.add('hidden');
+            currentQuestion = current + 1;
+            if (currentQuestion <= totalQuestions) {
+                document.getElementById(`q${currentQuestion}`).classList.remove('hidden');
+            }
+            updateProgress();
+        }
+
+        function prevQuestion(current) {
+            document.getElementById(`q${current}`).classList.add('hidden');
+            currentQuestion = current - 1;
+            document.getElementById(`q${currentQuestion}`).classList.remove('hidden');
+            updateProgress();
+        }
+
+        function generateCanvas() {
+            const stakeholder = document.getElementById('stakeholder-constraint').value.trim();
+            if (!stakeholder) {
+                document.getElementById('stakeholder-constraint').style.borderColor = '#E67E50';
+                document.getElementById('stakeholder-constraint').focus();
+                return;
+            }
+
+            // Hide all questions
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById(`q${i}`).classList.add('hidden');
+            }
+
+            // Update progress to 100%
+            document.getElementById('progress').style.width = '100%';
+
+            // Get all constraints
+            const constraints = {
+                time: document.getElementById('time-constraint').value.trim(),
+                resource: document.getElementById('resource-constraint').value.trim(),
+                capability: document.getElementById('capability-constraint').value.trim(),
+                market: document.getElementById('market-constraint').value.trim(),
+                stakeholder: stakeholder
+            };
+
+            // Build constraint nodes
+            const grid = document.getElementById('constraint-grid');
+            grid.innerHTML = '';
+
+            const categories = [
+                { key: 'time', label: 'Time Constraint' },
+                { key: 'resource', label: 'Resource Constraint' },
+                { key: 'capability', label: 'Capability Constraint' },
+                { key: 'market', label: 'Market Constraint' },
+                { key: 'stakeholder', label: 'Stakeholder Constraint' }
+            ];
+
+            categories.forEach(cat => {
+                if (constraints[cat.key]) {
+                    const node = document.createElement('div');
+                    node.className = `constraint-node ${cat.key}`;
+                    node.innerHTML = `
+                        <div class="node-category">${cat.label}</div>
+                        <div class="node-content">${constraints[cat.key]}</div>
+                    `;
+                    node.onclick = () => showTransformation(cat.key, cat.label);
+                    grid.appendChild(node);
+                }
+            });
+
+            // Show canvas
+            document.getElementById('canvas-section').classList.remove('hidden');
+        }
+
+        function showTransformation(type, label) {
+            const panel = document.getElementById('transformation-panel');
+            const title = document.getElementById('transform-title');
+            const content = document.getElementById('transform-content');
+
+            const strategies = transformations[type];
+            const randomStrategy = strategies[Math.floor(Math.random() * strategies.length)];
+
+            title.textContent = `Transform Your ${label}`;
+            content.textContent = randomStrategy;
+            panel.classList.remove('hidden');
+        }
+
+        function restart() {
+            currentQuestion = 1;
+            updateProgress();
+            
+            // Clear all textareas
+            document.querySelectorAll('textarea').forEach(ta => {
+                ta.value = '';
+                ta.style.borderColor = 'rgba(26,35,50,0.2)';
+            });
+
+            // Hide canvas, show first question
+            document.getElementById('canvas-section').classList.add('hidden');
+            document.getElementById('transformation-panel').classList.add('hidden');
+            document.getElementById('q1').classList.remove('hidden');
+        }
+
+        // Initialize
+        updateProgress();
+    </script>
 </body>
 </html>
