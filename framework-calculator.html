@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework Calculator - What is a Framework?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: linear-gradient(135deg, #1A2332 0%, #2A3A4A 100%); font-family: 'Roboto', sans-serif; margin: 0; padding: 24px; min-height: 100vh; color: white; }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 { color: #E67E50; text-align: center; font-size: 2.5rem; margin-bottom: 16px; }
+        .subtitle { text-align: center; font-size: 1.2rem; opacity: 0.9; margin-bottom: 32px; }
+        .back-link { display: inline-block; color: #E67E50; text-decoration: none; margin-bottom: 24px; }
+        .tool-section { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+        input { width: 100%; padding: 12px; margin: 8px 0 16px 0; border: 2px solid rgba(230, 126, 80, 0.3); border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: white; font-family: 'Roboto', sans-serif; }
+        .btn-primary { background: #E67E50; color: white; border: none; padding: 16px 32px; border-radius: 8px; font-size: 1.1rem; cursor: pointer; width: 100%; margin-top: 16px; }
+        .btn-primary:hover { background: #D86A42; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="interactive-lab.html" class="back-link">← Back to Interactive Lab</a>
+        <h1>Framework Calculator</h1>
+        <p class="subtitle">Calculate the ROI of systematic thinking</p>
+        <div class="tool-section">
+            <label>Weekly Decisions:</label>
+            <input type="number" id="decisions" placeholder="e.g., 15">
+            <label>Minutes per Decision:</label>
+            <input type="number" id="minutes" placeholder="e.g., 20">
+            <label>Your Hourly Rate ($):</label>
+            <input type="number" id="rate" placeholder="e.g., 75">
+            <button class="btn-primary" onclick="calculate()">Calculate Savings</button>
+            <div id="results" style="display:none; margin-top: 24px; padding: 24px; background: rgba(230, 126, 80, 0.1); border-radius: 8px;">
+                <h3 style="color: #E67E50;">Your Time Savings</h3>
+                <p id="output"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+    function calculate() {
+        const decisions = parseFloat(document.getElementById('decisions').value);
+        const minutes = parseFloat(document.getElementById('minutes').value);
+        const rate = parseFloat(document.getElementById('rate').value);
+        if (!decisions || !minutes || !rate) { alert('Please fill in all fields'); return; }
+        const weeklyMinutes = decisions * minutes;
+        const savedMinutes = weeklyMinutes * 0.7;
+        const savedHours = savedMinutes / 60;
+        const weeklySavings = savedHours * rate;
+        const yearlySavings = weeklySavings * 52;
+        document.getElementById('output').innerHTML = `<strong>Weekly savings:</strong> ${savedHours.toFixed(1)} hours ($${weeklySavings.toFixed(0)})<br><strong>Yearly savings:</strong> ${(savedHours * 52).toFixed(0)} hours ($${yearlySavings.toFixed(0)})<br><br>A framework reduces decision time by 60-80% after initial setup.`;
+        document.getElementById('results').style.display = 'block';
+    }
+    </script>
+</body>
+</html>
