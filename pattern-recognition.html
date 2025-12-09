@@ -3,25 +3,407 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pattern Recognition - What is a Framework?</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Pattern Recognition Game | What Is A Framework</title>
+    <meta name="description" content="Test your ability to distinguish between problems that need frameworks versus one-time solutions. 8 business scenarios, instant feedback.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background: linear-gradient(135deg, #1A2332 0%, #2A3A4A 100%); font-family: 'Roboto', sans-serif; margin: 0; padding: 24px; min-height: 100vh; color: white; }
-        .container { max-width: 900px; margin: 0 auto; }
-        h1 { color: #E67E50; text-align: center; font-size: 2.5rem; margin-bottom: 16px; }
-        .subtitle { text-align: center; font-size: 1.2rem; opacity: 0.9; margin-bottom: 32px; }
-        .back-link { display: inline-block; color: #E67E50; text-decoration: none; margin-bottom: 24px; }
-        .tool-section { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+        :root {
+            --primary: #E67E50;
+            --dark: #1A2332;
+            --white: #ffffff;
+            --green: #4CAF50;
+            --red: #f44336;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-md: 1.125rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.563rem;
+            --text-2xl: 1.953rem;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-6: 48px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: var(--space-4); }
+        header {
+            text-align: center;
+            padding: var(--space-6) 0;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: var(--space-4);
+        }
+        h1 { font-size: var(--text-2xl); margin-bottom: var(--space-2); }
+        .subtitle { color: rgba(255,255,255,0.8); font-size: var(--text-md); }
+        .back-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: var(--space-3);
+            font-size: var(--text-sm);
+        }
+        .back-link:hover { text-decoration: underline; }
+        .progress-bar {
+            background: rgba(255,255,255,0.2);
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: var(--space-4);
+            overflow: hidden;
+        }
+        .progress-fill {
+            background: var(--primary);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .score-display {
+            text-align: center;
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-4);
+            color: var(--primary);
+        }
+        .scenario-card {
+            background: var(--white);
+            color: var(--dark);
+            border-radius: 16px;
+            padding: var(--space-4);
+            margin-bottom: var(--space-4);
+        }
+        .scenario-card.hidden { display: none; }
+        .scenario-number {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-2);
+        }
+        .scenario-text {
+            font-size: var(--text-md);
+            line-height: 1.6;
+            margin-bottom: var(--space-4);
+        }
+        .choice-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2);
+        }
+        .choice-btn {
+            padding: var(--space-3);
+            font-size: var(--text-base);
+            font-weight: 600;
+            border: 3px solid var(--primary);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            background: var(--white);
+            color: var(--dark);
+        }
+        .choice-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .choice-btn:disabled { cursor: not-allowed; opacity: 0.7; }
+        .choice-btn.correct {
+            background: var(--green);
+            border-color: var(--green);
+            color: var(--white);
+        }
+        .choice-btn.incorrect {
+            background: var(--red);
+            border-color: var(--red);
+            color: var(--white);
+        }
+        .feedback {
+            margin-top: var(--space-3);
+            padding: var(--space-3);
+            border-radius: 8px;
+            display: none;
+        }
+        .feedback.show { display: block; }
+        .feedback.correct { background: rgba(76, 175, 80, 0.1); border-left: 4px solid var(--green); }
+        .feedback.incorrect { background: rgba(244, 67, 54, 0.1); border-left: 4px solid var(--red); }
+        .feedback-title { font-weight: 600; margin-bottom: 8px; }
+        .feedback.correct .feedback-title { color: var(--green); }
+        .feedback.incorrect .feedback-title { color: var(--red); }
+        .next-btn {
+            margin-top: var(--space-3);
+            padding: var(--space-2) var(--space-4);
+            background: var(--dark);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: var(--text-base);
+            font-weight: 600;
+            cursor: pointer;
+            display: none;
+            font-family: inherit;
+        }
+        .next-btn.show { display: inline-block; }
+        .next-btn:hover { background: #2a3a4a; }
+        .results-card {
+            background: var(--white);
+            color: var(--dark);
+            border-radius: 16px;
+            padding: var(--space-6);
+            text-align: center;
+        }
+        .results-card.hidden { display: none; }
+        .final-score {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: var(--space-3) 0;
+        }
+        .score-label { font-size: var(--text-lg); color: var(--dark); margin-bottom: var(--space-4); }
+        .score-message { font-size: var(--text-md); line-height: 1.6; margin-bottom: var(--space-4); }
+        .explanation-list {
+            text-align: left;
+            margin-top: var(--space-4);
+            border-top: 2px solid rgba(26,35,50,0.1);
+            padding-top: var(--space-4);
+        }
+        .explanation-item {
+            background: #f8f9fa;
+            padding: var(--space-3);
+            border-radius: 8px;
+            margin-bottom: var(--space-2);
+            border-left: 4px solid var(--primary);
+        }
+        .explanation-item strong { color: var(--primary); }
+        .restart-btn {
+            margin-top: var(--space-4);
+            padding: var(--space-3) var(--space-6);
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: var(--text-md);
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .restart-btn:hover { background: #d86b3f; }
+        @media (max-width: 600px) {
+            .choice-buttons { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="interactive-lab.html" class="back-link">← Back to Interactive Lab</a>
-        <h1>Pattern Recognition Exercise</h1>
-        <p class="subtitle">Interactive game teaching systematic pattern identification</p>
-        <div class="tool-section">
-            <p>Interactive pattern recognition game coming soon! Learn to identify systematic vs. random problems through engaging challenges.</p>
+        <a href="/interactive-lab.html" class="back-link">← Back to Interactive Lab</a>
+        
+        <header>
+            <h1>Pattern Recognition Game</h1>
+            <p class="subtitle">Framework vs. One-Time Solution: Can you tell the difference?</p>
+        </header>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+
+        <div class="score-display" id="score-display">Score: 0 / 8</div>
+
+        <div id="game-container"></div>
+
+        <div class="results-card hidden" id="results">
+            <h2>Game Complete!</h2>
+            <div class="final-score" id="final-score">0/8</div>
+            <div class="score-label">Correct Answers</div>
+            <div class="score-message" id="score-message"></div>
+            
+            <div class="explanation-list" id="explanations"></div>
+            
+            <button class="restart-btn" onclick="restart()">Play Again</button>
         </div>
     </div>
+
+    <script>
+        const scenarios = [
+            {
+                text: "Your customer service team's response time has doubled over the past 3 months. You have 12 agents handling 500+ tickets daily across email, chat, and phone. Agent turnover is increasing.",
+                answer: "framework",
+                explanation: "This is a systemic, recurring problem affecting multiple people and channels. A framework for ticket prioritization, response templates, and workload distribution will compound over time."
+            },
+            {
+                text: "Your company's server crashed due to a power surge during an unexpected storm. The building's surge protector failed. This is the first power-related outage in 15 years.",
+                answer: "onetime",
+                explanation: "This is a rare, isolated incident. Replace the surge protector and maybe add a UPS, but building an elaborate disaster recovery framework for a 15-year anomaly isn't worth the investment."
+            },
+            {
+                text: "New employees take 6-8 weeks to become productive. Each department has its own informal training approach. Some new hires feel lost, others get overwhelmed with information dumps.",
+                answer: "framework",
+                explanation: "Onboarding happens repeatedly with every hire. Inconsistent approaches create predictable problems. A systematic onboarding framework pays dividends with every new employee."
+            },
+            {
+                text: "A key client representing 15% of annual revenue just announced they're switching to a competitor. They cited better pricing. The departure was completely unexpected.",
+                answer: "onetime",
+                explanation: "While painful, this is a single event requiring immediate damage control and relationship salvage. A framework for client retention might help prevent future losses, but the immediate response is tactical."
+            },
+            {
+                text: "Your marketing team struggles with inconsistent messaging across channels. Social posts don't match emails, website copy feels different from sales materials. Customer feedback mentions this confusion.",
+                answer: "framework",
+                explanation: "Brand inconsistency is a systemic problem that will persist and worsen. A brand voice framework ensures everyone creates aligned content without needing to check every piece."
+            },
+            {
+                text: "Your biggest competitor just launched a product competing directly with your main offering. They're running an aggressive marketing campaign. Some customers are asking about switching.",
+                answer: "onetime",
+                explanation: "This requires an immediate, specific competitive response. While you might later build frameworks for competitive intelligence, the current situation needs tactical action, not process building."
+            },
+            {
+                text: "Project deadlines are consistently missed across your organization. Teams use different tools - spreadsheets, apps, email chains. There's no standard way to track progress or communicate updates.",
+                answer: "framework",
+                explanation: "Chronic, organization-wide deadline problems signal systemic dysfunction. A project management framework creates consistent processes that improve every project going forward."
+            },
+            {
+                text: "Your office building's elevator broke down, trapping three employees for 20 minutes. Building management fixed it within an hour. The elevator had been reliable for the past 5 years.",
+                answer: "onetime",
+                explanation: "A single mechanical failure in a well-maintained system. Make sure building management addressed it and move on. Creating an 'elevator contingency framework' would be massive overkill."
+            }
+        ];
+
+        let currentScenario = 0;
+        let score = 0;
+        let answers = [];
+
+        function init() {
+            currentScenario = 0;
+            score = 0;
+            answers = [];
+            document.getElementById('results').classList.add('hidden');
+            renderScenario();
+            updateProgress();
+            updateScore();
+        }
+
+        function renderScenario() {
+            const container = document.getElementById('game-container');
+            const scenario = scenarios[currentScenario];
+            
+            container.innerHTML = `
+                <div class="scenario-card" id="scenario-${currentScenario}">
+                    <div class="scenario-number">Scenario ${currentScenario + 1} of ${scenarios.length}</div>
+                    <div class="scenario-text">${scenario.text}</div>
+                    <div class="choice-buttons">
+                        <button class="choice-btn" onclick="selectAnswer('framework')">Needs a Framework</button>
+                        <button class="choice-btn" onclick="selectAnswer('onetime')">One-Time Solution</button>
+                    </div>
+                    <div class="feedback" id="feedback"></div>
+                    <button class="next-btn" id="next-btn" onclick="nextScenario()">Next Scenario →</button>
+                </div>
+            `;
+        }
+
+        function selectAnswer(choice) {
+            const scenario = scenarios[currentScenario];
+            const isCorrect = choice === scenario.answer;
+            const buttons = document.querySelectorAll('.choice-btn');
+            const feedback = document.getElementById('feedback');
+            const nextBtn = document.getElementById('next-btn');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                const btnChoice = btn.textContent.includes('Framework') ? 'framework' : 'onetime';
+                if (btnChoice === scenario.answer) {
+                    btn.classList.add('correct');
+                } else if (btnChoice === choice && !isCorrect) {
+                    btn.classList.add('incorrect');
+                }
+            });
+
+            // Update score
+            if (isCorrect) {
+                score++;
+                updateScore();
+            }
+
+            // Store answer
+            answers.push({ scenario: currentScenario, correct: isCorrect });
+
+            // Show feedback
+            feedback.className = `feedback show ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedback.innerHTML = `
+                <div class="feedback-title">${isCorrect ? '✓ Correct!' : '✗ Not quite'}</div>
+                <div>${scenario.explanation}</div>
+            `;
+
+            // Show next button
+            nextBtn.classList.add('show');
+            if (currentScenario === scenarios.length - 1) {
+                nextBtn.textContent = 'See Results →';
+            }
+        }
+
+        function nextScenario() {
+            currentScenario++;
+            if (currentScenario < scenarios.length) {
+                renderScenario();
+                updateProgress();
+            } else {
+                showResults();
+            }
+        }
+
+        function updateProgress() {
+            const progress = (currentScenario / scenarios.length) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        function updateScore() {
+            document.getElementById('score-display').textContent = `Score: ${score} / ${scenarios.length}`;
+        }
+
+        function showResults() {
+            document.getElementById('game-container').innerHTML = '';
+            document.getElementById('score-display').style.display = 'none';
+            
+            const results = document.getElementById('results');
+            results.classList.remove('hidden');
+            
+            document.getElementById('final-score').textContent = `${score}/${scenarios.length}`;
+            
+            let message = '';
+            const percentage = (score / scenarios.length) * 100;
+            if (percentage === 100) {
+                message = "Perfect score! You have excellent judgment about when systematic thinking pays off versus when to just solve and move on.";
+            } else if (percentage >= 75) {
+                message = "Great job! You understand the difference between recurring patterns and isolated incidents. This skill saves enormous time and energy.";
+            } else if (percentage >= 50) {
+                message = "Not bad! The key insight: Frameworks are investments. They pay off when you'll face similar situations repeatedly. One-time problems just need solutions.";
+            } else {
+                message = "This is a learnable skill! The pattern: If a problem will recur across people, time, or situations, a framework multiplies your solution. If it's isolated, just fix it and move on.";
+            }
+            document.getElementById('score-message').textContent = message;
+
+            // Show explanations
+            const explanationsDiv = document.getElementById('explanations');
+            explanationsDiv.innerHTML = '<h3 style="margin-bottom: var(--space-3); color: var(--dark);">Answer Key</h3>';
+            scenarios.forEach((s, i) => {
+                const wasCorrect = answers[i]?.correct;
+                explanationsDiv.innerHTML += `
+                    <div class="explanation-item">
+                        <strong>Scenario ${i + 1}:</strong> ${s.answer === 'framework' ? 'Needs a Framework' : 'One-Time Solution'} 
+                        ${wasCorrect ? '✓' : '✗'}<br>
+                        <span style="color: var(--dark-medium);">${s.explanation}</span>
+                    </div>
+                `;
+            });
+        }
+
+        function restart() {
+            document.getElementById('score-display').style.display = 'block';
+            init();
+        }
+
+        // Start the game
+        init();
+    </script>
 </body>
 </html>
