@@ -10,23 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #e67e50;
-            --primary-dark: #d06a3a;
-            --primary-light: rgba(230, 126, 80, 0.1);
-            --dark: #2d3b4e;
-            --dark-light: #4a5568;
+            --primary: #E67E50;
+            --dark: #1A2332;
             --white: #ffffff;
-            --gray-light: #f7f7f7;
-            --gray-medium: #e2e2e2;
+            --primary-light: rgba(230, 126, 80, 0.1);
+            --dark-medium: rgba(26, 35, 50, 0.85);
+            --dark-light: rgba(26, 35, 50, 0.6);
             
-            --text-xs: 12px;
-            --text-sm: 14px;
-            --text-base: 16px;
-            --text-lg: 20px;
-            --text-xl: 25px;
-            --text-2xl: 31px;
-            --text-3xl: 39px;
-            --text-4xl: 49px;
+            --text-xs: 0.688rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-md: 1.125rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.563rem;
+            --text-2xl: 1.953rem;
+            --text-3xl: 2.441rem;
             
             --space-1: 8px;
             --space-2: 16px;
@@ -36,6 +34,8 @@
             --space-6: 48px;
             --space-8: 64px;
             --space-10: 80px;
+            
+            --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.08);
             
             --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             --max-width: 800px;
@@ -51,26 +51,31 @@
         body {
             font-family: var(--font-family);
             font-size: var(--text-base);
-            line-height: 1.7;
+            line-height: 1.6;
             color: var(--dark);
             background: var(--white);
         }
         
-        /* Navigation */
+        /* Navigation - Matching Homepage */
         nav {
-            background: var(--dark);
-            padding: var(--space-2) var(--space-6);
-            position: sticky;
+            background: var(--white);
+            padding: var(--space-2) var(--space-5);
+            border-bottom: 1px solid var(--primary-light);
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            box-shadow: var(--shadow-sm);
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
         }
         
         .logo-icon {
@@ -85,15 +90,15 @@
         }
         
         .nav-links a {
-            color: var(--gray-medium);
+            color: var(--dark-light);
             text-decoration: none;
             font-weight: 500;
-            font-size: var(--text-sm);
+            font-size: var(--text-base);
             transition: color 0.2s ease;
         }
         
         .nav-links a:hover {
-            color: var(--white);
+            color: var(--primary);
         }
         
         .nav-cta {
@@ -118,7 +123,7 @@
         /* Page Header */
         .page-header {
             background: var(--dark);
-            padding: var(--space-8) var(--space-4);
+            padding: calc(var(--space-10) + 68px) var(--space-4) var(--space-8);
             text-align: center;
         }
         
@@ -147,7 +152,7 @@
         }
         
         .page-subtitle {
-            color: var(--gray-medium);
+            color: rgba(255,255,255,0.8);
             font-size: var(--text-lg);
             max-width: 600px;
             margin: 0 auto;
@@ -178,7 +183,9 @@
         
         .content p {
             margin-bottom: var(--space-3);
-            color: var(--dark-light);
+            color: var(--dark-medium);
+            font-size: var(--text-md);
+            line-height: 1.75;
         }
         
         .content strong {
@@ -189,10 +196,13 @@
         /* Scripture Quote */
         .scripture {
             background: var(--primary-light);
-            border-left: 4px solid var(--primary);
-            padding: var(--space-4);
-            margin: var(--space-4) 0;
+            border-left: 6px solid var(--primary);
+            padding: var(--space-5);
+            margin: var(--space-5) 0;
+            border-radius: 0 12px 12px 0;
             font-style: italic;
+            font-weight: 500;
+            color: var(--dark);
         }
         
         .scripture-ref {
@@ -206,15 +216,24 @@
         
         /* Framework Section */
         .framework-section {
-            background: var(--gray-light);
-            padding: var(--space-6);
-            margin: var(--space-6) 0;
-            border-radius: 8px;
+            background: rgba(26, 35, 50, 0.03);
+            padding: var(--space-5);
+            margin: var(--space-5) 0;
+            border-radius: 12px;
+            border: 1px solid var(--primary-light);
         }
         
         .framework-section h3 {
             margin-top: 0;
             color: var(--dark);
+        }
+        
+        .framework-section p {
+            margin-bottom: var(--space-2);
+        }
+        
+        .framework-section p:last-child {
+            margin-bottom: 0;
         }
         
         /* Steps */
@@ -261,38 +280,42 @@
         }
         
         .footer-cta p {
-            color: var(--gray-medium);
+            color: rgba(255,255,255,0.9);
             max-width: 600px;
-            margin: 0 auto var(--space-4);
+            margin: 0 auto var(--space-5);
+            font-size: var(--text-lg);
         }
         
         .cta-button {
             display: inline-block;
             background: var(--primary);
             color: var(--white);
-            padding: var(--space-2) var(--space-5);
-            font-size: var(--text-lg);
+            padding: var(--space-2) var(--space-6);
+            font-size: var(--text-md);
             font-weight: 600;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 12px;
             transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            box-shadow: 0 4px 16px rgba(230, 126, 80, 0.3);
         }
         
         .cta-button:hover {
+            background: transparent;
+            color: var(--primary);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(230, 126, 80, 0.3);
+            box-shadow: 0 8px 24px rgba(230, 126, 80, 0.4);
         }
         
         /* Footer */
         footer {
-            background: var(--dark);
-            padding: var(--space-4);
+            background: #0f151d;
+            padding: var(--space-6) var(--space-4);
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
         footer p {
-            color: var(--gray-medium);
+            color: rgba(255,255,255,0.7);
             font-size: var(--text-sm);
         }
         
@@ -303,6 +326,10 @@
         
         /* Responsive */
         @media (max-width: 768px) {
+            nav {
+                padding: var(--space-2) var(--space-3);
+            }
+            
             .nav-links a:not(.nav-cta) {
                 display: none;
             }
@@ -314,6 +341,10 @@
             
             .logo-icon {
                 height: 52px;
+            }
+            
+            .page-header {
+                padding-top: calc(var(--space-8) + 52px);
             }
             
             .page-title {
@@ -332,24 +363,11 @@
 </head>
 <body>
     <nav>
-        <div class="nav-container">
-            <a href="/">
-                <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="45" stroke="#e67e50" stroke-width="2" fill="none"/>
-                    <circle cx="50" cy="25" r="6" fill="#e67e50"/>
-                    <circle cx="25" cy="65" r="6" fill="#e67e50"/>
-                    <circle cx="75" cy="65" r="6" fill="#e67e50"/>
-                    <line x1="50" y1="31" x2="50" y2="44" stroke="#e67e50" stroke-width="2"/>
-                    <line x1="29" y1="61" x2="44" y2="52" stroke="#e67e50" stroke-width="2"/>
-                    <line x1="71" y1="61" x2="56" y2="52" stroke="#e67e50" stroke-width="2"/>
-                    <circle cx="50" cy="50" r="8" fill="#e67e50"/>
-                </svg>
-            </a>
-            <div class="nav-links">
-                <a href="/#definition">Definition</a>
-                <a href="/#topics">Topics</a>
-                <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
-            </div>
+        <a href="/" class="logo-link"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon"></a>
+        <div class="nav-links">
+            <a href="/#definition">Definition</a>
+            <a href="/#topics">Topics</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
         </div>
     </nav>
 
