@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Your AI Bills Are 10x Higher Than They Should Be | WhatIsAFramework</title>
+    <meta name="description" content="Framework thinking reduces AI computational requirements by 90%. Here's the simple explanation everyone's missing about efficiency.">
+    <meta property="og:title" content="Why Your AI Bills Are 10x Higher Than They Should Be">
+    <meta property="og:description" content="Framework thinking dramatically reduces AI compute requirements. Learn the efficiency insight everyone's missing.">
+    <meta property="og:image" content="https://ragedesigner.com/wp-content/uploads/2025/12/AI-Energy-RageDesigner.jpg">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://ragedesigner.com/wp-content/uploads/2025/12/AI-Energy-RageDesigner.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS7JGCYKT1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GS7JGCYKT1');
+    </script>
+    <style>
+        :root {
+            --primary: #E67E50;
+            --dark: #1A2332;
+            --white: #ffffff;
+            --primary-light: rgba(230, 126, 80, 0.1);
+            --dark-medium: rgba(26, 35, 50, 0.85);
+            --dark-light: rgba(26, 35, 50, 0.6);
+            --text-xs: 0.8rem;
+            --text-sm: 1rem;
+            --text-base: 1.125rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.563rem;
+            --text-2xl: 1.953rem;
+            --text-3xl: 2.441rem;
+            --text-4xl: 3.052rem;
+            --leading-tight: 1.25;
+            --leading-normal: 1.6;
+            --leading-relaxed: 1.75;
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 40px;
+            --space-6: 48px;
+            --space-8: 64px;
+            --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.1);
+            --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--dark); padding-top: 80px; background: var(--white); }
+        
+        nav#main-header {
+            background: var(--white);
+            padding: 16px 48px;
+            border-bottom: 1px solid rgba(230, 126, 80, 0.1);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        nav#main-header.scrolled { padding: 12px 48px; box-shadow: 0 2px 20px rgba(26, 35, 50, 0.08); }
+        .logo-link { display: inline-block; transition: transform 0.3s ease; }
+        .logo-link:hover { transform: scale(1.05); }
+        .logo-icon { height: 68px; width: auto; transition: height 0.3s ease; }
+        nav#main-header.scrolled .logo-icon { height: 56px; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-link { color: var(--dark-light); text-decoration: none; font-weight: 500; transition: color 0.3s ease; position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease; }
+        .nav-link:hover { color: var(--primary); }
+        .nav-link:hover::after { width: 100%; }
+        .nav-cta { background: var(--primary); color: white !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; transform: translateY(-2px); }
+        
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
+        .hamburger-line { width: 28px; height: 3px; background: var(--dark); border-radius: 2px; transition: all 0.3s ease; }
+        .mobile-menu-toggle:hover .hamburger-line { background: var(--primary); }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translateY(9px); }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translateY(-9px); }
+        
+        .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--dark); padding: 48px 40px; transition: right 0.4s ease; z-index: 1002; }
+        .mobile-nav-drawer.active { right: 0; }
+        .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--primary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; transition: transform 0.3s ease; }
+        .mobile-nav-close:hover { transform: rotate(90deg); }
+        .mobile-nav { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
+        .mobile-nav-link { color: white; text-decoration: none; font-size: 18px; font-weight: 500; padding: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; position: relative; }
+        .mobile-nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--primary); transform: translateX(-4px); transition: transform 0.3s ease; }
+        .mobile-nav-link:hover { padding-left: 24px; color: var(--primary); }
+        .mobile-nav-link:hover::before { transform: translateX(0); }
+        .mobile-nav-cta { margin-top: 24px; background: var(--primary); color: white !important; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .mobile-nav-cta:hover { background: transparent; transform: translateY(-2px); }
+        .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.8); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1001; }
+        .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
+
+        .hero {
+            background: linear-gradient(rgba(26, 35, 50, 0.92), rgba(26, 35, 50, 0.92)), url('https://ragedesigner.com/wp-content/uploads/2025/12/AI-Energy-RageDesigner.jpg');
+            background-size: cover; background-position: center;
+            color: var(--white); min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: var(--space-3);
+        }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(var(--text-3xl), 5vw, var(--text-4xl)); font-weight: 700; line-height: var(--leading-tight); margin-bottom: var(--space-3); }
+        .hero-subtitle { font-size: clamp(var(--text-base), 3vw, var(--text-lg)); opacity: 0.95; }
+        article { max-width: 720px; margin: 0 auto; padding: var(--space-8) var(--space-3); }
+        h2 { font-size: var(--text-2xl); color: var(--dark); margin: var(--space-6) 0 var(--space-3); font-weight: 700; }
+        h3 { font-size: var(--text-xl); color: var(--dark); margin: var(--space-5) 0 var(--space-2); font-weight: 700; }
+        p { font-size: var(--text-base); margin-bottom: var(--space-3); color: var(--dark-medium); line-height: var(--leading-relaxed); }
+        .lead { font-size: var(--text-lg); color: var(--dark); margin-bottom: var(--space-4); font-weight: 500; }
+        strong { font-weight: 600; color: var(--dark); }
+        .pullquote { background: var(--primary-light); border-left: 4px solid var(--primary); padding: var(--space-4); margin: var(--space-5) 0; border-radius: 0 8px 8px 0; }
+        .pullquote p { font-size: var(--text-lg); font-style: italic; color: var(--dark); margin: 0; font-weight: 500; }
+        .insight-box { background: var(--dark); color: var(--white); padding: var(--space-5); border-radius: 12px; margin: var(--space-6) 0; }
+        .insight-box h3 { color: var(--primary); margin-top: 0; margin-bottom: var(--space-3); }
+        .insight-box p { color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-2); }
+        .insight-box p:last-child { margin-bottom: 0; }
+        .insight-box strong { color: var(--primary); }
+        .infographic-full { width: 100%; height: auto; margin: var(--space-6) 0; border-radius: 12px; box-shadow: var(--shadow-md); }
+        .download-cta { background: var(--primary-light); border: 2px solid var(--primary); padding: var(--space-5); border-radius: 12px; margin: var(--space-6) 0; text-align: center; }
+        .download-cta h3 { color: var(--dark); margin-bottom: var(--space-3); }
+        .download-cta ul { text-align: left; max-width: 600px; margin: 0 auto var(--space-4); list-style: none; }
+        .download-cta li { padding: var(--space-1) 0; color: var(--dark-medium); }
+        .download-cta li:before { content: '✓ '; color: var(--primary); font-weight: bold; margin-right: var(--space-1); }
+        article a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        article a:hover { opacity: 0.8; }
+        .btn-primary { display: inline-block; background: var(--primary); color: var(--white); padding: var(--space-2) var(--space-5); font-size: var(--text-base); font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .btn-primary:hover { background: transparent; color: var(--primary); transform: translateY(-2px); }
+        .cta-section { background: var(--dark); color: var(--white); padding: var(--space-8) var(--space-3); text-align: center; }
+        .cta-section h2 { color: var(--white); margin-top: 0; margin-bottom: var(--space-3); }
+        .cta-section p { color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto var(--space-4); }
+        .cta-section strong { color: var(--primary); }
+        .related-articles { background: var(--primary-light); padding: var(--space-8) var(--space-3); }
+        .related-articles h3 { text-align: center; margin-bottom: var(--space-4); color: var(--dark); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); max-width: 900px; margin: 0 auto; }
+        .related-card { background: var(--white); padding: var(--space-3); border-radius: 8px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease; display: block; }
+        .related-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .related-card h4 { color: var(--dark); margin-bottom: var(--space-1); font-size: var(--text-base); font-weight: 700; }
+        .related-card p { color: var(--dark-light); font-size: var(--text-sm); margin-bottom: 0; }
+        footer { padding: var(--space-6) var(--space-3) var(--space-4); background: #0f151d; color: var(--white); text-align: center; }
+        footer p { opacity: 0.7; font-size: var(--text-sm); }
+        footer a { color: var(--primary); text-decoration: none; }
+        .footer-links { margin-bottom: var(--space-3); }
+        .footer-links a { margin: 0 var(--space-2); }
+        @media (max-width: 768px) {
+            body { padding-top: 70px; }
+            .desktop-nav { display: none; }
+            .mobile-menu-toggle { display: flex; }
+            .logo-icon { height: 52px; }
+            nav#main-header.scrolled .logo-icon { height: 44px; }
+            .hero { min-height: 80vh; }
+            article { padding: var(--space-5) var(--space-3); }
+            .related-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-header">
+        <a href="/" class="logo-link"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon"></a>
+        <div class="nav-links desktop-nav">
+            <a href="/#definition" class="nav-link">Definition</a>
+            <a href="/#topics" class="nav-link">Topics</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
+
+    <div class="mobile-nav-drawer">
+        <button class="mobile-nav-close" aria-label="Close menu">×</button>
+        <nav class="mobile-nav">
+            <a href="/#definition" class="mobile-nav-link">Definition</a>
+            <a href="/#topics" class="mobile-nav-link">Topics</a>
+            <a href="https://howtoframework.com" class="mobile-nav-cta">Learn to Build Frameworks</a>
+        </nav>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Why Your AI Bills Are 10x Higher Than They Should Be</h1>
+            <p class="hero-subtitle">Framework thinking reduces AI computational requirements by 90%. Here's the simple explanation everyone's missing.</p>
+        </div>
+    </section>
+
+    <article>
+        <p class="lead">You're asking AI to do marketing for your business. It asks what kind of business. You answer. It asks about your audience. You answer. It asks about competitors. You answer.</p>
+
+        <p>Ten interactions later, you finally get a marketing plan.</p>
+
+        <p>You just burned 10x the energy you needed to.</p>
+
+        <p>Here's why that matters—and what you can do about it.</p>
+
+        <h2>The Conversation Tax</h2>
+
+        <p>Every time you interact with AI, you're paying a computational tax. Not just in dollars—in electricity, infrastructure strain, and environmental impact.</p>
+
+        <p>When you ask ChatGPT or Claude a question without context, here's what happens behind the scenes:</p>
+
+        <p><strong>Request 1:</strong> "Help me with marketing"<br>
+        <em>AI Processing:</em> Query interpretation → Context gap identification → Question generation<br>
+        <em>Energy Cost:</em> 1 unit</p>
+
+        <p><strong>Your Response:</strong> Provides some business info<br>
+        <em>AI Processing:</em> New context integration → Additional gap identification → More questions<br>
+        <em>Energy Cost:</em> 1 unit</p>
+
+        <p><strong>Back and Forth Continues...</strong><br>
+        <em>Total Interactions:</em> 8-12 exchanges<br>
+        <em>Total Energy Cost:</em> 8-12 units</p>
+
+        <p>Now imagine you start with a framework instead.</p>
+
+        <h2>The Framework Efficiency</h2>
+
+        <p><strong>One Request:</strong> "Use my business framework and create a marketing strategy"</p>
+
+        <p><strong>Your Framework Contains:</strong></p>
+        <ul style="color: var(--dark-medium); line-height: var(--leading-relaxed); margin-bottom: var(--space-4);">
+            <li>Business type: Graphic designer</li>
+            <li>Location: St. Petersburg, FL</li>
+            <li>Years in business: 5</li>
+            <li>Social platforms: Instagram, LinkedIn, portfolio site</li>
+            <li>Sample clients: Local restaurants, tech startups, real estate agencies</li>
+            <li>Portfolio link: yoursite.com/work</li>
+            <li>Target market: Small businesses needing brand identity</li>
+            <li>Project range: $2,500-$8,000</li>
+            <li>Known competitors: Three local design studios</li>
+            <li>Unique positioning: Fast turnaround + personal service</li>
+        </ul>
+
+        <p><strong>AI Processing:</strong> Complete analysis → Strategic recommendations → Implementation plan<br>
+        <strong>Energy Cost:</strong> 1 unit<br>
+        <strong>Result:</strong> Comprehensive marketing strategy in one response</p>
+
+        <div class="pullquote">
+            <p>Efficiency gain: 90%</p>
+        </div>
+
+        <img src="https://ragedesigner.com/wp-content/uploads/2025/12/AI-Energy-RageDesigner.jpg" alt="AI Efficiency Gap - Framework vs No Framework Comparison" class="infographic-full">
+
+        <h2>Why This Matters Beyond Your Electric Bill</h2>
+
+        <p>The AI industry is facing a $7 trillion infrastructure crisis. Data centers consumed 53-76 terawatt-hours in 2024—enough to power 7.2 million homes. By 2028, that could hit 326 terawatt-hours.</p>
+
+        <p>The industry's solution? Build bigger models with more computational power.</p>
+
+        <p>But research shows that's solving the wrong problem.</p>
+
+        <p>Studies from Stanford, MIT, and Carnegie Mellon demonstrate that structured frameworks reduce AI computational requirements by 40-80% while maintaining or improving output quality.</p>
+
+        <p>You don't need more powerful AI. You need better structured intelligence.</p>
+
+        <h2>The Math Everyone Misses</h2>
+
+        <div class="insight-box">
+            <h3>Without Framework Thinking:</h3>
+            <p>Average business uses AI for 20-30 tasks monthly</p>
+            <p>Each task requires 6-10 back-and-forth interactions</p>
+            <p>Total monthly AI cycles: 120-300</p>
+            <p><strong>Computational cost: Full processing power × 120-300 cycles</strong></p>
+        </div>
+
+        <div class="insight-box">
+            <h3>With Framework Thinking:</h3>
+            <p>Same 20-30 tasks monthly</p>
+            <p>Each task completes in 1-2 interactions</p>
+            <p>Total monthly AI cycles: 20-60</p>
+            <p><strong>Computational cost: Full processing power × 20-60 cycles</strong></p>
+        </div>
+
+        <p><strong>Result: 60-80% reduction in compute requirements</strong></p>
+
+        <p>Multiply that by millions of users, and you're looking at infrastructure that doesn't need to be built, electricity that doesn't need to be generated, and rate increases that don't need to happen.</p>
+
+        <h2>What A Framework Actually Is</h2>
+
+        <p>A framework isn't complicated. It's just organized information that AI would otherwise have to ask you about.</p>
+
+        <p>Think of it like this:</p>
+
+        <p><strong>Bad approach:</strong> Walk into a restaurant and say "Feed me." The waiter has to ask about dietary restrictions, preferences, budget, how hungry you are, whether you want drinks, and ten other questions before you get food.</p>
+
+        <p><strong>Framework approach:</strong> Walk in and say "Table for two, we're doing the chef's tasting menu, one vegetarian, wine pairing for both, two hours available." You get exactly what you want immediately.</p>
+
+        <p>The framework is the pre-answered questions.</p>
+
+        <h2>Real-World Impact</h2>
+
+        <p>A sales professional implemented systematic frameworks for client conversations. Previously, preparing for a discovery call meant 15-20 minutes of back-and-forth with AI, generating questions, refining approaches, adjusting based on client type.</p>
+
+        <p><strong>With frameworks:</strong> 60 seconds. One request, complete preparation.</p>
+
+        <p><strong>Time saved:</strong> 93%<br>
+        <strong>Compute power saved:</strong> Similar reduction<br>
+        <strong>Quality of output:</strong> Significantly improved (because the framework captured patterns from dozens of successful calls)</p>
+
+        <p>The framework doesn't just save energy—it produces better results because it's built on systematic intelligence rather than one-off interactions.</p>
+
+        <h2>The Industry Implication</h2>
+
+        <p>Right now, AI companies are in an arms race for computational power. Google's capital expenditure jumped 83% year-over-year to $24 billion. Microsoft's up 74% to $35 billion. Meta more than doubled spending to $19.4 billion.</p>
+
+        <p>They're building bigger models because users don't know how to collaborate efficiently with the models that already exist.</p>
+
+        <p>What if the solution isn't more powerful AI, but more systematic humans?</p>
+
+        <p>Research suggests that smaller AI models with structured frameworks can match or exceed the performance of larger models at 10-20% of the computational cost.</p>
+
+        <p>That means Fortune 500-level AI capability for $20-200 per month instead of enterprise pricing. It means infrastructure that doesn't need to be built. It means electricity rates that don't need to increase 25%.</p>
+
+        <p>The technology for AI efficiency already exists. It's called systematic thinking.</p>
+
+        <h2>What You Can Do</h2>
+
+        <p>Start building frameworks for your repetitive AI tasks.</p>
+
+        <p>Every time you find yourself having the same conversation with AI, document it:</p>
+
+        <ol style="color: var(--dark-medium); line-height: var(--leading-relaxed); margin-bottom: var(--space-4); margin-left: var(--space-4);">
+            <li>What context did AI need to know?</li>
+            <li>What questions did it ask?</li>
+            <li>What answers did you provide?</li>
+            <li>What made the final output successful?</li>
+        </ol>
+
+        <p>Turn those answers into a reusable framework. Next time, provide that framework upfront.</p>
+
+        <p>The first framework takes time to build. The second one is faster. By the tenth, you're systematizing your AI collaboration without thinking about it.</p>
+
+        <p>And you're using 60-80% less computational power while getting better results.</p>
+
+        <h2>The Bigger Picture</h2>
+
+        <p>The AI industry has a choice: continue scaling infrastructure to compensate for inefficient collaboration, or invest in systematic intelligence that makes existing models dramatically more effective.</p>
+
+        <p>The research proves efficiency works. The environmental argument supports it. The economic case is clear.</p>
+
+        <p>What's missing is widespread adoption of framework thinking.</p>
+
+        <p>You can't control what Big Tech does with their billions in capital expenditure. But you can control how efficiently you collaborate with the AI systems you use.</p>
+
+        <p>Build frameworks. Reduce your computational footprint. Get better results.</p>
+
+        <p>The infrastructure crisis won't be solved by bigger data centers. It'll be solved by smarter humans teaching AI to think systematically.</p>
+
+        <p><strong>Start with your next AI conversation.</strong></p>
+
+        <div class="download-cta">
+            <h3>Want the Complete Research?</h3>
+            <p>This article covers the core insight: framework thinking dramatically reduces AI computational requirements. The full research brief includes:</p>
+            <ul>
+                <li>Detailed energy consumption data and projections</li>
+                <li>Academic studies on prompt optimization efficiency</li>
+                <li>Comparative analysis: infrastructure scaling vs. systematic intelligence</li>
+                <li>Industry implications and competitive advantage scenarios</li>
+                <li>Implementation pathways and open research questions</li>
+            </ul>
+            <a href="https://ragedesigner.com/wp-content/uploads/2025/12/AI_Efficiency_Research_Brief.docx-1.pdf" class="btn-primary" target="_blank">Download Research Brief (PDF)</a>
+            <p style="font-size: var(--text-sm); color: var(--dark-light); margin-top: var(--space-2);">Evidence-based analysis with 19 citations from Stanford, MIT, Carnegie Mellon, and industry sources. No proprietary methodology disclosed—just the research validation that systematic intelligence beats computational brute force.</p>
+        </div>
+
+    </article>
+
+    <section class="related-articles">
+        <h3>Continue Exploring</h3>
+        <div class="related-grid">
+            <a href="/strategic-intelligence" class="related-card">
+                <h4>What Is Strategic Intelligence?</h4>
+                <p>Fortune 500 companies pay millions for it. Here's what it actually is.</p>
+            </a>
+            <a href="/framework-controlled-intelligence" class="related-card">
+                <h4>Framework-Controlled Intelligence</h4>
+                <p>How systematic frameworks address AI safety through controlled amplification.</p>
+            </a>
+            <a href="/spanish-sales-framework" class="related-card">
+                <h4>Sebastian's Story</h4>
+                <p>The framework he uses every single day for Spanish-language sales.</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Learn to Build Efficiency Frameworks</h2>
+        <p>Strategic Thinking Academy teaches framework generation methodology. Build systematic intelligence that creates competitive advantages while reducing computational waste.</p>
+        <a href="https://howtoframework.com" class="btn-primary">Join Strategic Thinking Academy</a>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/">What is a Framework?</a>
+            <a href="https://howtoframework.com">How to Framework</a>
+            <a href="https://ragedesigner.com">RageDesigner</a>
+            <a href="https://ragedesigner.com/contact">Contact</a>
+        </div>
+        <p>Part of the <a href="https://ragedesigner.com">RageDesigner</a> framework ecosystem</p>
+        <p style="margin-top: 8px;">© 2025 RageDesigner. All rights reserved.</p>
+    </footer>
+
+    <script>
+    (function() {
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileDrawer = document.querySelector('.mobile-nav-drawer');
+        const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+        const mobileClose = document.querySelector('.mobile-nav-close');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
+        });
+        
+        function openMobileMenu() {
+            mobileToggle.classList.add('active');
+            mobileDrawer.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileToggle.classList.remove('active');
+            mobileDrawer.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        if (mobileToggle) mobileToggle.addEventListener('click', function() {
+            mobileDrawer.classList.contains('active') ? closeMobileMenu() : openMobileMenu();
+        });
+        if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileDrawer.classList.contains('active')) closeMobileMenu();
+        });
+        document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function(link) {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    })();
+    </script>
+</body>
+</html>
