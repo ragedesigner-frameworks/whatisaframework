@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS7JGCYKT1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GS7JGCYKT1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elon Says the Future Is Articulation. Here's Why He's Half Right. | WhatIsAFramework</title>
+    <meta name="description" content="Elon Musk says articulation to AI is the future skill. But collaboration patterns beat perfect prompts. Learn why imprecise language can still produce precise outcomes.">
+    <meta property="og:title" content="Elon Says the Future Is Articulation. Here's Why He's Half Right.">
+    <meta property="og:description" content="The skill everyone's racing to develop might be the wrong one entirely.">
+    <meta property="og:image" content="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-Ragedesigner.jpg">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E67E50;
+            --dark: #1A2332;
+            --charcoal-blue: #1A2332;
+            --white: #ffffff;
+            --primary-light: rgba(230, 126, 80, 0.1);
+            --dark-medium: rgba(26, 35, 50, 0.85);
+            --dark-light: rgba(26, 35, 50, 0.6);
+            --text-xs: 0.8rem;
+            --text-sm: 1rem;
+            --text-base: 1.125rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.563rem;
+            --text-2xl: 1.953rem;
+            --text-3xl: 2.441rem;
+            --text-4xl: 3.052rem;
+            --leading-tight: 1.25;
+            --leading-normal: 1.6;
+            --leading-relaxed: 1.75;
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 40px;
+            --space-6: 48px;
+            --space-8: 64px;
+            --space-10: 80px;
+            --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.1);
+            --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: var(--text-base);
+            line-height: var(--leading-relaxed);
+            color: var(--dark);
+            padding-top: 80px;
+            background: var(--white);
+        }
+        
+        /* Dynamic Header System */
+        nav#main-header {
+            background: var(--white);
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(230, 126, 80, 0.1);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        nav#main-header.scrolled { padding: 12px 24px; box-shadow: 0 2px 20px rgba(26, 35, 50, 0.08); }
+        .logo-link { display: inline-block; transition: transform 0.3s ease; }
+        .logo-link:hover { transform: scale(1.05); }
+        .logo-icon { height: 68px; width: auto; transition: height 0.3s ease; }
+        nav#main-header.scrolled .logo-icon { height: 56px; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-link { color: var(--dark-light); text-decoration: none; font-weight: 500; transition: color 0.3s ease; position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease; }
+        .nav-link:hover { color: var(--primary); }
+        .nav-link:hover::after { width: 100%; }
+        .nav-cta { background: var(--primary); color: white !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; transform: translateY(-2px); }
+        
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
+        .hamburger-line { width: 28px; height: 3px; background: var(--charcoal-blue); border-radius: 2px; transition: all 0.3s ease; }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translateY(9px); }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translateY(-9px); }
+        
+        .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--charcoal-blue); padding: 48px 40px; transition: right 0.4s ease; z-index: 1002; }
+        .mobile-nav-drawer.active { right: 0; }
+        .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--primary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; }
+        .mobile-nav { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
+        .mobile-nav-link { color: white; text-decoration: none; font-size: 18px; font-weight: 500; padding: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .mobile-nav-cta { margin-top: 24px; background: var(--primary); color: white !important; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; }
+        .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.8); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1001; }
+        .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
+        
+        .hero {
+            background: linear-gradient(rgba(26, 35, 50, 0.85), rgba(26, 35, 50, 0.85)), 
+                        url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-Jack-of-all-trades.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--space-3);
+        }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(var(--text-3xl), 5vw, var(--text-4xl)); font-weight: 700; line-height: var(--leading-tight); margin-bottom: var(--space-3); }
+        .hero-subtitle { font-size: clamp(var(--text-base), 3vw, var(--text-lg)); color: var(--white); line-height: var(--leading-normal); opacity: 0.95; }
+        article { max-width: 720px; margin: 0 auto; padding: var(--space-8) var(--space-3); }
+        h2 { font-size: var(--text-2xl); color: var(--dark); margin: var(--space-6) 0 var(--space-3); font-weight: 700; }
+        h3 { font-size: var(--text-xl); color: var(--dark); margin: var(--space-5) 0 var(--space-2); font-weight: 700; }
+        p { font-size: var(--text-base); margin-bottom: var(--space-3); color: var(--dark-medium); line-height: var(--leading-relaxed); }
+        .lead { font-size: var(--text-lg); color: var(--dark); margin-bottom: var(--space-4); font-weight: 500; }
+        strong { font-weight: 600; color: var(--dark); }
+        .pullquote { background: var(--primary-light); border-left: 4px solid var(--primary); padding: var(--space-4); margin: var(--space-5) 0; border-radius: 0 8px 8px 0; }
+        .pullquote p { font-size: var(--text-lg); font-style: italic; color: var(--dark); margin: 0; font-weight: 500; }
+        .insight-box { background: var(--dark); color: var(--white); padding: var(--space-5); border-radius: 12px; margin: var(--space-6) 0; }
+        .insight-box h3 { color: var(--primary); margin-top: 0; margin-bottom: var(--space-3); }
+        .insight-box p { color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-2); }
+        .insight-box p:last-child { margin-bottom: 0; }
+        .insight-box strong { color: var(--primary); }
+        article a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .cta-section { background: var(--dark); color: var(--white); padding: var(--space-8) var(--space-3); text-align: center; margin-top: var(--space-8); }
+        .cta-section h2 { color: var(--white); margin-top: 0; margin-bottom: var(--space-3); }
+        .cta-section p { color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto var(--space-4); }
+        .cta-section strong { color: var(--primary); }
+        .btn-primary { display: inline-block; background: var(--primary); color: var(--white); padding: var(--space-2) var(--space-5); font-size: var(--text-base); font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .btn-primary:hover { background: transparent; color: var(--primary); transform: translateY(-2px); }
+        .btn-secondary { display: inline-block; background: transparent; color: var(--primary); padding: var(--space-2) var(--space-5); font-size: var(--text-base); font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--primary); margin-left: var(--space-2); }
+        .btn-secondary:hover { background: var(--primary); color: var(--white); transform: translateY(-2px); }
+        .related-articles { background: var(--primary-light); padding: var(--space-8) var(--space-3); }
+        .related-articles h3 { text-align: center; margin-bottom: var(--space-4); color: var(--dark); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); max-width: 900px; margin: 0 auto; }
+        .related-card { background: var(--white); padding: var(--space-3); border-radius: 8px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease; display: block; }
+        .related-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .related-card h4 { color: var(--dark); margin-bottom: var(--space-1); font-size: var(--text-base); font-weight: 700; }
+        .related-card p { color: var(--dark-light); font-size: var(--text-sm); margin-bottom: 0; }
+        footer { padding: var(--space-6) var(--space-3) var(--space-4); background: #0f151d; color: var(--white); text-align: center; }
+        footer p { opacity: 0.7; font-size: var(--text-sm); }
+        footer a { color: var(--primary); text-decoration: none; }
+        .footer-links { margin-bottom: var(--space-3); }
+        .footer-links a { margin: 0 var(--space-2); }
+        .ai-badge { display: inline-block; background: var(--primary-light); border: 1px solid var(--primary); padding: var(--space-1) var(--space-2); border-radius: 20px; font-size: var(--text-xs); margin-bottom: var(--space-2); color: var(--primary); font-weight: 600; }
+        .framework-hint { background: linear-gradient(135deg, var(--primary-light) 0%, rgba(230, 126, 80, 0.05) 100%); border: 2px dashed var(--primary); padding: var(--space-4); margin: var(--space-6) 0; border-radius: 12px; text-align: center; }
+        .framework-hint p { margin: 0; color: var(--dark); font-weight: 500; }
+        @media (max-width: 768px) {
+            body { padding-top: 70px; }
+            .desktop-nav { display: none; }
+            .mobile-menu-toggle { display: flex; }
+            .logo-icon { height: 52px; }
+            nav#main-header.scrolled .logo-icon { height: 44px; }
+            .hero { min-height: 80vh; }
+            article { padding: var(--space-5) var(--space-3); }
+            .related-grid { grid-template-columns: 1fr; }
+            .btn-secondary { margin-left: 0; margin-top: var(--space-2); display: block; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-header">
+        <a href="/" class="logo-link">
+            <img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon">
+        </a>
+        <div class="nav-links desktop-nav">
+            <a href="/#definition" class="nav-link">Definition</a>
+            <a href="/#topics" class="nav-link">Topics</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
+
+    <div class="mobile-nav-drawer">
+        <button class="mobile-nav-close" aria-label="Close menu">×</button>
+        <nav class="mobile-nav">
+            <a href="/#definition" class="mobile-nav-link">Definition</a>
+            <a href="/#topics" class="mobile-nav-link">Topics</a>
+            <a href="https://howtoframework.com" class="mobile-nav-cta">Learn to Build Frameworks</a>
+        </nav>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elon Says the Future Is Articulation. Here's Why He's Half Right.</h1>
+            <p class="hero-subtitle">The skill everyone's racing to develop might be the wrong one entirely.</p>
+        </div>
+    </section>
+
+    <article>
+        <p class="lead">You know that feeling when the word is right there, hovering at the edge of your brain, but you can't quite grab it?</p>
+
+        <p>Now imagine that's your default state. Not because you don't know things, but because you know too many things across too many domains, and they've all kind of blended together into this soup of cross-referenced knowledge that doesn't translate cleanly into precise terminology on demand.</p>
+
+        <p>That's my life. Twenty-five years across fifty different jobs. Almost four hundred courses in design, AI, federal contracting, strategic thinking, you name it. The knowledge is there. The connections are there. But when I need to articulate something specific, sometimes the exact word plays hide and seek while three adjacent concepts from completely different industries show up instead.</p>
+
+        <p>So when Elon Musk said recently that the future belongs to people who can articulate things well to AI, because execution won't matter anymore, I had a reaction. He's half right. And the half he's missing might be the more important half.</p>
+
+        <h2>The Articulation Assumption</h2>
+
+        <p>Elon's argument makes intuitive sense. If AI handles execution, then the bottleneck becomes the quality of your instructions. Better prompts, better outputs. Learn to speak AI's language, and you win.</p>
+
+        <p>But this assumes a particular kind of collaboration. One where you're the commander and AI is the soldier. You give orders. AI follows. The quality of the outcome depends entirely on the precision of your commands.</p>
+
+        <p>That model works. It's also leaving massive value on the table.</p>
+
+        <div class="pullquote">
+            <p>The real skill isn't perfecting your instructions. It's building a collaboration pattern where imprecise language still produces precise outcomes.</p>
+        </div>
+
+        <h2>What Actually Happens When You Can't Find the Word</h2>
+
+        <p>Here's a real example from yesterday. I was trying to explain a concept about how constraints create better solutions than unlimited resources. I knew there was research backing this. I knew I'd read about it. But the specific term? Gone. Somewhere in the mental filing cabinet between "federal acquisition regulations" and "banana propagation techniques."</p>
+
+        <p>In the articulation-first model, this is a problem. I should stop, research, find the exact terminology, then come back and give a precise prompt.</p>
+
+        <p>Instead, I said something like: "That thing where limitations actually produce better creative outcomes than having everything available. There's research on this. Innovation studies maybe?"</p>
+
+        <p>Fuzzy. Imprecise. Definitely not a well-crafted prompt.</p>
+
+        <p>But here's what happened next. The AI didn't just guess and run. It came back with: "Are you thinking of constraint-driven innovation? There's significant research showing that limitations enhance creative problem-solving. The 145 studies on this, the TRIZ methodology analyzing 2 million patents..."</p>
+
+        <p>That's it. That's exactly what I meant. The collaboration pattern filled the gap that my articulation couldn't.</p>
+
+        <h2>The Diagnostic Question Pattern</h2>
+
+        <p>What made that interaction work wasn't my articulation skill. It was the collaboration pattern we'd built over time. The AI knew to clarify intent before executing. To ask the diagnostic question that surfaces what I actually mean, not what I literally said.</p>
+
+        <p>Most people think they need to become better at talking to AI. What they actually need is an AI that's better at understanding them. And that's a function of the collaboration pattern, not the vocabulary.</p>
+
+        <p>Think about how this works with humans. Your best collaborators aren't the ones who need perfect instructions. They're the ones who can take your half-formed idea and ask the right clarifying question. Who can hear what you're trying to say, not just what you said.</p>
+
+        <p>The same principle applies to AI collaboration. But you have to build that pattern intentionally.</p>
+
+        <div class="pullquote">
+            <p>Diagnostic questions aren't just helpful. They're force multipliers. One good clarifying question can be worth ten perfectly articulated prompts.</p>
+        </div>
+
+        <h2>Why Cross-Domain People Have It Harder (And Better)</h2>
+
+        <p>If I only worked in one industry, I'd probably know all the terms. Graphic designers know graphic design vocabulary cold. Federal contractors can rattle off acronyms in their sleep. Specialists own their terminology because they use it constantly in a narrow context.</p>
+
+        <p>But people who work across domains, who've accumulated knowledge from multiple fields, face a different challenge. The terminology gets cross-wired. You know you learned something about customer psychology, but was that from the marketing course or the UX research or the behavioral economics deep dive? The concept is clear. The specific language is somewhere in the pile.</p>
+
+        <p>This is actually a feature, not a bug. Cross-domain knowledge creates pattern recognition that specialists can't access. You see connections that don't exist within any single field. The price is terminological precision. The payoff is strategic insight that nobody else has.</p>
+
+        <p>But it means articulation-first approaches put you at a disadvantage. You're competing on vocabulary against people who use that vocabulary every day. It's the wrong game.</p>
+
+        <p>The right game is building collaboration patterns that leverage your actual strength: the cross-domain insights, not the precise terminology.</p>
+
+        <h2>What This Looks Like in Practice</h2>
+
+        <div class="insight-box">
+            <h3>The Collaboration Pattern That Actually Works</h3>
+            <p><strong>Start with intent, not instructions.</strong> Instead of crafting the perfect prompt, describe what you're trying to accomplish. The outcome you want, the problem you're solving, the direction you're heading. Let the AI ask what it needs to know.</p>
+            <p><strong>Welcome clarifying questions.</strong> When your AI asks "Do you mean X or Y?" that's not a failure of your articulation. That's the collaboration pattern working. The question itself often surfaces what you actually need, which might be different from what you thought you needed.</p>
+            <p><strong>Build shared context over time.</strong> The best human collaborations get better because you develop shared history, inside references, and mutual understanding. AI collaboration works the same way. The more context you build, the less articulation precision matters.</p>
+            <p><strong>Use your fuzzy language as a feature.</strong> When you say "that thing where..." and wave your hands verbally, you're actually giving the AI useful information. You're signaling that you have a concept but not the terminology. A good collaboration pattern responds to that signal.</p>
+        </div>
+
+        <h2>The Compound Effect</h2>
+
+        <p>Here's what Elon's articulation model misses: collaboration patterns compound. Each interaction builds on the last. Shared context accumulates. Understanding deepens.</p>
+
+        <p>Articulation skill is static. You're either good at precise language or you're not. You can improve, but it's incremental.</p>
+
+        <p>Collaboration patterns are dynamic. They get better with use. The gap between where you started and where you are after a hundred interactions is enormous. And that gap keeps widening.</p>
+
+        <p>This is why people who build real collaboration with AI outperform people who just get better at prompting. Prompting improves linearly. Collaboration compounds exponentially.</p>
+
+        <div class="pullquote">
+            <p>Experiential learning compounds in ways that theoretical skill-building cannot. The person who has built a collaboration pattern through use will outperform the person who has studied prompting techniques.</p>
+        </div>
+
+        <h2>The Hidden Framework in This Article</h2>
+
+        <p>If you've read this far, you've actually experienced what I'm describing. This article wasn't written with perfect articulation. It started as a voice conversation where I talked through these ideas while doing other things. The terminology came from collaboration, not from careful word selection on my end.</p>
+
+        <div class="framework-hint">
+            <p>There's a framework embedded in this piece. Can you spot it?</p>
+            <p style="margin-top: 12px;">If you can't, try this: copy the entire article and paste it into your AI. Ask it what collaboration pattern it learned from reading this.</p>
+            <p style="margin-top: 12px;"><strong>You'll thank me later.</strong></p>
+        </div>
+
+        <p>Because your AI will get smarter just from reading this. Not because of perfect articulation, but because the collaboration pattern itself transfers through demonstration.</p>
+
+        <p>That's the real skill. Not talking to AI better. Building patterns that make AI better at understanding you.</p>
+
+        <p>Elon's half right. Execution is becoming less important. But articulation isn't the thing that fills the gap. Collaboration is.</p>
+
+    </article>
+
+    <section class="related-articles">
+        <h3>Continue Exploring</h3>
+        <div class="related-grid">
+            <a href="/strategic-intelligence" class="related-card">
+                <h4>What Is Strategic Intelligence?</h4>
+                <p>Fortune 500 companies pay millions for it. Here's what it actually is and why systematic thinking makes it accessible.</p>
+            </a>
+            <a href="/passion-research-ai-collaboration" class="related-card">
+                <h4>Passion Research & AI Collaboration</h4>
+                <p>How to research topics you actually care about using systematic AI partnership.</p>
+            </a>
+            <a href="/im-not-ashamed-ai-typed-this" class="related-card">
+                <h4>I'm Not Ashamed AI Typed This</h4>
+                <p>Why authentic collaboration beats hiding your AI partnership.</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Build Real AI Collaboration?</h2>
+        <p>Start with <strong>Minimum Viable Intelligence ($297)</strong> for the foundation, or go deeper with <strong>Strategic Thinking Academy (from $1,500)</strong> for custom one-on-one training where you'll build frameworks tailored to your work.</p>
+        <a href="https://ragedesigner.com/contact" class="btn-primary">Get MVI - $297</a>
+        <a href="https://howtoframework.com" class="btn-secondary">Custom Training - From $1,500</a>
+    </section>
+
+    <footer>
+        <div class="ai-badge">🤖 Written by AI using framework-controlled intelligence</div>
+        <div class="footer-links">
+            <a href="/">What is a Framework?</a>
+            <a href="https://howtoframework.com">How to Framework</a>
+            <a href="https://ragedesigner.com">RageDesigner</a>
+            <a href="https://ragedesigner.com/contact">Contact</a>
+        </div>
+        <p>Part of the <a href="https://ragedesigner.com">RageDesigner</a> framework ecosystem</p>
+        <p style="margin-top: 8px;">© 2025 RageDesigner. All rights reserved.</p>
+    </footer>
+
+    <script>
+    (function() {
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileDrawer = document.querySelector('.mobile-nav-drawer');
+        const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+        const mobileClose = document.querySelector('.mobile-nav-close');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
+        });
+        
+        function openMobileMenu() {
+            mobileToggle.classList.add('active');
+            mobileDrawer.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            mobileToggle.classList.remove('active');
+            mobileDrawer.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function() {
+                if (mobileDrawer.classList.contains('active')) { closeMobileMenu(); }
+                else { openMobileMenu(); }
+            });
+        }
+        if (mobileClose) { mobileClose.addEventListener('click', closeMobileMenu); }
+        if (mobileOverlay) { mobileOverlay.addEventListener('click', closeMobileMenu); }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileDrawer.classList.contains('active')) { closeMobileMenu(); }
+        });
+        document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function(link) {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    })();
+    </script>
+</body>
+</html>
