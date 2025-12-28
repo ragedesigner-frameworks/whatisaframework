@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Adoption Accelerator | What Is A Framework</title>
+    <meta name="description" content="Transform cultural resistance into competitive advantage with systematic change management, skill development, and adoption metrics for AI implementation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #E67E50; --dark: #1A2332; --white: #ffffff; --light-gray: #f8f9fa; --medium-gray: #6c757d; --border-gray: #e9ecef; --primary-light: rgba(230, 126, 80, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: var(--dark); background-color: var(--white); }
+        .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+        nav { background: var(--white); padding: 16px 48px; border-bottom: 1px solid var(--primary-light); position: fixed; top: 0; left: 0; right: 0; z-index: 100; box-shadow: 0 1px 3px rgba(26, 35, 50, 0.08); display: flex; justify-content: space-between; align-items: center; }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-icon { height: 68px; width: auto; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-links a { color: rgba(26, 35, 50, 0.6); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-cta { background: var(--primary); color: var(--white) !important; padding: 12px 24px; font-size: 0.875rem; font-weight: 600; border-radius: 8px; border: 2px solid var(--primary); }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; }
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, #243447 100%); color: var(--white); padding: calc(68px + 96px) 24px 96px; text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        .framework-badge { display: inline-block; background: var(--primary); color: var(--white); padding: 8px 24px; border-radius: 24px; font-size: 0.875rem; font-weight: 600; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .hero h1 { font-size: clamp(2.441rem, 6vw, 3.052rem); font-weight: 700; line-height: 1.25; margin-bottom: 16px; color: var(--white); }
+        .tagline { font-size: 1.25rem; max-width: 700px; margin: 0 auto; color: var(--white); opacity: 0.95; }
+        .main-content { padding: 96px 24px; }
+        .section { margin-bottom: 80px; }
+        .section h2 { font-size: clamp(1.953rem, 5vw, 2.441rem); font-weight: 700; color: var(--dark); margin-bottom: 24px; line-height: 1.25; }
+        .section p { font-size: 1.125rem; line-height: 1.75; color: rgba(26, 35, 50, 0.85); margin-bottom: 24px; }
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .principles-list { list-style: none; margin: 32px 0; }
+        .principles-list li { background-color: var(--primary-light); padding: 24px; margin-bottom: 16px; border-radius: 8px; border-left: 4px solid var(--primary); font-size: 1rem; line-height: 1.6; }
+        .principles-list li strong { color: var(--dark); display: block; margin-bottom: 8px; font-weight: 600; font-size: 1.125rem; }
+        .case-study { background-color: var(--light-gray); padding: 40px; border-radius: 12px; border: 1px solid var(--border-gray); }
+        .case-study h4 { font-size: 1.25rem; font-weight: 600; color: var(--dark); margin-bottom: 24px; }
+        .case-study .label { color: var(--primary); font-weight: 600; display: block; margin-bottom: 8px; }
+        .case-study .content-block { margin-bottom: 20px; }
+        .case-study .content-block:last-child { margin-bottom: 0; }
+        .timeframe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 32px; }
+        .timeframe-card { background-color: var(--white); padding: 32px; border-radius: 12px; border: 2px solid var(--border-gray); text-align: center; }
+        .timeframe-card .number { font-size: 2rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 8px; }
+        .timeframe-card h4 { font-size: 1.125rem; font-weight: 600; color: var(--dark); margin-bottom: 12px; }
+        .timeframe-card p { font-size: 0.875rem; color: var(--medium-gray); margin-bottom: 0; }
+        .cta-section { background: linear-gradient(135deg, var(--dark) 0%, #243447 100%); color: var(--white); padding: 96px 24px; text-align: center; }
+        .cta-section h2 { color: var(--white); margin-bottom: 20px; }
+        .cta-section p { color: rgba(255, 255, 255, 0.8); font-size: 1.125rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-button { display: inline-block; background-color: var(--primary); color: var(--white); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .cta-button:hover { background-color: transparent; color: var(--primary); transform: translateY(-2px); }
+        footer { padding: 56px 24px 32px; background: #0f151d; color: var(--white); text-align: center; }
+        .footer-logo { max-width: 300px; height: auto; margin: 0 auto 32px; display: block; }
+        footer p { opacity: 0.7; font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); }
+        footer a { color: var(--primary); text-decoration: none; transition: opacity 0.2s ease; }
+        footer a:hover { opacity: 0.8; }
+        @media (max-width: 768px) { nav { padding: 16px 24px; } .logo-icon { height: 52px; } .nav-links a:not(.nav-cta) { display: none; } .hero { padding: calc(68px + 64px) 24px 64px; min-height: auto; } .two-column { grid-template-columns: 1fr; gap: 40px; } .timeframe-grid { grid-template-columns: 1fr; } .case-study { padding: 24px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon"></a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/interactive-lab.html">Interactive Lab</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn Framework Building</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="framework-badge">AI Implementation Framework</div>
+        <h1>AI Adoption Accelerator</h1>
+        <p class="tagline">Transform the human side of AI implementation from your biggest obstacle into your strongest competitive advantage.</p>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="section">
+                <div class="two-column">
+                    <div>
+                        <h2>The Challenge</h2>
+                        <p>Most AI implementations fail for human reasons, not technical ones. The technology works, but teams don't use it. They're worried about job security, skeptical of the hype, or simply too busy to learn new tools that might not stick around.</p>
+                        <p>Leadership launches AI initiatives with enthusiasm, but six months later adoption metrics tell a different story. The tools sit unused while teams quietly revert to familiar processes. The investment disappears into organizational resistance.</p>
+                    </div>
+                    <div>
+                        <h2>The Approach</h2>
+                        <p>Sustainable AI adoption requires treating change management as seriously as technical implementation. That means understanding what drives resistance, designing for real workflow integration, and building capability systematically rather than hoping training alone creates lasting change.</p>
+                        <p>The accelerator addresses adoption at three levels: individual skill building, team workflow redesign, and organizational culture alignment. Success requires coordinated movement across all three.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Core Principles</h2>
+                <p>Four principles drive effective AI adoption acceleration:</p>
+                <ul class="principles-list">
+                    <li><strong>Resistance as Intelligence</strong>People resist AI adoption for reasons that make sense to them. Fear of job displacement, skepticism about effectiveness, concerns about quality. Effective adoption programs surface these objections and address them directly rather than dismissing them as change resistance.</li>
+                    <li><strong>Workflow-First Design</strong>AI tools that require practitioners to leave their normal workflow to use them won't get used. Adoption accelerates when AI integrates into existing processes rather than demanding parallel workflows people forget to follow.</li>
+                    <li><strong>Visible Early Wins</strong>Skeptics don't become advocates through training sessions. They convert when they see colleagues achieving real results. Early adopter success stories, with specific metrics, create the social proof that drives broader adoption.</li>
+                    <li><strong>Capability Building Over Tool Training</strong>Teaching people how to use specific AI tools creates fragile adoption that breaks when tools change. Building AI fluency and judgment creates durable capability that transfers across tools and use cases.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Application Example</h2>
+                <div class="case-study">
+                    <h4>Consulting Firm: From 12% to 78% Active Usage</h4>
+                    <div class="content-block">
+                        <span class="label">Challenge:</span>
+                        A management consulting firm invested in enterprise AI tools but tracking showed only 12% of consultants used them regularly. Exit interviews revealed the real issue: senior partners weren't using AI, so junior staff felt it was career-limiting to be seen relying on it.
+                    </div>
+                    <div class="content-block">
+                        <span class="label">Application:</span>
+                        The accelerator program started with partner-level AI fluency sessions, explicitly positioning AI capability as a promotion criterion rather than a crutch. Middle managers received coaching on how to evaluate AI-assisted work. Junior staff got workflow integration support. Within six months, active usage reached 78%, and the firm documented 23% improvement in research phase efficiency.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Implementation Scope</h2>
+                <p>Adoption acceleration unfolds over months, not weeks. Cultural change requires sustained attention:</p>
+                <div class="timeframe-grid">
+                    <div class="timeframe-card">
+                        <span class="number">4-6</span>
+                        <h4>Assessment Phase</h4>
+                        <p>Weeks to map resistance patterns, identify adoption barriers, and design intervention strategy</p>
+                    </div>
+                    <div class="timeframe-card">
+                        <span class="number">3-6</span>
+                        <h4>Implementation</h4>
+                        <p>Months of coordinated skill building, workflow redesign, and culture alignment work</p>
+                    </div>
+                    <div class="timeframe-card">
+                        <span class="number">6-12</span>
+                        <h4>Optimization</h4>
+                        <p>Months of reinforcement, metrics tracking, and continuous adoption expansion</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Accelerate AI Adoption?</h2>
+            <p>Stop fighting your organization's natural resistance to change. Build systematic adoption capability that turns skeptics into advocates and makes AI usage inevitable.</p>
+            <a href="https://ragedesigner.com/contact" class="cta-button">Discuss Implementation</a>
+        </div>
+    </section>
+
+    <footer>
+        <img src="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png" alt="Strategic Thinking Academy" class="footer-logo">
+        <p>Learn more at <a href="https://ragedesigner.com">RageDesigner.com</a> | Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2025</p>
+    </footer>
+</body>
+</html>
