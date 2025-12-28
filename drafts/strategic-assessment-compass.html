@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Assessment Compass | AI Implementation Guide</title>
+    <meta name="description" content="Answer 3 questions to find the right AI implementation framework for your organization's specific situation, challenges, and constraints.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E67E50;
+            --dark: #1A2332;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #6c757d;
+            --border-gray: #e9ecef;
+            --primary-light: rgba(230, 126, 80, 0.1);
+            --success: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light-gray);
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 16px 48px;
+            border-bottom: 1px solid var(--primary-light);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(26, 35, 50, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            height: 68px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: rgba(26, 35, 50, 0.6);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 12px 24px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--primary) !important;
+        }
+
+        /* Main Container */
+        .compass-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: calc(68px + 48px) 24px 48px;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .compass-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .compass-header h1 {
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .compass-header p {
+            font-size: 1.125rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-bottom: 32px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--border-gray);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px;
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 0.875rem;
+            color: var(--medium-gray);
+        }
+
+        /* Question Card */
+        .question-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(26, 35, 50, 0.08);
+            display: none;
+        }
+
+        .question-card.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question-number {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .question-card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 28px;
+            line-height: 1.4;
+        }
+
+        /* Options */
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .option {
+            display: block;
+            background: var(--light-gray);
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
+            padding: 20px 24px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .option.selected {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .option input {
+            display: none;
+        }
+
+        .option-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .option-radio {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border-gray);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            margin-top: 2px;
+        }
+
+        .option.selected .option-radio {
+            border-color: var(--primary);
+            background: var(--primary);
+        }
+
+        .option.selected .option-radio::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--white);
+            border-radius: 50%;
+        }
+
+        .option-text h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .option-text p {
+            font-size: 0.95rem;
+            color: var(--medium-gray);
+            line-height: 1.5;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-gray);
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-back {
+            background: transparent;
+            color: var(--medium-gray);
+            border-color: var(--border-gray);
+        }
+
+        .btn-back:hover {
+            border-color: var(--dark);
+            color: var(--dark);
+        }
+
+        .btn-back:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-next {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .btn-next:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Results Card */
+        .results-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 48px 40px;
+            box-shadow: 0 4px 20px rgba(26, 35, 50, 0.08);
+            text-align: center;
+            display: none;
+        }
+
+        .results-card.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .results-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .results-icon svg {
+            width: 40px;
+            height: 40px;
+            color: var(--primary);
+        }
+
+        .results-card h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .results-card .recommendation-label {
+            font-size: 0.875rem;
+            color: var(--medium-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .results-card .framework-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .results-card .framework-description {
+            font-size: 1.125rem;
+            color: var(--medium-gray);
+            max-width: 500px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
+        .results-card .btn-view {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            border: 2px solid var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .results-card .btn-view:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .results-card .btn-restart {
+            display: block;
+            background: transparent;
+            color: var(--medium-gray);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            margin-top: 16px;
+        }
+
+        .results-card .btn-restart:hover {
+            color: var(--dark);
+        }
+
+        /* Selection Summary */
+        .selection-summary {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: left;
+        }
+
+        .selection-summary h4 {
+            font-size: 0.875rem;
+            color: var(--medium-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .selection-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .selection-item:last-child {
+            border-bottom: none;
+        }
+
+        .selection-item .label {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+        }
+
+        .selection-item .value {
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 24px;
+            }
+
+            .logo-icon {
+                height: 52px;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .compass-container {
+                padding: calc(68px + 32px) 16px 32px;
+            }
+
+            .question-card,
+            .results-card {
+                padding: 28px 20px;
+            }
+
+            .option {
+                padding: 16px 18px;
+            }
+
+            .nav-buttons {
+                flex-direction: column-reverse;
+                gap: 12px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link">
+            <img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon">
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/interactive-lab.html">Interactive Lab</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn Framework Building</a>
+        </div>
+    </nav>
+
+    <div class="compass-container">
+        <div class="compass-header">
+            <h1>Strategic Assessment Compass</h1>
+            <p>Answer 3 questions to find the right AI implementation framework for your situation.</p>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="progressStep">Question 1 of 3</span>
+                <span id="progressPercent">0%</span>
+            </div>
+        </div>
+
+        <!-- Question 1: Strategic Timeframe -->
+        <div class="question-card active" id="question1">
+            <span class="question-number">Question 1</span>
+            <h2>What best describes your current strategic situation with AI implementation?</h2>
+            
+            <div class="options-list">
+                <label class="option" data-value="crisis">
+                    <input type="radio" name="q1" value="crisis">
+                    <div class="option-content">
+                        <div class="option-radio"></div>
+                        <div class="option-text">
+                            <h3>Crisis Response</h3>
+                            <p>We need immediate AI solutions to address pressing competitive threats or operational failures.</p>
+                        </div>
+                    </div>
+                </label>
+
+                <label class="option" data-value="optimization">
+                    <input type="radio" name="q1" value="optimization">
+                    <div class="option-content">
+                        <div class="option-radio"></div>
+                        <div class="option-text">
+                            <h3>Operational Optimization</h3>
+                            <p>We want to systematically improve existing processes and capabilities with AI.</p>
+                        </div>
+                    </div>
+                </label>
+
+                <label class="option" data-value="transformation">
+                    <input type="radio" name="q1" value="transformation">
+                    <div class="option-content">
+                        <div class="option-radio"></div>
+                        <div class="option-text">
+                            <h3>Transformational Planning</h3>
+                            <p>We're designing our long-term AI strategy and organizational capabilities.</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-back" disabled>Back</button>
+                <button class="btn btn-next" id="next1" disabled>Continue</button>
+            </div>
+        </div>
+
+        <!-- Question 2: Challenge Domain -->
+        <div class="question-card" id="question2">
+            <span class="question-number">Question 2</span>
+            <h2>Where is your biggest AI implementation challenge right now?</h2>
+            
+            <div class="options-list">
+                <label class="option" data-value="adoption">
+                    <input type="radio" name="q2" value="adoption">
+                    <div class="option-content">
+                        <div class="option-radio"></div>
+                        <div class="option-text">
+                            <h3>Adoption Strategy</h3>
+                            <p>Determining which AI applications will create the most value for our practice areas.</p>
+                        </div>
+                    </div>
+                </label>
+
+                <label class="option" data-value="governance">
+                    <input type="radio" name="q2" value="governance">
+                    <div class="option-content">
+                        <div class="option-radio"></div>
+                        <div class="option-text">
+                            <h3>Governance Framework</h3>
+                            <p>Establishing policies, controls, and accountability structures for AI usage.</p>
+                        </div>
+                    </div>
+                </label>
+
+                <label class="option" data-value="integration">
+                    <input type="radio" name="q2" value="integration">
+                    <div class="option-content">
+                        <div class="option-radio"></div>
+                        <div class="option-text">
+                            <h3>Integration Complexity</h3>
+                            <p>Connecting AI tools with existing systems, workflows, and client deliverables.</p>
+                        </div>
+                    </div>
+                </label>
+
+                <label class="option" data-value="scaling">
+                    <input type="radio" name="q2" value="scaling">
+                    <div class="option-content">
+                        <div class="option-radio"></div>
+                        <div class="option-text">
+                            <h3>Scaling Mechanisms</h3>
+                            <p>Moving from successful pilots to organization-wide AI capabilities.</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-back" id="back2">Back</button>
+                <button class="btn btn-next" id="next2" disabled>Continue</button>
+            </div>
+        </div>
+
+        <!-- Question 3: Constraint Type -->
+        <div class="question-card" id="question3">
+            <span class="question-number">Question 3</span>
+            <h2>What represents your most significant constraint right now?</h2>
+            
+            <div class="options-list">
+                <label class="option" data-value="technical">
+                    <input type="radio" name="q3" value="technical">
+                    <div class="option-content">
+                        <div class="option-radio"></div>
+                        <div class="option-text">
+                            <h3>Technical Limitations</h3>
+                            <p>Infrastructure, data quality, or system integration challenges.</p>
+                        </div>
+                    </div>
+                </label>
+
+                <label class="option" data-value="cultural">
+                    <input type="radio" name="q3" value="cultural">
+                    <div class="option-content">
+                        <div class="option-radio"></div>
+                        <div class="option-text">
+                            <h3>Cultural Resistance</h3>
+                            <p>Team adoption, skill gaps, or change management issues.</p>
+                        </div>
+                    </div>
+                </label>
+
+                <label class="option" data-value="resource">
+                    <input type="radio" name="q3" value="resource">
+                    <div class="option-content">
+                        <div class="option-radio"></div>
+                        <div class="option-text">
+                            <h3>Resource Allocation</h3>
+                            <p>Budget constraints, competing priorities, or capacity limitations.</p>
+                        </div>
+                    </div>
+                </label>
+
+                <label class="option" data-value="regulatory">
+                    <input type="radio" name="q3" value="regulatory">
+                    <div class="option-content">
+                        <div class="option-radio"></div>
+                        <div class="option-text">
+                            <h3>Regulatory Concerns</h3>
+                            <p>Compliance requirements, client confidentiality, or professional standards.</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-back" id="back3">Back</button>
+                <button class="btn btn-next" id="next3" disabled>Get Recommendation</button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results-card" id="results">
+            <div class="results-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            <h2>Your Recommended Framework</h2>
+            
+            <div class="selection-summary">
+                <h4>Based on your selections</h4>
+                <div class="selection-item">
+                    <span class="label">Strategic Situation</span>
+                    <span class="value" id="summary-q1">—</span>
+                </div>
+                <div class="selection-item">
+                    <span class="label">Primary Challenge</span>
+                    <span class="value" id="summary-q2">—</span>
+                </div>
+                <div class="selection-item">
+                    <span class="label">Key Constraint</span>
+                    <span class="value" id="summary-q3">—</span>
+                </div>
+            </div>
+
+            <p class="recommendation-label">We Recommend</p>
+            <p class="framework-name" id="frameworkName">—</p>
+            <p class="framework-description" id="frameworkDescription">—</p>
+            
+            <a href="#" class="btn-view" id="viewFramework">View Framework Details</a>
+            <button class="btn-restart" id="restart">Start Over</button>
+        </div>
+    </div>
+
+    <script>
+        // Framework routing data
+        const frameworks = {
+            // Crisis Response Pathways
+            'crisis-adoption-any': {
+                name: 'Rapid AI Deployment for Competitive Response',
+                description: 'Quick-win identification and fast pilot execution to capture immediate value within 30-90 days.',
+                url: '/frameworks/rapid-ai-deployment.html'
+            },
+            'crisis-governance-regulatory': {
+                name: 'Emergency AI Governance Protocol',
+                description: 'Fast-track compliance and risk mitigation with crisis communication protocols in 15-45 days.',
+                url: '/frameworks/emergency-ai-governance.html'
+            },
+            'crisis-governance-cultural': {
+                name: 'Emergency AI Governance Protocol',
+                description: 'Fast-track compliance and risk mitigation with crisis communication protocols in 15-45 days.',
+                url: '/frameworks/emergency-ai-governance.html'
+            },
+            'crisis-integration-any': {
+                name: 'Crisis Integration Stabilization',
+                description: 'System stability and process continuity to maintain stakeholder confidence in 45-120 days.',
+                url: '/frameworks/crisis-integration-stabilization.html'
+            },
+            'crisis-scaling-any': {
+                name: 'Crisis Integration Stabilization',
+                description: 'System stability and process continuity to maintain stakeholder confidence in 45-120 days.',
+                url: '/frameworks/crisis-integration-stabilization.html'
+            },
+
+            // Optimization Pathways
+            'optimization-adoption-any': {
+                name: 'Strategic AI Use Case Portfolio',
+                description: 'Systematic opportunity assessment with value quantification and priority matrix over 3-6 months.',
+                url: '/frameworks/strategic-ai-use-case-portfolio.html'
+            },
+            'optimization-governance-any': {
+                name: 'Professional Services AI Governance Model',
+                description: 'Policy development, approval workflows, and monitoring systems deployed in 2-4 months.',
+                url: '/frameworks/ai-governance-model.html'
+            },
+            'optimization-integration-technical': {
+                name: 'Workflow Integration Architecture',
+                description: 'System design, API strategies, and data flow optimization over 4-8 months.',
+                url: '/frameworks/workflow-integration-architecture.html'
+            },
+            'optimization-integration-cultural': {
+                name: 'AI Adoption Accelerator',
+                description: 'Change management, skill development, and adoption metrics program spanning 6-12 months.',
+                url: '/frameworks/ai-adoption-accelerator.html'
+            },
+            'optimization-integration-resource': {
+                name: 'Resource-Conscious AI Implementation',
+                description: 'Phased rollouts with cost optimization and ROI tracking over 3-9 months.',
+                url: '/frameworks/resource-conscious-ai-implementation.html'
+            },
+            'optimization-integration-regulatory': {
+                name: 'Workflow Integration Architecture',
+                description: 'System design, API strategies, and data flow optimization over 4-8 months.',
+                url: '/frameworks/workflow-integration-architecture.html'
+            },
+            'optimization-scaling-cultural': {
+                name: 'AI Adoption Accelerator',
+                description: 'Change management, skill development, and adoption metrics program spanning 6-12 months.',
+                url: '/frameworks/ai-adoption-accelerator.html'
+            },
+            'optimization-scaling-any': {
+                name: 'Scaling AI Capabilities Framework',
+                description: 'Capability maturity, standardization, and expansion planning over 6-18 months.',
+                url: '/frameworks/scaling-ai-capabilities.html'
+            },
+            'optimization-any-resource': {
+                name: 'Resource-Conscious AI Implementation',
+                description: 'Phased rollouts with cost optimization and ROI tracking over 3-9 months.',
+                url: '/frameworks/resource-conscious-ai-implementation.html'
+            },
+
+            // Transformation Pathways
+            'transformation-any-any': {
+                name: 'Future-State AI Operating Model',
+                description: 'Organizational design, capability roadmap, and strategic positioning over 12-24 months.',
+                url: '/frameworks/future-state-ai-operating-model.html'
+            },
+            'transformation-adoption-any': {
+                name: 'AI-First Service Line Development',
+                description: 'New service creation, market positioning, and revenue model innovation spanning 18-36 months.',
+                url: '/frameworks/ai-first-service-line.html'
+            },
+            'transformation-scaling-any': {
+                name: 'AI-First Service Line Development',
+                description: 'New service creation, market positioning, and revenue model innovation spanning 18-36 months.',
+                url: '/frameworks/ai-first-service-line.html'
+            },
+            'transformation-governance-regulatory': {
+                name: 'Regulatory-Compliant AI Transformation',
+                description: 'Compliance by design with regulatory engagement and industry leadership positioning over 24-48 months.',
+                url: '/frameworks/regulatory-compliant-ai-transformation.html'
+            }
+        };
+
+        // Display labels for summary
+        const labels = {
+            q1: {
+                crisis: 'Crisis Response',
+                optimization: 'Operational Optimization',
+                transformation: 'Transformational Planning'
+            },
+            q2: {
+                adoption: 'Adoption Strategy',
+                governance: 'Governance Framework',
+                integration: 'Integration Complexity',
+                scaling: 'Scaling Mechanisms'
+            },
+            q3: {
+                technical: 'Technical Limitations',
+                cultural: 'Cultural Resistance',
+                resource: 'Resource Allocation',
+                regulatory: 'Regulatory Concerns'
+            }
+        };
+
+        // State
+        let currentQuestion = 1;
+        let answers = { q1: null, q2: null, q3: null };
+
+        // DOM Elements
+        const progressFill = document.getElementById('progressFill');
+        const progressStep = document.getElementById('progressStep');
+        const progressPercent = document.getElementById('progressPercent');
+
+        // Initialize option click handlers
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const questionCard = this.closest('.question-card');
+                const questionNum = questionCard.id.replace('question', '');
+                const value = this.dataset.value;
+
+                // Update state
+                answers[`q${questionNum}`] = value;
+
+                // Update UI
+                questionCard.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+
+                // Enable next button
+                document.getElementById(`next${questionNum}`).disabled = false;
+            });
+        });
+
+        // Navigation handlers
+        document.getElementById('next1').addEventListener('click', () => goToQuestion(2));
+        document.getElementById('next2').addEventListener('click', () => goToQuestion(3));
+        document.getElementById('next3').addEventListener('click', showResults);
+        document.getElementById('back2').addEventListener('click', () => goToQuestion(1));
+        document.getElementById('back3').addEventListener('click', () => goToQuestion(2));
+        document.getElementById('restart').addEventListener('click', restart);
+
+        function goToQuestion(num) {
+            // Hide all questions
+            document.querySelectorAll('.question-card').forEach(card => card.classList.remove('active'));
+            
+            // Show target question
+            document.getElementById(`question${num}`).classList.add('active');
+            
+            // Update progress
+            currentQuestion = num;
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const percent = ((currentQuestion - 1) / 3) * 100;
+            progressFill.style.width = `${percent}%`;
+            progressStep.textContent = `Question ${currentQuestion} of 3`;
+            progressPercent.textContent = `${Math.round(percent)}%`;
+        }
+
+        function showResults() {
+            // Hide questions, show results
+            document.querySelectorAll('.question-card').forEach(card => card.classList.remove('active'));
+            document.getElementById('results').classList.add('active');
+
+            // Update progress to complete
+            progressFill.style.width = '100%';
+            progressStep.textContent = 'Complete';
+            progressPercent.textContent = '100%';
+
+            // Update summary
+            document.getElementById('summary-q1').textContent = labels.q1[answers.q1];
+            document.getElementById('summary-q2').textContent = labels.q2[answers.q2];
+            document.getElementById('summary-q3').textContent = labels.q3[answers.q3];
+
+            // Get framework recommendation
+            const framework = getFramework();
+            document.getElementById('frameworkName').textContent = framework.name;
+            document.getElementById('frameworkDescription').textContent = framework.description;
+            document.getElementById('viewFramework').href = framework.url;
+        }
+
+        function getFramework() {
+            const { q1, q2, q3 } = answers;
+
+            // Try specific match first
+            let key = `${q1}-${q2}-${q3}`;
+            if (frameworks[key]) return frameworks[key];
+
+            // Try with 'any' constraint
+            key = `${q1}-${q2}-any`;
+            if (frameworks[key]) return frameworks[key];
+
+            // Try with 'any' challenge
+            key = `${q1}-any-${q3}`;
+            if (frameworks[key]) return frameworks[key];
+
+            // Try with both 'any'
+            key = `${q1}-any-any`;
+            if (frameworks[key]) return frameworks[key];
+
+            // Fallback
+            return {
+                name: 'Strategic AI Use Case Portfolio',
+                description: 'Start with systematic opportunity assessment to identify the highest-impact AI initiatives for your organization.',
+                url: '/frameworks/strategic-ai-use-case-portfolio.html'
+            };
+        }
+
+        function restart() {
+            // Reset state
+            answers = { q1: null, q2: null, q3: null };
+            currentQuestion = 1;
+
+            // Reset UI
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            document.querySelectorAll('.btn-next').forEach(btn => btn.disabled = true);
+            
+            // Show first question
+            document.getElementById('results').classList.remove('active');
+            document.getElementById('question1').classList.add('active');
+            
+            updateProgress();
+        }
+
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>
