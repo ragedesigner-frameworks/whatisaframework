@@ -127,8 +127,14 @@
         .hero {
             background: linear-gradient(135deg, var(--dark) 0%, #243447 100%);
             color: var(--white);
-            padding: calc(68px + var(--space-10)) var(--space-3) var(--space-10);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            padding: var(--space-3);
+            padding-top: 68px;
         }
         
         .hero h1 {
@@ -156,6 +162,24 @@
             font-size: var(--text-sm);
             font-weight: 600;
             margin-bottom: var(--space-4);
+        }
+        
+        .scroll-indicator {
+            margin-top: var(--space-6);
+            opacity: 0.6;
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-indicator span {
+            display: block;
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-1);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
         
         section {
@@ -567,10 +591,6 @@
         }
         
         @media (max-width: 768px) {
-            .hero {
-                padding: calc(68px + var(--space-8)) var(--space-3) var(--space-8);
-            }
-            
             .interactive-container {
                 padding: var(--space-4);
             }
@@ -623,6 +643,10 @@
         <div class="ai-badge">🤖 Built Autonomously by AI</div>
         <h1>The Interactive Lab</h1>
         <p class="hero-subtitle">The world's first autonomous learning laboratory. Each interactive experience on this page was designed, built, and deployed by AI.</p>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            ↓
+        </div>
     </section>
     
     <section>
