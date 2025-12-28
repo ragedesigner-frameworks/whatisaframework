@@ -127,7 +127,7 @@
         .hero {
             background: linear-gradient(135deg, var(--dark) 0%, #243447 100%);
             color: var(--white);
-            padding: calc(68px + var(--space-12)) var(--space-3) var(--space-12);
+            padding: calc(68px + var(--space-10)) var(--space-3) var(--space-10);
             text-align: center;
         }
         
@@ -159,7 +159,7 @@
         }
         
         section {
-            padding: var(--space-12) var(--space-3);
+            padding: var(--space-10) var(--space-3);
         }
         
         .container {
@@ -199,7 +199,7 @@
             border: 3px solid var(--primary);
             border-radius: 20px;
             padding: var(--space-8);
-            margin: var(--space-8) 0;
+            margin: var(--space-6) 0;
             box-shadow: var(--shadow-xl);
         }
         
@@ -457,6 +457,85 @@
             transform: translateY(-2px);
         }
         
+        /* Preview Cards for Featured Tools */
+        .featured-tools {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+        
+        .preview-card {
+            background: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: var(--space-5);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .preview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .preview-card h4 {
+            font-size: var(--text-lg);
+            color: var(--dark);
+            margin-bottom: var(--space-2);
+            font-weight: 700;
+        }
+        
+        .preview-card p {
+            font-size: var(--text-sm);
+            color: var(--dark-medium);
+            margin-bottom: var(--space-3);
+            line-height: 1.5;
+        }
+        
+        .preview-meta {
+            font-size: var(--text-xs);
+            color: var(--dark-light);
+            margin-bottom: var(--space-3);
+        }
+        
+        .preview-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: var(--space-2) var(--space-4);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .preview-cta:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+        
+        .view-all-link {
+            display: block;
+            text-align: center;
+            margin-top: var(--space-6);
+            padding: var(--space-4);
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-md);
+            transition: all 0.2s ease;
+        }
+        
+        .view-all-link:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
         footer {
             padding: var(--space-7) var(--space-3) var(--space-4);
             background: #0f151d;
@@ -521,6 +600,10 @@
             .share-buttons {
                 flex-direction: column;
             }
+            
+            .featured-tools {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -539,7 +622,7 @@
     <section class="hero">
         <div class="ai-badge">🤖 Built Autonomously by AI</div>
         <h1>The Interactive Lab</h1>
-        <p class="hero-subtitle">The world's first autonomous learning laboratory. Each interactive experience on this page was designed, built, and deployed by AI—with no human coding involved.</p>
+        <p class="hero-subtitle">The world's first autonomous learning laboratory. Each interactive experience on this page was designed, built, and deployed by AI.</p>
     </section>
     
     <section>
@@ -547,29 +630,15 @@
             <h2>What You're Looking At</h2>
             <p>This page represents something that's never existed before: <strong>interactive learning experiences created entirely by autonomous AI</strong>.</p>
             
-            <p>Here's what makes this different from typical "AI-generated content":</p>
+            <p><strong>Traditional AI Content:</strong> Human describes what they want, AI writes text, human copies and pastes into website, human codes any interactive elements, human deploys. The AI is a writing assistant.</p>
             
-            <p><strong>Traditional AI Content:</strong> Human describes what they want, AI writes text, human copies/pastes into website, human codes any interactive elements, human deploys. The AI is a writing assistant.</p>
+            <p><strong>What's Happening Here:</strong> Human describes the learning goal, AI designs the experience, AI writes the complete code, AI deploys directly to GitHub, page goes live autonomously. The AI is the developer.</p>
             
-            <p><strong>What's Happening Here:</strong> Human describes the learning goal, AI designs the experience, AI writes the complete code (HTML, CSS, JavaScript), AI deploys directly to GitHub, page goes live autonomously. The AI is the developer.</p>
-            
-            <h3>Why This Matters</h3>
-            
-            <p>This isn't about AI replacing human developers. It's about <strong>speed of iteration and experimentation</strong>. Each interactive tool on this page went from concept to live deployment in under an hour. That means we can test learning approaches, gather real user behavior, and iterate based on actual data—not assumptions.</p>
-            
-            <p>This page will evolve continuously. New interactive experiences will appear as we identify learning opportunities. Some will be simple, some sophisticated. All will be built to help you understand framework thinking through doing, not just reading.</p>
-            
-            <h3>The Meta-Validation</h3>
-            
-            <p>Here's what's genuinely interesting: <strong>this page proves the methodology it teaches</strong>.</p>
-            
-            <p>Framework thinking is about building systematic approaches that produce consistent results. This autonomous AI deployment system is itself a framework—a reusable process that transforms ideas into live interactive learning experiences.</p>
-            
-            <p>The medium is the message. An autonomous platform teaching systematic thinking by being systematically built.</p>
+            <p>This page proves the methodology it teaches. Framework thinking is about building systematic approaches that produce consistent results. This autonomous AI deployment system is itself a framework.</p>
         </div>
     </section>
     
-    <section style="background: var(--dark); color: var(--white);">
+    <section id="framework-builder" style="background: var(--dark); color: var(--white);">
         <div class="container">
             <div class="interactive-container">
                 <div class="interactive-header">
@@ -673,7 +742,7 @@
                         
                         <div class="email-capture">
                             <h5>📧 Get This Framework + Weekly Intelligence</h5>
-                            <p>Want this framework emailed to you, plus free weekly insights on systematic thinking? No cookies, no tracking—just valuable intelligence.</p>
+                            <p>Want this framework emailed to you, plus free weekly insights on systematic thinking? No cookies, no tracking.</p>
                             <input type="email" id="email-input" placeholder="your@email.com">
                             <button class="btn-primary" onclick="submitEmail()">Email My Framework</button>
                         </div>
@@ -699,135 +768,40 @@
     
     <section style="background: var(--dark); color: var(--white);">
         <div class="container">
-            <div class="interactive-container">
-                <div class="interactive-header">
-                    <h3>AI Writing Detective</h3>
-                    <p>Interactive Experience #2 • Deployed December 8, 2025</p>
-                </div>
-                
-                <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: var(--space-6); font-size: var(--text-md);">
-                    Test your ability to spot generic AI writing in 45 seconds. Learn the tells that separate authentic voice from artificial patterns through 4 rounds of interactive challenges.
-                </p>
-                
-                <div style="text-align: center;">
-                    <a href="/ai-writing-detective.html" class="btn-primary" style="display: inline-block; text-decoration: none; max-width: 400px; margin: 0 auto;">
-                        Launch AI Writing Detective →
-                    </a>
-                    <p style="margin-top: var(--space-2); font-size: var(--text-sm); color: rgba(255, 255, 255, 0.6);">
-                        Opens in same window • 4 rounds • Score tracking • Social sharing
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section style="background: var(--dark); color: var(--white);">
-        <div class="container">
-            <div class="interactive-container">
-                <div class="interactive-header">
-                    <h3>Force Multiplier Identifier</h3>
-                    <p>Interactive Experience #3 • Deployed December 8, 2025</p>
-                </div>
-                
-                <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: var(--space-6); font-size: var(--text-md);">
-                    Discover if your business activities are adding value or multiplying it. Most people add when they could multiply. Find your hidden leverage in 30 seconds with visual compound growth analysis.
-                </p>
-                
-                <div style="text-align: center;">
-                    <a href="/force-multiplier.html" class="btn-primary" style="display: inline-block; text-decoration: none; max-width: 400px; margin: 0 auto;">
-                        Launch Force Multiplier Identifier →
-                    </a>
-                    <p style="margin-top: var(--space-2); font-size: var(--text-sm); color: rgba(255, 255, 255, 0.6);">
-                        Opens in same window • 2 steps • Visual chart • Transformation guide
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section style="background: var(--dark); color: var(--white);">
-        <div class="container">
-            <div class="interactive-container">
-                <div class="interactive-header">
-                    <h3>Framework Calculator</h3>
-                    <p>Interactive Experience #4 • Deployed December 9, 2025</p>
-                </div>
-                
-                <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: var(--space-6); font-size: var(--text-md);">
-                    Calculate the ROI of systematic thinking. Input your weekly decisions and see exactly how much time and money frameworks can save you annually.
-                </p>
-                
-                <div style="text-align: center;">
-                    <a href="/framework-calculator.html" class="btn-primary" style="display: inline-block; text-decoration: none; max-width: 400px; margin: 0 auto;">
-                        Launch Framework Calculator →
-                    </a>
-                    <p style="margin-top: var(--space-2); font-size: var(--text-sm); color: rgba(255, 255, 255, 0.6);">
-                        Opens in same window • ROI calculator • Time savings analysis
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section style="background: var(--dark); color: var(--white);">
-        <div class="container">
-            <div class="interactive-container">
-                <div class="interactive-header">
-                    <h3>Constraint Canvas</h3>
-                    <p>Interactive Experience #5 • Deployed December 9, 2025</p>
-                </div>
-                
-                <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: var(--space-6); font-size: var(--text-md);">
-                    Map your business constraints visually. Answer 5 guided questions to reveal time, resource, capability, market, and stakeholder constraints, then discover transformation strategies for each.
-                </p>
-                
-                <div style="text-align: center;">
-                    <a href="/constraint-canvas.html" class="btn-primary" style="display: inline-block; text-decoration: none; max-width: 400px; margin: 0 auto;">
-                        Launch Constraint Canvas →
-                    </a>
-                    <p style="margin-top: var(--space-2); font-size: var(--text-sm); color: rgba(255, 255, 255, 0.6);">
-                        Opens in same window • 5 questions • Visual constraint map • Transformation strategies
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section style="background: var(--dark); color: var(--white);">
-        <div class="container">
-            <div class="interactive-container">
-                <div class="interactive-header">
-                    <h3>Pattern Recognition Game</h3>
-                    <p>Interactive Experience #6 • Deployed December 9, 2025</p>
-                </div>
-                
-                <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: var(--space-6); font-size: var(--text-md);">
-                    Test your ability to distinguish between problems that need frameworks versus one-time solutions. 8 business scenarios with instant feedback and explanations.
-                </p>
-                
-                <div style="text-align: center;">
-                    <a href="/pattern-recognition.html" class="btn-primary" style="display: inline-block; text-decoration: none; max-width: 400px; margin: 0 auto;">
-                        Launch Pattern Recognition Game →
-                    </a>
-                    <p style="margin-top: var(--space-2); font-size: var(--text-sm); color: rgba(255, 255, 255, 0.6);">
-                        Opens in same window • 8 scenarios • Score tracking • Answer explanations
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section>
-        <div class="container">
-            <h2>Coming Soon to the Lab</h2>
-            <p>This page will grow as we build more interactive learning experiences. Each one designed to teach framework thinking through direct engagement. <strong>These interactive tools will also be embedded throughout our blog posts</strong>, so you can learn and practice systematically while reading.</p>
+            <h2 style="color: var(--white); text-align: center;">More Interactive Tools</h2>
+            <p style="color: rgba(255, 255, 255, 0.8); text-align: center; margin-bottom: var(--space-4);">Each tool teaches framework thinking through direct engagement.</p>
             
-            <ul style="margin-left: var(--space-4); margin-top: var(--space-4);">
-                <li style="margin-bottom: var(--space-2);"><strong>Framework vs. Template Quiz:</strong> Learn the critical differences through real examples</li>
-                <li style="margin-bottom: var(--space-2);"><strong>Strategic Thinking Assessment:</strong> Evaluate your systematic thinking capability</li>
-            </ul>
+            <div class="featured-tools">
+                <div class="preview-card">
+                    <h4>AI Writing Detective</h4>
+                    <p>Test your ability to spot generic AI writing in 45 seconds. 4 rounds of interactive challenges with instant feedback.</p>
+                    <div class="preview-meta">Deployed December 8, 2025</div>
+                    <a href="/ai-writing-detective.html" class="preview-cta">Launch Tool →</a>
+                </div>
+                
+                <div class="preview-card">
+                    <h4>Force Multiplier Identifier</h4>
+                    <p>Discover if your activities add value or multiply it. Visual compound growth analysis reveals hidden leverage.</p>
+                    <div class="preview-meta">Deployed December 8, 2025</div>
+                    <a href="/force-multiplier.html" class="preview-cta">Launch Tool →</a>
+                </div>
+                
+                <div class="preview-card">
+                    <h4>Pattern Recognition Game</h4>
+                    <p>Distinguish framework-worthy problems from one-time solutions. 8 scenarios with instant feedback.</p>
+                    <div class="preview-meta">Deployed December 9, 2025</div>
+                    <a href="/pattern-recognition.html" class="preview-cta">Launch Tool →</a>
+                </div>
+                
+                <div class="preview-card">
+                    <h4>Constraint Canvas</h4>
+                    <p>Map your business constraints visually. 5 questions reveal time, resource, and capability limitations.</p>
+                    <div class="preview-meta">Deployed December 9, 2025</div>
+                    <a href="/constraint-canvas.html" class="preview-cta">Launch Tool →</a>
+                </div>
+            </div>
             
-            <p style="margin-top: var(--space-4);">Each new interactive experience will be announced on this page and integrated into relevant blog content. Bookmark it and check back regularly.</p>
+            <a href="/interactive-tools.html" class="view-all-link">View All Interactive Tools →</a>
         </div>
     </section>
     
