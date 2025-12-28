@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future-State AI Operating Model | What Is A Framework</title>
+    <meta name="description" content="Design the organization you want to become, not just the AI you want to implement. A systematic approach to building AI-native operating models over 12-24 months.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #E67E50; --dark: #1A2332; --white: #ffffff; --light-gray: #f8f9fa; --medium-gray: #6c757d; --border-gray: #e9ecef; --primary-light: rgba(230, 126, 80, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: var(--dark); background-color: var(--white); }
+        .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+        nav { background: var(--white); padding: 16px 48px; border-bottom: 1px solid var(--primary-light); position: fixed; top: 0; left: 0; right: 0; z-index: 100; box-shadow: 0 1px 3px rgba(26, 35, 50, 0.08); display: flex; justify-content: space-between; align-items: center; }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-icon { height: 68px; width: auto; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-links a { color: rgba(26, 35, 50, 0.6); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-cta { background: var(--primary); color: var(--white) !important; padding: 12px 24px; font-size: 0.875rem; font-weight: 600; border-radius: 8px; border: 2px solid var(--primary); }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; }
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, #243447 100%); color: var(--white); padding: calc(68px + 96px) 24px 96px; text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        .framework-badge { display: inline-block; background: var(--primary); color: var(--white); padding: 8px 24px; border-radius: 24px; font-size: 0.875rem; font-weight: 600; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .hero h1 { font-size: clamp(2.441rem, 6vw, 3.052rem); font-weight: 700; line-height: 1.25; margin-bottom: 16px; color: var(--white); }
+        .tagline { font-size: 1.25rem; max-width: 700px; margin: 0 auto; color: var(--white); opacity: 0.95; }
+        .main-content { padding: 96px 24px; }
+        .section { margin-bottom: 80px; }
+        .section h2 { font-size: clamp(1.953rem, 5vw, 2.441rem); font-weight: 700; color: var(--dark); margin-bottom: 24px; line-height: 1.25; }
+        .section p { font-size: 1.125rem; line-height: 1.75; color: rgba(26, 35, 50, 0.85); margin-bottom: 24px; }
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .principles-list { list-style: none; margin: 32px 0; }
+        .principles-list li { background-color: var(--primary-light); padding: 24px; margin-bottom: 16px; border-radius: 8px; border-left: 4px solid var(--primary); font-size: 1rem; line-height: 1.6; }
+        .principles-list li strong { color: var(--dark); display: block; margin-bottom: 8px; font-weight: 600; font-size: 1.125rem; }
+        .case-study { background-color: var(--light-gray); padding: 40px; border-radius: 12px; border: 1px solid var(--border-gray); }
+        .case-study h4 { font-size: 1.25rem; font-weight: 600; color: var(--dark); margin-bottom: 24px; }
+        .case-study .label { color: var(--primary); font-weight: 600; display: block; margin-bottom: 8px; }
+        .case-study .content-block { margin-bottom: 20px; }
+        .case-study .content-block:last-child { margin-bottom: 0; }
+        .timeframe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 32px; }
+        .timeframe-card { background-color: var(--white); padding: 32px; border-radius: 12px; border: 2px solid var(--border-gray); text-align: center; }
+        .timeframe-card .number { font-size: 2rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 8px; }
+        .timeframe-card h4 { font-size: 1.125rem; font-weight: 600; color: var(--dark); margin-bottom: 12px; }
+        .timeframe-card p { font-size: 0.875rem; color: var(--medium-gray); margin-bottom: 0; }
+        .cta-section { background: linear-gradient(135deg, var(--dark) 0%, #243447 100%); color: var(--white); padding: 96px 24px; text-align: center; }
+        .cta-section h2 { color: var(--white); margin-bottom: 20px; }
+        .cta-section p { color: rgba(255, 255, 255, 0.8); font-size: 1.125rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-button { display: inline-block; background-color: var(--primary); color: var(--white); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .cta-button:hover { background-color: transparent; color: var(--primary); transform: translateY(-2px); }
+        footer { padding: 56px 24px 32px; background: #0f151d; color: var(--white); text-align: center; }
+        .footer-logo { max-width: 300px; height: auto; margin: 0 auto 32px; display: block; }
+        footer p { opacity: 0.7; font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); }
+        footer a { color: var(--primary); text-decoration: none; transition: opacity 0.2s ease; }
+        footer a:hover { opacity: 0.8; }
+        @media (max-width: 768px) { nav { padding: 16px 24px; } .logo-icon { height: 52px; } .nav-links a:not(.nav-cta) { display: none; } .hero { padding: calc(68px + 64px) 24px 64px; min-height: auto; } .two-column { grid-template-columns: 1fr; gap: 40px; } .timeframe-grid { grid-template-columns: 1fr; } .case-study { padding: 24px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon"></a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/interactive-lab.html">Interactive Lab</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn Framework Building</a>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="framework-badge">Transformation Framework</div>
+        <h1>Future-State AI Operating Model</h1>
+        <p class="tagline">Design the organization you want to become, not just the AI you want to implement. Build an AI-native operating model that fundamentally reshapes how your organization creates value.</p>
+    </section>
+    <main class="main-content">
+        <div class="container">
+            <section class="section">
+                <div class="two-column">
+                    <div>
+                        <h2>The Challenge</h2>
+                        <p>Adding AI to existing processes yields incremental improvement. But your competitors aren't optimizing old models. They're building new ones. The question isn't how to make current operations more efficient. It's what operations become possible when AI is foundational rather than supplemental.</p>
+                        <p>Most organizations can't see beyond current constraints. They imagine AI-enhanced versions of today instead of fundamentally different futures. This limits transformation to automation of existing work rather than reimagination of possible work.</p>
+                    </div>
+                    <div>
+                        <h2>The Approach</h2>
+                        <p>Future-state design works backward from an AI-native vision. What would this organization look like if it were founded today with AI as a core capability? How would roles, processes, and value creation differ fundamentally?</p>
+                        <p>The framework creates a clear target state, then builds the transformation roadmap to get there. Not incremental improvement but deliberate evolution toward a fundamentally different operating model.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2>Core Principles</h2>
+                <ul class="principles-list">
+                    <li><strong>Vision Before Roadmap</strong>Define the destination before planning the journey. Transformational thinking requires clarity about where you're going, not just willingness to leave where you are. Vague aspirations create wandering initiatives.</li>
+                    <li><strong>Roles Not Tasks</strong>Don't automate tasks. Reimagine roles. AI-native operations change what humans do, not just how they do it. The future state defines new roles that leverage human judgment alongside AI capability.</li>
+                    <li><strong>Value Chain Redesign</strong>Transformational AI doesn't fit into existing value chains. It enables new ones. Examine how value creation itself changes when AI capabilities are foundational rather than supplemental.</li>
+                    <li><strong>Staged Transformation</strong>You can't leap to the future state. Design intermediate stages that are valuable independently while building toward the ultimate vision. Each stage must deliver value, not just enable the next stage.</li>
+                </ul>
+            </section>
+            <section class="section">
+                <h2>Application Example</h2>
+                <div class="case-study">
+                    <h4>Actuarial Consulting Firm: From Report Generators to Decision Partners</h4>
+                    <div class="content-block">
+                        <span class="label">Challenge:</span>
+                        A mid-sized actuarial firm recognized AI could automate 60% of their current work. Rather than wait for disruption, they chose to design their future before competitors defined it for them.
+                    </div>
+                    <div class="content-block">
+                        <span class="label">Application:</span>
+                        Future-state design revealed that AI-generated actuarial analysis was commodity. The valuable future role was strategic interpretation and decision partnership. 18-month transformation shifted from report generation to real-time decision support. Staff roles evolved from analysts to advisors. Client relationships deepened as the firm moved from periodic reporting to continuous strategic partnership.
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2>Implementation Scope</h2>
+                <div class="timeframe-grid">
+                    <div class="timeframe-card">
+                        <span class="number">8-12</span>
+                        <h4>Assessment Phase</h4>
+                        <p>Weeks to design future-state vision and transformation architecture</p>
+                    </div>
+                    <div class="timeframe-card">
+                        <span class="number">36-60</span>
+                        <h4>Implementation</h4>
+                        <p>Weeks for staged transformation with value delivery at each phase</p>
+                    </div>
+                    <div class="timeframe-card">
+                        <span class="number">24-48</span>
+                        <h4>Optimization</h4>
+                        <p>Weeks for capability maturation and continuous model evolution</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Design Your Future?</h2>
+            <p>Don't wait for disruption to define your transformation. Create a deliberate vision of AI-native operations and build the roadmap to get there.</p>
+            <a href="https://ragedesigner.com/contact" class="cta-button">Discuss Future-State Design</a>
+        </div>
+    </section>
+    <footer>
+        <img src="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png" alt="Strategic Thinking Academy" class="footer-logo">
+        <p>Learn more at <a href="https://ragedesigner.com">RageDesigner.com</a> | Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2025</p>
+    </footer>
+</body>
+</html>
