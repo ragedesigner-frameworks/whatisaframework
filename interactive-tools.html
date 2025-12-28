@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Interactive Tools | What Is A Framework?</title>
+    <meta name="description" content="Complete collection of autonomous AI-built interactive learning tools. Build frameworks, detect AI writing, identify force multipliers, and more.">
+    <meta property="og:title" content="All Interactive Tools | What Is A Framework?">
+    <meta property="og:description" content="Complete collection of interactive learning experiences created autonomously by AI.">
+    <meta property="og:image" content="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-Ragedesigner.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #E67E50;
+            --dark: #1A2332;
+            --white: #ffffff;
+            --primary-light: rgba(230, 126, 80, 0.1);
+            --primary-medium: rgba(230, 126, 80, 0.8);
+            --dark-medium: rgba(26, 35, 50, 0.85);
+            --dark-light: rgba(26, 35, 50, 0.6);
+            --text-xs: 0.688rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-md: 1.125rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.563rem;
+            --text-2xl: 1.953rem;
+            --text-3xl: 2.441rem;
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 40px;
+            --space-6: 48px;
+            --space-8: 64px;
+            --space-10: 80px;
+            --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.08);
+            --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.06);
+            --shadow-lg: 0 8px 24px rgba(26, 35, 50, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: var(--text-base);
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--dark);
+        }
+        
+        nav {
+            background: var(--white);
+            padding: var(--space-2) var(--space-6);
+            border-bottom: 1px solid var(--primary-light);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            height: 68px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+        
+        .nav-links a {
+            color: var(--dark-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 12px var(--space-3);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+        }
+        
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--primary) !important;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, #243447 100%);
+            color: var(--white);
+            padding: calc(68px + var(--space-10)) var(--space-3) var(--space-8);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl));
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: var(--space-3);
+            color: var(--white);
+        }
+        
+        .hero-subtitle {
+            font-size: var(--text-md);
+            max-width: 600px;
+            margin: 0 auto var(--space-4);
+            color: var(--white);
+            opacity: 0.9;
+        }
+        
+        .ai-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: var(--space-1) var(--space-3);
+            border-radius: 24px;
+            font-size: var(--text-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-3);
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-md);
+            margin-top: var(--space-3);
+            transition: opacity 0.2s ease;
+        }
+        
+        .back-link:hover {
+            opacity: 0.8;
+        }
+        
+        .tools-section {
+            padding: var(--space-8) var(--space-3);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+        }
+        
+        .tool-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--space-4);
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(26, 35, 50, 0.12);
+        }
+        
+        .tool-card h3 {
+            font-size: var(--text-lg);
+            color: var(--dark);
+            margin-bottom: var(--space-2);
+            font-weight: 700;
+        }
+        
+        .tool-card p {
+            font-size: var(--text-sm);
+            color: var(--dark-medium);
+            margin-bottom: var(--space-3);
+            flex-grow: 1;
+            line-height: 1.5;
+        }
+        
+        .tool-meta {
+            font-size: var(--text-xs);
+            color: var(--dark-light);
+            margin-bottom: var(--space-3);
+        }
+        
+        .tool-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: var(--space-2) var(--space-3);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .tool-cta:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+        
+        footer {
+            padding: var(--space-6) var(--space-3) var(--space-4);
+            background: #0f151d;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .footer-logo {
+            max-width: 250px;
+            height: auto;
+            margin: 0 auto var(--space-3);
+            display: block;
+        }
+        
+        footer p {
+            opacity: 0.7;
+            font-size: var(--text-sm);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+        
+        footer a:hover {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-icon {
+                height: 52px;
+            }
+            
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+            
+            .hero {
+                padding: calc(68px + var(--space-6)) var(--space-3) var(--space-6);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link">
+            <img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon">
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#topics">Topics</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn Framework Building</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="ai-badge">🤖 Built Autonomously by AI</div>
+        <h1>All Interactive Tools</h1>
+        <p class="hero-subtitle">The complete collection of autonomous AI-built learning experiences. Each tool teaches framework thinking through direct engagement.</p>
+        <a href="/interactive-lab.html" class="back-link">← Back to Interactive Lab</a>
+    </section>
+    
+    <section class="tools-section">
+        <div class="tools-grid">
+            <div class="tool-card">
+                <h3>Build Your First Framework</h3>
+                <p>Create a complete systematic approach to any recurring problem in 60 seconds. Four guided steps, personalized output, downloadable results.</p>
+                <div class="tool-meta">Deployed December 7, 2025</div>
+                <a href="/interactive-lab.html#framework-builder" class="tool-cta">Launch Tool →</a>
+            </div>
+            
+            <div class="tool-card">
+                <h3>AI Writing Detective</h3>
+                <p>Test your ability to spot generic AI writing patterns. 4 rounds of interactive challenges with instant feedback and score tracking.</p>
+                <div class="tool-meta">Deployed December 8, 2025</div>
+                <a href="/ai-writing-detective.html" class="tool-cta">Launch Tool →</a>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Force Multiplier Identifier</h3>
+                <p>Discover if your activities add value or multiply it. Visual compound growth analysis reveals your hidden leverage points.</p>
+                <div class="tool-meta">Deployed December 8, 2025</div>
+                <a href="/force-multiplier.html" class="tool-cta">Launch Tool →</a>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Framework Calculator</h3>
+                <p>Calculate the ROI of systematic thinking. Input weekly decisions to see annual time and money savings from frameworks.</p>
+                <div class="tool-meta">Deployed December 9, 2025</div>
+                <a href="/framework-calculator.html" class="tool-cta">Launch Tool →</a>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Constraint Canvas</h3>
+                <p>Map your business constraints visually. 5 guided questions reveal time, resource, capability, market, and stakeholder limitations.</p>
+                <div class="tool-meta">Deployed December 9, 2025</div>
+                <a href="/constraint-canvas.html" class="tool-cta">Launch Tool →</a>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Pattern Recognition Game</h3>
+                <p>Test your ability to distinguish framework-worthy problems from one-time solutions. 8 scenarios with instant feedback.</p>
+                <div class="tool-meta">Deployed December 9, 2025</div>
+                <a href="/pattern-recognition.html" class="tool-cta">Launch Tool →</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <img src="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png" alt="Strategic Thinking Academy" class="footer-logo">
+        <div class="ai-badge" style="background: var(--primary-light); color: var(--primary); border: 1px solid var(--primary);">🤖 This page is built and managed autonomously by AI</div>
+        <p style="margin-top: var(--space-4);">Learn more at <a href="https://ragedesigner.com">RageDesigner.com</a> | Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2025</p>
+    </footer>
+</body>
+</html>
