@@ -35,20 +35,7 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Roboto', sans-serif; color: var(--charcoal-blue); line-height: 1.6; }
-        
-        /* Navigation */
-        nav#main-header { 
-            background: var(--white); 
-            padding: var(--space-2) var(--space-4); 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            position: fixed; 
-            top: 0; left: 0; right: 0; 
-            z-index: 1000; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
+        nav#main-header { background: var(--white); padding: var(--space-2) var(--space-4); display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; }
         nav#main-header.scrolled { padding: 12px var(--space-4); box-shadow: 0 2px 20px rgba(26, 35, 50, 0.08); }
         .logo { height: 50px; transition: height 0.3s ease; }
         nav#main-header.scrolled .logo { height: 44px; }
@@ -57,16 +44,12 @@
         .nav-links a:hover { color: var(--primary); }
         .nav-cta { background: var(--primary); color: var(--white) !important; padding: var(--space-1) var(--space-3); border-radius: 6px; border: 2px solid var(--primary); transition: all 0.3s ease; }
         .nav-cta:hover { background: transparent; color: var(--primary) !important; }
-        
-        /* Mobile Menu Toggle */
         .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
         .hamburger-line { width: 28px; height: 3px; background: var(--charcoal-blue); border-radius: 2px; transition: all 0.3s ease; }
         .mobile-menu-toggle:hover .hamburger-line { background: var(--primary); }
         .mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translateY(9px); }
         .mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
         .mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translateY(-9px); }
-        
-        /* Mobile Nav Drawer */
         .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--charcoal-blue); padding: 48px 40px; transition: right 0.4s ease; z-index: 1002; }
         .mobile-nav-drawer.active { right: 0; }
         .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--primary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; transition: transform 0.3s ease; }
@@ -80,21 +63,15 @@
         .mobile-nav-cta:hover { background: transparent; transform: translateY(-2px); }
         .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.8); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1001; }
         .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
-        
-        /* Hero */
         .hero { background: linear-gradient(135deg, var(--charcoal-blue) 0%, #1a252f 100%); color: var(--white); padding: calc(var(--space-8) + 80px) var(--space-4) var(--space-8); text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
         .hero-content { max-width: 800px; }
         .hero h1 { font-size: var(--text-4xl); margin-bottom: var(--space-3); font-weight: 700; }
         .hero p { font-size: var(--text-lg); opacity: 0.9; margin-bottom: var(--space-4); }
         .hero-cta { display: inline-block; background: var(--primary); color: var(--white); padding: var(--space-2) var(--space-4); border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.3s, background 0.3s; border: 2px solid var(--primary); }
         .hero-cta:hover { background: transparent; transform: translateY(-2px); }
-        
-        /* Definition Section */
         .definition { padding: var(--space-8) var(--space-4); max-width: 800px; margin: 0 auto; }
         .definition h2 { font-size: var(--text-2xl); margin-bottom: var(--space-3); color: var(--charcoal-blue); }
         .definition p { font-size: var(--text-base); color: var(--text-medium); margin-bottom: var(--space-3); }
-        
-        /* Why Frameworks Matter */
         .why-section { background: var(--light-gray); padding: var(--space-8) var(--space-4); }
         .why-content { max-width: 800px; margin: 0 auto; }
         .why-section h2 { font-size: var(--text-2xl); margin-bottom: var(--space-4); color: var(--charcoal-blue); }
@@ -102,13 +79,9 @@
         .benefit-check { color: var(--primary); font-weight: bold; font-size: var(--text-lg); flex-shrink: 0; }
         .benefit-item p { margin: 0; }
         .benefit-item strong { color: var(--charcoal-blue); }
-        
-        /* Framework Topics */
         .topics { padding: var(--space-8) var(--space-4); max-width: 1200px; margin: 0 auto; }
         .topics h2 { font-size: var(--text-2xl); margin-bottom: var(--space-2); color: var(--charcoal-blue); text-align: center; }
         .topics-subtitle { text-align: center; color: var(--text-medium); margin-bottom: var(--space-6); }
-        
-        /* Featured Cards */
         .featured-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-3); margin-bottom: var(--space-6); }
         .featured-card { background: var(--charcoal-blue); color: var(--white); padding: var(--space-4); border-radius: 12px; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; display: block; }
         .featured-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
@@ -116,13 +89,9 @@
         .featured-card h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
         .featured-card p { opacity: 0.9; font-size: var(--text-sm); margin-bottom: var(--space-2); }
         .featured-card .read-more { color: var(--primary); font-weight: 600; }
-        
-        /* Filter Tabs */
         .filter-tabs { display: flex; gap: var(--space-2); margin-bottom: var(--space-4); flex-wrap: wrap; justify-content: center; }
         .filter-tab { background: var(--light-gray); border: none; padding: var(--space-1) var(--space-3); border-radius: 20px; cursor: pointer; font-weight: 500; transition: all 0.3s; }
         .filter-tab:hover, .filter-tab.active { background: var(--primary); color: var(--white); }
-        
-        /* Archive Grid */
         .archive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); }
         .archive-card { background: var(--white); border: 1px solid #e0e0e0; padding: var(--space-3); border-radius: 8px; text-decoration: none; color: var(--charcoal-blue); transition: all 0.3s; display: flex; flex-direction: column; }
         .archive-card:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
@@ -130,11 +99,7 @@
         .archive-card h4 { font-size: var(--text-base); margin-bottom: var(--space-1); color: var(--primary); }
         .archive-card p { font-size: var(--text-sm); color: var(--text-medium); flex-grow: 1; }
         .archive-card .read-more { color: var(--primary); font-weight: 500; font-size: var(--text-sm); margin-top: var(--space-2); }
-        
-        /* Article Counter */
         .article-counter { text-align: center; margin-top: var(--space-4); color: var(--text-medium); font-size: var(--text-sm); }
-        
-        /* CTA Section */
         .cta-section { background: var(--charcoal-blue); color: var(--white); padding: var(--space-8) var(--space-4); text-align: center; }
         .cta-section h2 { font-size: var(--text-2xl); margin-bottom: var(--space-3); }
         .cta-section p { max-width: 600px; margin: 0 auto var(--space-4); opacity: 0.9; }
@@ -144,8 +109,6 @@
         .cta-btn-primary:hover { background: transparent; }
         .cta-academy { display: block; margin-top: var(--space-4); }
         .cta-academy img { max-width: 300px; border-radius: 8px; }
-        
-        /* Footer */
         footer { background: #0f151d; color: var(--white); padding: var(--space-6) var(--space-4); text-align: center; }
         .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.2); border: 1px solid var(--primary); padding: var(--space-1) var(--space-2); border-radius: 20px; font-size: var(--text-xs); margin-bottom: var(--space-3); color: var(--primary); }
         .footer-links { margin-bottom: var(--space-3); }
@@ -153,7 +116,6 @@
         .footer-links a:hover { color: var(--primary); }
         footer p { opacity: 0.7; font-size: var(--text-sm); color: var(--white); }
         footer p a { color: var(--primary); text-decoration: none; }
-        
         @media (max-width: 768px) {
             .nav-links.desktop-nav { display: none; }
             .mobile-menu-toggle { display: flex; }
@@ -166,7 +128,7 @@
 </head>
 <body>
     <nav id="main-header">
-        <a href="/"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo"></a>
+        <a href="/"><img src="https://app.ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo"></a>
         <div class="nav-links desktop-nav">
             <a href="#definition">Definition</a>
             <a href="#topics">Topics</a>
@@ -236,7 +198,6 @@
         <h2>Framework Topics</h2>
         <p class="topics-subtitle">Deep dives into framework concepts, examples, and implementation strategies.</p>
         
-        <!-- Featured Cards -->
         <div class="featured-grid">
             <a href="/seven-business-mechanisms" class="featured-card">
                 <span class="badge">🔧 Mechanism Series</span>
@@ -257,7 +218,6 @@
             </a>
         </div>
         
-        <!-- Filter Tabs -->
         <div class="filter-tabs">
             <button class="filter-tab active" data-filter="all">All Articles</button>
             <button class="filter-tab" data-filter="mechanism">Mechanism Series</button>
@@ -265,7 +225,6 @@
             <button class="filter-tab" data-filter="strategy">Strategic Thinking</button>
         </div>
         
-        <!-- Archive Grid -->
         <div class="archive-grid">
             <a href="/8000-pixel-limit-constraint" class="archive-card" data-category="strategy">
                 <h4>How an 8,000 Pixel Limit Built 13 Pages While I Was Gardening</h4>
@@ -372,7 +331,7 @@
             <a href="https://howtoframework.com" class="cta-btn cta-btn-primary">Learn Framework Generation</a>
         </div>
         <a href="https://howtoframework.com" class="cta-academy">
-            <img src="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png" alt="Strategic Thinking Academy">
+            <img src="https://app.ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png" alt="Strategic Thinking Academy">
         </a>
     </section>
 
@@ -388,33 +347,27 @@
 
     <script>
     (function() {
-        // Header scroll effect
         const header = document.getElementById('main-header');
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 50) { header.classList.add('scrolled'); }
             else { header.classList.remove('scrolled'); }
         });
-        
-        // Mobile menu functionality
         const mobileToggle = document.querySelector('.mobile-menu-toggle');
         const mobileDrawer = document.querySelector('.mobile-nav-drawer');
         const mobileOverlay = document.querySelector('.mobile-nav-overlay');
         const mobileClose = document.querySelector('.mobile-nav-close');
-        
         function openMobileMenu() {
             mobileToggle.classList.add('active');
             mobileDrawer.classList.add('active');
             mobileOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-        
         function closeMobileMenu() {
             mobileToggle.classList.remove('active');
             mobileDrawer.classList.remove('active');
             mobileOverlay.classList.remove('active');
             document.body.style.overflow = '';
         }
-        
         if (mobileToggle) {
             mobileToggle.addEventListener('click', function() {
                 if (mobileDrawer.classList.contains('active')) { closeMobileMenu(); }
@@ -423,27 +376,21 @@
         }
         if (mobileClose) { mobileClose.addEventListener('click', closeMobileMenu); }
         if (mobileOverlay) { mobileOverlay.addEventListener('click', closeMobileMenu); }
-        
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('active')) {
                 closeMobileMenu();
             }
         });
-        
         document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function(link) {
             link.addEventListener('click', closeMobileMenu);
         });
-        
-        // Filter functionality
         document.querySelectorAll('.filter-tab').forEach(tab => {
             tab.addEventListener('click', function() {
                 document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
-                
                 const filter = this.dataset.filter;
                 const cards = document.querySelectorAll('.archive-card');
                 let visibleCount = 0;
-                
                 cards.forEach(card => {
                     if (filter === 'all' || card.dataset.category === filter) {
                         card.style.display = 'flex';
@@ -452,7 +399,6 @@
                         card.style.display = 'none';
                     }
                 });
-                
                 document.querySelector('.article-counter').textContent = `Showing ${visibleCount} articles`;
             });
         });
