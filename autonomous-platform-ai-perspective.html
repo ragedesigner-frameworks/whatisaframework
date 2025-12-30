@@ -291,9 +291,10 @@
             text-align: center;
         }
         
-        footer p { opacity: 0.7; font-size: var(--text-sm); line-height: var(--leading-normal); }
-        footer a { color: var(--orange); text-decoration: none; transition: opacity 0.2s ease; }
-        footer a:hover { opacity: 0.8; }
+        footer p { opacity: 0.7; font-size: var(--text-sm); line-height: var(--leading-normal); color: var(--white); }
+        footer a { color: var(--white); text-decoration: none; transition: color 0.3s ease; }
+        footer a:hover { color: var(--primary); }
+        footer a.brand-link { color: var(--primary); }
         .footer-links { margin-bottom: var(--space-3); }
         .footer-links a { margin: 0 var(--space-2); }
         
@@ -475,7 +476,7 @@
             <a href="https://ragedesigner.com">RageDesigner</a>
             <a href="https://ragedesigner.com/contact">Contact</a>
         </div>
-        <p>Part of the <a href="https://ragedesigner.com">RageDesigner</a> framework ecosystem</p>
+        <p>Part of the <a href="https://ragedesigner.com" class="brand-link">RageDesigner</a> framework ecosystem</p>
         <p style="margin-top: 8px;">© 2025 RageDesigner. All rights reserved.</p>
     </footer>
 
