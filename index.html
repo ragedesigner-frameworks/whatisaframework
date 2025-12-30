@@ -13,8 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --charcoal-blue: #2d3b4e;
-            --primary: #e67e50;
+            --charcoal-blue: #1A2332;
+            --primary: #E67E50;
             --white: #ffffff;
             --light-gray: #f5f5f5;
             --text-medium: #666666;
@@ -37,21 +37,57 @@
         body { font-family: 'Roboto', sans-serif; color: var(--charcoal-blue); line-height: 1.6; }
         
         /* Navigation */
-        nav { background: var(--white); padding: var(--space-2) var(--space-4); display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .logo { height: 50px; }
+        nav#main-header { 
+            background: var(--white); 
+            padding: var(--space-2) var(--space-4); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: fixed; 
+            top: 0; left: 0; right: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        nav#main-header.scrolled { padding: 12px var(--space-4); box-shadow: 0 2px 20px rgba(26, 35, 50, 0.08); }
+        .logo { height: 50px; transition: height 0.3s ease; }
+        nav#main-header.scrolled .logo { height: 44px; }
         .nav-links { display: flex; gap: var(--space-3); align-items: center; }
         .nav-links a { text-decoration: none; color: var(--charcoal-blue); font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: var(--primary); }
-        .nav-cta { background: var(--primary); color: var(--white) !important; padding: var(--space-1) var(--space-3); border-radius: 6px; }
-        .nav-cta:hover { background: #d06a3c; }
+        .nav-cta { background: var(--primary); color: var(--white) !important; padding: var(--space-1) var(--space-3); border-radius: 6px; border: 2px solid var(--primary); transition: all 0.3s ease; }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
+        .hamburger-line { width: 28px; height: 3px; background: var(--charcoal-blue); border-radius: 2px; transition: all 0.3s ease; }
+        .mobile-menu-toggle:hover .hamburger-line { background: var(--primary); }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translateY(9px); }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translateY(-9px); }
+        
+        /* Mobile Nav Drawer */
+        .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--charcoal-blue); padding: 48px 40px; transition: right 0.4s ease; z-index: 1002; }
+        .mobile-nav-drawer.active { right: 0; }
+        .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--primary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; transition: transform 0.3s ease; }
+        .mobile-nav-close:hover { transform: rotate(90deg); }
+        .mobile-nav { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
+        .mobile-nav-link { color: white; text-decoration: none; font-size: 18px; font-weight: 500; padding: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; position: relative; }
+        .mobile-nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--primary); transform: translateX(-4px); transition: transform 0.3s ease; }
+        .mobile-nav-link:hover { padding-left: 24px; color: var(--primary); }
+        .mobile-nav-link:hover::before { transform: translateX(0); }
+        .mobile-nav-cta { margin-top: 24px; background: var(--primary); color: white !important; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .mobile-nav-cta:hover { background: transparent; transform: translateY(-2px); }
+        .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.8); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1001; }
+        .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
         
         /* Hero */
         .hero { background: linear-gradient(135deg, var(--charcoal-blue) 0%, #1a252f 100%); color: var(--white); padding: calc(var(--space-8) + 80px) var(--space-4) var(--space-8); text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
         .hero-content { max-width: 800px; }
         .hero h1 { font-size: var(--text-4xl); margin-bottom: var(--space-3); font-weight: 700; }
         .hero p { font-size: var(--text-lg); opacity: 0.9; margin-bottom: var(--space-4); }
-        .hero-cta { display: inline-block; background: var(--primary); color: var(--white); padding: var(--space-2) var(--space-4); border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.3s, background 0.3s; }
-        .hero-cta:hover { background: #d06a3c; transform: translateY(-2px); }
+        .hero-cta { display: inline-block; background: var(--primary); color: var(--white); padding: var(--space-2) var(--space-4); border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.3s, background 0.3s; border: 2px solid var(--primary); }
+        .hero-cta:hover { background: transparent; transform: translateY(-2px); }
         
         /* Definition Section */
         .definition { padding: var(--space-8) var(--space-4); max-width: 800px; margin: 0 auto; }
@@ -104,25 +140,23 @@
         .cta-section p { max-width: 600px; margin: 0 auto var(--space-4); opacity: 0.9; }
         .cta-buttons { display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap; }
         .cta-btn { padding: var(--space-2) var(--space-4); border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
-        .cta-btn-primary { background: var(--primary); color: var(--white); }
-        .cta-btn-primary:hover { background: #d06a3c; }
+        .cta-btn-primary { background: var(--primary); color: var(--white); border: 2px solid var(--primary); }
+        .cta-btn-primary:hover { background: transparent; }
         .cta-academy { display: block; margin-top: var(--space-4); }
         .cta-academy img { max-width: 300px; border-radius: 8px; }
         
         /* Footer */
-        footer { background: #1a252f; color: var(--white); padding: var(--space-6) var(--space-4); text-align: center; }
-        .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.2); border: 1px solid var(--primary); padding: var(--space-1) var(--space-2); border-radius: 20px; font-size: var(--text-xs); margin-bottom: var(--space-3); }
+        footer { background: #0f151d; color: var(--white); padding: var(--space-6) var(--space-4); text-align: center; }
+        .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.2); border: 1px solid var(--primary); padding: var(--space-1) var(--space-2); border-radius: 20px; font-size: var(--text-xs); margin-bottom: var(--space-3); color: var(--primary); }
         .footer-links { margin-bottom: var(--space-3); }
-        .footer-links a { color: var(--primary); text-decoration: none; margin: 0 var(--space-2); }
-        .footer-links a:hover { text-decoration: underline; }
-        footer p { opacity: 0.7; font-size: var(--text-sm); }
-        
-        /* Mobile Menu */
-        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+        .footer-links a { color: var(--white); text-decoration: none; margin: 0 var(--space-2); transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--primary); }
+        footer p { opacity: 0.7; font-size: var(--text-sm); color: var(--white); }
+        footer p a { color: var(--primary); text-decoration: none; }
         
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu-btn { display: block; }
+            .nav-links.desktop-nav { display: none; }
+            .mobile-menu-toggle { display: flex; }
             .hero h1 { font-size: var(--text-3xl); }
             .hero { min-height: 80vh; }
             .featured-grid { grid-template-columns: 1fr; }
@@ -131,16 +165,31 @@
     </style>
 </head>
 <body>
-    <nav>
+    <nav id="main-header">
         <a href="/"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo"></a>
-        <div class="nav-links">
+        <div class="nav-links desktop-nav">
             <a href="#definition">Definition</a>
             <a href="#topics">Topics</a>
             <a href="/interactive-lab.html">Interactive Lab</a>
             <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
         </div>
-        <button class="mobile-menu-btn">☰</button>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </nav>
+
+    <div class="mobile-nav-drawer">
+        <button class="mobile-nav-close" aria-label="Close menu">×</button>
+        <nav class="mobile-nav">
+            <a href="#definition" class="mobile-nav-link">Definition</a>
+            <a href="#topics" class="mobile-nav-link">Topics</a>
+            <a href="/interactive-lab.html" class="mobile-nav-link">Interactive Lab</a>
+            <a href="https://howtoframework.com" class="mobile-nav-cta">Learn to Build Frameworks</a>
+        </nav>
+    </div>
+    <div class="mobile-nav-overlay"></div>
 
     <section class="hero">
         <div class="hero-content">
@@ -338,6 +387,53 @@
     </footer>
 
     <script>
+    (function() {
+        // Header scroll effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
+        });
+        
+        // Mobile menu functionality
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileDrawer = document.querySelector('.mobile-nav-drawer');
+        const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+        const mobileClose = document.querySelector('.mobile-nav-close');
+        
+        function openMobileMenu() {
+            mobileToggle.classList.add('active');
+            mobileDrawer.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileToggle.classList.remove('active');
+            mobileDrawer.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function() {
+                if (mobileDrawer.classList.contains('active')) { closeMobileMenu(); }
+                else { openMobileMenu(); }
+            });
+        }
+        if (mobileClose) { mobileClose.addEventListener('click', closeMobileMenu); }
+        if (mobileOverlay) { mobileOverlay.addEventListener('click', closeMobileMenu); }
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+        
+        document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function(link) {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
         // Filter functionality
         document.querySelectorAll('.filter-tab').forEach(tab => {
             tab.addEventListener('click', function() {
@@ -360,6 +456,7 @@
                 document.querySelector('.article-counter').textContent = `Showing ${visibleCount} articles`;
             });
         });
+    })();
     </script>
 </body>
 </html>
