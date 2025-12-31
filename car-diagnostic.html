@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>90-Second Car Diagnostic</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .app-header {
+      background: #1A2332;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .app-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .app-subtitle {
+      font-size: 1rem;
+      color: #e8e8e8;
+      font-weight: 400;
+    }
+
+    .app-main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .screen {
+      display: none;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .screen.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .start-content {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .start-title {
+      font-size: 1.75rem;
+      color: #1A2332;
+      margin-bottom: 1rem;
+    }
+
+    .start-description {
+      font-size: 1.125rem;
+      color: #5a5a5a;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .start-button {
+      background: #B7704F;
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .start-button:hover {
+      background: #a05f3f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(183, 112, 79, 0.3);
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: #e8e8e8;
+      border-radius: 3px;
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #325d74, #B7704F);
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+
+    .progress-text {
+      text-align: right;
+      font-size: 0.875rem;
+      color: #5a5a5a;
+      margin-bottom: 2rem;
+    }
+
+    .question-title {
+      font-size: 1.5rem;
+      color: #1A2332;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .options-grid {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .option-button {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: white;
+      border: 2px solid #325d74;
+      border-radius: 8px;
+      font-size: 1.125rem;
+      color: #1A2332;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: left;
+    }
+
+    .option-button:hover {
+      background: #325d74;
+      color: white;
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(50, 93, 116, 0.2);
+    }
+
+    .option-emoji {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .option-text {
+      flex: 1;
+      font-weight: 500;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      border: 2px solid #5a5a5a;
+      border-radius: 8px;
+      color: #5a5a5a;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .back-button:hover {
+      background: #5a5a5a;
+      color: white;
+    }
+
+    .result-header {
+      text-align: center;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid #e8e8e8;
+      margin-bottom: 2rem;
+    }
+
+    .urgency-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .result-title {
+      font-size: 1.75rem;
+      color: #1A2332;
+      margin: 1rem 0;
+      font-weight: 700;
+    }
+
+    .urgency-badge {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      letter-spacing: 0.5px;
+      color: white;
+    }
+
+    .result-description {
+      font-size: 1.125rem;
+      color: #2d2d2d;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .result-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      color: #1A2332;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .causes-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .cause-tag {
+      background: #f5f5f5;
+      color: #325d74;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+    }
+
+    .mechanic-script {
+      background: #f5f5f5;
+      border-left: 4px solid #B7704F;
+      padding: 1.5rem;
+      border-radius: 4px;
+    }
+
+    .script-label {
+      color: #B7704F;
+      font-weight: 700;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .script-text {
+      font-size: 1.0625rem;
+      color: #2d2d2d;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+
+    .price-box {
+      background: #f5f5f5;
+      padding: 1.25rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .total-box {
+      background: #325d74;
+    }
+
+    .total-box .price-label,
+    .total-box .price-value {
+      color: white;
+    }
+
+    .price-label {
+      font-size: 0.875rem;
+      color: #5a5a5a;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .price-value {
+      font-size: 1.25rem;
+      color: #1A2332;
+      font-weight: 700;
+    }
+
+    .red-flags-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .red-flag-item {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f5f5f5;
+      color: #2d2d2d;
+      line-height: 1.6;
+    }
+
+    .flag-bullet {
+      color: #B7704F;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .quick-tip {
+      background: #fff8f3;
+      border: 1px solid #B7704F;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      color: #2d2d2d;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .quick-tip strong {
+      color: #B7704F;
+    }
+
+    .reset-button {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: #325d74;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .reset-button:hover {
+      background: #264554;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(50, 93, 116, 0.3);
+    }
+
+    .app-footer {
+      text-align: center;
+      padding: 2rem;
+      color: #5a5a5a;
+      font-size: 0.875rem;
+    }
+
+    .footer-link {
+      color: #325d74;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-link:hover {
+      color: #B7704F;
+    }
+
+    .disclaimer {
+      margin-top: 0.5rem;
+      font-size: 0.8125rem;
+      color: #999;
+    }
+
+    @media (max-width: 640px) {
+      .app-title {
+        font-size: 1.5rem;
+      }
+
+      .app-subtitle {
+        font-size: 0.9375rem;
+      }
+
+      .question-title {
+        font-size: 1.25rem;
+      }
+
+      .option-button {
+        padding: 1rem;
+        font-size: 1rem;
+      }
+
+      .result-title {
+        font-size: 1.5rem;
+      }
+
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="app-title">90-Second Car Diagnostic</h1>
+    <p class="app-subtitle">Figure out what's wrong • Know what to say • Don't get ripped off</p>
+  </header>
+
+  <main class="app-main">
+    <div id="startScreen" class="screen active">
+      <div class="start-content">
+        <h2 class="start-title">Answer a few quick questions</h2>
+        <p class="start-description">
+          We'll help you understand what's probably wrong with your car, 
+          what to tell your mechanic, and what a fair price should be.
+        </p>
+        <button class="start-button" onclick="startDiagnosis()">Start Diagnosis</button>
+      </div>
+    </div>
+
+    <div id="questionScreen" class="screen">
+      <div class="progress-bar">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+      <div id="progressText" class="progress-text"></div>
+      <h2 id="questionTitle" class="question-title"></h2>
+      <div id="optionsGrid" class="options-grid"></div>
+      <button id="backButton" class="back-button" onclick="goBack()" style="display: none;">
+        ← Back
+      </button>
+    </div>
+
+    <div id="resultScreen" class="screen">
+      <div id="resultContent"></div>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>Built by <a href="https://ragedesigner.com" class="footer-link">RageDesigner</a></p>
+    <p class="disclaimer">For informational purposes only. Always consult a qualified mechanic.</p>
+  </footer>
+
+  <script>
+    // App state
+    let currentPath = 'start';
+    let answerHistory = [];
+    let currentDiagnosis = null;
+
+    // Diagnosis database
+    const diagnoses = {
+      nostart_dead: {
+        problem: "Dead Battery or Electrical",
+        likely: ["Dead battery", "Corroded battery terminals", "Failed alternator", "Main fuse blown"],
+        urgency: "moderate",
+        urgencyLabel: "FIX TO DRIVE",
+        urgencyColor: "#B7704F",
+        urgencyIcon: "⚠️",
+        description: "Your battery is either dead or not connected properly. This is usually a simple fix.",
+        tellMechanic: "The car is completely dead - no lights, no sounds, nothing when I turn the key.",
+        priceRange: { parts: "$100-300", labor: "$50-150", total: "$150-450" },
+        redFlags: [
+          "Battery replacement should be under $250 total for most cars",
+          "If they say alternator, ask them to test it in front of you",
+          "Terminal cleaning is a $20-50 fix, not $200"
+        ],
+        quickTip: "Try jump starting first. If it works but dies again, it's the alternator. If it won't jump, it's the battery or connections."
+      },
+      nostart_click: {
+        problem: "Starter or Weak Battery",
+        likely: ["Weak battery", "Failing starter motor", "Starter solenoid", "Poor ground connection"],
+        urgency: "moderate",
+        urgencyLabel: "FIX TO DRIVE",
+        urgencyColor: "#B7704F",
+        urgencyIcon: "⚠️",
+        description: "Clicking usually means there's some power but not enough to turn the engine. Often battery or starter.",
+        tellMechanic: "When I turn the key, I hear clicking but the engine won't turn over.",
+        priceRange: { parts: "$150-400", labor: "$100-250", total: "$250-650" },
+        redFlags: [
+          "Try a jump start first - if it works, probably battery",
+          "Starter replacement labor varies wildly by car - get quotes",
+          "Rebuilt starters are fine and much cheaper than new"
+        ],
+        quickTip: "Rapid clicking = weak battery. Single click = starter."
+      },
+      nostart_crank: {
+        problem: "Fuel or Ignition Issue",
+        likely: ["Fuel pump failure", "Clogged fuel filter", "Failed ignition coil", "Crankshaft position sensor"],
+        urgency: "moderate",
+        urgencyLabel: "NEEDS DIAGNOSIS",
+        urgencyColor: "#B7704F",
+        urgencyIcon: "⚠️",
+        description: "The engine is turning but not firing. Either fuel isn't getting there or there's no spark to ignite it.",
+        tellMechanic: "The engine cranks and turns over but won't actually start and run.",
+        priceRange: { parts: "$150-500", labor: "$100-300", total: "$250-800" },
+        redFlags: [
+          "Ask them to check fuel pressure before replacing pump",
+          "Sensors are often cheaper than quoted - get specific part prices",
+          "If multiple ignition coils 'need' replacing, ask why"
+        ]
+      },
+      nostart_stall: {
+        problem: "Idle Control or Sensor Issue",
+        likely: ["Idle air control valve", "Mass airflow sensor", "Vacuum leak", "Throttle body dirty"],
+        urgency: "moderate",
+        urgencyLabel: "NEEDS DIAGNOSIS",
+        urgencyColor: "#B7704F",
+        urgencyIcon: "⚠️",
+        description: "The engine starts but can't maintain idle on its own. Usually a sensor or air metering issue.",
+        tellMechanic: "It starts for a second then immediately dies. I have to keep giving it gas to keep it running.",
+        priceRange: { parts: "$100-350", labor: "$100-200", total: "$200-550" },
+        redFlags: [
+          "Throttle body cleaning is a $100-150 service, not a $400 part replacement",
+          "Ask for the diagnostic code before approving sensor replacement",
+          "Vacuum leaks are often cheap fixes - just a hose"
+        ]
+      },
+      light_battery: {
+        problem: "Charging System Failure",
+        likely: ["Alternator failing", "Serpentine belt broken/slipping", "Battery dying", "Voltage regulator"],
+        urgency: "high",
+        urgencyLabel: "DRIVE CAREFULLY - LIMITED TIME",
+        urgencyColor: "#dc2626",
+        urgencyIcon: "🚨",
+        description: "Your battery isn't being charged while driving. You're running on stored battery power only.",
+        tellMechanic: "The battery light came on while driving. How long has it been on and how far have I driven since?",
+        priceRange: { parts: "$150-400", labor: "$100-200", total: "$250-600" },
+        redFlags: [
+          "Belt replacement should be under $150",
+          "Ask them to test alternator output before replacing",
+          "Rebuilt alternators work fine and cost half as much"
+        ],
+        quickTip: "Turn off AC, radio, and unnecessary electronics to extend how far you can drive. Go directly to shop."
+      },
+      light_oil: {
+        problem: "Oil Pressure Problem",
+        likely: ["Low oil level", "Oil pressure sensor", "Oil pump failing", "Engine wear"],
+        urgency: "critical",
+        urgencyLabel: "STOP DRIVING",
+        urgencyColor: "#dc2626",
+        urgencyIcon: "🛑",
+        description: "This is serious. Low oil pressure can destroy your engine in minutes.",
+        tellMechanic: "My oil pressure light came on. I stopped immediately.",
+        priceRange: { parts: "$20-500", labor: "$50-300", total: "$70-800" },
+        redFlags: [
+          "Check oil level yourself first - might just be low",
+          "Oil pressure sensor failure is cheap fix ($100-200)",
+          "If they say oil pump, get second opinion - expensive job"
+        ],
+        quickTip: "STOP and check oil level immediately. If it's full and light stays on, DO NOT drive - get towed."
+      },
+      light_check_solid: {
+        problem: "Engine Management Issue",
+        likely: ["Oxygen sensor", "Catalytic converter efficiency", "EVAP system leak", "Misfire"],
+        urgency: "low",
+        urgencyLabel: "SAFE TO DRIVE - SCHEDULE SERVICE",
+        urgencyColor: "#325d74",
+        urgencyIcon: "✓",
+        description: "Something in the emissions or engine management system triggered a code. Usually not urgent.",
+        tellMechanic: "Check engine light came on and stayed solid. Car seems to run fine otherwise.",
+        priceRange: { parts: "$50-500", labor: "$100-300", total: "$150-800" },
+        redFlags: [
+          "Get the code read FREE at AutoZone/O'Reilly first",
+          "Ask for the specific code number (like P0420)",
+          "Don't approve catalytic converter without second opinion - expensive"
+        ],
+        quickTip: "Safe to drive to shop. Get code read for free at auto parts store first."
+      },
+      light_check_flash: {
+        problem: "Active Misfire - Engine Damage Risk",
+        likely: ["Severe misfire", "Ignition coil failure", "Spark plug failure", "Fuel injector failure"],
+        urgency: "critical",
+        urgencyLabel: "STOP DRIVING - DAMAGE OCCURRING",
+        urgencyColor: "#dc2626",
+        urgencyIcon: "🛑",
+        description: "A flashing check engine light means raw fuel is hitting your catalytic converter. This causes expensive damage.",
+        tellMechanic: "Check engine light is flashing, not solid. I stopped driving immediately.",
+        priceRange: { parts: "$100-400", labor: "$100-250", total: "$200-650" },
+        redFlags: [
+          "Spark plugs and coils are usually the fix - not that expensive",
+          "If they say catalytic converter damage, get second opinion",
+          "Misfires are often one cylinder - don't replace all coils unless tested"
+        ],
+        quickTip: "Pull over safely and turn off the car. Every minute of driving risks your catalytic converter ($1000+ part)."
+      },
+      brake_grind: {
+        problem: "Brake Pads Worn to Metal",
+        likely: ["Pads completely worn", "Rotor damage from metal contact", "Debris caught in brakes"],
+        urgency: "critical",
+        urgencyLabel: "STOP - DAMAGING YOUR CAR",
+        urgencyColor: "#dc2626",
+        urgencyIcon: "🛑",
+        description: "Grinding means metal is touching metal. Every stop is damaging your rotors and reducing stopping power.",
+        tellMechanic: "I hear grinding when I brake. Metal on metal sound.",
+        priceRange: { parts: "$200-500", labor: "$150-300", total: "$350-800" },
+        redFlags: [
+          "Rotors probably need replacement too at this point",
+          "Don't let them sell calipers unless they show damage",
+          "Both sides of an axle should be done together"
+        ],
+        quickTip: "Minimize driving. Every stop makes it worse and more expensive. Brakes still work but are compromised."
+      },
+      brake_soft: {
+        problem: "Brake Fluid or Hydraulic Issue",
+        likely: ["Low brake fluid", "Air in brake lines", "Master cylinder failing", "Brake line leak"],
+        urgency: "critical",
+        urgencyLabel: "DANGEROUS - LIMIT DRIVING",
+        urgencyColor: "#dc2626",
+        urgencyIcon: "🚨",
+        description: "A soft or sinking pedal means your hydraulic brake system isn't building proper pressure. Stopping power is reduced.",
+        tellMechanic: "Brake pedal feels soft/spongy and goes further to the floor than normal.",
+        priceRange: { parts: "$100-400", labor: "$100-300", total: "$200-700" },
+        redFlags: [
+          "Check fluid level first - might be low from worn pads",
+          "Bleeding brakes is cheap ($75-150)",
+          "Master cylinder is pricier - ask for diagnosis proof"
+        ],
+        quickTip: "Drive VERY carefully to nearest shop. Pump brakes if needed. Keep maximum distance from other cars."
+      },
+      driving_low_steering: {
+        problem: "Front End Components",
+        likely: ["CV joint wear", "Tie rod ends", "Ball joints", "Power steering issue"],
+        urgency: "moderate",
+        urgencyLabel: "FIX SOON",
+        urgencyColor: "#B7704F",
+        urgencyIcon: "⚠️",
+        description: "Components connecting your steering to your wheels are wearing. Common around 80-120k miles.",
+        tellMechanic: "I'm feeling play or looseness in the steering wheel at low speeds, especially when turning in parking lots.",
+        priceRange: { parts: "$100-400", labor: "$150-400", total: "$250-800" },
+        redFlags: [
+          "If they say you need all components at once, ask to see each one",
+          "Get a second opinion if quote exceeds $900",
+          "Ask them to show you the worn parts"
+        ]
+      }
+    };
+
+    // Question tree
+    const questions = {
+      start: {
+        title: "What's going on with your car?",
+        options: [
+          { label: "It won't start", key: 'A', emoji: '🔋', next: 'nostart_q1' },
+          { label: "Dashboard warning light is on", key: 'B', emoji: '⚠️', next: 'lights_q1' },
+          { label: "It's overheating or steaming", key: 'C', emoji: '🌡️', next: 'overheat_q1' },
+          { label: "Something feels or sounds wrong", key: 'D', emoji: '🔊', next: 'symptoms_q1' }
+        ]
+      },
+      nostart_q1: {
+        title: "What happens when you turn the key?",
+        options: [
+          { label: "Nothing at all - completely dead", key: 'nothing', emoji: '💀', result: 'nostart_dead' },
+          { label: "Clicking sound", key: 'clicking', emoji: '🔊', result: 'nostart_click' },
+          { label: "Cranks/turns over but won't start", key: 'cranks', emoji: '🔄', result: 'nostart_crank' },
+          { label: "Starts then immediately dies", key: 'stall', emoji: '💨', result: 'nostart_stall' }
+        ]
+      },
+      lights_q1: {
+        title: "Which light is on?",
+        options: [
+          { label: "Check engine light", key: 'check', emoji: '⚙️', next: 'lights_check_q2' },
+          { label: "Battery light", key: 'battery', emoji: '🔋', result: 'light_battery' },
+          { label: "Oil light", key: 'oil', emoji: '🛢️', result: 'light_oil' }
+        ]
+      },
+      lights_check_q2: {
+        title: "Is the check engine light solid or flashing?",
+        options: [
+          { label: "Solid/steady", key: 'solid', emoji: '●', result: 'light_check_solid' },
+          { label: "Flashing/blinking", key: 'flash', emoji: '⚡', result: 'light_check_flash' }
+        ]
+      },
+      overheat_q1: {
+        title: "What are you seeing?",
+        options: [
+          { label: "Temperature gauge is high/in red", key: 'gauge', emoji: '🌡️', result: 'light_oil' },
+          { label: "Steam coming from hood", key: 'steam', emoji: '💨', result: 'light_oil' }
+        ]
+      },
+      symptoms_q1: {
+        title: "When does it happen?",
+        options: [
+          { label: "When I'm driving", key: 'driving', emoji: '🚗', next: 'symptoms_driving' },
+          { label: "When I'm braking", key: 'braking', emoji: '🛑', next: 'brake_q1' }
+        ]
+      },
+      brake_q1: {
+        title: "What happens when you brake?",
+        options: [
+          { label: "Grinding noise", key: 'grind', emoji: '🔊', result: 'brake_grind' },
+          { label: "Pedal feels soft/goes to floor", key: 'soft', emoji: '⬇️', result: 'brake_soft' }
+        ]
+      },
+      symptoms_driving: {
+        title: "At what speeds?",
+        options: [
+          { label: "Low speeds (parking lots, turning)", key: 'low', emoji: '🐌', result: 'driving_low_steering' },
+          { label: "Highway speeds (50+ mph)", key: 'high', emoji: '🏎️', result: 'driving_low_steering' }
+        ]
+      }
+    };
+
+    function startDiagnosis() {
+      currentPath = 'start';
+      answerHistory = [];
+      showScreen('questionScreen');
+      renderQuestion();
+    }
+
+    function showScreen(screenId) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(screenId).classList.add('active');
+    }
+
+    function renderQuestion() {
+      const question = questions[currentPath];
+      if (!question) return;
+
+      document.getElementById('questionTitle').textContent = question.title;
+      
+      const progress = (answerHistory.length / 7) * 100;
+      document.getElementById('progressFill').style.width = progress + '%';
+      document.getElementById('progressText').textContent = `Question ${answerHistory.length + 1} of up to 7`;
+
+      const optionsGrid = document.getElementById('optionsGrid');
+      optionsGrid.innerHTML = '';
+
+      question.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'option-button';
+        btn.innerHTML = `
+          <span class="option-emoji">${opt.emoji}</span>
+          <span class="option-text">${opt.label}</span>
+        `;
+        btn.onclick = () => handleAnswer(opt);
+        optionsGrid.appendChild(btn);
+      });
+
+      document.getElementById('backButton').style.display = answerHistory.length > 0 ? 'inline-flex' : 'none';
+    }
+
+    function handleAnswer(option) {
+      answerHistory.push({ path: currentPath, answer: option });
+
+      if (option.result) {
+        currentDiagnosis = diagnoses[option.result];
+        showResult();
+      } else if (option.next) {
+        currentPath = option.next;
+        renderQuestion();
+      }
+    }
+
+    function goBack() {
+      if (answerHistory.length === 0) return;
+      answerHistory.pop();
+      
+      if (answerHistory.length === 0) {
+        currentPath = 'start';
+      } else {
+        currentPath = answerHistory[answerHistory.length - 1].path;
+      }
+      
+      renderQuestion();
+    }
+
+    function showResult() {
+      const d = currentDiagnosis;
+      
+      const html = `
+        <div class="result-header">
+          <div class="urgency-icon">${d.urgencyIcon}</div>
+          <h2 class="result-title">${d.problem}</h2>
+          <div class="urgency-badge" style="background-color: ${d.urgencyColor}">
+            ${d.urgencyLabel}
+          </div>
+        </div>
+
+        <p class="result-description">${d.description}</p>
+
+        <div class="result-section">
+          <h3 class="section-title">Most Likely Causes</h3>
+          <div class="causes-grid">
+            ${d.likely.map(cause => `<div class="cause-tag">${cause}</div>`).join('')}
+          </div>
+        </div>
+
+        <div class="result-section">
+          <h3 class="section-title">What to Tell Your Mechanic</h3>
+          <div class="mechanic-script">
+            <div class="script-label">SAY THIS:</div>
+            <p class="script-text">"${d.tellMechanic}"</p>
+          </div>
+        </div>
+
+        <div class="result-section">
+          <h3 class="section-title">Fair Price Range</h3>
+          <div class="price-grid">
+            <div class="price-box">
+              <div class="price-label">Parts</div>
+              <div class="price-value">${d.priceRange.parts}</div>
+            </div>
+            <div class="price-box">
+              <div class="price-label">Labor</div>
+              <div class="price-value">${d.priceRange.labor}</div>
+            </div>
+            <div class="price-box total-box">
+              <div class="price-label">Total</div>
+              <div class="price-value">${d.priceRange.total}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-section">
+          <h3 class="section-title">🚩 Red Flags to Watch For</h3>
+          <ul class="red-flags-list">
+            ${d.redFlags.map(flag => `
+              <li class="red-flag-item">
+                <span class="flag-bullet">→</span>
+                <span>${flag}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+
+        ${d.quickTip ? `
+          <div class="quick-tip">
+            <strong>Quick Tip:</strong> ${d.quickTip}
+          </div>
+        ` : ''}
+
+        <button class="reset-button" onclick="reset()">
+          ↻ Start New Diagnosis
+        </button>
+      `;
+
+      document.getElementById('resultContent').innerHTML = html;
+      showScreen('resultScreen');
+    }
+
+    function reset() {
+      currentPath = 'start';
+      answerHistory = [];
+      currentDiagnosis = null;
+      showScreen('startScreen');
+    }
+  </script>
+</body>
+</html>
