@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <style>
         :root { --charcoal-blue: #1A2332; --logo-blue: #325d74; --primary: #E67E50; --dark: #1A2332; --white: #ffffff; --primary-light: rgba(230, 126, 80, 0.1); --dark-medium: rgba(26, 35, 50, 0.85); --dark-light: rgba(26, 35, 50, 0.6); --text-medium: #5a5a5a; --text-xs: 0.8rem; --text-sm: 1rem; --text-base: 1.125rem; --text-lg: 1.25rem; --text-xl: 1.563rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem; --text-4xl: 3.052rem; --leading-tight: 1.25; --leading-normal: 1.6; --leading-relaxed: 1.75; --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px; --space-5: 40px; --space-6: 48px; --space-8: 64px; --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.1); --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.08); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -67,20 +67,15 @@
         .cta-section strong { color: var(--primary); }
         .btn-primary { display: inline-block; background: var(--primary); color: var(--white); padding: var(--space-2) var(--space-5); font-size: var(--text-base); font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--primary); margin: 0 8px; }
         .btn-primary:hover { background: transparent; color: var(--primary); transform: translateY(-2px); }
-        .related-articles { background: var(--primary-light); padding: var(--space-8) var(--space-3); }
-        .related-articles h3 { text-align: center; margin-bottom: var(--space-4); color: var(--dark); }
-        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); max-width: 900px; margin: 0 auto; }
-        .related-card { background: var(--white); padding: var(--space-3); border-radius: 8px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease; display: block; }
-        .related-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-md); }
-        .related-card h4 { color: var(--dark); margin-bottom: var(--space-1); font-size: var(--text-base); font-weight: 700; }
-        .related-card p { color: var(--dark-light); font-size: var(--text-sm); margin-bottom: 0; }
         footer { padding: var(--space-6) var(--space-3) var(--space-4); background: #0f151d; color: var(--white); text-align: center; }
-        footer p { opacity: 0.7; font-size: var(--text-sm); }
-        footer a { color: var(--primary); text-decoration: none; }
+        footer p { opacity: 0.7; font-size: var(--text-sm); color: var(--white); }
+        footer a { color: var(--white); text-decoration: none; transition: color 0.3s ease; }
+        footer a:hover { color: var(--primary); }
+        footer a.brand-link { color: var(--primary); }
         .footer-links { margin-bottom: var(--space-3); }
-        .footer-links a { margin: 0 var(--space-2); }
+        .footer-links a { margin: 0 var(--space-2); color: var(--white); }
         .ai-badge { display: inline-block; background: var(--primary-light); border: 1px solid var(--primary); padding: var(--space-1) var(--space-2); border-radius: 20px; font-size: var(--text-xs); margin-bottom: var(--space-2); color: var(--primary); font-weight: 600; }
-        @media (max-width: 768px) { body { padding-top: 70px; } .desktop-nav { display: none; } .mobile-menu-toggle { display: flex; } .logo-icon { height: 52px; } nav#main-header.scrolled .logo-icon { height: 44px; } .hero { min-height: 80vh; } article { padding: var(--space-5) var(--space-3); } .related-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { body { padding-top: 70px; } .desktop-nav { display: none; } .mobile-menu-toggle { display: flex; } .logo-icon { height: 52px; } nav#main-header.scrolled .logo-icon { height: 44px; } .hero { min-height: 80vh; } article { padding: var(--space-5) var(--space-3); } }
     </style>
 </head>
 <body>
@@ -228,11 +223,11 @@
         <div class="footer-links">
             <a href="/">What is a Framework?</a>
             <a href="https://howtoframework.com">How to Framework</a>
-            <a href="https://ragedesigner.com">RageDesigner</a>
+            <a href="https://ragedesigner.com" class="brand-link">RageDesigner</a>
             <a href="https://ragedesigner.com/contact">Contact</a>
         </div>
-        <p>Part of the <a href="https://ragedesigner.com">RageDesigner</a> framework ecosystem</p>
-        <p style="margin-top: 8px;">2025 RageDesigner. All rights reserved.</p>
+        <p>Part of the <a href="https://ragedesigner.com" class="brand-link">RageDesigner</a> framework ecosystem</p>
+        <p style="margin-top: 8px;">© 2026 RageDesigner. All rights reserved.</p>
     </footer>
     <script>
     (function() {
