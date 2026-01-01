@@ -446,9 +446,24 @@
             text-align: center;
         }
         
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+            color: var(--white);
+        }
+        
         footer a {
-            color: var(--primary);
+            color: var(--white);
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--primary);
+        }
+        
+        footer a.brand-link {
+            color: var(--primary);
         }
         
         @media (max-width: 768px) {
@@ -551,7 +566,7 @@
     
     <footer>
         <p><a href="/interactive-lab.html">← Back to Interactive Lab</a></p>
-        <p style="margin-top: 16px; opacity: 0.7;">Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2025</p>
+        <p style="margin-top: 16px;">Built by <a href="https://ragedesigner.com" class="brand-link">RageDesigner</a> | © 2026</p>
     </footer>
     
     <script>
