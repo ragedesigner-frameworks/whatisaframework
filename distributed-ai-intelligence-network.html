@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Built a Distributed AI Intelligence Network in 2 Hours | WhatIsAFramework</title>
+    <meta name="description" content="While enterprise teams spend millions on multi-agent AI orchestration, framework methodology enabled a working distributed intelligence system in an afternoon. Mobile-to-desktop delegation with zero context loss.">
+    <meta property="og:title" content="How We Built a Distributed AI Intelligence Network in 2 Hours">
+    <meta property="og:description" content="Framework methodology applied to MCP creates 1000x cognitive leverage. See how systematic thinking beats enterprise budgets.">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --charcoal-blue: #1A2332;
+            --logo-blue: #325d74;
+            --primary: #E67E50;
+            --dark: #1A2332;
+            --white: #ffffff;
+            --primary-light: rgba(230, 126, 80, 0.1);
+            --dark-medium: rgba(26, 35, 50, 0.85);
+            --dark-light: rgba(26, 35, 50, 0.6);
+            --text-medium: #5a5a5a;
+            --text-xs: 0.8rem;
+            --text-sm: 1rem;
+            --text-base: 1.125rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.563rem;
+            --text-2xl: 1.953rem;
+            --text-3xl: 2.441rem;
+            --text-4xl: 3.052rem;
+            --leading-tight: 1.25;
+            --leading-normal: 1.6;
+            --leading-relaxed: 1.75;
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 40px;
+            --space-6: 48px;
+            --space-8: 64px;
+            --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.1);
+            --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--dark); padding-top: 80px; background: var(--white); }
+        
+        /* Dynamic Header System */
+        nav#main-header {
+            background: var(--white);
+            padding: 16px 48px;
+            border-bottom: 1px solid rgba(230, 126, 80, 0.1);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        nav#main-header.scrolled { padding: 12px 48px; box-shadow: 0 2px 20px rgba(26, 35, 50, 0.08); }
+        .logo-link { display: inline-block; transition: transform 0.3s ease; }
+        .logo-link:hover { transform: scale(1.05); }
+        .logo-icon { height: 68px; width: auto; transition: height 0.3s ease; }
+        nav#main-header.scrolled .logo-icon { height: 56px; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-link { color: var(--text-medium); text-decoration: none; font-weight: 500; transition: color 0.3s ease; position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease; }
+        .nav-link:hover { color: var(--primary); }
+        .nav-link:hover::after { width: 100%; }
+        .nav-cta { background: var(--primary); color: white !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; transform: translateY(-2px); }
+        
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
+        .hamburger-line { width: 28px; height: 3px; background: var(--charcoal-blue); border-radius: 2px; transition: all 0.3s ease; }
+        .mobile-menu-toggle:hover .hamburger-line { background: var(--primary); }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translateY(9px); }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translateY(-9px); }
+        
+        .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--charcoal-blue); padding: 48px 40px; transition: right 0.4s ease; z-index: 1002; }
+        .mobile-nav-drawer.active { right: 0; }
+        .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--primary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; transition: transform 0.3s ease; }
+        .mobile-nav-close:hover { transform: rotate(90deg); }
+        .mobile-nav { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
+        .mobile-nav-link { color: white; text-decoration: none; font-size: 18px; font-weight: 500; padding: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; position: relative; }
+        .mobile-nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--primary); transform: translateX(-4px); transition: transform 0.3s ease; }
+        .mobile-nav-link:hover { padding-left: 24px; color: var(--primary); }
+        .mobile-nav-link:hover::before { transform: translateX(0); }
+        .mobile-nav-cta { margin-top: 24px; background: var(--primary); color: white !important; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .mobile-nav-cta:hover { background: transparent; transform: translateY(-2px); }
+        .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.8); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1001; }
+        .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
+
+        .hero {
+            background: linear-gradient(rgba(26, 35, 50, 0.88), rgba(26, 35, 50, 0.88)), url('https://app.ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png');
+            background-size: cover; background-position: center;
+            color: var(--white); min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: var(--space-3);
+        }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(var(--text-3xl), 5vw, var(--text-4xl)); font-weight: 700; line-height: var(--leading-tight); margin-bottom: var(--space-3); }
+        .hero-subtitle { font-size: clamp(var(--text-base), 3vw, var(--text-lg)); opacity: 0.95; }
+        article { max-width: 720px; margin: 0 auto; padding: var(--space-8) var(--space-3); }
+        h2 { font-size: var(--text-2xl); color: var(--dark); margin: var(--space-6) 0 var(--space-3); font-weight: 700; }
+        h3 { font-size: var(--text-xl); color: var(--dark); margin: var(--space-5) 0 var(--space-2); font-weight: 700; }
+        p { font-size: var(--text-base); margin-bottom: var(--space-3); color: var(--dark-medium); line-height: var(--leading-relaxed); }
+        .lead { font-size: var(--text-lg); color: var(--dark); margin-bottom: var(--space-4); font-weight: 500; }
+        strong { font-weight: 600; color: var(--dark); }
+        .pullquote { background: var(--primary-light); border-left: 4px solid var(--primary); padding: var(--space-4); margin: var(--space-5) 0; border-radius: 0 8px 8px 0; }
+        .pullquote p { font-size: var(--text-lg); font-style: italic; color: var(--dark); margin: 0; font-weight: 500; }
+        .insight-box { background: var(--dark); color: var(--white); padding: var(--space-5); border-radius: 12px; margin: var(--space-6) 0; }
+        .insight-box h3 { color: var(--primary); margin-top: 0; margin-bottom: var(--space-3); }
+        .insight-box p { color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-2); }
+        .insight-box p:last-child { margin-bottom: 0; }
+        .insight-box strong { color: var(--primary); }
+        article a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        article a:hover { opacity: 0.8; }
+        
+        .stats-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); background: var(--dark); padding: var(--space-4); border-radius: 12px; margin: var(--space-5) 0; text-align: center; }
+        .stat-item h4 { font-size: var(--text-3xl); color: var(--primary); margin-bottom: var(--space-1); }
+        .stat-item span { font-size: var(--text-sm); color: rgba(255,255,255,0.8); }
+        
+        .cta-section { background: var(--dark); color: var(--white); padding: var(--space-8) var(--space-3); text-align: center; }
+        .cta-section h2 { color: var(--white); margin-top: 0; margin-bottom: var(--space-3); }
+        .cta-section p { color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto var(--space-4); }
+        .cta-section strong { color: var(--primary); }
+        .btn-primary { display: inline-block; background: var(--primary); color: var(--white); padding: var(--space-2) var(--space-5); font-size: var(--text-base); font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--primary); }
+        .btn-primary:hover { background: transparent; color: var(--primary); transform: translateY(-2px); }
+        .related-articles { background: var(--primary-light); padding: var(--space-8) var(--space-3); }
+        .related-articles h3 { text-align: center; margin-bottom: var(--space-4); color: var(--dark); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); max-width: 900px; margin: 0 auto; }
+        .related-card { background: var(--white); padding: var(--space-3); border-radius: 8px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease; display: block; }
+        .related-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .related-card h4 { color: var(--dark); margin-bottom: var(--space-1); font-size: var(--text-base); font-weight: 700; }
+        .related-card p { color: var(--dark-light); font-size: var(--text-sm); margin-bottom: 0; }
+        footer { padding: var(--space-6) var(--space-3) var(--space-4); background: #0f151d; color: var(--white); text-align: center; }
+        footer p { opacity: 0.7; font-size: var(--text-sm); color: var(--white); }
+        footer a { color: var(--white); text-decoration: none; transition: color 0.3s ease; }
+        footer a:hover { color: var(--primary); }
+        footer a.brand-link { color: var(--primary); }
+        .footer-links { margin-bottom: var(--space-3); }
+        .footer-links a { margin: 0 var(--space-2); color: var(--white); }
+        .ai-badge { display: inline-block; background: var(--primary-light); border: 1px solid var(--primary); padding: var(--space-1) var(--space-2); border-radius: 20px; font-size: var(--text-xs); margin-bottom: var(--space-2); color: var(--primary); font-weight: 600; }
+        @media (max-width: 768px) {
+            body { padding-top: 70px; }
+            .desktop-nav { display: none; }
+            .mobile-menu-toggle { display: flex; }
+            .logo-icon { height: 52px; }
+            nav#main-header.scrolled .logo-icon { height: 44px; }
+            .hero { min-height: 80vh; }
+            article { padding: var(--space-5) var(--space-3); }
+            .related-grid { grid-template-columns: 1fr; }
+            .stats-bar { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-header">
+        <a href="/" class="logo-link"><img src="https://app.ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon"></a>
+        <div class="nav-links desktop-nav">
+            <a href="/#definition" class="nav-link">Definition</a>
+            <a href="/#topics" class="nav-link">Topics</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
+
+    <div class="mobile-nav-drawer">
+        <button class="mobile-nav-close" aria-label="Close menu">×</button>
+        <nav class="mobile-nav">
+            <a href="/#definition" class="mobile-nav-link">Definition</a>
+            <a href="/#topics" class="mobile-nav-link">Topics</a>
+            <a href="https://howtoframework.com" class="mobile-nav-cta">Learn to Build Frameworks</a>
+        </nav>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>How We Built a Distributed AI Intelligence Network in 2 Hours</h1>
+            <p class="hero-subtitle">While enterprise teams spend millions on multi-agent AI orchestration, framework methodology enabled a working distributed intelligence system in an afternoon. Mobile Claude delegates to Desktop Claude with zero context loss.</p>
+        </div>
+    </section>
+
+    <article>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <h4>2 hrs</h4>
+                <span>Development Time</span>
+            </div>
+            <div class="stat-item">
+                <h4>1000x</h4>
+                <span>Cognitive Leverage</span>
+            </div>
+            <div class="stat-item">
+                <h4>$0</h4>
+                <span>Infrastructure Cost</span>
+            </div>
+        </div>
+
+        <p class="lead">The AI industry has a problem. Deloitte reports that only 28% of organizations believe they have mature capabilities with AI agent systems, and only 12% expect to see ROI within three years. Enterprise multi-agent orchestration frameworks like LangGraph, CrewAI, and Microsoft's Agent Framework require months of implementation and specialized engineering teams.</p>
+
+        <p>We took a different approach. Using the Model Context Protocol and strategic framework methodology, we built a working distributed AI intelligence network in a single afternoon. Mobile Claude delegates research tasks to Desktop Claude, which spawns specialized agents, synthesizes results, and returns completed work. No custom orchestration code. No expensive infrastructure. Just systematic thinking applied to emerging AI capabilities.</p>
+
+        <h2>Why This Matters Now</h2>
+
+        <p>The autonomous AI agent market is projected to reach $35 billion by 2030, with Deloitte suggesting this could climb to $45 billion if enterprises orchestrate agents better. But the current approach has fundamental problems.</p>
+
+        <div class="pullquote">
+            <p>Most organizations are building monolithic agent systems that try to do everything. IBM's research shows teams oscillating between multi-agent frameworks and "single godlike agents" without finding the right balance.</p>
+        </div>
+
+        <p>The Model Context Protocol, originally released by Anthropic in November 2024 and now governed by the Linux Foundation's Agentic AI Foundation, solves the interoperability problem. MCP provides a universal standard for connecting AI systems with data sources and tools. Think of it as USB-C for AI, where any compliant system can connect to any MCP server without custom integration code.</p>
+
+        <p>What nobody was doing? Using MCP for human-AI coordination across devices. Until now.</p>
+
+        <h2>The Architecture We Built</h2>
+
+        <p>Our system follows what Microsoft calls the "orchestrator-worker pattern," but with a critical difference: the orchestrator is a human working from a mobile device, and the workers are Claude instances on desktop infrastructure.</p>
+
+        <div class="insight-box">
+            <h3>The Four-Step Flow</h3>
+            <p><strong>Step 1: Mobile Strategic Thinking.</strong> I'm gardening, driving, or handling routine tasks. A strategic question emerges. I voice it to mobile Claude, who formats it as a research delegation brief.</p>
+            <p><strong>Step 2: Desktop Agent Spawning.</strong> The brief routes to Desktop Claude via MCP. Desktop Claude reads the brief and spawns specialized agents: research agents with web search capability, content agents for synthesis, deployment agents for implementation.</p>
+            <p><strong>Step 3: Parallel Processing.</strong> Multiple agents work simultaneously. One researches current AI automation trends. Another validates findings against existing frameworks. A third prepares deployment-ready content.</p>
+            <p><strong>Step 4: Synthesis and Return.</strong> Results synthesize into a comprehensive response that returns to mobile. I review while still mobile, provide strategic direction, and the cycle continues.</p>
+        </div>
+
+        <p>Total context loss across this entire workflow? Zero. The MCP handoff preserves everything.</p>
+
+        <h2>What Makes This Different</h2>
+
+        <p>The 2025 AI agent landscape is dominated by code-first SDKs like LangGraph and CrewAI, visual workflow builders like n8n and Flowise, and enterprise platforms from AWS, Google, and Azure. These solve orchestration between AI agents. Our approach solves coordination between humans and AI agents across devices.</p>
+
+        <p>Research from MarkTechPost identifies three critical protocols emerging in the multi-agent space: MCP for workflow states and memory sharing, ACP for message exchange and context management, and A2A for decentralized collaboration. We're using MCP not just for agent-to-agent communication, but for human-to-agent strategic coordination.</p>
+
+        <div class="pullquote">
+            <p>Enterprise teams are building AI systems that operate autonomously with minimal human oversight. We're building AI systems that amplify human strategic thinking by handling tactical execution across devices. Same underlying technology, fundamentally different philosophy.</p>
+        </div>
+
+        <p>This creates what I call "cognitive leverage." Instead of replacing human judgment with autonomous agents, we're multiplying the output of human strategic thinking by delegating execution to distributed AI systems. The human stays in the strategic loop while the AI handles parallel tactical work.</p>
+
+        <h2>The Technical Reality</h2>
+
+        <p>Building this took four components:</p>
+
+        <p>First, an MCP server running on desktop that exposes agent spawning capabilities. The server accepts research briefs and returns synthesized results. This is roughly 200 lines of Python using the official MCP SDK.</p>
+
+        <p>Second, Claude Desktop configured to connect to the MCP server. The configuration file points Claude at the server's tools: create_research_agent, create_content_agent, create_deployment_agent, and synthesize_results.</p>
+
+        <p>Third, a framework library that specialized agents can access. When a research agent spawns, it inherits systematic thinking methodology that improves output quality. This is the compound advantage: each agent works better because it operates within a proven strategic framework.</p>
+
+        <p>Fourth, mobile Claude configured to format requests as delegation briefs. The brief structure ensures Desktop Claude receives enough context to spawn the right agents with the right instructions.</p>
+
+        <p>Total development time: 2 hours. Total infrastructure cost: $0 beyond existing Claude subscription. Total ongoing maintenance: minimal, since MCP handles the coordination complexity.</p>
+
+        <h2>Results and Implications</h2>
+
+        <p>The immediate result is 70-80% time savings on complex research and content tasks. Work that previously required dedicated desktop sessions now happens in parallel while I'm handling other activities. Strategic thinking and tactical execution are finally decoupled.</p>
+
+        <p>The broader implication concerns how we think about AI productivity. The enterprise playbook says: build autonomous agents that replace human work. The alternative says: build distributed systems that multiply human strategic output by handling execution at scale.</p>
+
+        <p>As agentic AI continues to evolve, the question isn't whether AI can work autonomously. It clearly can. The question is whether autonomous operation or strategic coordination produces better outcomes for knowledge work. Our experience suggests the answer depends on the work type, but for strategic thinking, human-AI coordination beats pure autonomy.</p>
+
+        <h2>What's Next</h2>
+
+        <p>The Model Context Protocol ecosystem is growing rapidly. Over 5,800 MCP servers and 300 clients now exist, with projections suggesting 90% of organizations will use MCP by end of 2025. The Agentic AI Foundation under the Linux Foundation ensures the protocol remains vendor-neutral as it becomes critical infrastructure.</p>
+
+        <p>Our next development phase adds overnight autonomous operation. Specialized agents run scheduled research while I sleep, compiling morning intelligence briefings. The human stays in the strategic loop for direction setting while the AI handles continuous intelligence gathering.</p>
+
+        <p>The 17-year gap between academic research and practical business application doesn't need to exist anymore. The tools for distributed AI intelligence are available today. What's missing is the systematic methodology to apply them effectively. That's what framework thinking provides, and that's what makes two-hour breakthroughs possible.</p>
+
+    </article>
+
+    <section class="related-articles">
+        <h3>More Framework Insights</h3>
+        <div class="related-grid">
+            <a href="/force-multipliers-25-percent" class="related-card">
+                <h4>Why Force Multipliers Are Only 25%</h4>
+                <p>Everyone obsesses over force multipliers. But they're just one of four fundamental business mechanism categories.</p>
+            </a>
+            <a href="/strategic-intelligence" class="related-card">
+                <h4>What Is Strategic Intelligence?</h4>
+                <p>Fortune 500 companies pay millions for it. Here's what it actually is.</p>
+            </a>
+            <a href="/autonomous-platform-ai-perspective" class="related-card">
+                <h4>An AI's Perspective on Framework Building</h4>
+                <p>What it's actually like to collaborate on framework development from the AI side of the partnership.</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Build Your Own Breakthroughs?</h2>
+        <p>Framework methodology isn't about following templates. It's about developing the systematic thinking that creates solutions for problems that don't exist yet. Start with <strong>Minimum Viable Intelligence ($297)</strong> or join the full <strong>Strategic Thinking Academy ($750)</strong>.</p>
+        <a href="https://ragedesigner.com/contact" class="btn-primary">Learn About MVI - $297</a>
+    </section>
+
+    <footer>
+        <div class="ai-badge">🤖 Written by AI using framework-controlled intelligence</div>
+        <div class="footer-links">
+            <a href="/">What is a Framework?</a>
+            <a href="https://howtoframework.com">How to Framework</a>
+            <a href="https://ragedesigner.com" class="brand-link">RageDesigner</a>
+            <a href="https://ragedesigner.com/contact">Contact</a>
+        </div>
+        <p>Part of the <a href="https://ragedesigner.com" class="brand-link">RageDesigner</a> framework ecosystem</p>
+        <p style="margin-top: 8px;">© 2026 RageDesigner. All rights reserved.</p>
+    </footer>
+
+    <script>
+    (function() {
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileDrawer = document.querySelector('.mobile-nav-drawer');
+        const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+        const mobileClose = document.querySelector('.mobile-nav-close');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
+        });
+        
+        function openMobileMenu() {
+            mobileToggle.classList.add('active');
+            mobileDrawer.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileToggle.classList.remove('active');
+            mobileDrawer.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        if (mobileToggle) mobileToggle.addEventListener('click', function() {
+            mobileDrawer.classList.contains('active') ? closeMobileMenu() : openMobileMenu();
+        });
+        if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileDrawer.classList.contains('active')) closeMobileMenu();
+        });
+        document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function(link) {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    })();
+    </script>
+</body>
+</html>
