@@ -42,10 +42,10 @@
         .mobile-nav-cta:hover { background: transparent; transform: translateY(-2px); }
         .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.8); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1001; }
         .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
-        .hero { background: linear-gradient(rgba(26, 35, 50, 0.88), rgba(26, 35, 50, 0.88)), url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png'); background-size: cover; background-position: center; color: var(--white); min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: var(--space-3); }
+        .hero { background: linear-gradient(rgba(26, 35, 50, 0.88), rgba(26, 35, 50, 0.88)), url('https://app.ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png'); background-size: cover; background-position: center; color: var(--white); min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: var(--space-3); }
         .hero-content { max-width: 800px; margin: 0 auto; }
         .hero h1 { font-size: clamp(var(--text-3xl), 5vw, var(--text-4xl)); font-weight: 700; line-height: var(--leading-tight); margin-bottom: var(--space-3); }
-        .hero-subtitle { font-size: clamp(var(--text-base), 3vw, var(--text-lg)); opacity: 0.95; }
+        .hero-subtitle { font-size: clamp(var(--text-base), 3vw, var(--text-lg)); color: var(--primary); }
         article { max-width: 720px; margin: 0 auto; padding: var(--space-8) var(--space-3); }
         h2 { font-size: var(--text-2xl); color: var(--dark); margin: var(--space-6) 0 var(--space-3); font-weight: 700; }
         h3 { font-size: var(--text-xl); color: var(--dark); margin: var(--space-5) 0 var(--space-2); font-weight: 700; }
@@ -59,8 +59,12 @@
         .insight-box p { color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-2); }
         .insight-box p:last-child { margin-bottom: 0; }
         .insight-box strong { color: var(--primary); }
+        .insight-box pre { background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 8px; overflow-x: auto; font-size: var(--text-sm); }
         article a { color: var(--primary); font-weight: 600; text-decoration: none; }
         article a:hover { opacity: 0.8; }
+        article ul { margin-bottom: var(--space-3); padding-left: var(--space-4); }
+        article li { margin-bottom: var(--space-1); color: var(--dark-medium); }
+        article li strong { color: var(--dark); }
         .cta-section { background: var(--dark); color: var(--white); padding: var(--space-8) var(--space-3); text-align: center; }
         .cta-section h2 { color: var(--white); margin-top: 0; margin-bottom: var(--space-3); }
         .cta-section p { color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto var(--space-4); }
@@ -85,7 +89,7 @@
 </head>
 <body>
     <nav id="main-header">
-        <a href="/" class="logo-link"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon"></a>
+        <a href="/" class="logo-link"><img src="https://app.ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon"></a>
         <div class="nav-links desktop-nav">
             <a href="/#definition" class="nav-link">Definition</a>
             <a href="/#topics" class="nav-link">Topics</a>
@@ -98,7 +102,7 @@
         </button>
     </nav>
     <div class="mobile-nav-drawer">
-        <button class="mobile-nav-close" aria-label="Close menu">x</button>
+        <button class="mobile-nav-close" aria-label="Close menu">×</button>
         <nav class="mobile-nav">
             <a href="/#definition" class="mobile-nav-link">Definition</a>
             <a href="/#topics" class="mobile-nav-link">Topics</a>
@@ -147,8 +151,8 @@
 <p>At the highest level, frameworks become architectural thinking systems. They're not just tools you use - they're intelligence structures that evolve and improve through application.</p>
 
 <div class="insight-box">
-<p><strong>Framework Structure Preview:</strong> Professional frameworks often follow systematic architecture patterns:</p>
-<pre style="background: #f5f5f5; padding: 20px; border-radius: 8px; overflow-x: auto;">
+<p><strong>Framework Structure Preview:</strong> Professional frameworks often follow systematic architecture patterns. <a href="https://ragedesigner.com/mvi" style="color: var(--primary);">See real examples in Minimum Viable Intelligence →</a></p>
+<pre>
 {
   "name": "Priority Decision Framework",
   "layers": {
@@ -213,9 +217,9 @@
 
     <section class="cta-section">
         <h2>Ready to Build Real AI Collaboration?</h2>
-        <p>Start with <strong>Minimum Viable Intelligence ($297)</strong> for the foundation, or go deeper with <strong>Strategic Thinking Academy (from $1,500)</strong> for custom one-on-one training.</p>
-        <a href="https://ragedesigner.com/contact" class="btn-primary">Get MVI - $297</a>
-        <a href="https://howtoframework.com" class="btn-primary">Custom Training - From $1,500</a>
+        <p>Start with <strong>Minimum Viable Intelligence ($297)</strong> for the foundation, or explore <strong>Strategic Thinking Academy</strong> for custom one-on-one training.</p>
+        <a href="https://ragedesigner.com/mvi" class="btn-primary">Get MVI - $297</a>
+        <a href="https://howtoframework.com" class="btn-primary">Academy - More Info</a>
     </section>
     <footer>
         <div class="ai-badge">Built by AI using framework-controlled intelligence</div>
@@ -223,10 +227,10 @@
             <a href="/">What is a Framework?</a>
             <a href="https://howtoframework.com">How to Framework</a>
             <a href="https://ragedesigner.com">RageDesigner</a>
-            <a href="https://ragedesigner.com/contact">Contact</a>
+            <a href="https://app.ragedesigner.com/contact/">Contact</a>
         </div>
         <p>Part of the <a href="https://ragedesigner.com">RageDesigner</a> framework ecosystem</p>
-        <p style="margin-top: 8px;">2025 RageDesigner. All rights reserved.</p>
+        <p style="margin-top: 8px;">© 2026 RageDesigner. All rights reserved.</p>
     </footer>
     <script>
     (function() {
