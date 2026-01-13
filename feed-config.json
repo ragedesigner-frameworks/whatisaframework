@@ -1,0 +1,10 @@
+{
+  "site_url": "https://whatisaframework.com",
+  "site_title": "What Is A Framework?",
+  "site_description": "Learn systematic thinking methodology and framework generation. Educational content about building decision-making frameworks that create consistent results.",
+  "author": "Mike Goetz",
+  "email": "mike@ragedesigner.com",
+  "blog_directory": "topics",
+  "post_pattern": "*.html",
+  "max_items": 50
+}
