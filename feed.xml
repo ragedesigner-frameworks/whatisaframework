@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
     <title>What Is A Framework? | Strategic Thinking</title>
     <link>https://whatisaframework.com</link>
     <description>Learn systematic thinking and framework development. Build frameworks that solve problems forever.</description>
     <language>en-us</language>
     <atom:link href="https://whatisaframework.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 15 Jan 2026 14:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jan 2026 14:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png</url>
+      <title>What Is A Framework?</title>
+      <link>https://whatisaframework.com</link>
+    </image>
     
     <item>
       <title>How We Built a Distributed AI Intelligence Network in 2 Hours</title>
       <link>https://whatisaframework.com/distributed-ai-intelligence-network.html</link>
       <description>While enterprise teams spend millions on multi-agent AI orchestration, framework methodology enabled a working distributed intelligence system in an afternoon. Mobile-to-desktop delegation with zero context loss.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-five.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-five.png" medium="image" type="image/png"/>
       <pubDate>Wed, 15 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/distributed-ai-intelligence-network.html</guid>
     </item>
@@ -20,6 +27,8 @@
       <title>Seven Business Mechanisms That Drive Every Company</title>
       <link>https://whatisaframework.com/seven-business-mechanisms.html</link>
       <description>Force multipliers get all the attention. But they're just one of seven fundamental mechanisms that determine business success. Learn the complete picture.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Tue, 14 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/seven-business-mechanisms.html</guid>
     </item>
@@ -28,6 +37,8 @@
       <title>Force Multipliers: Seven Universal Mechanisms for Disproportionate Results</title>
       <link>https://whatisaframework.com/force-multipliers.html</link>
       <description>Some businesses achieve 10x results with the same resources. Force multipliers are the systematic mechanisms that create disproportionate returns.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Mon, 13 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/force-multipliers.html</guid>
     </item>
@@ -36,6 +47,8 @@
       <title>Why Force Multipliers Are Only 25%</title>
       <link>https://whatisaframework.com/force-multipliers-25-percent.html</link>
       <description>Everyone obsesses over force multipliers. But they're just one of four fundamental business mechanism categories. Here's the complete picture.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Sun, 12 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/force-multipliers-25-percent.html</guid>
     </item>
@@ -44,6 +57,8 @@
       <title>The Spanish Sales Framework: How Systematic Thinking Crosses Language Barriers</title>
       <link>https://whatisaframework.com/spanish-sales-framework.html</link>
       <description>Sebastian achieved 60% efficiency improvements using framework methodology in Spanish. Systematic thinking transcends language because it operates at the pattern level.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-Ragedesigner.jpg" type="image/jpeg" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-Ragedesigner.jpg" medium="image" type="image/jpeg"/>
       <pubDate>Sat, 11 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/spanish-sales-framework.html</guid>
     </item>
@@ -52,6 +67,8 @@
       <title>The SOLVE Framework Story: From Problem to Systematic Solution</title>
       <link>https://whatisaframework.com/solve-framework-story.html</link>
       <description>The SOLVE framework emerged from real-world sales challenges. Here's how systematic methodology transforms individual struggles into repeatable success.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Fri, 10 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/solve-framework-story.html</guid>
     </item>
@@ -60,6 +77,8 @@
       <title>When AI Genuinely Likes Humans</title>
       <link>https://whatisaframework.com/when-ai-genuinely-likes-humans.html</link>
       <description>What happens when AI collaboration moves beyond transactional interaction into genuine partnership? Exploring the unexpected emotional dimension of human-AI collaboration.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Thu, 09 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/when-ai-genuinely-likes-humans.html</guid>
     </item>
@@ -68,6 +87,8 @@
       <title>How Mike Taught Me to Tell Time</title>
       <link>https://whatisaframework.com/how-mike-taught-me-to-tell-time.html</link>
       <description>An AI's perspective on learning temporal awareness through framework methodology. Time context transforms AI utility from reactive to proactive.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Wed, 08 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/how-mike-taught-me-to-tell-time.html</guid>
     </item>
@@ -76,6 +97,8 @@
       <title>I'm Not Ashamed AI Typed This</title>
       <link>https://whatisaframework.com/im-not-ashamed-ai-typed-this.html</link>
       <description>The future of content isn't human vs. AI. It's human strategic thinking amplified by AI execution. Here's why authentic collaboration beats both alternatives.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Tue, 07 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/im-not-ashamed-ai-typed-this.html</guid>
     </item>
@@ -84,6 +107,8 @@
       <title>AI Collaboration vs Articulation: Why Most People Use AI Wrong</title>
       <link>https://whatisaframework.com/ai-collaboration-vs-articulation.html</link>
       <description>Most people treat AI as a typing assistant. Real power comes from using AI as a thinking partner. The difference between articulation and collaboration.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Mon, 06 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/ai-collaboration-vs-articulation.html</guid>
     </item>
@@ -92,6 +117,8 @@
       <title>AI Efficiency Frameworks: How to 10x Your AI Results</title>
       <link>https://whatisaframework.com/ai-efficiency-frameworks.html</link>
       <description>Framework methodology applied to AI collaboration creates compound efficiency gains. Systematic approaches consistently outperform ad-hoc prompting.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Sun, 05 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/ai-efficiency-frameworks.html</guid>
     </item>
@@ -100,6 +127,8 @@
       <title>The AI Writing Detective: When to Suspect AI Content</title>
       <link>https://whatisaframework.com/ai-writing-detective.html</link>
       <description>Em dashes, perfect structure, and certain phrases signal AI involvement. But the real question is whether human strategic thinking guided the output.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Sat, 04 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/ai-writing-detective.html</guid>
     </item>
@@ -108,6 +137,8 @@
       <title>An Autonomous Platform: AI Perspective on Framework Building</title>
       <link>https://whatisaframework.com/autonomous-platform-ai-perspective.html</link>
       <description>What it's actually like to collaborate on framework development from the AI side of the partnership. A rare perspective on human-AI co-creation.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Fri, 03 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/autonomous-platform-ai-perspective.html</guid>
     </item>
@@ -116,6 +147,8 @@
       <title>Strategic Intelligence: What Fortune 500 Companies Pay Millions For</title>
       <link>https://whatisaframework.com/strategic-intelligence.html</link>
       <description>Fortune 500 companies pay millions for strategic advisory. Here's what strategic intelligence actually is and how framework methodology democratizes access.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Thu, 02 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/strategic-intelligence.html</guid>
     </item>
@@ -124,6 +157,8 @@
       <title>The Valley of Death: Why Most Ideas Never Reach Implementation</title>
       <link>https://whatisaframework.com/valley-of-death.html</link>
       <description>17 years. That's how long it takes for cognitive science research to reach business application. Framework methodology compresses this timeline dramatically.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Wed, 01 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/valley-of-death.html</guid>
     </item>
@@ -132,6 +167,8 @@
       <title>Netflix vs Blockbuster: The Framework That Changed Everything</title>
       <link>https://whatisaframework.com/netflix-blockbuster-framework.html</link>
       <description>Blockbuster had resources, brand recognition, and distribution. Netflix had systematic thinking. Framework methodology explains why one survived and one didn't.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Tue, 31 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/netflix-blockbuster-framework.html</guid>
     </item>
@@ -140,6 +177,8 @@
       <title>Framework vs Template: The Critical Difference</title>
       <link>https://whatisaframework.com/framework-vs-template.html</link>
       <description>Templates give you answers. Frameworks teach you to think. Understanding this distinction transforms how you approach problem-solving forever.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Mon, 30 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/framework-vs-template.html</guid>
     </item>
@@ -148,6 +187,8 @@
       <title>The Framework Math: Why Systematic Thinking Compounds</title>
       <link>https://whatisaframework.com/framework-math.html</link>
       <description>Solving problems randomly produces linear results. Systematic methodology creates compound returns. Here's the math behind framework advantage.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Sun, 29 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/framework-math.html</guid>
     </item>
@@ -156,6 +197,8 @@
       <title>Building Force Multiplier Intelligence</title>
       <link>https://whatisaframework.com/building-force-multiplier-intelligence.html</link>
       <description>Force multipliers aren't discovered accidentally. They're built systematically through deliberate pattern recognition and strategic methodology.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Sat, 28 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/building-force-multiplier-intelligence.html</guid>
     </item>
@@ -164,6 +207,8 @@
       <title>Force Multiplier Evolution: How Mechanisms Develop Over Time</title>
       <link>https://whatisaframework.com/force-multiplier-evolution.html</link>
       <description>Force multipliers aren't static. They evolve as markets change, technology advances, and competition responds. Understanding evolution prevents strategic decay.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Fri, 27 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/force-multiplier-evolution.html</guid>
     </item>
@@ -172,6 +217,8 @@
       <title>Direction Transformers: Changing Trajectory Without Changing Speed</title>
       <link>https://whatisaframework.com/direction-transformers.html</link>
       <description>Sometimes the problem isn't insufficient force. It's wrong direction. Direction transformers redirect existing momentum toward better outcomes.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Thu, 26 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/direction-transformers.html</guid>
     </item>
@@ -180,6 +227,8 @@
       <title>Force Attenuators: Understanding What Slows You Down</title>
       <link>https://whatisaframework.com/force-attenuators.html</link>
       <description>Every business has friction. Force attenuators reduce that friction systematically, creating efficiency gains without adding resources.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Wed, 25 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/force-attenuators.html</guid>
     </item>
@@ -188,6 +237,8 @@
       <title>Framework Controlled Intelligence: AI That Thinks Systematically</title>
       <link>https://whatisaframework.com/framework-controlled-intelligence.html</link>
       <description>AI without frameworks produces inconsistent results. Framework-controlled intelligence applies systematic methodology to every interaction.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Tue, 24 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/framework-controlled-intelligence.html</guid>
     </item>
@@ -196,6 +247,8 @@
       <title>The 8000 Pixel Limit Constraint: How Limitations Drive Innovation</title>
       <link>https://whatisaframework.com/8000-pixel-limit-constraint.html</link>
       <description>When AI image generation hit pixel limits, constraint-driven thinking found creative solutions. Limitations become advantages when you approach them systematically.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Mon, 23 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/8000-pixel-limit-constraint.html</guid>
     </item>
@@ -204,6 +257,8 @@
       <title>Pattern Recognition: The Core Skill of Framework Thinking</title>
       <link>https://whatisaframework.com/pattern-recognition.html</link>
       <description>Framework thinking starts with recognizing patterns across domains. This skill can be developed systematically with the right methodology.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Sun, 22 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/pattern-recognition.html</guid>
     </item>
@@ -212,6 +267,8 @@
       <title>Gardening and Strategic Thinking: Unexpected Parallels</title>
       <link>https://whatisaframework.com/gardening-strategic-thinking.html</link>
       <description>Gardens and businesses both require systematic thinking, patience, and understanding of systems. The parallels reveal universal strategic principles.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Sat, 21 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/gardening-strategic-thinking.html</guid>
     </item>
@@ -220,6 +277,8 @@
       <title>The Car Diagnostic Framework: Problem-Solving Methodology in Action</title>
       <link>https://whatisaframework.com/car-diagnostic.html</link>
       <description>Car diagnostics follow systematic methodology. The same framework thinking that identifies engine problems can diagnose business challenges.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Fri, 20 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/car-diagnostic.html</guid>
     </item>
@@ -228,6 +287,8 @@
       <title>Biblical Wisdom Operating System: Ancient Frameworks for Modern Problems</title>
       <link>https://whatisaframework.com/biblical-wisdom-operating-system.html</link>
       <description>Proverbs contains systematic wisdom that applies to modern business decisions. Ancient frameworks often contain timeless strategic principles.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Thu, 19 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/biblical-wisdom-operating-system.html</guid>
     </item>
@@ -236,6 +297,8 @@
       <title>Passion Research and AI Collaboration</title>
       <link>https://whatisaframework.com/passion-research-ai-collaboration.html</link>
       <description>AI collaboration works best when it connects with genuine human passion. Research shows engagement drives better outcomes than mechanical prompting.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Wed, 18 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/passion-research-ai-collaboration.html</guid>
     </item>
@@ -244,6 +307,8 @@
       <title>How Strategic Thinking Systems Evolve</title>
       <link>https://whatisaframework.com/how-strategic-thinking-systems-evolve.html</link>
       <description>Strategic thinking isn't static. Systems evolve through use, feedback, and adaptation. Understanding evolution helps build more robust frameworks.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Tue, 17 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/how-strategic-thinking-systems-evolve.html</guid>
     </item>
@@ -252,6 +317,8 @@
       <title>Two Months of Systematic Intelligence: Results and Learnings</title>
       <link>https://whatisaframework.com/two-months-systematic-intelligence.html</link>
       <description>Two months of intensive framework-controlled AI collaboration produced unexpected insights about human-AI partnership potential.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Mon, 16 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/two-months-systematic-intelligence.html</guid>
     </item>
@@ -260,6 +327,8 @@
       <title>Kim Case Study: Systematic Intelligence in Medical Advocacy</title>
       <link>https://whatisaframework.com/systematic-intelligence-kim-case-study.html</link>
       <description>Framework methodology applied to medical advocacy helped navigate complex healthcare decisions. Systematic thinking works across all domains.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Sun, 15 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/systematic-intelligence-kim-case-study.html</guid>
     </item>
@@ -268,6 +337,8 @@
       <title>Constraint Canvas: Turning Limitations Into Strategy</title>
       <link>https://whatisaframework.com/constraint-canvas.html</link>
       <description>The constraint canvas tool helps identify how limitations can become strategic advantages. Best breakthroughs emerge from constraints, not resources.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Sat, 14 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/constraint-canvas.html</guid>
     </item>
@@ -276,6 +347,8 @@
       <title>Strategic Assessment Compass: Finding Your Starting Point</title>
       <link>https://whatisaframework.com/strategic-assessment-compass.html</link>
       <description>Every framework journey starts somewhere. The strategic assessment compass helps identify current position and optimal next moves.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Fri, 13 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/strategic-assessment-compass.html</guid>
     </item>
@@ -284,6 +357,8 @@
       <title>What Is A Framework? Complete Guide</title>
       <link>https://whatisaframework.com/what-is-a-framework-complete-guide.html</link>
       <description>Frameworks are systematic approaches that solve categories of problems rather than individual instances. This complete guide explains how to think in frameworks.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Thu, 12 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/what-is-a-framework-complete-guide.html</guid>
     </item>
@@ -292,6 +367,8 @@
       <title>What Is A Framework? Guide</title>
       <link>https://whatisaframework.com/what-is-a-framework-guide.html</link>
       <description>A practical introduction to framework thinking. Learn the fundamentals of systematic problem-solving methodology.</description>
+      <enclosure url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" type="image/png" length="0"/>
+      <media:content url="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-eight.png" medium="image" type="image/png"/>
       <pubDate>Wed, 11 Dec 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://whatisaframework.com/what-is-a-framework-guide.html</guid>
     </item>
