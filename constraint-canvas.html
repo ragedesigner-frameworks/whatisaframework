@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="google611c3a184dd473df" />
     <title>Constraint Canvas | What Is A Framework</title>
     <meta name="description" content="Map your business constraints visually and discover how to transform limitations into strategic advantages.">
+    <meta property="og:title" content="Constraint Canvas | What Is A Framework">
+    <meta property="og:description" content="Map your business constraints visually and discover how to transform limitations into strategic advantages.">
+    <meta property="og:image" content="https://app.ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-Ragedesigner.jpg">
+    <meta property="og:type" content="website">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS7JGCYKT1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GS7JGCYKT1');
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -233,7 +246,6 @@
             <div class="progress-fill" id="progress"></div>
         </div>
 
-        <!-- Question 1: Time -->
         <div class="question-card" id="q1">
             <div class="category-label">Time Constraints</div>
             <div class="question-text">What deadline or time pressure is creating the most stress in your business right now?</div>
@@ -243,7 +255,6 @@
             </div>
         </div>
 
-        <!-- Question 2: Resource -->
         <div class="question-card hidden" id="q2">
             <div class="category-label">Resource Constraints</div>
             <div class="question-text">What resource limitation (money, people, tools) is holding back your growth?</div>
@@ -254,7 +265,6 @@
             </div>
         </div>
 
-        <!-- Question 3: Capability -->
         <div class="question-card hidden" id="q3">
             <div class="category-label">Capability Constraints</div>
             <div class="question-text">What skill or capability gap is preventing you from executing your vision?</div>
@@ -265,7 +275,6 @@
             </div>
         </div>
 
-        <!-- Question 4: Market -->
         <div class="question-card hidden" id="q4">
             <div class="category-label">Market Constraints</div>
             <div class="question-text">What market condition or competitive pressure is forcing you to adapt?</div>
@@ -276,7 +285,6 @@
             </div>
         </div>
 
-        <!-- Question 5: Stakeholder -->
         <div class="question-card hidden" id="q5">
             <div class="category-label">Stakeholder Constraints</div>
             <div class="question-text">What expectation from investors, customers, or partners is creating pressure?</div>
@@ -287,16 +295,13 @@
             </div>
         </div>
 
-        <!-- Results Canvas -->
         <div class="canvas-section hidden" id="canvas-section">
             <div class="canvas-header">
                 <h2>Your Constraint Map</h2>
                 <p style="color: var(--dark-medium);">Click any constraint to see transformation strategies</p>
             </div>
 
-            <div class="constraint-grid" id="constraint-grid">
-                <!-- Nodes will be inserted here -->
-            </div>
+            <div class="constraint-grid" id="constraint-grid"></div>
 
             <div class="transformation-panel hidden" id="transformation-panel">
                 <h3 id="transform-title">Transformation Strategy</h3>
@@ -386,15 +391,12 @@
                 return;
             }
 
-            // Hide all questions
             for (let i = 1; i <= 5; i++) {
                 document.getElementById(`q${i}`).classList.add('hidden');
             }
 
-            // Update progress to 100%
             document.getElementById('progress').style.width = '100%';
 
-            // Get all constraints
             const constraints = {
                 time: document.getElementById('time-constraint').value.trim(),
                 resource: document.getElementById('resource-constraint').value.trim(),
@@ -403,7 +405,6 @@
                 stakeholder: stakeholder
             };
 
-            // Build constraint nodes
             const grid = document.getElementById('constraint-grid');
             grid.innerHTML = '';
 
@@ -428,7 +429,6 @@
                 }
             });
 
-            // Show canvas
             document.getElementById('canvas-section').classList.remove('hidden');
         }
 
@@ -449,19 +449,16 @@
             currentQuestion = 1;
             updateProgress();
             
-            // Clear all textareas
             document.querySelectorAll('textarea').forEach(ta => {
                 ta.value = '';
                 ta.style.borderColor = 'rgba(26,35,50,0.2)';
             });
 
-            // Hide canvas, show first question
             document.getElementById('canvas-section').classList.add('hidden');
             document.getElementById('transformation-panel').classList.add('hidden');
             document.getElementById('q1').classList.remove('hidden');
         }
 
-        // Initialize
         updateProgress();
     </script>
 </body>
