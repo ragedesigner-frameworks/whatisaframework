@@ -21,6 +21,15 @@
             box-sizing: border-box;
         }
         
+        /* Respect user's motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
         :root {
             --bg: #0f1117;
             --card-bg: #1a1d27;
@@ -50,6 +59,18 @@
         .header {
             margin-bottom: 48px;
             text-align: center;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .category-tag {
@@ -61,6 +82,12 @@
             text-transform: uppercase;
             margin-bottom: 12px;
             display: inline-block;
+            animation: fadeIn 0.6s ease-out 0.1s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         h1 {
@@ -68,12 +95,14 @@
             font-weight: 700;
             margin-bottom: 12px;
             line-height: 1.2;
+            animation: fadeIn 0.6s ease-out 0.2s both;
         }
         
         .subtitle {
             color: var(--text-secondary);
             font-size: 16px;
             margin-bottom: 24px;
+            animation: fadeIn 0.6s ease-out 0.3s both;
         }
         
         .updated-date {
@@ -82,6 +111,7 @@
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            animation: fadeIn 0.6s ease-out 0.4s both;
         }
         
         .comparison-cards {
@@ -96,18 +126,45 @@
             border-radius: 16px;
             padding: 24px;
             background-color: var(--card-bg);
-            transition: border-color 0.3s, box-shadow 0.3s;
+            transition: border-color 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: cardSlideUp 0.6s ease-out both;
+            will-change: transform, box-shadow, border-color;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        @keyframes cardSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .product-card:hover {
             border-color: var(--accent);
-            box-shadow: 0 0 20px var(--accent-glow);
+            box-shadow: 0 8px 32px var(--accent-glow);
+            transform: translateY(-6px);
         }
         
         .product-card.winner {
             background: var(--winner-bg);
             border: 2px solid var(--winner-border);
             position: relative;
+        }
+        
+        .product-card.winner:hover {
+            box-shadow: 0 12px 48px rgba(230, 126, 80, 0.25);
         }
         
         .winner-badge {
@@ -123,6 +180,18 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            animation: badgePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+        }
+        
+        @keyframes badgePop {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
         
         .rank {
@@ -139,6 +208,18 @@
             color: var(--accent);
             min-width: 40px;
             line-height: 1;
+            animation: countUp 0.6s ease-out 0.2s both;
+        }
+        
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .product-info {
@@ -150,6 +231,11 @@
             font-weight: 600;
             margin-bottom: 8px;
             line-height: 1.3;
+            transition: color 0.3s ease;
+        }
+        
+        .product-card:hover .product-name {
+            color: var(--accent);
         }
         
         .product-rating {
@@ -159,10 +245,21 @@
             margin-bottom: 12px;
             font-size: 14px;
             color: var(--text-secondary);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover .product-rating {
+            transform: translateX(4px);
         }
         
         .stars {
             color: #ffc107;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover .stars {
+            transform: scale(1.1);
         }
         
         .specs {
@@ -177,6 +274,29 @@
         .spec-item {
             border-left: 2px solid var(--card-border);
             padding-left: 12px;
+            transition: all 0.3s ease;
+            animation: fadeInLeft 0.5s ease-out backwards;
+        }
+        
+        .spec-item:nth-child(1) { animation-delay: 0.3s; }
+        .spec-item:nth-child(2) { animation-delay: 0.35s; }
+        .spec-item:nth-child(3) { animation-delay: 0.4s; }
+        .spec-item:nth-child(4) { animation-delay: 0.45s; }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .product-card:hover .spec-item {
+            border-left-color: var(--accent);
+            padding-left: 16px;
         }
         
         .spec-label {
@@ -185,11 +305,21 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+        
+        .product-card:hover .spec-label {
+            color: var(--accent);
         }
         
         .spec-value {
             color: var(--text-primary);
             font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .product-card:hover .spec-value {
+            color: var(--accent);
         }
         
         .differentiator {
@@ -200,6 +330,25 @@
             font-size: 14px;
             color: var(--text-secondary);
             border-radius: 4px;
+            transition: all 0.3s ease;
+            animation: slideInLeft 0.6s ease-out 0.2s both;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .product-card:hover .differentiator {
+            background-color: rgba(230, 126, 80, 0.1);
+            border-left-width: 4px;
+            padding-left: 16px;
         }
         
         .price-section {
@@ -209,6 +358,8 @@
             margin-bottom: 16px;
             border-top: 1px solid var(--card-border);
             padding-top: 16px;
+            gap: 16px;
+            animation: fadeIn 0.6s ease-out 0.3s both;
         }
         
         .price {
@@ -216,6 +367,11 @@
             font-size: 22px;
             font-weight: 700;
             color: var(--accent);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .product-card:hover .price {
+            transform: scale(1.08);
         }
         
         .price-label {
@@ -237,14 +393,34 @@
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            transition: opacity 0.3s, transform 0.2s;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            will-change: transform, box-shadow;
+        }
+        
+        .buy-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.4s ease;
+            z-index: -1;
         }
         
         .buy-button:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(230, 126, 80, 0.4);
+        }
+        
+        .buy-button:active {
+            transform: translateY(-1px);
         }
         
         .quick-compare {
@@ -254,6 +430,13 @@
             padding: 24px;
             margin-bottom: 40px;
             overflow-x: auto;
+            animation: cardSlideUp 0.6s ease-out 0.5s both;
+            transition: box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        
+        .quick-compare:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
         
         .compare-table {
@@ -271,12 +454,31 @@
             text-transform: uppercase;
             font-size: 11px;
             letter-spacing: 0.5px;
+            transition: color 0.3s ease;
         }
         
         .compare-table td {
             padding: 12px 0;
             border-bottom: 1px solid var(--card-border);
             color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .compare-table tr {
+            transition: background-color 0.3s ease;
+        }
+        
+        .compare-table tbody tr:hover {
+            background-color: rgba(230, 126, 80, 0.05);
+        }
+        
+        .compare-table tbody tr:hover td {
+            color: var(--text-primary);
+        }
+        
+        .compare-table tbody tr:hover td:first-child {
+            color: var(--accent);
+            font-weight: 600;
         }
         
         .compare-table tr:last-child td {
@@ -290,6 +492,7 @@
             font-size: 12px;
             color: var(--text-muted);
             line-height: 1.8;
+            animation: fadeIn 0.6s ease-out 0.6s both;
         }
         
         .disclosure {
@@ -299,6 +502,13 @@
             border-radius: 4px;
             margin-bottom: 16px;
             font-size: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .disclosure:hover {
+            background-color: rgba(230, 126, 80, 0.1);
+            border-left-width: 4px;
+            padding-left: 20px;
         }
         
         .source-tag {
@@ -311,6 +521,12 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-top: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .source-tag:hover {
+            background-color: var(--accent);
+            color: #000;
         }
         
         @media (max-width: 600px) {
@@ -336,6 +552,10 @@
             
             .compare-table {
                 font-size: 12px;
+            }
+            
+            .product-card:hover {
+                transform: translateY(-3px);
             }
         }
     </style>
