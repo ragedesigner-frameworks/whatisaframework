@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Dash Cams 2026 | Strategic Comparison</title>
+<meta name="description" content="Researched comparison of the top dash cams for 2026. Resolution, night vision, and value ranked.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --card-bg: #1a1d27;
+    --card-border: #2a2d3a;
+    --accent: #e67e50;
+    --accent-glow: rgba(230, 126, 80, 0.15);
+    --text-primary: #e8e8ec;
+    --text-secondary: #8b8d9a;
+    --text-muted: #5a5c6a;
+    --winner-bg: linear-gradient(135deg, rgba(230, 126, 80, 0.08), rgba(230, 126, 80, 0.02));
+    --winner-border: rgba(230, 126, 80, 0.4);
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --blue: #60a5fa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 24px;
+  }
+
+  .comparison-card {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .card-header {
+    padding: 28px 28px 20px;
+    border-bottom: 1px solid var(--card-border);
+    position: relative;
+  }
+
+  .card-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+
+  .category-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .card-title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .card-subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .updated-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+
+  .products {
+    padding: 8px 16px;
+  }
+
+  .product {
+    padding: 20px 12px;
+    border-bottom: 1px solid var(--card-border);
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    gap: 16px;
+    align-items: start;
+    transition: background 0.2s;
+  }
+
+  .product:last-child { border-bottom: none; }
+
+  .product:hover {
+    background: rgba(255,255,255,0.02);
+  }
+
+  .product.winner {
+    background: var(--winner-bg);
+    border: 1px solid var(--winner-border);
+    border-radius: 12px;
+    margin: 8px 0;
+    border-bottom: 1px solid var(--winner-border);
+  }
+
+  .rank {
+    font-family: 'Space Mono', monospace;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-muted);
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .product.winner .rank {
+    color: var(--accent);
+  }
+
+  .product-info {
+    min-width: 0;
+  }
+
+  .product-name {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .product-name a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .product-name a:hover {
+    color: var(--accent);
+  }
+
+  .winner-badge {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(230, 126, 80, 0.12);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .product-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 6px;
+  }
+
+  .spec {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .spec-value {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .product-why {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .product-price {
+    text-align: right;
+    min-width: 70px;
+  }
+
+  .price {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .price-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .buy-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 14px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .buy-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+
+  .compare-grid {
+    padding: 20px 28px;
+    border-top: 1px solid var(--card-border);
+  }
+
+  .compare-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .compare-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 8px 8px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-table td {
+    font-size: 13px;
+    padding: 8px 8px;
+    border-bottom: 1px solid rgba(42, 45, 58, 0.5);
+    color: var(--text-secondary);
+  }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+
+  .compare-table .highlight {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .card-footer {
+    padding: 16px 28px;
+    border-top: 1px solid var(--card-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .affiliate-disclosure {
+    font-size: 11px;
+    color: var(--text-muted);
+    max-width: 400px;
+    line-height: 1.4;
+  }
+
+  .source-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    .card-header { padding: 20px 16px 16px; }
+    .card-title { font-size: 18px; }
+    .products { padding: 4px 8px; }
+    .product { 
+      grid-template-columns: 32px 1fr;
+      gap: 12px;
+      padding: 16px 8px;
+    }
+    .product-price {
+      grid-column: 2;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .compare-grid { padding: 16px; }
+    .card-footer { 
+      flex-direction: column; 
+      gap: 8px;
+      padding: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="comparison-card">
+
+  <div class="card-header">
+    <span class="category-tag">Dash Cams</span>
+    <h1 class="card-title">The Dash Cam That Actually Matters</h1>
+    <p class="card-subtitle">Four picks from budget dual-cam to stealth 4K. No fluff, just what works on the road.</p>
+    <span class="updated-date">Updated February 2026</span>
+  </div>
+
+  <div class="products">
+
+    <div class="product winner">
+      <div class="rank">1</div>
+      <div class="product-info">
+        <div class="product-name">
+          <a href="https://www.amazon.com/dp/B0D6J5B98H/?tag=ragedesigne0c-20" target="_blank" rel="nofollow">Rove R2-4K Dual</a>
+          <span class="winner-badge">Best Value</span>
+        </div>
+        <div class="product-specs">
+          <span class="spec"><span class="spec-value">4K</span> front</span>
+          <span class="spec"><span class="spec-value">1080p</span> rear</span>
+          <span class="spec"><span class="spec-value">150°</span> FOV</span>
+          <span class="spec"><span class="spec-value">GPS</span> built-in</span>
+        </div>
+        <p class="product-why">Front and rear coverage with a free 128GB card in the box. STARVIS 2 sensor reads plates at night. Polished app, simple setup, and a supercapacitor that handles Florida summers. This is the one most people should buy.</p>
+      </div>
+      <div class="product-price">
+        <div class="price">$130</div>
+        <div class="price-note">Amazon</div>
+        <a href="https://www.amazon.com/dp/B0D6J5B98H/?tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="buy-btn">View Deal</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="rank">2</div>
+      <div class="product-info">
+        <div class="product-name">
+          <a href="https://www.amazon.com/dp/B0CKYFSKNN/?tag=ragedesigne0c-20" target="_blank" rel="nofollow">Viofo A229 Pro 2CH</a>
+        </div>
+        <div class="product-specs">
+          <span class="spec"><span class="spec-value">4K HDR</span> front</span>
+          <span class="spec"><span class="spec-value">2K</span> rear</span>
+          <span class="spec"><span class="spec-value">IMX678</span> sensor</span>
+          <span class="spec"><span class="spec-value">GPS</span> built-in</span>
+        </div>
+        <p class="product-why">The enthusiast pick. Dual STARVIS 2 sensors with HDR on both channels. Night footage looks like daytime on cheaper cams. CPL filter included. You pay more, but the image quality gap is real.</p>
+      </div>
+      <div class="product-price">
+        <div class="price">$200</div>
+        <div class="price-note">Amazon</div>
+        <a href="https://www.amazon.com/dp/B0CKYFSKNN/?tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="buy-btn">View Deal</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="rank">3</div>
+      <div class="product-info">
+        <div class="product-name">
+          <a href="https://www.amazon.com/dp/B0DSKXJV3H/?tag=ragedesigne0c-20" target="_blank" rel="nofollow">Vantrue E1 Pro</a>
+        </div>
+        <div class="product-specs">
+          <span class="spec"><span class="spec-value">4K</span> front only</span>
+          <span class="spec"><span class="spec-value">158°</span> FOV</span>
+          <span class="spec"><span class="spec-value">GPS</span> + WiFi</span>
+          <span class="spec"><span class="spec-value">1TB</span> max storage</span>
+        </div>
+        <p class="product-why">Size of a dollar coin. Magnetic mount, CPL filter in the box, and PlatePix tech that actually helps read plates at night. No rear cam, but if you want 4K stealth that disappears behind your mirror, this is it.</p>
+      </div>
+      <div class="product-price">
+        <div class="price">$150</div>
+        <div class="price-note">Amazon</div>
+        <a href="https://www.amazon.com/dp/B0DSKXJV3H/?tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="buy-btn">View Deal</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="rank">4</div>
+      <div class="product-info">
+        <div class="product-name">
+          <a href="https://www.amazon.com/dp/B0DDM7PFLW/?tag=ragedesigne0c-20" target="_blank" rel="nofollow">Garmin Dash Cam Mini 3</a>
+        </div>
+        <div class="product-specs">
+          <span class="spec"><span class="spec-value">1080p</span> HDR</span>
+          <span class="spec"><span class="spec-value">140°</span> FOV</span>
+          <span class="spec"><span class="spec-value">Built-in</span> polarizer</span>
+          <span class="spec"><span class="spec-value">Voice</span> control</span>
+        </div>
+        <p class="product-why">The set-and-forget cam. Tiny as a car key, built-in polarizer cuts windshield glare, and syncs up to four Garmin cams through one app. Only 1080p, but the Garmin ecosystem and dead-simple operation make up for it.</p>
+      </div>
+      <div class="product-price">
+        <div class="price">$140</div>
+        <div class="price-note">Amazon</div>
+        <a href="https://www.amazon.com/dp/B0DDM7PFLW/?tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="buy-btn">View Deal</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-title">Quick Compare</div>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Resolution</th>
+          <th>FOV</th>
+          <th>GPS</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="highlight">Rove R2-4K Dual</td>
+          <td>4K + 1080p</td>
+          <td>150°</td>
+          <td>Yes</td>
+          <td class="highlight">$130</td>
+        </tr>
+        <tr>
+          <td>Viofo A229 Pro</td>
+          <td class="highlight">4K HDR + 2K</td>
+          <td>140°</td>
+          <td>Yes</td>
+          <td>$200</td>
+        </tr>
+        <tr>
+          <td>Vantrue E1 Pro</td>
+          <td>4K front</td>
+          <td>158°</td>
+          <td>Yes</td>
+          <td>$150</td>
+        </tr>
+        <tr>
+          <td>Garmin Mini 3</td>
+          <td>1080p</td>
+          <td>140°</td>
+          <td>No</td>
+          <td>$140</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-footer">
+    <span class="affiliate-disclosure">This comparison contains affiliate links. Purchases through these links support our research at no extra cost to you.</span>
+    <span class="source-tag">whatisaframework.com</span>
+  </div>
+
+</div>
+
+</body>
+</html>
