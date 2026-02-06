@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Tactical Flashlights 2025 | Strategic Comparison</title>
+<meta name="description" content="Researched comparison of the top tactical flashlights for 2025. Lumens, runtime, durability, and value ranked.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --card-bg: #1a1d27;
+    --card-border: #2a2d3a;
+    --accent: #e67e50;
+    --accent-glow: rgba(230, 126, 80, 0.15);
+    --text-primary: #e8e8ec;
+    --text-secondary: #8b8d9a;
+    --text-muted: #5a5c6a;
+    --winner-bg: linear-gradient(135deg, rgba(230, 126, 80, 0.08), rgba(230, 126, 80, 0.02));
+    --winner-border: rgba(230, 126, 80, 0.4);
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --blue: #60a5fa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 24px;
+  }
+
+  .comparison-card {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .card-header {
+    padding: 28px 28px 20px;
+    border-bottom: 1px solid var(--card-border);
+    position: relative;
+  }
+
+  .card-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+
+  .category-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .card-title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .card-subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .updated-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+
+  .products {
+    padding: 8px 16px;
+  }
+
+  .product {
+    padding: 20px 12px;
+    border-bottom: 1px solid var(--card-border);
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    gap: 16px;
+    align-items: start;
+    transition: background 0.2s;
+  }
+
+  .product:last-child { border-bottom: none; }
+
+  .product:hover {
+    background: rgba(255,255,255,0.02);
+  }
+
+  .product.winner {
+    background: var(--winner-bg);
+    border: 1px solid var(--winner-border);
+    border-radius: 12px;
+    margin: 8px 0;
+    border-bottom: 1px solid var(--winner-border);
+  }
+
+  .rank {
+    font-family: 'Space Mono', monospace;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-muted);
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .product.winner .rank {
+    color: var(--accent);
+  }
+
+  .product-info {
+    min-width: 0;
+  }
+
+  .product-name {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .product-name a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .product-name a:hover {
+    color: var(--accent);
+  }
+
+  .winner-badge {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(230, 126, 80, 0.12);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .product-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 6px;
+  }
+
+  .spec {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .spec-value {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .product-why {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .product-price {
+    text-align: right;
+    min-width: 70px;
+  }
+
+  .price {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .price-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .buy-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 14px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .buy-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+
+  .compare-grid {
+    padding: 20px 28px;
+    border-top: 1px solid var(--card-border);
+  }
+
+  .compare-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .compare-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 8px 8px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-table td {
+    font-size: 13px;
+    padding: 8px 8px;
+    border-bottom: 1px solid rgba(42, 45, 58, 0.5);
+    color: var(--text-secondary);
+  }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+
+  .compare-table .highlight {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .card-footer {
+    padding: 16px 28px;
+    border-top: 1px solid var(--card-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .affiliate-disclosure {
+    font-size: 11px;
+    color: var(--text-muted);
+    max-width: 400px;
+    line-height: 1.4;
+  }
+
+  .source-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    .card-header { padding: 20px 16px 16px; }
+    .card-title { font-size: 18px; }
+    .products { padding: 4px 8px; }
+    .product { 
+      grid-template-columns: 32px 1fr;
+      gap: 12px;
+      padding: 16px 8px;
+    }
+    .product-price {
+      grid-column: 2;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .compare-grid { padding: 16px; }
+    .card-footer { 
+      flex-direction: column; 
+      gap: 8px;
+      padding: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="comparison-card">
+
+  <div class="card-header">
+    <span class="category-tag">Tactical Gear</span>
+    <h1 class="card-title">The Tactical Flashlight That Actually Matters</h1>
+    <p class="card-subtitle">Four picks from compact EDC to full-size duty light. Tested by professionals, ranked for real-world use.</p>
+    <span class="updated-date">Updated February 2025</span>
+  </div>
+
+  <div class="products">
+
+    <div class="product winner">
+      <div class="rank">1</div>
+      <div class="product-info">
+        <div class="product-name">
+          <a href="https://www.amazon.com/dp/B0BGMZ4YNC/?tag=ragedesigne0c-20" target="_blank" rel="nofollow">Fenix PD36R Pro</a>
+          <span class="winner-badge">Best Overall</span>
+        </div>
+        <div class="product-specs">
+          <span class="spec"><span class="spec-value">2,800</span> lumens</span>
+          <span class="spec"><span class="spec-value">415 yd</span> throw</span>
+          <span class="spec"><span class="spec-value">IP68</span> waterproof</span>
+          <span class="spec"><span class="spec-value">42 hr</span> runtime</span>
+        </div>
+        <p class="product-why">This is the one most people should buy. Dual tail switches give you instant strobe and one-handed brightness control. USB-C rechargeable 21700 battery, 5.74 inches, under 6 ounces. The balance of power, runtime, and build quality is hard to beat at this price.</p>
+      </div>
+      <div class="product-price">
+        <div class="price">$90</div>
+        <div class="price-note">Amazon</div>
+        <a href="https://www.amazon.com/dp/B0BGMZ4YNC/?tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="buy-btn">View Deal</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="rank">2</div>
+      <div class="product-info">
+        <div class="product-name">
+          <a href="https://www.amazon.com/dp/B0BN6S5PMQ/?tag=ragedesigne0c-20" target="_blank" rel="nofollow">Streamlight ProTac 2.0</a>
+        </div>
+        <div class="product-specs">
+          <span class="spec"><span class="spec-value">2,000</span> lumens</span>
+          <span class="spec"><span class="spec-value">262 m</span> beam</span>
+          <span class="spec"><span class="spec-value">IP67</span> waterproof</span>
+          <span class="spec"><span class="spec-value">25 hr</span> runtime</span>
+        </div>
+        <p class="product-why">The law enforcement standard. TEN-TAP programmable switch lets you set up three custom mode sequences. Streamlight has been building duty lights since the 1970s, and the ProTac 2.0 shows why departments keep coming back.</p>
+      </div>
+      <div class="product-price">
+        <div class="price">$120</div>
+        <div class="price-note">Amazon</div>
+        <a href="https://www.amazon.com/dp/B0BN6S5PMQ/?tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="buy-btn">View Deal</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="rank">3</div>
+      <div class="product-info">
+        <div class="product-name">
+          <a href="https://www.amazon.com/dp/B0BSB57B47/?tag=ragedesigne0c-20" target="_blank" rel="nofollow">Nitecore EDC27</a>
+        </div>
+        <div class="product-specs">
+          <span class="spec"><span class="spec-value">3,000</span> lumens</span>
+          <span class="spec"><span class="spec-value">240 yd</span> throw</span>
+          <span class="spec"><span class="spec-value">IP54</span> rated</span>
+          <span class="spec"><span class="spec-value">37 hr</span> runtime</span>
+        </div>
+        <p class="product-why">The flat one that disappears in your pocket. Half an inch thick with stainless steel construction and an OLED display showing battery and runtime. Highest lumens on this list in a form factor thinner than most knives.</p>
+      </div>
+      <div class="product-price">
+        <div class="price">$85</div>
+        <div class="price-note">Amazon</div>
+        <a href="https://www.amazon.com/dp/B0BSB57B47/?tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="buy-btn">View Deal</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="rank">4</div>
+      <div class="product-info">
+        <div class="product-name">
+          <a href="https://www.amazon.com/dp/B0C4H77WKB/?tag=ragedesigne0c-20" target="_blank" rel="nofollow">Olight Warrior Mini 3</a>
+        </div>
+        <div class="product-specs">
+          <span class="spec"><span class="spec-value">1,750</span> lumens</span>
+          <span class="spec"><span class="spec-value">240 m</span> beam</span>
+          <span class="spec"><span class="spec-value">IPX8</span> waterproof</span>
+          <span class="spec"><span class="spec-value">100 day</span> moonlight</span>
+        </div>
+        <p class="product-why">The compact pocket rocket. Magnetic charging means no ports to worry about, and the proximity sensor auto-dims if you accidentally turbo at close range. 4.25 inches makes this the smallest real tactical light you can carry every day.</p>
+      </div>
+      <div class="product-price">
+        <div class="price">$70</div>
+        <div class="price-note">Amazon</div>
+        <a href="https://www.amazon.com/dp/B0C4H77WKB/?tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="buy-btn">View Deal</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-title">Quick Compare</div>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Lumens</th>
+          <th>Runtime</th>
+          <th>Rating</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="highlight">PD36R Pro</td>
+          <td class="highlight">2,800</td>
+          <td>42 hr</td>
+          <td class="highlight">IP68</td>
+          <td>$90</td>
+        </tr>
+        <tr>
+          <td>ProTac 2.0</td>
+          <td>2,000</td>
+          <td>25 hr</td>
+          <td>IP67</td>
+          <td>$120</td>
+        </tr>
+        <tr>
+          <td>EDC27</td>
+          <td>3,000</td>
+          <td class="highlight">37 hr</td>
+          <td>IP54</td>
+          <td>$85</td>
+        </tr>
+        <tr>
+          <td>Warrior Mini 3</td>
+          <td>1,750</td>
+          <td>18 hr</td>
+          <td>IPX8</td>
+          <td class="highlight">$70</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-footer">
+    <span class="affiliate-disclosure">This comparison contains affiliate links. Purchases through these links support our research at no extra cost to you.</span>
+    <span class="source-tag">whatisaframework.com</span>
+  </div>
+
+</div>
+
+</body>
+</html>
