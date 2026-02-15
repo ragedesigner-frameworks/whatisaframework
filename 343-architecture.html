@@ -39,11 +39,19 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Roboto', sans-serif; color: var(--white); line-height: 1.6; background-color: var(--charcoal-blue); }
         
+        /* Header Styles */
+        nav#main-header { background: var(--white); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { height: 50px; }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: #1A2332; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-cta { background: var(--primary); color: var(--white) !important; padding: 0.5rem 1.5rem; border-radius: 6px; border: 2px solid var(--primary); transition: all 0.3s ease; }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; }
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
+        .hamburger-line { width: 28px; height: 3px; background: #1A2332; border-radius: 2px; }
+        
         /* Main Content */
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px 40px; }
-        .cover-image-wrapper { width: 100vw; margin: 0 0 3rem 0; margin-left: calc(-50vw + 50%); position: relative; overflow: hidden; }
-        .cover-image-wrapper::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.4); }
-        .cover-image { width: 100%; height: auto; display: block; object-fit: cover; }
+        .container { max-width: 1400px; margin: 80px auto 0; padding: 40px 20px; }
         .header { text-align: center; margin-bottom: 60px; }
         .header h1 { color: var(--primary); font-size: 3rem; margin-bottom: 10px; }
         .header .subtitle { color: var(--white); font-size: 1.5rem; margin-bottom: 20px; }
@@ -96,6 +104,8 @@
         footer p a { color: var(--primary); text-decoration: none; }
 
         @media (max-width: 768px) {
+            .nav-links.desktop-nav { display: none; }
+            .mobile-menu-toggle { display: flex; }
             .header h1 { font-size: 2rem; }
             .header .subtitle { font-size: 1.2rem; }
             .categories-grid { grid-template-columns: 1fr; }
@@ -104,11 +114,22 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="cover-image-wrapper">
-            <img src="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-two.png" alt="343 Strategic Intelligence Architecture" class="cover-image">
+    <nav id="main-header">
+        <a href="/"><img src="/whatisaframework%20logo.png" alt="What Is A Framework" class="logo"></a>
+        <div class="nav-links desktop-nav">
+            <a href="/#definition">Definition</a>
+            <a href="/#topics">Topics</a>
+            <a href="/interactive-lab.html">Interactive Lab</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
         </div>
-        
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
+
+    <div class="container">
         <div id="root"></div>
     </div>
 
