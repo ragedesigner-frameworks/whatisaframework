@@ -51,7 +51,8 @@
         .hamburger-line { width: 28px; height: 3px; background: #1A2332; border-radius: 2px; }
         
         /* Main Content */
-        .container { max-width: 1400px; margin: 80px auto 0; padding: 40px 20px; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px 40px; }
+        .content-wrapper { padding-top: 80px; }
         .cover-image-wrapper { width: 100vw; margin: 0 0 3rem 0; margin-left: calc(-50vw + 50%); position: relative; overflow: hidden; }
         .cover-image-wrapper::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.4); }
         .cover-image { width: 100%; height: auto; display: block; object-fit: cover; }
@@ -133,11 +134,11 @@
     </nav>
 
     <div class="container">
-        <div class="cover-image-wrapper">
+        <div class="cover-image-wrapper" style="margin-top: 80px;">
             <img src="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-two.png" alt="343 Strategic Intelligence Architecture" class="cover-image">
         </div>
         
-        <div id="root"></div>
+        <div id="root" class="content-wrapper"></div>
     </div>
 
     <footer>
@@ -261,12 +262,10 @@
 
             const handleCategoryClick = (categoryId) => {
                 setSelectedCategory(categoryId);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             };
 
             const handleBackClick = () => {
                 setSelectedCategory(null);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             };
 
             if (selectedCategory) {
