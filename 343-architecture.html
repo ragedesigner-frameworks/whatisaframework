@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="NkrXwQRVVd79oQT2T0cD0jfh7T0PwSDgC2QX515IuRk">
+    <title>Seven Meta-Categories: The 343 Strategic Intelligence Architecture</title>
+    <meta name="description" content="Complete taxonomic mapping of strategic intelligence reality across seven meta-categories, 49 elements, and 343 operational layers. The foundational architecture that all SIOS frameworks build upon.">
+    <meta property="og:title" content="Seven Meta-Categories: The 343 Strategic Intelligence Architecture">
+    <meta property="og:description" content="Complete taxonomic mapping of strategic intelligence reality across seven meta-categories, 49 elements, and 343 operational layers.">
+    <meta property="og:image" content="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-two.png">
+    <meta property="og:url" content="https://whatisaframework.com/343-architecture.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-two.png">
+    <link rel="canonical" href="https://whatisaframework.com/343-architecture.html">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBXZ335ZR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TXBXZ335ZR');
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --charcoal-blue: #2d3b4e;
+            --primary: #e67e50;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --text-medium: #666666;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; color: var(--white); line-height: 1.6; background-color: var(--charcoal-blue); }
+        
+        /* Header Styles */
+        nav#main-header { background: var(--white); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { height: 50px; }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: #1A2332; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-cta { background: var(--primary); color: var(--white) !important; padding: 0.5rem 1.5rem; border-radius: 6px; border: 2px solid var(--primary); transition: all 0.3s ease; }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; }
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
+        .hamburger-line { width: 28px; height: 3px; background: #1A2332; border-radius: 2px; }
+        
+        /* Main Content */
+        .container { max-width: 1400px; margin: 80px auto 0; padding: 40px 20px; }
+        .cover-image-wrapper { width: 100vw; margin: 0 0 3rem 0; margin-left: calc(-50vw + 50%); position: relative; overflow: hidden; }
+        .cover-image-wrapper::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.4); }
+        .cover-image { width: 100%; height: auto; display: block; object-fit: cover; }
+        .header { text-align: center; margin-bottom: 60px; }
+        .header h1 { color: var(--primary); font-size: 3rem; margin-bottom: 10px; }
+        .header .subtitle { color: var(--white); font-size: 1.5rem; margin-bottom: 20px; }
+        .header .description { color: #b0b0b0; font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem; }
+        .validation-badge { display: inline-block; background: rgba(230, 126, 80, 0.2); border: 1px solid var(--primary); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; margin-top: 1rem; color: var(--primary); }
+
+        .architecture-summary { background: linear-gradient(135deg, #e67e50 0%, #d66940 100%); padding: 30px; border-radius: 12px; margin-bottom: 60px; text-align: center; }
+        .architecture-summary h2 { color: #2d3b4e; font-size: 2rem; margin-bottom: 15px; }
+        .architecture-summary .formula { font-size: 1.8rem; color: #2d3b4e; font-weight: bold; margin-bottom: 15px; }
+        .architecture-summary .tagline { font-size: 1.2rem; color: #1a2332; font-style: italic; }
+
+        .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        .category-card { background: linear-gradient(135deg, #3a4d63 0%, #2d3b4e 100%); border-radius: 12px; padding: 30px; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent; position: relative; overflow: hidden; }
+        .category-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #e67e50, #d66940); }
+        .category-card:hover { transform: translateY(-5px); border-color: #e67e50; box-shadow: 0 10px 30px rgba(230, 126, 80, 0.3); }
+        .category-card h3 { color: #e67e50; font-size: 1.8rem; margin-bottom: 15px; }
+        .category-card .tagline { color: #b0b0b0; font-style: italic; margin-bottom: 15px; font-size: 1rem; }
+        .category-card .element-count { color: #ffffff; font-size: 0.9rem; margin-bottom: 10px; }
+        .category-card .status-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; margin-top: 10px; }
+        .status-complete { background: rgba(76, 175, 80, 0.3); color: #81c784; }
+        .status-mapped { background: rgba(33, 150, 243, 0.3); color: #64b5f6; }
+
+        .back-button { background: linear-gradient(135deg, #e67e50 0%, #d66940 100%); color: #ffffff; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-size: 1rem; margin-bottom: 30px; transition: all 0.3s ease; }
+        .back-button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(230, 126, 80, 0.4); }
+
+        .elements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .element-card { background: linear-gradient(135deg, #3a4d63 0%, #2d3b4e 100%); border-radius: 10px; padding: 25px; border-left: 4px solid #e67e50; }
+        .element-card h4 { color: #e67e50; font-size: 1.3rem; margin-bottom: 15px; }
+        .element-card ol { padding-left: 20px; color: #d0d0d0; }
+        .element-card li { margin-bottom: 8px; font-size: 0.95rem; }
+
+        .category-detail-header { background: linear-gradient(135deg, #3a4d63 0%, #2d3b4e 100%); padding: 40px; border-radius: 12px; margin-bottom: 40px; border-top: 4px solid #e67e50; }
+        .category-detail-header h2 { color: #e67e50; font-size: 2.5rem; margin-bottom: 10px; }
+        .category-detail-header .tagline { color: #b0b0b0; font-size: 1.2rem; font-style: italic; }
+
+        .cta-section { background: linear-gradient(135deg, #3a4d63 0%, #2d3b4e 100%); padding: 60px 40px; border-radius: 12px; margin-top: 60px; text-align: center; border-top: 4px solid #e67e50; }
+        .cta-section h2 { color: #e67e50; font-size: 2rem; margin-bottom: 20px; }
+        .cta-section p { color: #b0b0b0; font-size: 1.1rem; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .cta-links { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+        .cta-link { color: #e67e50; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #e67e50; border-radius: 8px; transition: all 0.3s ease; }
+        .cta-link:hover { background: #e67e50; color: #2d3b4e; }
+
+        /* Footer */
+        footer { background: #1a2332; color: var(--white); padding: 3rem 2rem; text-align: center; margin-top: 60px; }
+        .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.2); border: 1px solid var(--primary); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.75rem; margin-bottom: 1.5rem; color: var(--primary); }
+        .footer-links { margin-bottom: 1.5rem; }
+        .footer-links a { color: var(--white); text-decoration: none; margin: 0 1rem; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--primary); }
+        footer p { opacity: 0.7; font-size: 0.875rem; color: var(--white); }
+        footer p a { color: var(--primary); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .nav-links.desktop-nav { display: none; }
+            .mobile-menu-toggle { display: flex; }
+            .header h1 { font-size: 2rem; }
+            .header .subtitle { font-size: 1.2rem; }
+            .categories-grid { grid-template-columns: 1fr; }
+            .elements-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-header">
+        <a href="/"><img src="/whatisaframework%20logo.png" alt="What Is A Framework" class="logo"></a>
+        <div class="nav-links desktop-nav">
+            <a href="/#definition">Definition</a>
+            <a href="/#topics">Topics</a>
+            <a href="/interactive-lab.html">Interactive Lab</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
+
+    <div class="container">
+        <div class="cover-image-wrapper">
+            <img src="https://app.ragedesigner.com/wp-content/uploads/2026/01/what-is-the-framework-two.png" alt="343 Strategic Intelligence Architecture" class="cover-image">
+        </div>
+        
+        <div id="root"></div>
+    </div>
+
+    <footer>
+        <div class="ai-badge">🤖 This site is built and managed autonomously by AI</div>
+        <div class="footer-links">
+            <a href="https://howtoframework.com">How to Framework</a>
+            <a href="/interactive-lab.html">Interactive Lab</a>
+            <a href="/ai">AI Reference</a>
+        </div>
+        <p>Built by <a href="https://ragedesigner.com">RageDesigner</a> | &copy; 2026</p>
+    </footer>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        const CATEGORIES_DATA = {
+            1: {
+                name: "MECHANISMS",
+                tagline: "Universal patterns of strategic leverage and force application",
+                status: "complete",
+                elements: {
+                    "ACCELERATION": ["Momentum Generation", "Velocity Enhancement", "Compound Acceleration", "Breakthrough Catalysis", "Exponential Growth", "Speed Optimization", "Transcendent Acceleration"],
+                    "STABILITY": ["Volatility Reduction", "Risk Mitigation", "Consistency Maintenance", "Foundation Strengthening", "Resilience Building", "Equilibrium Management", "Sacred Stability"],
+                    "DIRECTION": ["Trajectory Transformation", "Strategic Redirection", "Course Correction", "Paradigm Shifting", "Constraint Reframing", "Navigation Optimization", "Transcendent Direction"],
+                    "CONTROL": ["Quality Standards", "Performance Monitoring", "Compliance Systems", "Error Prevention", "Precision Management", "Systematic Governance", "Sacred Stewardship"],
+                    "INTEGRATION": ["Component Connection", "System Synthesis", "Workflow Coordination", "Knowledge Integration", "Resource Unification", "Compound Intelligence", "Transcendent Unity"],
+                    "ENABLING": ["Infrastructure Creation", "Condition Setting", "Capability Building", "Environment Optimization", "Resource Provision", "Systematic Support", "Sacred Enabling"],
+                    "HARMONIZING": ["Balance Maintenance", "Sustainability Design", "Conflict Resolution", "Rhythm Optimization", "Long-term Viability", "Ecosystem Health", "Sacred Harmony"]
+                }
+            },
+            2: {
+                name: "COGNITION",
+                tagline: "Mental processing and intellectual capabilities",
+                status: "mapped",
+                statusDate: "February 13, 2026",
+                elements: {
+                    "LOGIC": ["Deductive Reasoning", "Inductive Reasoning", "Abductive Reasoning", "Systems Logic", "Formal Logic", "Dialectical Logic", "Transcendent Logic"],
+                    "INTELLIGENCE": ["Pattern Recognition", "Information Processing", "Problem Solving", "Learning Capacity", "Adaptive Intelligence", "Collective Intelligence", "Wisdom Intelligence"],
+                    "STRATEGY": ["Situation Assessment", "Option Generation", "Decision Frameworks", "Implementation Planning", "Adaptation Protocols", "Strategic Integration", "Transcendent Strategy"],
+                    "JUDGMENT": ["Evaluation Criteria", "Evidence Weighing", "Risk Assessment", "Value Integration", "Timing Wisdom", "Perspective Balance", "Sacred Discernment"],
+                    "CREATIVITY": ["Idea Generation", "Novel Combinations", "Constraint Innovation", "Breakthrough Thinking", "Artistic Expression", "Creative Systems", "Sacred Creativity"],
+                    "COMMUNICATION": ["Message Clarity", "Audience Adaptation", "Persuasion Methods", "Feedback Integration", "Relationship Building", "Cultural Translation", "Sacred Expression"],
+                    "WISDOM": ["Experience Integration", "Perspective Depth", "Judgment Maturity", "Teaching Capability", "Legacy Thinking", "Transcendent Understanding", "Sacred Wisdom"]
+                }
+            },
+            3: {
+                name: "SYSTEMS",
+                tagline: "Architecture, feedback loops, and emergent properties",
+                status: "complete",
+                elements: {
+                    "ARCHITECTURE_DESIGN": ["Component Identification", "Connection Protocols", "Information Flow", "Dependency Mapping", "Boundary Definition", "Integration Standards", "Modular Design"],
+                    "FEEDBACK_MECHANISMS": ["Input Collection", "Processing Protocols", "Response Generation", "Loop Closure", "Error Correction", "Learning Integration", "Adaptive Enhancement"],
+                    "EMERGENT_PROPERTIES": ["Synergy Creation", "Collective Intelligence", "Network Effects", "Threshold Phenomena", "Compound Outcomes", "Systematic Amplification", "Transcendent Capability"],
+                    "SCALABILITY_PATTERNS": ["Growth Accommodation", "Load Distribution", "Performance Maintenance", "Efficiency Optimization", "Capacity Expansion", "Bottleneck Prevention", "Systematic Growth"],
+                    "INTEGRATION_PROTOCOLS": ["Communication Standards", "Compatibility Frameworks", "Data Translation", "Workflow Coordination", "Resource Sharing", "Error Handling", "Unified Operation"],
+                    "RESILIENCE_ENGINEERING": ["Failure Prevention", "Redundancy Design", "Recovery Protocols", "Stress Testing", "Adaptive Response", "Anti-Fragility", "Systematic Durability"],
+                    "META_SYSTEMS": ["Systems Thinking", "Design Principles", "Governance Protocols", "Optimization Strategies", "Development Guidance", "Transcendent Organization", "Systematic Wisdom"]
+                }
+            },
+            4: {
+                name: "CONTEXT",
+                tagline: "Environmental awareness and situational intelligence",
+                status: "complete",
+                elements: {
+                    "ENVIRONMENTAL_SCANNING": ["Situation Assessment", "Landscape Mapping", "External Monitoring", "Trend Analysis", "Opportunity Identification", "Threat Detection", "Strategic Intelligence"],
+                    "CULTURAL_TRANSLATION": ["Value Recognition", "Communication Adaptation", "Behavioral Norms", "Relationship Protocols", "Decision Context", "Trust Building", "Cultural Bridge"],
+                    "TEMPORAL_POSITIONING": ["Historical Context", "Present Awareness", "Future Trajectory", "Timing Optimization", "Seasonal Wisdom", "Lifecycle Awareness", "Temporal Strategy"],
+                    "COMPETITIVE_LANDSCAPE": ["Market Analysis", "Competitor Mapping", "Positioning Strategy", "Strategic Terrain", "Competitive Intelligence", "Advantage Sources", "Strategic Dominance"],
+                    "RESOURCE_CONSTRAINTS": ["Asset Inventory", "Limitation Recognition", "Scarcity Management", "Constraint Optimization", "Resource Efficiency", "Capacity Planning", "Constraint Innovation"],
+                    "STAKEHOLDER_ECOSYSTEM": ["Relationship Mapping", "Communication Channels", "Influence Networks", "Partnership Dynamics", "Stakeholder Alignment", "Trust Architecture", "Ecosystem Optimization"],
+                    "META_CONTEXT": ["Contextual Awareness", "Interpretive Frameworks", "Perspective Shifting", "Context Creation", "Adaptive Intelligence", "Wisdom Integration", "Transcendent Positioning"]
+                }
+            },
+            5: {
+                name: "AGENCY",
+                tagline: "Intentional action and strategic execution capabilities",
+                status: "complete",
+                elements: {
+                    "INTENTION_FORMATION": ["Purpose Clarification", "Vision Articulation", "Value Alignment", "Desire Integration", "Direction Setting", "Commitment Generation", "Sacred Purpose"],
+                    "DECISION_ARCHITECTURE": ["Option Generation", "Criteria Establishment", "Information Gathering", "Analysis Protocols", "Choice Selection", "Implementation Planning", "Wisdom Application"],
+                    "WILL_ACTIVATION": ["Motivation Ignition", "Energy Management", "Resistance Overcoming", "Discipline Development", "Persistence Cultivation", "Commitment Deepening", "Sacred Determination"],
+                    "ACTION_INITIATION": ["Implementation Triggers", "Momentum Generation", "Execution Protocols", "Resource Mobilization", "Systematic Action", "Breakthrough Actions", "Sacred Action"],
+                    "PERSISTENCE_MANAGEMENT": ["Endurance Building", "Obstacle Navigation", "Consistency Maintenance", "Recovery Protocols", "Tenacity Cultivation", "Long-term Sustainability", "Sacred Perseverance"],
+                    "ADAPTATION_PROTOCOLS": ["Feedback Integration", "Course Correction", "Flexibility Maintenance", "Learning Application", "Transformation Management", "Change Protocols", "Sacred Adaptation"],
+                    "META_AGENCY": ["Self-Direction", "Agency Optimization", "Will Integration", "Responsibility Embrace", "Freedom Exercise", "Transcendent Agency", "Sacred Stewardship"]
+                }
+            },
+            6: {
+                name: "IDENTITY",
+                tagline: "Character, nature, and foundational being",
+                status: "mapped",
+                statusDate: "February 13, 2026",
+                elements: {
+                    "CHARACTER": ["Virtue Development", "Moral Courage", "Integrity Foundation", "Ethical Clarity", "Honor System", "Character Strength", "Sacred Character"],
+                    "NATURE": ["Essential Qualities", "Natural Tendencies", "Innate Capacities", "Temperament Understanding", "Authentic Expression", "Nature Integration", "Sacred Nature"],
+                    "ESSENCE": ["Core Identity", "Fundamental Being", "Intrinsic Value", "Essential Purpose", "True Self", "Essence Recognition", "Sacred Essence"],
+                    "ROLE": ["Position Clarity", "Responsibility Scope", "Function Excellence", "Role Integration", "Authority Exercise", "Role Evolution", "Sacred Calling"],
+                    "PURPOSE": ["Mission Clarity", "Vision Alignment", "Contribution Focus", "Legacy Intent", "Impact Design", "Purpose Fulfillment", "Sacred Purpose"],
+                    "LEGACY": ["Impact Duration", "Influence Permanence", "Knowledge Transfer", "Cultural Contribution", "Generational Blessing", "Legacy Architecture", "Sacred Inheritance"],
+                    "TRANSCENDENCE": ["Beyond Self", "Eternal Perspective", "Divine Connection", "Ultimate Meaning", "Spiritual Integration", "Transcendent Purpose", "Sacred Union"]
+                }
+            },
+            7: {
+                name: "TRANSFORMATION",
+                tagline: "Fundamental change, growth, and strategic development",
+                status: "complete",
+                elements: {
+                    "TRANSFORMATION_DETECTION": ["Change Awareness", "Pattern Recognition", "Threshold Sensing", "Signal Processing", "Transformation Mapping", "Anticipatory Intelligence", "Sacred Discernment"],
+                    "ADAPTATION_MECHANISMS": ["Response Systems", "Flexibility Frameworks", "Learning Integration", "Adjustment Protocols", "Resilience Building", "Dynamic Alignment", "Sacred Adaptation"],
+                    "GROWTH_ARCHITECTURE": ["Development Patterns", "Capacity Building", "Skill Development", "Infrastructure Growth", "Systematic Development", "Compound Growth", "Sacred Growth"],
+                    "LEARNING_INTEGRATION": ["Knowledge Absorption", "Experience Processing", "Insight Synthesis", "Skill Application", "Wisdom Accumulation", "Teaching Integration", "Sacred Learning"],
+                    "INNOVATION_CATALYSIS": ["Creative Stimulation", "Idea Generation", "Experimental Protocols", "Breakthrough Management", "Innovation Systems", "Transformative Innovation", "Sacred Creativity"],
+                    "TRANSFORMATION_PROTOCOLS": ["Change Leadership", "Metamorphosis Management", "Paradigm Navigation", "Identity Development", "Systematic Transformation", "Revolutionary Change", "Sacred Transformation"],
+                    "META_TRANSFORMATION": ["Transformation Wisdom", "Change Governance", "Transformation Strategy", "Development Mastery", "Transcendent Development", "Transformation Integration", "Sacred Stewardship"]
+                }
+            }
+        };
+
+        function App() {
+            const [selectedCategory, setSelectedCategory] = useState(null);
+
+            const handleCategoryClick = (categoryId) => {
+                setSelectedCategory(categoryId);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            const handleBackClick = () => {
+                setSelectedCategory(null);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            if (selectedCategory) {
+                const category = CATEGORIES_DATA[selectedCategory];
+                
+                return (
+                    <>
+                        <button className="back-button" onClick={handleBackClick}>
+                            ← Back to All Categories
+                        </button>
+
+                        <div className="category-detail-header">
+                            <h2>META-CATEGORY {selectedCategory}: {category.name}</h2>
+                            <p className="tagline">{category.tagline}</p>
+                            {category.statusDate && (
+                                <p style={{ color: '#64b5f6', marginTop: '10px' }}>
+                                    {category.status === 'mapped' ? 'Complete mapping validated' : 'Status'}: {category.statusDate}
+                                </p>
+                            )}
+                        </div>
+
+                        <div className="elements-grid">
+                            {Object.entries(category.elements).map(([elementName, layers], idx) => (
+                                <div key={idx} className="element-card">
+                                    <h4>{idx + 1}. {elementName.replace(/_/g, ' ')}</h4>
+                                    <ol>
+                                        {layers.map((layer, layerIdx) => (
+                                            <li key={layerIdx}>{layer}</li>
+                                        ))}
+                                    </ol>
+                                </div>
+                            ))}
+                        </div>
+                    </>
+                );
+            }
+
+            return (
+                <>
+                    <div className="header">
+                        <h1>Seven Meta-Categories</h1>
+                        <p className="subtitle">The 343 Strategic Intelligence Architecture</p>
+                        <p className="description">
+                            Complete taxonomic mapping of strategic intelligence reality across seven meta-categories, 
+                            each containing seven elements with seven operational layers.
+                        </p>
+                        <p className="description">
+                            Every SIOS framework maps to specific combinations of these 343 components. This enables 
+                            systematic gap analysis, deliberate framework generation, and comprehensive strategic intelligence 
+                            that single-domain approaches cannot match.
+                        </p>
+                        <span className="validation-badge">
+                            ✓ Validated through 260+ operational frameworks across multiple domains and organizations
+                        </span>
+                    </div>
+
+                    <div className="architecture-summary">
+                        <h2>COMPLETE 343 ARCHITECTURE</h2>
+                        <div className="formula">7 Meta-Categories × 7 Elements × 7 Layers = 343 Components</div>
+                        <p className="tagline">
+                            The foundational taxonomy of strategic intelligence reality<br/>
+                            Biblical wisdom integrated • Practical business application • Systematic development
+                        </p>
+                    </div>
+
+                    <div className="categories-grid">
+                        {Object.entries(CATEGORIES_DATA).map(([id, category]) => (
+                            <div 
+                                key={id} 
+                                className="category-card"
+                                onClick={() => handleCategoryClick(parseInt(id))}
+                            >
+                                <h3>META-CATEGORY {id}: {category.name}</h3>
+                                <p className="tagline">{category.tagline}</p>
+                                <p className="element-count">7 Elements • 49 Layers</p>
+                                <span className={`status-badge ${category.status === 'complete' ? 'status-complete' : 'status-mapped'}`}>
+                                    {category.status === 'complete' ? '✓ Complete' : '✓ Mapped'}
+                                    {category.statusDate && ` - ${category.statusDate}`}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="cta-section">
+                        <h2>Explore Strategic Intelligence</h2>
+                        <p>
+                            Want to learn framework generation capability? Explore the Strategic Thinking Academy. 
+                            Need custom frameworks for your business? Contact RageDesigner. 
+                            Deep dive into specific elements through our&nbsp;blog.
+                        </p>
+                        <div className="cta-links">
+                            <a href="https://howtoframework.com" className="cta-link">Strategic Thinking Academy</a>
+                            <a href="https://app.ragedesigner.com/contact/" className="cta-link">Contact RageDesigner</a>
+                            <a href="/" className="cta-link">Explore Blog</a>
+                        </div>
+                    </div>
+                </>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
