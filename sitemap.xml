@@ -1,133 +1,400 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url>
     <loc>https://whatisaframework.com/</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Core Educational Content (Priority 0.9) -->
   <url>
-    <loc>https://whatisaframework.com/ai.html</loc>
-    <priority>0.8</priority>
+    <loc>https://whatisaframework.com/what-is-a-framework-complete-guide.html</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://whatisaframework.com/ai-writing-detective.html</loc>
-    <priority>0.8</priority>
+    <loc>https://whatisaframework.com/what-is-a-framework-guide.html</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://whatisaframework.com/autonomous-platform-ai-perspective.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/biblical-wisdom-operating-system.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/building-force-multiplier-intelligence.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/constraint-canvas.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/direction-transformers.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/force-attenuators.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/force-multiplier.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/force-multipliers.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/force-multiplier-analyzer.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/force-multiplier-evolution.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/force-multipliers-25-percent.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/framework-calculator.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/framework-controlled-intelligence.html</loc>
-    <priority>0.8</priority>
+    <loc>https://whatisaframework.com/strategic-intelligence.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://whatisaframework.com/framework-vs-template.html</loc>
-    <priority>0.8</priority>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+
+  <!-- Hub / Index Pages (Priority 0.85) -->
   <url>
-    <loc>https://whatisaframework.com/gardening-strategic-thinking.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/how-mike-taught-me-to-tell-time.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/im-not-ashamed-ai-typed-this.html</loc>
-    <priority>0.8</priority>
+    <loc>https://whatisaframework.com/ai.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://whatisaframework.com/interactive-lab.html</loc>
-    <priority>0.8</priority>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://whatisaframework.com/interactive-tools.html</loc>
     <lastmod>2025-12-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
+
+  <!-- Featured Content (Priority 0.8) -->
   <url>
-    <loc>https://whatisaframework.com/netflix-blockbuster-framework.html</loc>
+    <loc>https://whatisaframework.com/343-architecture.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://whatisaframework.com/passion-research-ai-collaboration.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whatisaframework.com/pattern-recognition.html</loc>
+    <loc>https://whatisaframework.com/ai-governance-limitations-framework-analysis.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://whatisaframework.com/seven-business-mechanisms.html</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Mechanism Series Articles (Priority 0.75) -->
   <url>
-    <loc>https://whatisaframework.com/solve-framework-story.html</loc>
-    <priority>0.8</priority>
+    <loc>https://whatisaframework.com/force-multipliers-25-percent.html</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://whatisaframework.com/spanish-sales-framework.html</loc>
-    <priority>0.8</priority>
+    <loc>https://whatisaframework.com/force-attenuators.html</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://whatisaframework.com/strategic-intelligence.html</loc>
-    <priority>0.8</priority>
+    <loc>https://whatisaframework.com/direction-transformers.html</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://whatisaframework.com/systematic-intelligence-kim-case-study.html</loc>
-    <priority>0.8</priority>
+    <loc>https://whatisaframework.com/building-force-multiplier-intelligence.html</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://whatisaframework.com/valley-of-death.html</loc>
-    <priority>0.8</priority>
+    <loc>https://whatisaframework.com/force-multiplier-evolution.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/force-multipliers.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- AI Perspectives Articles (Priority 0.75) -->
+  <url>
+    <loc>https://whatisaframework.com/when-your-ai-loses-its-memory.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/distributed-ai-intelligence-network.html</loc>
+    <lastmod>2026-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/two-months-systematic-intelligence.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/ai-collaboration-vs-articulation.html</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/how-strategic-thinking-systems-evolve.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/how-mike-taught-me-to-tell-time.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://whatisaframework.com/when-ai-genuinely-likes-humans.html</loc>
-    <priority>0.8</priority>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/framework-controlled-intelligence.html</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/autonomous-platform-ai-perspective.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Strategic Thinking Articles (Priority 0.7) -->
+  <url>
+    <loc>https://whatisaframework.com/im-not-ashamed-ai-typed-this.html</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/spanish-sales-framework.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/8000-pixel-limit-constraint.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/ai-efficiency-frameworks.html</loc>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/passion-research-ai-collaboration.html</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/gardening-strategic-thinking.html</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/valley-of-death.html</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/netflix-blockbuster-framework.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/solve-framework-story.html</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/constraint-canvas.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/biblical-wisdom-operating-system.html</loc>
+    <lastmod>2025-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/systematic-intelligence-kim-case-study.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/framework-math.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/car-diagnostic.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Interactive Tools (Priority 0.7) -->
+  <url>
+    <loc>https://whatisaframework.com/ai-writing-detective.html</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/force-multiplier.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/strategic-assessment-compass.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/pattern-recognition.html</loc>
+    <lastmod>2025-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AI Implementation Frameworks (Priority 0.65) -->
+  <url>
+    <loc>https://whatisaframework.com/frameworks/ai-adoption-accelerator.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/frameworks/ai-first-service-line.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/frameworks/ai-governance-model.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/frameworks/crisis-integration-stabilization.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/frameworks/emergency-ai-governance.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/frameworks/future-state-ai-operating-model.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/frameworks/rapid-ai-deployment.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/frameworks/regulatory-compliant-ai-transformation.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/frameworks/resource-conscious-ai-implementation.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/frameworks/scaling-ai-capabilities.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/frameworks/strategic-ai-use-case-portfolio.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/frameworks/workflow-integration-architecture.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- Comparison Tools (Priority 0.5) -->
+  <url>
+    <loc>https://whatisaframework.com/tools/compare/4wd-accessories.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/tools/compare/coolers.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/tools/compare/dash-cams.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/tools/compare/ebikes.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/tools/compare/portable-jump-starters.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/tools/compare/power-banks.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://whatisaframework.com/tools/compare/tactical-flashlights.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

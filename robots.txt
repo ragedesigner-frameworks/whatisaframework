@@ -1,4 +1,41 @@
+# whatisaframework.com - Robots Configuration
+# Optimized for search engines AND AI agent discovery
+# Last updated: 2026-02-18
+
+# Welcome all crawlers
 User-agent: *
 Allow: /
 
+# AI Agent Crawlers - Welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Disallow test artifacts and drafts
+Disallow: /drafts/
+Disallow: /scripts/
+
+# Sitemaps
 Sitemap: https://whatisaframework.com/sitemap.xml
+
+# Agent Hub (Phase 2 - Coming Soon)
+# Agent-readable framework data will be available at /api/frameworks/
+# Structured data: JSON-LD on all pages
+# Framework registry: /api/frameworks/registry.json
