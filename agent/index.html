@@ -84,6 +84,19 @@
         .audience-card ul { list-style: none; padding: 0; margin-bottom: 24px; }
         .audience-card li { padding: 8px 0; font-size: 0.9rem; color: var(--text-medium); border-bottom: 1px solid rgba(26,35,50,0.06); }
         .audience-card li::before { content: '→ '; color: var(--primary); font-weight: 600; }
+        .capture-form { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+        .capture-input { width: 100%; padding: 12px 16px; border: 2px solid rgba(26,35,50,0.12); border-radius: 8px; font-size: 0.9rem; font-family: 'Roboto', sans-serif; color: var(--charcoal-blue); transition: border-color 0.3s; background: var(--white); }
+        .capture-input:focus { outline: none; border-color: var(--primary); }
+        .capture-input::placeholder { color: #999; }
+        select.capture-input { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; cursor: pointer; }
+        select.capture-input option { color: var(--charcoal-blue); }
+        .capture-btn { width: 100%; cursor: pointer; border: none; font-size: 0.95rem; }
+        .capture-note { font-size: 0.8rem; color: var(--text-medium); margin-top: 8px; text-align: center; }
+        .capture-note a { color: var(--primary); text-decoration: none; }
+        .capture-note a:hover { text-decoration: underline; }
+        .capture-success { background: rgba(76,175,80,0.1); border: 2px solid #4CAF50; border-radius: 8px; padding: 20px; text-align: center; }
+        .capture-success h4 { color: #4CAF50; margin-bottom: 8px; }
+        .capture-success p { color: var(--text-medium); font-size: 0.9rem; }
         .card-cta { display: inline-block; background: var(--primary); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; border: 2px solid var(--primary); transition: all 0.3s; }
         .card-cta:hover { background: transparent; color: var(--primary); }
 
@@ -188,27 +201,40 @@
                 <div class="audience-card">
                     <div class="audience-icon">👩‍💻</div>
                     <h3>For Developers</h3>
-                    <p>Searchable framework library. Integration patterns. Build smarter agents with systematic thinking.</p>
-                    <ul>
-                        <li>Browse & filter frameworks</li>
-                        <li>Interactive tools & labs</li>
-                        <li>Framework-to-prompt patterns</li>
-                        <li>Agent integration examples</li>
-                    </ul>
-                    <a href="/agent/library.html" class="card-cta">Browse Library →</a>
+                    <p>Get framework integration patterns, prompt engineering guides, and updates on new frameworks delivered to your inbox.</p>
+                    <form class="capture-form" id="dev-form" onsubmit="handleDevSubmit(event)">
+                        <input type="email" placeholder="Your email" required class="capture-input" id="dev-email">
+                        <input type="text" placeholder="Your name (optional)" class="capture-input" id="dev-name">
+                        <button type="submit" class="card-cta capture-btn">Get Developer Access →</button>
+                    </form>
+                    <p class="capture-note">Plus instant access to the <a href="/agent/library.html">Framework Library</a></p>
                 </div>
 
                 <div class="audience-card">
                     <div class="audience-icon">🏢</div>
                     <h3>For Enterprises</h3>
-                    <p>Strategic intelligence assessment. Personalized recommendations. Framework methodology consulting.</p>
-                    <ul>
-                        <li>Intelligence Verification Gate</li>
-                        <li>Tier-based recommendations</li>
-                        <li>Custom framework development</li>
-                        <li>Team deployment guidance</li>
-                    </ul>
-                    <a href="/agent/verify.html" class="card-cta">Take Assessment →</a>
+                    <p>Custom framework development, team deployment, and strategic intelligence consulting for your organization.</p>
+                    <form class="capture-form" id="ent-form" onsubmit="handleEntSubmit(event)">
+                        <input type="email" placeholder="Work email" required class="capture-input" id="ent-email">
+                        <input type="text" placeholder="Organization name" class="capture-input" id="ent-org">
+                        <select class="capture-input" id="ent-size">
+                            <option value="" disabled selected>Team size</option>
+                            <option value="1-10">1–10 people</option>
+                            <option value="11-50">11–50 people</option>
+                            <option value="51-200">51–200 people</option>
+                            <option value="200+">200+ people</option>
+                        </select>
+                        <select class="capture-input" id="ent-challenge">
+                            <option value="" disabled selected>Primary challenge</option>
+                            <option value="ai-implementation">AI Implementation</option>
+                            <option value="ai-governance">AI Governance</option>
+                            <option value="scaling-ai">Scaling AI Pilots</option>
+                            <option value="framework-methodology">Framework Methodology</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <button type="submit" class="card-cta capture-btn">Connect with Team →</button>
+                    </form>
+                    <p class="capture-note">Or <a href="/agent/verify.html">take the assessment</a> first</p>
                 </div>
             </div>
         </div>
@@ -287,6 +313,56 @@
         document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function(l) { l.addEventListener('click', closeMenu); });
 
         AgentCore.trackEvent('hub_landing_view', 'agent_hub');
+
+        // Developer form handler
+        window.handleDevSubmit = function(e) {
+            e.preventDefault();
+            var email = document.getElementById('dev-email').value;
+            var name = document.getElementById('dev-name').value;
+            
+            // Track the capture
+            AgentCore.trackEvent('dev_email_capture', 'agent_hub', email);
+            
+            // Store locally for reference
+            var captures = JSON.parse(localStorage.getItem('wif_captures') || '[]');
+            captures.push({ type: 'developer', email: email, name: name, date: new Date().toISOString() });
+            localStorage.setItem('wif_captures', JSON.stringify(captures));
+            
+            // Show success and redirect
+            var form = document.getElementById('dev-form');
+            form.innerHTML = '<div class="capture-success"><h4>\u2713 You\'re in!</h4><p>Redirecting to connect with the team...</p></div>';
+            
+            setTimeout(function() {
+                window.open('https://app.ragedesigner.com/contact/', '_blank');
+            }, 1500);
+        };
+
+        // Enterprise form handler
+        window.handleEntSubmit = function(e) {
+            e.preventDefault();
+            var email = document.getElementById('ent-email').value;
+            var org = document.getElementById('ent-org').value;
+            var size = document.getElementById('ent-size').value;
+            var challenge = document.getElementById('ent-challenge').value;
+            
+            // Track the capture
+            AgentCore.trackEvent('ent_email_capture', 'agent_hub', email);
+            AgentCore.trackEvent('ent_org_size', 'agent_hub', size);
+            AgentCore.trackEvent('ent_challenge', 'agent_hub', challenge);
+            
+            // Store locally
+            var captures = JSON.parse(localStorage.getItem('wif_captures') || '[]');
+            captures.push({ type: 'enterprise', email: email, org: org, size: size, challenge: challenge, date: new Date().toISOString() });
+            localStorage.setItem('wif_captures', JSON.stringify(captures));
+            
+            // Show success and redirect
+            var form = document.getElementById('ent-form');
+            form.innerHTML = '<div class="capture-success"><h4>\u2713 Request received!</h4><p>Redirecting to schedule a conversation...</p></div>';
+            
+            setTimeout(function() {
+                window.open('https://app.ragedesigner.com/contact/', '_blank');
+            }, 1500);
+        };
     })();
     </script>
 </body>
