@@ -203,6 +203,8 @@
         .product-content {
             padding: var(--space-4);
             flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-summary {
@@ -279,6 +281,14 @@
             margin-right: 6px;
         }
 
+        /* Button group - brand + Amazon side by side */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+            flex-wrap: wrap;
+        }
+
         .cta-button {
             display: inline-block;
             background: var(--orange-accent);
@@ -290,7 +300,9 @@
             font-size: 0.95rem;
             transition: all 0.3s ease;
             border: 2px solid var(--orange-accent);
-            margin-top: auto;
+            flex: 1;
+            text-align: center;
+            min-width: 120px;
         }
 
         .cta-button:hover {
@@ -298,13 +310,14 @@
             color: var(--orange-accent);
         }
 
-        .cta-button.secondary {
+        .cta-button.amazon {
             background: transparent;
             color: var(--orange-accent);
             border: 2px solid var(--orange-accent);
+            font-size: 0.85rem;
         }
 
-        .cta-button.secondary:hover {
+        .cta-button.amazon:hover {
             background: var(--orange-accent);
             color: var(--white);
         }
@@ -381,6 +394,10 @@
 
             .container {
                 padding: var(--space-4);
+            }
+
+            .btn-group {
+                flex-direction: column;
             }
         }
     </style>
@@ -467,7 +484,10 @@
                             </ul>
                         </div>
 
-                        <a href="https://www.aventon.com/products/aventure-3-ebike?utm_source=ragedesigner&utm_medium=affiliate" class="cta-button">View on Aventon</a>
+                        <div class="btn-group">
+                            <a href="https://www.aventon.com/products/aventure-3-ebike?utm_source=ragedesigner&utm_medium=affiliate" target="_blank" rel="nofollow" class="cta-button">View on Aventon</a>
+                            <a href="https://www.amazon.com/s?k=Aventon+Aventure+3+fat+tire+ebike&tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="cta-button amazon">Also on Amazon</a>
+                        </div>
                     </div>
                 </div>
 
@@ -522,7 +542,10 @@
                             </ul>
                         </div>
 
-                        <a href="https://www.lectric.com/products/xpeak-2-0?utm_source=ragedesigner&utm_medium=affiliate" class="cta-button">View on Lectric</a>
+                        <div class="btn-group">
+                            <a href="https://www.lectric.com/products/xpeak-2-0?utm_source=ragedesigner&utm_medium=affiliate" target="_blank" rel="nofollow" class="cta-button">View on Lectric</a>
+                            <a href="https://www.amazon.com/s?k=Lectric+XPeak+2.0+fat+tire+ebike&tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="cta-button amazon">Also on Amazon</a>
+                        </div>
                     </div>
                 </div>
 
@@ -577,7 +600,10 @@
                             </ul>
                         </div>
 
-                        <a href="https://www.velotricbike.com/products/nomad-2x?utm_source=ragedesigner&utm_medium=affiliate" class="cta-button">View on Velotric</a>
+                        <div class="btn-group">
+                            <a href="https://www.velotricbike.com/products/nomad-2x?utm_source=ragedesigner&utm_medium=affiliate" target="_blank" rel="nofollow" class="cta-button">View on Velotric</a>
+                            <a href="https://www.amazon.com/s?k=Velotric+Nomad+2+fat+tire+ebike&tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="cta-button amazon">Also on Amazon</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -649,7 +675,10 @@
                             </ul>
                         </div>
 
-                        <a href="https://www.aventon.com/products/ramblas-electric-mountain-bike?utm_source=ragedesigner&utm_medium=affiliate" class="cta-button">View on Aventon</a>
+                        <div class="btn-group">
+                            <a href="https://www.aventon.com/products/ramblas-electric-mountain-bike?utm_source=ragedesigner&utm_medium=affiliate" target="_blank" rel="nofollow" class="cta-button">View on Aventon</a>
+                            <a href="https://www.amazon.com/s?k=Aventon+Ramblas+electric+mountain+bike&tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="cta-button amazon">Also on Amazon</a>
+                        </div>
                     </div>
                 </div>
 
@@ -704,7 +733,10 @@
                             </ul>
                         </div>
 
-                        <a href="https://www.specialized.com/us/en/turbo-levo-comp-alloy/p/199627?utm_source=ragedesigner&utm_medium=affiliate" class="cta-button">View on Specialized</a>
+                        <div class="btn-group">
+                            <a href="https://www.specialized.com/us/en/turbo-levo-comp-alloy/p/199627?utm_source=ragedesigner&utm_medium=affiliate" target="_blank" rel="nofollow" class="cta-button">View on Specialized</a>
+                            <a href="https://www.amazon.com/s?k=Specialized+Turbo+Levo+Comp+electric+mountain+bike&tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="cta-button amazon">Also on Amazon</a>
+                        </div>
                     </div>
                 </div>
 
@@ -759,7 +791,10 @@
                             </ul>
                         </div>
 
-                        <a href="https://www.trekbikes.com/us/en_US/bikes/mountain-bikes/e-mountain-bikes/rail/?utm_source=ragedesigner&utm_medium=affiliate" class="cta-button">View on Trek</a>
+                        <div class="btn-group">
+                            <a href="https://www.trekbikes.com/us/en_US/bikes/mountain-bikes/e-mountain-bikes/rail/?utm_source=ragedesigner&utm_medium=affiliate" target="_blank" rel="nofollow" class="cta-button">View on Trek</a>
+                            <a href="https://www.amazon.com/s?k=Trek+Rail+electric+mountain+bike&tag=ragedesigne0c-20" target="_blank" rel="nofollow" class="cta-button amazon">Also on Amazon</a>
+                        </div>
                     </div>
                 </div>
             </div>
