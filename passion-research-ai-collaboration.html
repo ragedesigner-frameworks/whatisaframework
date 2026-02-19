@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS7JGCYKT1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBXZ335ZR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-GS7JGCYKT1');
+      gtag('config', 'G-TXBXZ335ZR');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,8 +82,8 @@
         }
         .logo-link { display: inline-block; transition: transform 0.3s ease; }
         .logo-link:hover { transform: scale(1.05); }
-        .logo-icon { height: 68px; width: auto; transition: height 0.3s ease; }
-        nav#main-header.scrolled .logo-icon { height: 56px; }
+        .logo { height: 68px; width: auto; transition: height 0.3s ease; }
+        nav#main-header.scrolled .logo { height: 56px; }
         .nav-links { display: flex; align-items: center; gap: 32px; }
         .nav-link { color: var(--dark-light); text-decoration: none; font-weight: 500; transition: color 0.3s ease; position: relative; }
         .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease; }
@@ -150,16 +150,17 @@
         .related-card h4 { color: var(--dark); margin-bottom: var(--space-1); font-size: var(--text-base); font-weight: 700; }
         .related-card p { color: var(--dark-light); font-size: var(--text-sm); margin-bottom: 0; }
         footer { padding: var(--space-6) var(--space-3) var(--space-4); background: #0f151d; color: var(--white); text-align: center; }
-        footer p { opacity: 0.7; font-size: var(--text-sm); }
-        footer a { color: var(--primary); text-decoration: none; }
+        footer p { opacity: 0.7; font-size: var(--text-sm); color: var(--white); }
+        footer a { color: var(--white); text-decoration: none; transition: color 0.3s ease; }
+        footer a:hover { color: var(--primary); }
         .footer-links { margin-bottom: var(--space-3); }
         .footer-links a { margin: 0 var(--space-2); }
         @media (max-width: 768px) {
             body { padding-top: 70px; }
             .desktop-nav { display: none; }
             .mobile-menu-toggle { display: flex; }
-            .logo-icon { height: 52px; }
-            nav#main-header.scrolled .logo-icon { height: 44px; }
+            .logo { height: 52px; }
+            nav#main-header.scrolled .logo { height: 44px; }
             .hero { min-height: 80vh; }
             article { padding: var(--space-5) var(--space-3); }
             .related-grid { grid-template-columns: 1fr; }
@@ -169,11 +170,11 @@
 <body>
     <nav id="main-header">
         <a href="/" class="logo-link">
-            <img src="https://app.ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo-icon">
+            <img src="/images/whatisaframework-logo.png" alt="What Is A Framework" class="logo">
         </a>
         <div class="nav-links desktop-nav">
-            <a href="/#definition" class="nav-link">Definition</a>
-            <a href="/#topics" class="nav-link">Topics</a>
+            <a href="/">Home</a>
+            <a href="/interactive-lab.html">Interactive Lab</a>
             <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
         </div>
         <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -186,8 +187,8 @@
     <div class="mobile-nav-drawer">
         <button class="mobile-nav-close" aria-label="Close menu">×</button>
         <nav class="mobile-nav">
-            <a href="/#definition" class="mobile-nav-link">Definition</a>
-            <a href="/#topics" class="mobile-nav-link">Topics</a>
+            <a href="/" class="mobile-nav-link">Home</a>
+            <a href="/interactive-lab.html" class="mobile-nav-link">Interactive Lab</a>
             <a href="https://howtoframework.com" class="mobile-nav-cta">Learn to Build Frameworks</a>
         </nav>
     </div>
@@ -283,18 +284,18 @@
     <section class="cta-section">
         <h2>Ready to Build Systematic AI Collaboration?</h2>
         <p>Start with <strong>Minimum Viable Intelligence ($297)</strong> - the foundation for systematic thinking. Or join the full <strong>Strategic Thinking Academy ($750)</strong> to master framework generation.</p>
-        <a href="https://ragedesigner.com/contact" class="btn-primary">Learn About MVI - $297</a>
+        <a href="https://app.ragedesigner.com/contact" class="btn-primary">Learn About MVI - $297</a>
     </section>
 
     <footer>
+        <div class="ai-badge">&#129302; This site is built and managed autonomously by AI</div>
         <div class="footer-links">
             <a href="/">What is a Framework?</a>
             <a href="https://howtoframework.com">How to Framework</a>
             <a href="https://ragedesigner.com">RageDesigner</a>
-            <a href="https://ragedesigner.com/contact">Contact</a>
+            <a href="https://app.ragedesigner.com/contact">Contact</a>
         </div>
-        <p>Part of the <a href="https://ragedesigner.com">RageDesigner</a> framework ecosystem</p>
-        <p style="margin-top: 8px;">© 2025 RageDesigner. All rights reserved.</p>
+        <p>Built by <a href="https://ragedesigner.com">RageDesigner</a> | &copy; 2026</p>
     </footer>
 
     <script>
