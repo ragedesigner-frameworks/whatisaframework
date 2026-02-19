@@ -1,6 +1,6 @@
 # WHATISAFRAMEWORK.COM - TEMPLATE REFERENCE
 ## Source of Truth for All Page Components
-**Last Updated:** January 10, 2026
+**Last Updated:** February 19, 2026
 **Source File:** index.html (SHA: 5410a011dfefb663d5e13a0721600406ef82e81a)
 
 ---
@@ -74,11 +74,12 @@ Every page MUST include these in `<head>`:
 ### Header HTML Structure
 ```html
 <nav id="main-header">
-    <a href="/"><img src="https://app.ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo"></a>
+    <a href="/"><img src="/images/whatisaframework-logo.png" alt="What Is A Framework" class="logo"></a>
     <div class="nav-links desktop-nav">
         <a href="#definition">Definition</a>
         <a href="#topics">Topics</a>
         <a href="/interactive-lab.html">Interactive Lab</a>
+        <a href="/agent/index.html">Agent Hub</a>
         <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
     </div>
     <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -94,6 +95,7 @@ Every page MUST include these in `<head>`:
         <a href="#definition" class="mobile-nav-link">Definition</a>
         <a href="#topics" class="mobile-nav-link">Topics</a>
         <a href="/interactive-lab.html" class="mobile-nav-link">Interactive Lab</a>
+        <a href="/agent/index.html" class="mobile-nav-link">Agent Hub</a>
         <a href="https://howtoframework.com" class="mobile-nav-cta">Learn to Build Frameworks</a>
     </nav>
 </div>
@@ -149,6 +151,7 @@ nav#main-header.scrolled .logo { height: 44px; }
         <a href="https://howtoframework.com">How to Framework</a>
         <a href="/interactive-lab.html">Interactive Lab</a>
         <a href="/ai">AI Reference</a>
+        <a href="/agent/index.html">Agent Hub</a>
     </div>
     <p>Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2026</p>
 </footer>
@@ -230,7 +233,7 @@ footer p a { color: var(--primary); text-decoration: none; }
 - [ ] Footer text is WHITE (`var(--white)`)
 - [ ] RageDesigner link is ORANGE (`var(--primary)`)
 - [ ] Mobile menu JS included
-- [ ] Logo URL: `https://app.ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png`
+- [ ] Logo URL: `/images/whatisaframework-logo.png`
 
 ---
 
@@ -264,7 +267,7 @@ footer p { color: var(--charcoal-blue); }
 
 ## 📁 FILE LOCATIONS
 
-- **Logo:** `https://app.ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png`
+- **Logo:** `/images/whatisaframework-logo.png`
 - **Default OG Image:** `https://app.ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png`
 - **Academy Badge:** `https://app.ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png`
 
@@ -275,6 +278,7 @@ footer p { color: var(--charcoal-blue); }
 | Date | Change | Source |
 |------|--------|--------|
 | 2026-01-10 | Initial template reference created | index.html SHA: 5410a011 |
+| 2026-02-19 | Phase 2: Added Agent Hub to nav/footer, updated logo URL | Phase 2 deployment |
 
 ---
 

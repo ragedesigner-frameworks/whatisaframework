@@ -35,7 +35,14 @@ Disallow: /scripts/
 # Sitemaps
 Sitemap: https://whatisaframework.com/sitemap.xml
 
-# Agent Hub (Phase 2 - Coming Soon)
-# Agent-readable framework data will be available at /api/frameworks/
-# Structured data: JSON-LD on all pages
-# Framework registry: /api/frameworks/registry.json
+# Agent Economy Hub (Phase 2 - Live)
+Allow: /api/
+Allow: /agent/
+
+# Agent-readable framework data
+# API Manifest: /api/manifest.json
+# Framework Registry: /api/frameworks/registry.json
+# 343 Taxonomy: /api/frameworks/taxonomy.json
+# Search Index: /api/search/index.json
+# Verification Gate: /agent/verify.html
+# Framework Library: /agent/library.html
