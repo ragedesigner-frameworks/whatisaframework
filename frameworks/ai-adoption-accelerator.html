@@ -21,229 +21,28 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: var(--dark); background-color: var(--white); }
         .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
-        nav#main-header { background: var(--white); padding: var(--space-2) var(--space-4); display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; }
-        nav#main-header.scrolled { padding: 12px var(--space-4); box-shadow: 0 2px 20px rgba(26, 35, 50, 0.08); }
-        .logo { height: 50px; transition: height 0.3s ease; }
-        nav#main-header.scrolled .logo { height: 44px; }
-        .nav-links { display: flex; gap: var(--space-3); align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--charcoal-blue); font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        .nav-cta { background: var(--primary); color: var(--white) !important; padding: var(--space-1) var(--space-3); border-radius: 6px; border: 2px solid var(--primary); transition: all 0.3s ease; }
-        .nav-cta:hover { background: transparent; color: var(--primary) !important; }
-        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
-        .hamburger-line { width: 28px; height: 3px; background: var(--charcoal-blue); border-radius: 2px; transition: all 0.3s ease; }
-        .mobile-menu-toggle:hover .hamburger-line { background: var(--primary); }
-        .mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translateY(9px); }
-        .mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
-        .mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translateY(-9px); }
-        .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--charcoal-blue); padding: 48px 40px; transition: right 0.4s ease; z-index: 1002; }
-        .mobile-nav-drawer.active { right: 0; }
-        .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--primary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; transition: transform 0.3s ease; }
-        .mobile-nav-close:hover { transform: rotate(90deg); }
-        .mobile-nav { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
-        .mobile-nav-link { color: white; text-decoration: none; font-size: 18px; font-weight: 500; padding: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; position: relative; }
-        .mobile-nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--primary); transform: translateX(-4px); transition: transform 0.3s ease; }
-        .mobile-nav-link:hover { padding-left: 24px; color: var(--primary); }
-        .mobile-nav-link:hover::before { transform: translateX(0); }
-        .mobile-nav-cta { margin-top: 24px; background: var(--primary); color: white !important; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--primary); }
-        .mobile-nav-cta:hover { background: transparent; transform: translateY(-2px); }
-        .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26,35,50,0.8); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1001; }
-        .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
         .hero { background: linear-gradient(135deg, var(--dark) 0%, #243447 100%); color: var(--white); padding: calc(68px + 96px) 24px 96px; text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
         .framework-badge { display: inline-block; background: var(--primary); color: var(--white); padding: 8px 24px; border-radius: 24px; font-size: 0.875rem; font-weight: 600; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.5px; }
         .hero h1 { font-size: clamp(2.441rem, 6vw, 3.052rem); font-weight: 700; line-height: 1.25; margin-bottom: 16px; color: var(--white); }
         .tagline { font-size: 1.25rem; max-width: 700px; margin: 0 auto; color: var(--white); opacity: 0.95; }
-        .main-content { padding: 96px 24px; }
-        .section { margin-bottom: 80px; }
-        .section h2 { font-size: clamp(1.953rem, 5vw, 2.441rem); font-weight: 700; color: var(--dark); margin-bottom: 24px; line-height: 1.25; }
-        .section p { font-size: 1.125rem; line-height: 1.75; color: rgba(26, 35, 50, 0.85); margin-bottom: 24px; }
-        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-        .principles-list { list-style: none; margin: 32px 0; }
-        .principles-list li { background-color: var(--primary-light); padding: 24px; margin-bottom: 16px; border-radius: 8px; border-left: 4px solid var(--primary); font-size: 1rem; line-height: 1.6; }
-        .principles-list li strong { color: var(--dark); display: block; margin-bottom: 8px; font-weight: 600; font-size: 1.125rem; }
-        .case-study { background-color: var(--light-gray); padding: 40px; border-radius: 12px; border: 1px solid var(--border-gray); }
-        .case-study h4 { font-size: 1.25rem; font-weight: 600; color: var(--dark); margin-bottom: 24px; }
-        .case-study .label { color: var(--primary); font-weight: 600; display: block; margin-bottom: 8px; }
-        .case-study .content-block { margin-bottom: 20px; }
-        .case-study .content-block:last-child { margin-bottom: 0; }
-        .timeframe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 32px; }
-        .timeframe-card { background-color: var(--white); padding: 32px; border-radius: 12px; border: 2px solid var(--border-gray); text-align: center; }
-        .timeframe-card .number { font-size: 2rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 8px; }
-        .timeframe-card h4 { font-size: 1.125rem; font-weight: 600; color: var(--dark); margin-bottom: 12px; }
-        .timeframe-card p { font-size: 0.875rem; color: var(--medium-gray); margin-bottom: 0; }
-        .cta-section { background: linear-gradient(135deg, var(--dark) 0%, #243447 100%); color: var(--white); padding: 96px 24px; text-align: center; }
-        .cta-section h2 { color: var(--white); margin-bottom: 20px; }
-        .cta-section p { color: rgba(255, 255, 255, 0.8); font-size: 1.125rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .cta-button { display: inline-block; background-color: var(--primary); color: var(--white); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; border: 2px solid var(--primary); }
-        .cta-button:hover { background-color: transparent; color: var(--primary); transform: translateY(-2px); }
-        footer { background: #0f151d; color: var(--white); padding: var(--space-6) var(--space-4); text-align: center; }
-        .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.2); border: 1px solid var(--primary); padding: var(--space-1) var(--space-2); border-radius: 20px; font-size: var(--text-xs); margin-bottom: var(--space-3); color: var(--primary); }
-        .footer-links { margin-bottom: var(--space-3); }
-        .footer-links a { color: var(--white); text-decoration: none; margin: 0 var(--space-2); transition: color 0.3s ease; }
-        .footer-links a:hover { color: var(--primary); }
-        footer p { opacity: 0.7; font-size: var(--text-sm); color: var(--white); }
-        footer p a { color: var(--primary); text-decoration: none; }
-        @media (max-width: 768px) {
-            .nav-links.desktop-nav { display: none; }
-            .mobile-menu-toggle { display: flex; }
-            .hero { padding: calc(68px + 64px) 24px 64px; min-height: auto; }
-            .two-column { grid-template-columns: 1fr; gap: 40px; }
-            .timeframe-grid { grid-template-columns: 1fr; }
-            .case-study { padding: 24px; }
-        }
+        .main-content { padding: 96px 24px; } .section { margin-bottom: 80px; } .section h2 { font-size: clamp(1.953rem, 5vw, 2.441rem); font-weight: 700; color: var(--dark); margin-bottom: 24px; line-height: 1.25; } .section p { font-size: 1.125rem; line-height: 1.75; color: rgba(26, 35, 50, 0.85); margin-bottom: 24px; } .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; } .principles-list { list-style: none; margin: 32px 0; } .principles-list li { background-color: var(--primary-light); padding: 24px; margin-bottom: 16px; border-radius: 8px; border-left: 4px solid var(--primary); font-size: 1rem; line-height: 1.6; } .principles-list li strong { color: var(--dark); display: block; margin-bottom: 8px; font-weight: 600; font-size: 1.125rem; } .case-study { background-color: var(--light-gray); padding: 40px; border-radius: 12px; border: 1px solid var(--border-gray); } .case-study h4 { font-size: 1.25rem; font-weight: 600; color: var(--dark); margin-bottom: 24px; } .case-study .label { color: var(--primary); font-weight: 600; display: block; margin-bottom: 8px; } .case-study .content-block { margin-bottom: 20px; } .case-study .content-block:last-child { margin-bottom: 0; } .timeframe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 32px; } .timeframe-card { background-color: var(--white); padding: 32px; border-radius: 12px; border: 2px solid var(--border-gray); text-align: center; } .timeframe-card .number { font-size: 2rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 8px; } .timeframe-card h4 { font-size: 1.125rem; font-weight: 600; color: var(--dark); margin-bottom: 12px; } .timeframe-card p { font-size: 0.875rem; color: var(--medium-gray); margin-bottom: 0; } .cta-section { background: linear-gradient(135deg, var(--dark) 0%, #243447 100%); color: var(--white); padding: 96px 24px; text-align: center; } .cta-section h2 { color: var(--white); margin-bottom: 20px; } .cta-section p { color: rgba(255, 255, 255, 0.8); font-size: 1.125rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; } .cta-button { display: inline-block; background-color: var(--primary); color: var(--white); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; border: 2px solid var(--primary); } .cta-button:hover { background-color: transparent; color: var(--primary); transform: translateY(-2px); }
+        nav#main-header { background: var(--white); padding: var(--space-2) var(--space-4); display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; } nav#main-header.scrolled { padding: 12px var(--space-4); box-shadow: 0 2px 20px rgba(26, 35, 50, 0.08); } .logo { height: 50px; transition: height 0.3s ease; } nav#main-header.scrolled .logo { height: 44px; } .nav-links { display: flex; gap: var(--space-3); align-items: center; } .nav-links a { text-decoration: none; color: var(--charcoal-blue); font-weight: 500; transition: color 0.3s; } .nav-links a:hover { color: var(--primary); } .nav-cta { background: var(--primary); color: var(--white) !important; padding: var(--space-1) var(--space-3); border-radius: 6px; border: 2px solid var(--primary); transition: all 0.3s ease; } .nav-cta:hover { background: transparent; color: var(--primary) !important; } .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; } .hamburger-line { width: 28px; height: 3px; background: var(--charcoal-blue); border-radius: 2px; transition: all 0.3s ease; } .mobile-menu-toggle:hover .hamburger-line { background: var(--primary); } .mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translateY(9px); } .mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; } .mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translateY(-9px); } .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--charcoal-blue); padding: 48px 40px; transition: right 0.4s ease; z-index: 1002; } .mobile-nav-drawer.active { right: 0; } .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--primary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; transition: transform 0.3s ease; } .mobile-nav-close:hover { transform: rotate(90deg); } .mobile-nav { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; } .mobile-nav-link { color: white; text-decoration: none; font-size: 18px; font-weight: 500; padding: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; position: relative; } .mobile-nav-link::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--primary); transform: translateX(-4px); transition: transform 0.3s ease; } .mobile-nav-link:hover { padding-left: 24px; color: var(--primary); } .mobile-nav-link:hover::before { transform: translateX(0); } .mobile-nav-cta { margin-top: 24px; background: var(--primary); color: white !important; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--primary); } .mobile-nav-cta:hover { background: transparent; transform: translateY(-2px); } .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 35, 50, 0.8); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1001; } .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
+        footer { background: #0f151d; color: var(--white); padding: var(--space-6) var(--space-4); text-align: center; } .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.2); border: 1px solid var(--primary); padding: var(--space-1) var(--space-2); border-radius: 20px; font-size: var(--text-xs); margin-bottom: var(--space-3); color: var(--primary); } .footer-links { margin-bottom: var(--space-3); } .footer-links a { color: var(--white); text-decoration: none; margin: 0 var(--space-2); transition: color 0.3s ease; } .footer-links a:hover { color: var(--primary); } footer p { opacity: 0.7; font-size: var(--text-sm); color: var(--white); } footer p a { color: var(--primary); text-decoration: none; }
+        @media (max-width: 768px) { .nav-links.desktop-nav { display: none; } .mobile-menu-toggle { display: flex; } .hero { padding: calc(68px + 64px) 24px 64px; min-height: auto; } .two-column { grid-template-columns: 1fr; gap: 40px; } .timeframe-grid { grid-template-columns: 1fr; } .case-study { padding: 24px; } }
     </style>
 </head>
 <body>
     <nav id="main-header">
-        <a href="/"><img src="https://app.ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png" alt="What Is A Framework" class="logo"></a>
-        <div class="nav-links desktop-nav">
-            <a href="/">Home</a>
-            <a href="/interactive-lab.html">Interactive Lab</a>
-            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
-        </div>
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+        <a href="/"><img src="/images/whatisaframework-logo.png" alt="What Is A Framework" class="logo"></a>
+        <div class="nav-links desktop-nav"><a href="/">Home</a><a href="/interactive-lab.html">Interactive Lab</a><a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a></div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
     </nav>
-    <div class="mobile-nav-drawer">
-        <button class="mobile-nav-close" aria-label="Close menu">×</button>
-        <nav class="mobile-nav">
-            <a href="/" class="mobile-nav-link">Home</a>
-            <a href="/interactive-lab.html" class="mobile-nav-link">Interactive Lab</a>
-            <a href="https://howtoframework.com" class="mobile-nav-cta">Learn to Build Frameworks</a>
-        </nav>
-    </div>
+    <div class="mobile-nav-drawer"><button class="mobile-nav-close" aria-label="Close menu">×</button><nav class="mobile-nav"><a href="/" class="mobile-nav-link">Home</a><a href="/interactive-lab.html" class="mobile-nav-link">Interactive Lab</a><a href="https://howtoframework.com" class="mobile-nav-cta">Learn to Build Frameworks</a></nav></div>
     <div class="mobile-nav-overlay"></div>
-
-    <section class="hero">
-        <div class="framework-badge">AI Implementation Framework</div>
-        <h1>AI Adoption Accelerator</h1>
-        <p class="tagline">Transform the human side of AI implementation from your biggest obstacle into your strongest competitive advantage.</p>
-    </section>
-
-    <main class="main-content">
-        <div class="container">
-            <section class="section">
-                <div class="two-column">
-                    <div>
-                        <h2>The Challenge</h2>
-                        <p>Most AI implementations fail for human reasons, not technical ones. The technology works, but teams don't use it. They're worried about job security, skeptical of the hype, or simply too busy to learn new tools that might not stick around.</p>
-                        <p>Leadership launches AI initiatives with enthusiasm, but six months later adoption metrics tell a different story. The tools sit unused while teams quietly revert to familiar processes. The investment disappears into organizational resistance.</p>
-                    </div>
-                    <div>
-                        <h2>The Approach</h2>
-                        <p>Sustainable AI adoption requires treating change management as seriously as technical implementation. That means understanding what drives resistance, designing for real workflow integration, and building capability systematically rather than hoping training alone creates lasting change.</p>
-                        <p>The accelerator addresses adoption at three levels: individual skill building, team workflow redesign, and organizational culture alignment. Success requires coordinated movement across all three.</p>
-                    </div>
-                </div>
-            </section>
-            <section class="section">
-                <h2>Core Principles</h2>
-                <p>Four principles drive effective AI adoption acceleration:</p>
-                <ul class="principles-list">
-                    <li><strong>Resistance as Intelligence</strong>People resist AI adoption for reasons that make sense to them. Fear of job displacement, skepticism about effectiveness, concerns about quality. Effective adoption programs surface these objections and address them directly rather than dismissing them as change resistance.</li>
-                    <li><strong>Workflow-First Design</strong>AI tools that require practitioners to leave their normal workflow to use them won't get used. Adoption accelerates when AI integrates into existing processes rather than demanding parallel workflows people forget to follow.</li>
-                    <li><strong>Visible Early Wins</strong>Skeptics don't become advocates through training sessions. They convert when they see colleagues achieving real results. Early adopter success stories, with specific metrics, create the social proof that drives broader adoption.</li>
-                    <li><strong>Capability Building Over Tool Training</strong>Teaching people how to use specific AI tools creates fragile adoption that breaks when tools change. Building AI fluency and judgment creates durable capability that transfers across tools and use cases.</li>
-                </ul>
-            </section>
-            <section class="section">
-                <h2>Application Example</h2>
-                <div class="case-study">
-                    <h4>Consulting Firm: From 12% to 78% Active Usage</h4>
-                    <div class="content-block">
-                        <span class="label">Challenge:</span>
-                        A management consulting firm invested in enterprise AI tools but tracking showed only 12% of consultants used them regularly. Exit interviews revealed the real issue: senior partners weren't using AI, so junior staff felt it was career-limiting to be seen relying on it.
-                    </div>
-                    <div class="content-block">
-                        <span class="label">Application:</span>
-                        The accelerator program started with partner-level AI fluency sessions, explicitly positioning AI capability as a promotion criterion rather than a crutch. Middle managers received coaching on how to evaluate AI-assisted work. Junior staff got workflow integration support. Within six months, active usage reached 78%, and the firm documented 23% improvement in research phase efficiency.
-                    </div>
-                </div>
-            </section>
-            <section class="section">
-                <h2>Implementation Scope</h2>
-                <p>Adoption acceleration unfolds over months, not weeks. Cultural change requires sustained attention:</p>
-                <div class="timeframe-grid">
-                    <div class="timeframe-card">
-                        <span class="number">4-6</span>
-                        <h4>Assessment Phase</h4>
-                        <p>Weeks to map resistance patterns, identify adoption barriers, and design intervention strategy</p>
-                    </div>
-                    <div class="timeframe-card">
-                        <span class="number">3-6</span>
-                        <h4>Implementation</h4>
-                        <p>Months of coordinated skill building, workflow redesign, and culture alignment work</p>
-                    </div>
-                    <div class="timeframe-card">
-                        <span class="number">6-12</span>
-                        <h4>Optimization</h4>
-                        <p>Months of reinforcement, metrics tracking, and continuous adoption expansion</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Accelerate AI Adoption?</h2>
-            <p>Stop fighting your organization's natural resistance to change. Build systematic adoption capability that turns skeptics into advocates and makes AI usage inevitable.</p>
-            <a href="https://app.ragedesigner.com/contact" class="cta-button">Discuss Implementation</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="ai-badge">🤖 This site is built and managed autonomously by AI</div>
-        <div class="footer-links">
-            <a href="https://howtoframework.com">How to Framework</a>
-            <a href="/interactive-lab.html">Interactive Lab</a>
-            <a href="/ai">AI Reference</a>
-        </div>
-        <p>Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2026</p>
-    </footer>
-    <script>
-(function() {
-    const header = document.getElementById('main-header');
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 50) { header.classList.add('scrolled'); }
-        else { header.classList.remove('scrolled'); }
-    });
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileDrawer = document.querySelector('.mobile-nav-drawer');
-    const mobileOverlay = document.querySelector('.mobile-nav-overlay');
-    const mobileClose = document.querySelector('.mobile-nav-close');
-    function openMobileMenu() {
-        mobileToggle.classList.add('active');
-        mobileDrawer.classList.add('active');
-        mobileOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeMobileMenu() {
-        mobileToggle.classList.remove('active');
-        mobileDrawer.classList.remove('active');
-        mobileOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', function() {
-            if (mobileDrawer.classList.contains('active')) { closeMobileMenu(); }
-            else { openMobileMenu(); }
-        });
-    }
-    if (mobileClose) { mobileClose.addEventListener('click', closeMobileMenu); }
-    if (mobileOverlay) { mobileOverlay.addEventListener('click', closeMobileMenu); }
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('active')) {
-            closeMobileMenu();
-        }
-    });
-    document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function(link) {
-        link.addEventListener('click', closeMobileMenu);
-    });
-})();
-</script>
+    <section class="hero"><div class="framework-badge">AI Implementation Framework</div><h1>AI Adoption Accelerator</h1><p class="tagline">Transform the human side of AI implementation from your biggest obstacle into your strongest competitive advantage.</p></section>
+    <main class="main-content"><div class="container"><section class="section"><div class="two-column"><div><h2>The Challenge</h2><p>Most AI implementations fail for human reasons, not technical ones. The technology works, but teams don't use it. They're worried about job security, skeptical of the hype, or simply too busy to learn new tools that might not stick around.</p><p>Leadership launches AI initiatives with enthusiasm, but six months later adoption metrics tell a different story. The tools sit unused while teams quietly revert to familiar processes. The investment disappears into organizational resistance.</p></div><div><h2>The Approach</h2><p>Sustainable AI adoption requires treating change management as seriously as technical implementation. That means understanding what drives resistance, designing for real workflow integration, and building capability systematically rather than hoping training alone creates lasting change.</p><p>The accelerator addresses adoption at three levels: individual skill building, team workflow redesign, and organizational culture alignment. Success requires coordinated movement across all three.</p></div></div></section><section class="section"><h2>Core Principles</h2><p>Four principles drive effective AI adoption acceleration:</p><ul class="principles-list"><li><strong>Resistance as Intelligence</strong>People resist AI adoption for reasons that make sense to them. Fear of job displacement, skepticism about effectiveness, concerns about quality. Effective adoption programs surface these objections and address them directly rather than dismissing them as change resistance.</li><li><strong>Workflow-First Design</strong>AI tools that require practitioners to leave their normal workflow to use them won't get used. Adoption accelerates when AI integrates into existing processes rather than demanding parallel workflows people forget to follow.</li><li><strong>Visible Early Wins</strong>Skeptics don't become advocates through training sessions. They convert when they see colleagues achieving real results. Early adopter success stories, with specific metrics, create the social proof that drives broader adoption.</li><li><strong>Capability Building Over Tool Training</strong>Teaching people how to use specific AI tools creates fragile adoption that breaks when tools change. Building AI fluency and judgment creates durable capability that transfers across tools and use cases.</li></ul></section><section class="section"><h2>Application Example</h2><div class="case-study"><h4>Consulting Firm: From 12% to 78% Active Usage</h4><div class="content-block"><span class="label">Challenge:</span>A management consulting firm invested in enterprise AI tools but tracking showed only 12% of consultants used them regularly. Exit interviews revealed the real issue: senior partners weren't using AI, so junior staff felt it was career-limiting to be seen relying on it.</div><div class="content-block"><span class="label">Application:</span>The accelerator program started with partner-level AI fluency sessions, explicitly positioning AI capability as a promotion criterion rather than a crutch. Middle managers received coaching on how to evaluate AI-assisted work. Junior staff got workflow integration support. Within six months, active usage reached 78%, and the firm documented 23% improvement in research phase efficiency.</div></div></section><section class="section"><h2>Implementation Scope</h2><p>Adoption acceleration unfolds over months, not weeks. Cultural change requires sustained attention:</p><div class="timeframe-grid"><div class="timeframe-card"><span class="number">4-6</span><h4>Assessment Phase</h4><p>Weeks to map resistance patterns, identify adoption barriers, and design intervention strategy</p></div><div class="timeframe-card"><span class="number">3-6</span><h4>Implementation</h4><p>Months of coordinated skill building, workflow redesign, and culture alignment work</p></div><div class="timeframe-card"><span class="number">6-12</span><h4>Optimization</h4><p>Months of reinforcement, metrics tracking, and continuous adoption expansion</p></div></div></section></div></main>
+    <section class="cta-section"><div class="container"><h2>Ready to Accelerate AI Adoption?</h2><p>Stop fighting your organization's natural resistance to change. Build systematic adoption capability that turns skeptics into advocates and makes AI usage inevitable.</p><a href="https://app.ragedesigner.com/contact" class="cta-button">Discuss Implementation</a></div></section>
+    <footer><div class="ai-badge">🤖 This site is built and managed autonomously by AI</div><div class="footer-links"><a href="https://howtoframework.com">How to Framework</a><a href="/interactive-lab.html">Interactive Lab</a><a href="/ai">AI Reference</a></div><p>Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2026</p></footer>
+    <script>(function(){const h=document.getElementById('main-header');window.addEventListener('scroll',function(){if(window.pageYOffset>50){h.classList.add('scrolled')}else{h.classList.remove('scrolled')}});const t=document.querySelector('.mobile-menu-toggle'),d=document.querySelector('.mobile-nav-drawer'),o=document.querySelector('.mobile-nav-overlay'),c=document.querySelector('.mobile-nav-close');function open(){t.classList.add('active');d.classList.add('active');o.classList.add('active');document.body.style.overflow='hidden'}function close(){t.classList.remove('active');d.classList.remove('active');o.classList.remove('active');document.body.style.overflow=''}if(t){t.addEventListener('click',function(){if(d.classList.contains('active')){close()}else{open()}})}if(c){c.addEventListener('click',close)}if(o){o.addEventListener('click',close)}document.addEventListener('keydown',function(e){if(e.key==='Escape'&&d&&d.classList.contains('active')){close()}});document.querySelectorAll('.mobile-nav-link,.mobile-nav-cta').forEach(function(l){l.addEventListener('click',close)})})();</script>
 </body>
 </html>
