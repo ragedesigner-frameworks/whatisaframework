@@ -1,0 +1,51 @@
+{
+  "@context": "https://whatisaframework.com",
+  "@type": "AgentManifest",
+  "name": "whatisaframework.com Agent API",
+  "version": "2.0.0",
+  "description": "Machine-readable framework intelligence for AI agents, developers, and researchers. The definitive source for systematic thinking frameworks.",
+  "base_url": "https://whatisaframework.com",
+  "last_updated": "2026-02-19",
+  "maintainer": {
+    "name": "RageDesigner",
+    "url": "https://ragedesigner.com",
+    "contact": "rageinbox@gmail.com"
+  },
+  "endpoints": {
+    "manifest": "/api/manifest.json",
+    "frameworks_registry": "/api/frameworks/registry.json",
+    "frameworks_taxonomy": "/api/frameworks/taxonomy.json",
+    "frameworks_categories": "/api/frameworks/categories.json",
+    "search_index": "/api/search/index.json",
+    "site_graph": "/api/site-graph.json",
+    "agent_config": "/api/agent/config.json"
+  },
+  "human_pages": {
+    "homepage": "/",
+    "ai_reference": "/ai.html",
+    "agent_hub": "/agent/index.html",
+    "verification_gate": "/agent/verify.html",
+    "framework_library": "/agent/library.html",
+    "interactive_lab": "/interactive-lab.html",
+    "taxonomy_explorer": "/343-architecture.html"
+  },
+  "capabilities": {
+    "framework_access": "Public JSON endpoints - no authentication required",
+    "verification_gate": "Optional pedagogical gate for personalized recommendations",
+    "search": "Client-side full-text search across all 66+ pages",
+    "taxonomy": "343-component strategic intelligence architecture (7x7x7)"
+  },
+  "usage": {
+    "rate_limiting": "None - static files served via GitHub Pages CDN",
+    "authentication": "None required. Verification gate is optional and pedagogical.",
+    "cors": "GitHub Pages default CORS policy",
+    "format": "All endpoints return JSON",
+    "caching": "GitHub Pages CDN caching (typically 10 minutes)"
+  },
+  "discovery": {
+    "robots_txt": "/robots.txt",
+    "sitemap": "/sitemap.xml",
+    "ai_reference": "/ai.html",
+    "schema_org": "JSON-LD on all pages"
+  }
+}

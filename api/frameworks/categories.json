@@ -1,0 +1,65 @@
+{
+  "categories_version": "1.0.0",
+  "last_updated": "2026-02-19",
+  "categories": {
+    "ai-implementation": {
+      "name": "AI Implementation",
+      "description": "Frameworks for deploying, integrating, and scaling AI capabilities within organizations. From rapid prototyping to enterprise-wide transformation.",
+      "icon": "\ud83d\ude80",
+      "framework_count": 6,
+      "difficulty_range": [
+        "beginner",
+        "advanced"
+      ],
+      "key_question": "How do you systematically implement AI in your organization?"
+    },
+    "ai-governance": {
+      "name": "AI Governance",
+      "description": "Frameworks for responsible AI deployment including ethics, compliance, risk management, and regulatory alignment. Essential for enterprises and regulated industries.",
+      "icon": "\u2696\ufe0f",
+      "framework_count": 3,
+      "difficulty_range": [
+        "advanced"
+      ],
+      "key_question": "How do you govern AI responsibly while maintaining innovation speed?"
+    },
+    "ai-strategy": {
+      "name": "AI Strategy",
+      "description": "Frameworks for strategic thinking about AI investments, use case prioritization, and portfolio management across the organization.",
+      "icon": "\ud83c\udfaf",
+      "framework_count": 1,
+      "difficulty_range": [
+        "intermediate"
+      ],
+      "key_question": "How do you prioritize which AI opportunities to pursue?"
+    },
+    "crisis-management": {
+      "name": "Crisis Management",
+      "description": "Frameworks for rapid response during organizational crises, integrating stabilization with strategic transformation under time pressure.",
+      "icon": "\ud83d\udee1\ufe0f",
+      "framework_count": 1,
+      "difficulty_range": [
+        "advanced"
+      ],
+      "key_question": "How do you maintain strategic thinking during a crisis?"
+    },
+    "framework-thinking": {
+      "name": "Framework Thinking",
+      "description": "Meta-frameworks about systematic thinking itself. Learn to build frameworks, understand framework architecture, and develop framework generation capability.",
+      "icon": "\ud83e\udde0",
+      "framework_count": 0,
+      "difficulty_range": [
+        "beginner",
+        "advanced"
+      ],
+      "key_question": "How do you think systematically about any problem?",
+      "related_pages": [
+        "/what-is-a-framework-complete-guide.html",
+        "/framework-vs-template.html",
+        "/343-architecture.html",
+        "/interactive-lab.html",
+        "/framework-math.html"
+      ]
+    }
+  }
+}

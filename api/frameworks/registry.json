@@ -1,0 +1,201 @@
+{
+  "registry_version": "1.0.0",
+  "last_updated": "2026-02-19",
+  "total_frameworks": 12,
+  "source": "whatisaframework.com",
+  "frameworks": [
+    {
+      "id": "ai-adoption-accelerator",
+      "title": "AI Adoption Accelerator Framework",
+      "description": "Systematic approach to accelerating AI adoption across organizations with change management and stakeholder alignment.",
+      "url": "/frameworks/ai-adoption-accelerator.html",
+      "category": "ai-implementation",
+      "tags": [
+        "ai",
+        "adoption",
+        "change-management",
+        "organizational",
+        "enterprise"
+      ],
+      "difficulty": "intermediate",
+      "use_case": "Organizations struggling with AI adoption speed and employee resistance"
+    },
+    {
+      "id": "ai-first-service-line",
+      "title": "AI-First Service Line Framework",
+      "description": "Building service offerings with AI as the foundational capability rather than an add-on.",
+      "url": "/frameworks/ai-first-service-line.html",
+      "category": "ai-implementation",
+      "tags": [
+        "ai",
+        "service-design",
+        "business-model",
+        "revenue",
+        "consulting"
+      ],
+      "difficulty": "advanced",
+      "use_case": "Service businesses integrating AI as core capability rather than bolt-on"
+    },
+    {
+      "id": "ai-governance-model",
+      "title": "AI Governance Model Framework",
+      "description": "Comprehensive governance structure for responsible AI deployment including ethics, compliance, and oversight.",
+      "url": "/frameworks/ai-governance-model.html",
+      "category": "ai-governance",
+      "tags": [
+        "ai",
+        "governance",
+        "ethics",
+        "compliance",
+        "risk-management"
+      ],
+      "difficulty": "advanced",
+      "use_case": "Enterprises needing structured AI governance and ethical oversight"
+    },
+    {
+      "id": "crisis-integration-stabilization",
+      "title": "Crisis Integration & Stabilization Framework",
+      "description": "Rapid integration methodology for organizations in crisis, combining stabilization with strategic transformation.",
+      "url": "/frameworks/crisis-integration-stabilization.html",
+      "category": "crisis-management",
+      "tags": [
+        "crisis",
+        "integration",
+        "stabilization",
+        "turnaround",
+        "emergency"
+      ],
+      "difficulty": "advanced",
+      "use_case": "Organizations facing urgent integration challenges during crisis periods"
+    },
+    {
+      "id": "emergency-ai-governance",
+      "title": "Emergency AI Governance Framework",
+      "description": "Rapid-deployment governance for AI systems during emergencies when standard processes are too slow.",
+      "url": "/frameworks/emergency-ai-governance.html",
+      "category": "ai-governance",
+      "tags": [
+        "ai",
+        "emergency",
+        "governance",
+        "rapid-deployment",
+        "crisis"
+      ],
+      "difficulty": "advanced",
+      "use_case": "Deploying AI governance under time pressure during organizational emergencies"
+    },
+    {
+      "id": "future-state-ai-operating-model",
+      "title": "Future State AI Operating Model Framework",
+      "description": "Designing the target operating model for an AI-native organization, including roles, processes, and technology architecture.",
+      "url": "/frameworks/future-state-ai-operating-model.html",
+      "category": "ai-implementation",
+      "tags": [
+        "ai",
+        "operating-model",
+        "transformation",
+        "organizational-design",
+        "strategy"
+      ],
+      "difficulty": "advanced",
+      "use_case": "Enterprise leaders designing their AI-native organizational future state"
+    },
+    {
+      "id": "rapid-ai-deployment",
+      "title": "Rapid AI Deployment Framework",
+      "description": "Fast-track AI implementation methodology for organizations that need results in weeks, not months.",
+      "url": "/frameworks/rapid-ai-deployment.html",
+      "category": "ai-implementation",
+      "tags": [
+        "ai",
+        "rapid-deployment",
+        "implementation",
+        "speed",
+        "agile"
+      ],
+      "difficulty": "intermediate",
+      "use_case": "Organizations needing quick AI wins to build momentum and prove value"
+    },
+    {
+      "id": "regulatory-compliant-ai-transformation",
+      "title": "Regulatory-Compliant AI Transformation Framework",
+      "description": "AI transformation methodology for heavily regulated industries including healthcare, finance, and government.",
+      "url": "/frameworks/regulatory-compliant-ai-transformation.html",
+      "category": "ai-governance",
+      "tags": [
+        "ai",
+        "regulatory",
+        "compliance",
+        "healthcare",
+        "finance",
+        "government"
+      ],
+      "difficulty": "advanced",
+      "use_case": "Regulated industries implementing AI while maintaining compliance"
+    },
+    {
+      "id": "resource-conscious-ai-implementation",
+      "title": "Resource-Conscious AI Implementation Framework",
+      "description": "AI implementation approach optimized for organizations with limited budgets, small teams, or constrained resources.",
+      "url": "/frameworks/resource-conscious-ai-implementation.html",
+      "category": "ai-implementation",
+      "tags": [
+        "ai",
+        "budget",
+        "small-team",
+        "efficiency",
+        "resource-optimization"
+      ],
+      "difficulty": "beginner",
+      "use_case": "Small businesses or teams implementing AI with limited resources"
+    },
+    {
+      "id": "scaling-ai-capabilities",
+      "title": "Scaling AI Capabilities Framework",
+      "description": "Systematic approach to scaling successful AI pilots into enterprise-wide capabilities.",
+      "url": "/frameworks/scaling-ai-capabilities.html",
+      "category": "ai-implementation",
+      "tags": [
+        "ai",
+        "scaling",
+        "enterprise",
+        "growth",
+        "capability-building"
+      ],
+      "difficulty": "advanced",
+      "use_case": "Organizations scaling proven AI pilots to enterprise-wide deployment"
+    },
+    {
+      "id": "strategic-ai-use-case-portfolio",
+      "title": "Strategic AI Use Case Portfolio Framework",
+      "description": "Portfolio management approach for evaluating, prioritizing, and managing multiple AI initiatives simultaneously.",
+      "url": "/frameworks/strategic-ai-use-case-portfolio.html",
+      "category": "ai-strategy",
+      "tags": [
+        "ai",
+        "portfolio",
+        "use-cases",
+        "prioritization",
+        "strategy"
+      ],
+      "difficulty": "intermediate",
+      "use_case": "Leaders managing multiple AI initiatives and needing systematic prioritization"
+    },
+    {
+      "id": "workflow-integration-architecture",
+      "title": "Workflow Integration Architecture Framework",
+      "description": "Systematic methodology for integrating AI into existing business workflows without disruption.",
+      "url": "/frameworks/workflow-integration-architecture.html",
+      "category": "ai-implementation",
+      "tags": [
+        "ai",
+        "workflow",
+        "integration",
+        "process",
+        "automation"
+      ],
+      "difficulty": "intermediate",
+      "use_case": "Teams integrating AI tools into established business processes"
+    }
+  ]
+}

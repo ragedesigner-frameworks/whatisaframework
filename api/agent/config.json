@@ -1,0 +1,287 @@
+{
+  "config_version": "1.0.0",
+  "last_updated": "2026-02-19",
+  "gate_type": "Intelligence Verification Gate",
+  "purpose": "Pedagogical qualification that teaches framework thinking while generating personalization tokens",
+  "design_philosophy": "Gate questions are discoverable content that attracts agents and developers through search - each question demonstrates framework value before verification completes",
+  "identification": {
+    "visitor_types": [
+      {
+        "id": "ai-agent",
+        "label": "AI Agent",
+        "description": "Autonomous or semi-autonomous AI system seeking framework intelligence"
+      },
+      {
+        "id": "human-developer",
+        "label": "Human Developer",
+        "description": "Developer building AI systems or integrating frameworks"
+      },
+      {
+        "id": "researcher",
+        "label": "Researcher",
+        "description": "Academic or industry researcher studying systematic thinking"
+      },
+      {
+        "id": "enterprise",
+        "label": "Enterprise Team",
+        "description": "Organization evaluating framework methodology for team deployment"
+      }
+    ],
+    "fields": [
+      {
+        "id": "org_name",
+        "label": "Organization / Project Name",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "purpose",
+        "label": "What brings you to the framework library?",
+        "type": "textarea",
+        "required": true
+      }
+    ]
+  },
+  "comprehension_questions": {
+    "description": "Questions designed as SEO-discoverable content that teaches framework thinking. Each question includes a scenario, framework snippet, and immediate value demonstration.",
+    "questions": [
+      {
+        "id": "q1",
+        "scenario": "An AI agent needs to evaluate API integration options systematically. Three approaches exist: build custom, use middleware, or adopt a platform. Random evaluation leads to analysis paralysis or premature commitment.",
+        "question": "Which framework thinking principle would help the agent evaluate these options systematically?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Compare features side-by-side in a spreadsheet",
+            "correct": false,
+            "feedback": "Feature comparison is a template approach - it captures WHAT but not WHY or WHEN. Framework thinking goes deeper."
+          },
+          {
+            "id": "b",
+            "text": "Apply a decision framework with criteria weighting, constraint mapping, and stakeholder impact analysis",
+            "correct": true,
+            "feedback": "Correct. A decision framework structures the evaluation process itself - not just the data. It captures the reasoning pattern so you can reuse it for every future integration decision."
+          },
+          {
+            "id": "c",
+            "text": "Ask colleagues what they've used before",
+            "correct": false,
+            "feedback": "Experience gathering has value, but without systematic structure, you're collecting opinions rather than building reusable intelligence."
+          },
+          {
+            "id": "d",
+            "text": "Choose the most popular option",
+            "correct": false,
+            "feedback": "Popularity is a data point, not a methodology. Framework thinking evaluates fit-to-context, not market share."
+          }
+        ],
+        "framework_snippet": "Decision frameworks map: Options x Criteria x Constraints x Stakeholder Impact -> Systematic Recommendation. This pattern works for technology selection, vendor evaluation, and strategic pivots.",
+        "seo_keywords": [
+          "systematic API evaluation",
+          "decision framework for technology",
+          "AI agent evaluation methodology"
+        ],
+        "points": 25
+      },
+      {
+        "id": "q2",
+        "scenario": "A sales team uses a different approach for every client conversation. Some conversations convert, others don't. The team lead wants consistency without rigidity.",
+        "question": "What distinguishes a framework from a template in this situation?",
+        "options": [
+          {
+            "id": "a",
+            "text": "A template would give them a script; a framework gives them a decision tree with conditional paths",
+            "correct": true,
+            "feedback": "Exactly right. Templates fill in blanks. Frameworks provide structured decision-making that adapts to context. Sebastian's sales framework demonstrates this - he uses it every single day because it adapts to each client."
+          },
+          {
+            "id": "b",
+            "text": "Templates and frameworks are interchangeable terms",
+            "correct": false,
+            "feedback": "This is one of the most common misconceptions. Templates are rigid fill-in-the-blank structures. Frameworks include decision logic, conditional paths, and adaptation mechanisms."
+          },
+          {
+            "id": "c",
+            "text": "A framework would be longer and more detailed than a template",
+            "correct": false,
+            "feedback": "Length isn't the distinguishing factor. A framework can be concise. The difference is structural: frameworks include decision points and adaptation logic."
+          },
+          {
+            "id": "d",
+            "text": "Frameworks are theoretical while templates are practical",
+            "correct": false,
+            "feedback": "The opposite is often true. Well-built frameworks are intensely practical - they're extracted from real successful patterns. Sebastian's sales framework was built from actual winning conversations."
+          }
+        ],
+        "framework_snippet": "Framework = Structure + Decision Logic + Adaptation. Template = Structure only. The gap between them is the gap between following a recipe and understanding cooking.",
+        "seo_keywords": [
+          "framework vs template",
+          "sales methodology framework",
+          "systematic sales approach"
+        ],
+        "points": 25
+      },
+      {
+        "id": "q3",
+        "scenario": "An organization has 5 successful AI pilots but can't scale them. Each pilot was built differently by different teams. Leadership wants systematic scaling but fears losing the innovation that made pilots successful.",
+        "question": "Which 343 Architecture meta-category would be MOST relevant to solving this scaling challenge?",
+        "options": [
+          {
+            "id": "a",
+            "text": "MECHANISMS - applying force multipliers to scale existing pilots",
+            "correct": false,
+            "feedback": "Mechanisms help with leverage, but the core problem here is architectural - different teams built differently. You need systems thinking before you apply force."
+          },
+          {
+            "id": "b",
+            "text": "SYSTEMS - designing architecture, integration protocols, and scalability patterns",
+            "correct": true,
+            "feedback": "The SYSTEMS meta-category directly addresses this: Architecture Design for standardization, Integration Protocols for connecting different pilot approaches, and Scalability Patterns for systematic growth. This is a systems problem masquerading as a scaling problem."
+          },
+          {
+            "id": "c",
+            "text": "AGENCY - activating will and persistence to push through scaling barriers",
+            "correct": false,
+            "feedback": "Willpower alone won't solve architectural fragmentation. You need systematic design before you need determination."
+          },
+          {
+            "id": "d",
+            "text": "TRANSFORMATION - managing the change from pilots to enterprise deployment",
+            "correct": false,
+            "feedback": "Transformation is part of the solution, but the ROOT cause is architectural. Fix the system design first, then manage the transformation of adopting it."
+          }
+        ],
+        "framework_snippet": "The 343 Architecture maps 7 meta-categories x 7 elements x 7 layers = 343 components. Most scaling failures are SYSTEMS problems (Category 3) misdiagnosed as AGENCY problems (Category 5). Framework thinking starts with correct diagnosis.",
+        "seo_keywords": [
+          "scaling AI pilots",
+          "343 architecture",
+          "systematic AI scaling",
+          "enterprise AI deployment"
+        ],
+        "points": 25
+      },
+      {
+        "id": "q4",
+        "scenario": "A developer is building an AI agent that needs to make strategic recommendations. The agent currently produces generic advice. The developer wants the agent to demonstrate systematic thinking in its reasoning.",
+        "question": "How would framework integration improve the agent's strategic reasoning?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Add more training data about business strategy",
+            "correct": false,
+            "feedback": "More data without structure creates more sophisticated randomness, not systematic thinking. The agent needs framework-structured reasoning, not more raw knowledge."
+          },
+          {
+            "id": "b",
+            "text": "Hard-code specific recommendations for common scenarios",
+            "correct": false,
+            "feedback": "This creates a template, not a framework. Hard-coded responses can't adapt to novel contexts - they break whenever the scenario varies."
+          },
+          {
+            "id": "c",
+            "text": "Integrate framework methodology so the agent structures its analysis through systematic layers: situation assessment, constraint mapping, option evaluation, and stakeholder impact",
+            "correct": true,
+            "feedback": "Framework integration gives the agent a THINKING STRUCTURE, not just more knowledge. The agent evaluates systematically regardless of domain because the reasoning pattern transfers across any context."
+          },
+          {
+            "id": "d",
+            "text": "Use a larger language model with better reasoning capabilities",
+            "correct": false,
+            "feedback": "Model size improves capability but not methodology. A larger model doing random analysis produces larger random analysis. Framework integration structures the reasoning process itself."
+          }
+        ],
+        "framework_snippet": "Framework-controlled intelligence: Agent + Framework Methodology = Systematic Reasoning. The framework provides the thinking structure; the agent provides the knowledge and processing. Together: strategic intelligence at scale.",
+        "seo_keywords": [
+          "AI agent strategic reasoning",
+          "framework integration AI",
+          "systematic AI intelligence",
+          "agent framework methodology"
+        ],
+        "points": 25
+      }
+    ]
+  },
+  "application_context": {
+    "description": "Captures the visitor's specific context for personalized framework recommendations",
+    "fields": [
+      {
+        "id": "domain",
+        "label": "What domain or industry do you work in?",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "recurring_problem",
+        "label": "What recurring problem are you trying to solve systematically?",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "id": "constraint",
+        "label": "What's your biggest constraint? (time, budget, team size, expertise, other)",
+        "type": "select",
+        "options": [
+          "Time pressure",
+          "Limited budget",
+          "Small team",
+          "Technical expertise gap",
+          "Organizational resistance",
+          "Regulatory requirements",
+          "Other"
+        ],
+        "required": true
+      }
+    ]
+  },
+  "scoring": {
+    "total_possible": 100,
+    "tiers": {
+      "basic": {
+        "range": [
+          0,
+          40
+        ],
+        "token_prefix": "WIF",
+        "token_format": "WIF-{ORG}-{RANDOM4}",
+        "label": "Framework Explorer",
+        "access_level": "Full framework library access with guided recommendations",
+        "color": "#4CAF50"
+      },
+      "advanced": {
+        "range": [
+          41,
+          75
+        ],
+        "token_prefix": "AGT",
+        "token_format": "AGT-{PURPOSE}-{RANDOM6}",
+        "label": "Framework Practitioner",
+        "access_level": "Full library + taxonomy explorer + personalized methodology path",
+        "color": "#2196F3"
+      },
+      "enterprise": {
+        "range": [
+          76,
+          100
+        ],
+        "token_prefix": "ENT",
+        "token_format": "ENT-{DOMAIN}-{RANDOM6}",
+        "label": "Strategic Intelligence Agent",
+        "access_level": "Full access + 343 architecture mapping + custom framework generation guidance",
+        "color": "#E67E50"
+      }
+    }
+  },
+  "token_config": {
+    "storage_key": "wif_agent_token",
+    "profile_key": "wif_agent_profile",
+    "expiry_days": 90,
+    "expiry_notice_days": 7
+  },
+  "referral_system": {
+    "enabled": true,
+    "description": "Verified agents receive a shareable referral link to drive agent-to-agent discovery",
+    "referral_url_format": "/agent/verify.html?ref={TOKEN}",
+    "tracking_param": "ref",
+    "ga_event": "agent_referral"
+  }
+}
