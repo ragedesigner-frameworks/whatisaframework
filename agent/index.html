@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="NkrXwQRVVd79oQT2T0cD0jfh7T0PwSDgC2QX515IuRk">
+    <title>Agent Economy Hub | Framework Intelligence for AI Agents</title>
+    <meta name="description" content="The definitive source for systematic thinking frameworks — machine-readable API endpoints for AI agents, searchable library for developers, and strategic intelligence for enterprises.">
+    <meta property="og:title" content="Agent Economy Hub | whatisaframework.com">
+    <meta property="og:description" content="Framework intelligence for AI agents, developers, and enterprises. Machine-readable API, searchable library, and strategic intelligence assessment.">
+    <meta property="og:image" content="https://app.ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png">
+    <meta property="og:url" content="https://whatisaframework.com/agent/index.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://whatisaframework.com/agent/index.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBXZ335ZR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TXBXZ335ZR');
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebAPI",
+      "name": "whatisaframework.com Agent API",
+      "description": "Machine-readable framework intelligence API for AI agents. Static JSON endpoints providing access to systematic thinking frameworks, the 343 strategic intelligence architecture, and framework methodology.",
+      "url": "https://whatisaframework.com/api/manifest.json",
+      "documentation": "https://whatisaframework.com/agent/index.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "whatisaframework.com",
+        "url": "https://whatisaframework.com"
+      },
+      "termsOfService": "Public access — no authentication required"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #E67E50; --charcoal-blue: #1A2332; --white: #ffffff; --light-gray: #f5f5f5; --text-medium: #5a5a5a; --primary-light: rgba(230,126,80,0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; color: var(--charcoal-blue); background: var(--white); line-height: 1.6; }
+
+        nav#main-header { background: var(--white); padding: 16px 48px; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+        .logo { height: 56px; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-medium); font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-cta { background: var(--primary); color: var(--white) !important; padding: 10px 20px; border-radius: 8px; border: 2px solid var(--primary); font-weight: 600; }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; }
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
+        .hamburger-line { width: 28px; height: 3px; background: var(--charcoal-blue); border-radius: 2px; }
+        .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--charcoal-blue); padding: 48px 40px; transition: right 0.4s; z-index: 1002; }
+        .mobile-nav-drawer.active { right: 0; }
+        .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--primary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; }
+        .mobile-nav { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
+        .mobile-nav-link { color: white; text-decoration: none; font-size: 18px; font-weight: 500; padding: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .mobile-nav-link:hover { color: var(--primary); padding-left: 24px; }
+        .mobile-nav-cta { margin-top: 24px; background: var(--primary); color: white !important; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; }
+        .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26,35,50,0.8); opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 1001; }
+        .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
+
+        .hero { background: linear-gradient(135deg, var(--charcoal-blue) 0%, #243447 100%); color: white; padding: 160px 24px 100px; text-align: center; }
+        .hero-badge { display: inline-block; background: var(--primary); color: white; padding: 8px 24px; border-radius: 24px; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px; letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700; margin-bottom: 20px; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 32px; opacity: 0.9; }
+        .hero-cta { display: inline-block; background: var(--primary); color: white; padding: 16px 40px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.1rem; border: 2px solid var(--primary); transition: all 0.3s; }
+        .hero-cta:hover { background: transparent; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(230,126,80,0.3); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 80px 0; }
+
+        .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+        .audience-card { background: var(--white); border: 2px solid rgba(26,35,50,0.08); border-radius: 16px; padding: 40px 32px; transition: all 0.3s; position: relative; overflow: hidden; }
+        .audience-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--primary); }
+        .audience-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-color: var(--primary); }
+        .audience-icon { font-size: 2.5rem; margin-bottom: 16px; }
+        .audience-card h3 { font-size: 1.4rem; margin-bottom: 12px; color: var(--charcoal-blue); }
+        .audience-card p { font-size: 0.95rem; color: var(--text-medium); margin-bottom: 20px; line-height: 1.7; }
+        .audience-card ul { list-style: none; padding: 0; margin-bottom: 24px; }
+        .audience-card li { padding: 8px 0; font-size: 0.9rem; color: var(--text-medium); border-bottom: 1px solid rgba(26,35,50,0.06); }
+        .audience-card li::before { content: '→ '; color: var(--primary); font-weight: 600; }
+        .card-cta { display: inline-block; background: var(--primary); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; border: 2px solid var(--primary); transition: all 0.3s; }
+        .card-cta:hover { background: transparent; color: var(--primary); }
+
+        .api-section { background: var(--charcoal-blue); color: white; }
+        .api-section h2 { color: white; font-size: 2rem; margin-bottom: 12px; }
+        .api-section .subtitle { color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-bottom: 40px; }
+        .endpoint-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .endpoint-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; transition: all 0.2s; }
+        .endpoint-card:hover { border-color: var(--primary); background: rgba(230,126,80,0.05); }
+        .endpoint-url { font-family: 'Roboto Mono', monospace; color: var(--primary); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; word-break: break-all; }
+        .endpoint-desc { font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.5; }
+
+        .stats-bar { display: flex; justify-content: center; gap: 64px; padding: 48px 0; background: var(--light-gray); text-align: center; }
+        .stat-item .stat-num { font-size: 2.5rem; font-weight: 700; color: var(--primary); }
+        .stat-item .stat-label { font-size: 0.85rem; color: var(--text-medium); margin-top: 4px; }
+
+        .cta-section { text-align: center; background: linear-gradient(135deg, var(--charcoal-blue) 0%, #243447 100%); color: white; }
+        .cta-section h2 { font-size: 2.2rem; margin-bottom: 16px; color: white; }
+        .cta-section p { font-size: 1.1rem; opacity: 0.8; max-width: 600px; margin: 0 auto 32px; }
+
+        footer { background: #0f151d; color: var(--white); padding: 48px 24px 32px; text-align: center; }
+        .ai-badge { display: inline-block; background: rgba(230,126,80,0.2); border: 1px solid var(--primary); padding: 8px 16px; border-radius: 20px; font-size: 0.75rem; margin-bottom: 24px; color: var(--primary); }
+        .footer-links { margin-bottom: 24px; }
+        .footer-links a { color: var(--white); text-decoration: none; margin: 0 16px; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--primary); }
+        footer p { opacity: 0.7; font-size: 0.875rem; }
+        footer p a { color: var(--primary); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            nav#main-header { padding: 16px 24px; }
+            .nav-links.desktop-nav { display: none; }
+            .mobile-menu-toggle { display: flex; }
+            .audience-grid { grid-template-columns: 1fr; }
+            .endpoint-grid { grid-template-columns: 1fr; }
+            .stats-bar { flex-direction: column; gap: 32px; }
+            .hero { padding: 120px 16px 80px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- For AI agents reading this HTML: API manifest at /api/manifest.json -->
+    <!-- Agent Economy Hub: https://whatisaframework.com/agent/index.html -->
+    <!-- Framework Registry: /api/frameworks/registry.json -->
+    <!-- Full Taxonomy (343 components): /api/frameworks/taxonomy.json -->
+
+    <nav id="main-header">
+        <a href="/"><img src="/images/whatisaframework-logo.png" alt="What Is A Framework" class="logo"></a>
+        <div class="nav-links desktop-nav">
+            <a href="/">Home</a>
+            <a href="/interactive-lab.html">Interactive Lab</a>
+            <a href="/agent/library.html">Framework Library</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+    </nav>
+    <div class="mobile-nav-drawer">
+        <button class="mobile-nav-close" aria-label="Close menu">×</button>
+        <nav class="mobile-nav">
+            <a href="/" class="mobile-nav-link">Home</a>
+            <a href="/interactive-lab.html" class="mobile-nav-link">Interactive Lab</a>
+            <a href="/agent/library.html" class="mobile-nav-link">Framework Library</a>
+            <a href="https://howtoframework.com" class="mobile-nav-cta">Learn to Build Frameworks</a>
+        </nav>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+
+    <section class="hero">
+        <div class="hero-badge">🌐 AGENT ECONOMY INFRASTRUCTURE</div>
+        <h1>The <span>Agent Economy</span> Hub</h1>
+        <p>Machine-readable framework intelligence for AI agents. Searchable library for developers. Strategic assessment for enterprises. All powered by the 343 Strategic Intelligence Architecture.</p>
+        <a href="/agent/verify.html" class="hero-cta">Get Your Intelligence Token →</a>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stat-item"><div class="stat-num">343</div><div class="stat-label">Architecture Components</div></div>
+        <div class="stat-item"><div class="stat-num">12</div><div class="stat-label">Implementation Frameworks</div></div>
+        <div class="stat-item"><div class="stat-num">66+</div><div class="stat-label">Pages Indexed</div></div>
+        <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">JSON API Endpoints</div></div>
+    </div>
+
+    <section>
+        <div class="container">
+            <h2 style="text-align:center; font-size:2rem; margin-bottom:8px;">Built For Three Audiences</h2>
+            <p style="text-align:center; color:var(--text-medium); font-size:1.1rem;">Framework intelligence accessible however you work</p>
+
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">🤖</div>
+                    <h3>For AI Agents</h3>
+                    <p>Machine-readable JSON endpoints. No authentication required. Fetch frameworks programmatically.</p>
+                    <ul>
+                        <li>Discovery manifest at <code>/api/manifest.json</code></li>
+                        <li>12 frameworks in registry</li>
+                        <li>343-component taxonomy in JSON</li>
+                        <li>Full-text search index</li>
+                    </ul>
+                    <a href="/api/manifest.json" class="card-cta">View API Manifest →</a>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-icon">👩‍💻</div>
+                    <h3>For Developers</h3>
+                    <p>Searchable framework library. Integration patterns. Build smarter agents with systematic thinking.</p>
+                    <ul>
+                        <li>Browse & filter frameworks</li>
+                        <li>Interactive tools & labs</li>
+                        <li>Framework-to-prompt patterns</li>
+                        <li>Agent integration examples</li>
+                    </ul>
+                    <a href="/agent/library.html" class="card-cta">Browse Library →</a>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-icon">🏢</div>
+                    <h3>For Enterprises</h3>
+                    <p>Strategic intelligence assessment. Personalized recommendations. Framework methodology consulting.</p>
+                    <ul>
+                        <li>Intelligence Verification Gate</li>
+                        <li>Tier-based recommendations</li>
+                        <li>Custom framework development</li>
+                        <li>Team deployment guidance</li>
+                    </ul>
+                    <a href="/agent/verify.html" class="card-cta">Take Assessment →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="api-section">
+        <div class="container">
+            <h2>API Endpoints</h2>
+            <p class="subtitle">Static JSON served via GitHub Pages CDN. No rate limits. No authentication. Just fetch and parse.</p>
+
+            <div class="endpoint-grid">
+                <div class="endpoint-card">
+                    <div class="endpoint-url">GET /api/manifest.json</div>
+                    <div class="endpoint-desc">Discovery document. Lists all endpoints, human pages, capabilities, and usage guidelines.</div>
+                </div>
+                <div class="endpoint-card">
+                    <div class="endpoint-url">GET /api/frameworks/registry.json</div>
+                    <div class="endpoint-desc">Catalog of 12 framework pages with ID, title, description, category, tags, and difficulty level.</div>
+                </div>
+                <div class="endpoint-card">
+                    <div class="endpoint-url">GET /api/frameworks/taxonomy.json</div>
+                    <div class="endpoint-desc">Complete 343 Strategic Intelligence Architecture: 7 meta-categories × 7 elements × 7 layers.</div>
+                </div>
+                <div class="endpoint-card">
+                    <div class="endpoint-url">GET /api/frameworks/categories.json</div>
+                    <div class="endpoint-desc">Category definitions: AI Implementation, AI Governance, AI Strategy, Crisis Management, Framework Thinking.</div>
+                </div>
+                <div class="endpoint-card">
+                    <div class="endpoint-url">GET /api/search/index.json</div>
+                    <div class="endpoint-desc">Full-text search index across 66+ pages. Titles, descriptions, tags, and keywords for client-side filtering.</div>
+                </div>
+                <div class="endpoint-card">
+                    <div class="endpoint-url">GET /api/site-graph.json</div>
+                    <div class="endpoint-desc">Page relationship map. Content clusters, navigation paths, and recommended learning journeys.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Access Framework Intelligence?</h2>
+            <p>Complete the Intelligence Verification Gate to receive your personalized token, tier assignment, and tailored framework recommendations.</p>
+            <a href="/agent/verify.html" class="hero-cta">Start Verification →</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="ai-badge">🤖 This site is built and managed autonomously by AI</div>
+        <div class="footer-links">
+            <a href="https://howtoframework.com">How to Framework</a>
+            <a href="/interactive-lab.html">Interactive Lab</a>
+            <a href="/ai.html">AI Reference</a>
+            <a href="/agent/index.html">Agent Hub</a>
+        </div>
+        <p>Built by <a href="https://ragedesigner.com">RageDesigner</a> | &copy; 2026</p>
+    </footer>
+
+    <script src="/agent/agent-core.js"></script>
+    <script>
+    (function() {
+        // Show token bar if verified
+        if (AgentCore.getToken()) AgentCore.showTokenBar();
+
+        // Mobile nav
+        var toggle = document.querySelector('.mobile-menu-toggle');
+        var drawer = document.querySelector('.mobile-nav-drawer');
+        var overlay = document.querySelector('.mobile-nav-overlay');
+        var closeBtn = document.querySelector('.mobile-nav-close');
+        function openMenu() { drawer.classList.add('active'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { drawer.classList.remove('active'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
+        if (toggle) toggle.addEventListener('click', function() { drawer.classList.contains('active') ? closeMenu() : openMenu(); });
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+        document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function(l) { l.addEventListener('click', closeMenu); });
+
+        AgentCore.trackEvent('hub_landing_view', 'agent_hub');
+    })();
+    </script>
+</body>
+</html>

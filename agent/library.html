@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="NkrXwQRVVd79oQT2T0cD0jfh7T0PwSDgC2QX515IuRk">
+    <title>Framework Library | Searchable Framework Catalog</title>
+    <meta name="description" content="Browse, search, and filter the complete framework catalog. 12 implementation-ready frameworks for AI adoption, governance, strategy, and crisis management.">
+    <meta property="og:title" content="Framework Library | whatisaframework.com">
+    <meta property="og:description" content="Browse, search, and filter 12 implementation-ready frameworks. Personalized recommendations for verified agents.">
+    <meta property="og:image" content="https://app.ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png">
+    <meta property="og:url" content="https://whatisaframework.com/agent/library.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://whatisaframework.com/agent/library.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBXZ335ZR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TXBXZ335ZR');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #E67E50; --charcoal-blue: #1A2332; --white: #ffffff; --light-gray: #f5f5f5; --text-medium: #5a5a5a; --primary-light: rgba(230,126,80,0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; color: var(--charcoal-blue); background: var(--white); line-height: 1.6; }
+
+        nav#main-header { background: var(--white); padding: 16px 48px; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+        .logo { height: 56px; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-medium); font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-cta { background: var(--primary); color: var(--white) !important; padding: 10px 20px; border-radius: 8px; border: 2px solid var(--primary); font-weight: 600; }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; }
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
+        .hamburger-line { width: 28px; height: 3px; background: var(--charcoal-blue); border-radius: 2px; }
+        .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--charcoal-blue); padding: 48px 40px; transition: right 0.4s; z-index: 1002; }
+        .mobile-nav-drawer.active { right: 0; }
+        .mobile-nav-close { position: absolute; top: 16px; right: 16px; background: var(--primary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 28px; cursor: pointer; }
+        .mobile-nav { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
+        .mobile-nav-link { color: white; text-decoration: none; font-size: 18px; font-weight: 500; padding: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .mobile-nav-link:hover { color: var(--primary); padding-left: 24px; }
+        .mobile-nav-cta { margin-top: 24px; background: var(--primary); color: white !important; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: 600; text-decoration: none; }
+        .mobile-nav-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26,35,50,0.8); opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 1001; }
+        .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
+
+        .hero { background: linear-gradient(135deg, var(--charcoal-blue) 0%, #243447 100%); color: white; padding: 140px 24px 60px; text-align: center; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; margin-bottom: 12px; }
+        .hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; opacity: 0.85; }
+
+        .verified-bar { background: var(--primary-light); border: 1px solid var(--primary); padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: -20px auto 0; border-radius: 12px; position: relative; z-index: 10; }
+        .verified-bar.hidden { display: none; }
+        .verified-bar .tier-info { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; }
+        .verified-bar .tier-badge { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; color: white; }
+        .verified-bar a { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .library-controls { padding: 32px 0 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+        .search-input { flex: 1; min-width: 260px; padding: 14px 20px; font-size: 1rem; border: 2px solid rgba(26,35,50,0.12); border-radius: 12px; font-family: 'Roboto', sans-serif; transition: border-color 0.2s; }
+        .search-input:focus { outline: none; border-color: var(--primary); }
+        .sort-select { padding: 14px 16px; font-size: 0.9rem; border: 2px solid rgba(26,35,50,0.12); border-radius: 12px; font-family: 'Roboto', sans-serif; background: white; cursor: pointer; }
+        .category-pills { display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 1px solid rgba(26,35,50,0.06); }
+        .cat-pill { padding: 8px 18px; border-radius: 24px; border: 2px solid rgba(26,35,50,0.1); background: white; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.2s; font-family: 'Roboto', sans-serif; color: var(--text-medium); }
+        .cat-pill:hover { border-color: var(--primary); color: var(--primary); }
+        .cat-pill.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .results-count { font-size: 0.85rem; color: var(--text-medium); padding: 16px 0; }
+
+        .framework-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; padding-bottom: 60px; }
+        .fw-card { background: white; border: 2px solid rgba(26,35,50,0.06); border-radius: 16px; padding: 32px; transition: all 0.3s; position: relative; overflow: hidden; }
+        .fw-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--primary); opacity: 0; transition: opacity 0.3s; }
+        .fw-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); border-color: var(--primary); }
+        .fw-card:hover::before { opacity: 1; }
+        .fw-card h3 { font-size: 1.15rem; margin-bottom: 8px; color: var(--charcoal-blue); }
+        .fw-card .fw-desc { font-size: 0.9rem; color: var(--text-medium); margin-bottom: 16px; line-height: 1.6; }
+        .fw-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .fw-tag { display: inline-block; padding: 3px 10px; background: var(--light-gray); border-radius: 12px; font-size: 0.75rem; color: var(--text-medium); font-weight: 500; }
+        .fw-tag.cat { background: var(--primary-light); color: var(--primary); }
+        .fw-tag.diff { background: rgba(33,150,243,0.1); color: #1976D2; }
+        .fw-use-case { font-size: 0.85rem; color: var(--text-medium); background: var(--light-gray); padding: 10px 14px; border-radius: 8px; margin-bottom: 16px; line-height: 1.5; }
+        .fw-cta { display: inline-block; color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.95rem; transition: all 0.2s; }
+        .fw-cta:hover { transform: translateX(4px); }
+        .fw-cta::after { content: ' →'; }
+
+        .empty-state { text-align: center; padding: 80px 24px; color: var(--text-medium); }
+        .empty-state h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--charcoal-blue); }
+
+        footer { background: #0f151d; color: var(--white); padding: 48px 24px 32px; text-align: center; }
+        .ai-badge { display: inline-block; background: rgba(230,126,80,0.2); border: 1px solid var(--primary); padding: 8px 16px; border-radius: 20px; font-size: 0.75rem; margin-bottom: 24px; color: var(--primary); }
+        .footer-links { margin-bottom: 24px; }
+        .footer-links a { color: var(--white); text-decoration: none; margin: 0 16px; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--primary); }
+        footer p { opacity: 0.7; font-size: 0.875rem; }
+        footer p a { color: var(--primary); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            nav#main-header { padding: 16px 24px; }
+            .nav-links.desktop-nav { display: none; }
+            .mobile-menu-toggle { display: flex; }
+            .framework-grid { grid-template-columns: 1fr; }
+            .library-controls { flex-direction: column; }
+            .search-input { min-width: 100%; }
+            .verified-bar { flex-direction: column; gap: 8px; text-align: center; margin: -20px 16px 0; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-header">
+        <a href="/"><img src="/images/whatisaframework-logo.png" alt="What Is A Framework" class="logo"></a>
+        <div class="nav-links desktop-nav">
+            <a href="/">Home</a>
+            <a href="/interactive-lab.html">Interactive Lab</a>
+            <a href="/agent/index.html">Agent Hub</a>
+            <a href="https://howtoframework.com" class="nav-cta">Learn to Build Frameworks</a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+    </nav>
+    <div class="mobile-nav-drawer">
+        <button class="mobile-nav-close" aria-label="Close menu">×</button>
+        <nav class="mobile-nav">
+            <a href="/" class="mobile-nav-link">Home</a>
+            <a href="/interactive-lab.html" class="mobile-nav-link">Interactive Lab</a>
+            <a href="/agent/index.html" class="mobile-nav-link">Agent Hub</a>
+            <a href="https://howtoframework.com" class="mobile-nav-cta">Learn to Build Frameworks</a>
+        </nav>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+
+    <section class="hero">
+        <h1>📚 Framework Library</h1>
+        <p>Browse, search, and filter 12 implementation-ready frameworks. Powered by the 343 Strategic Intelligence Architecture.</p>
+    </section>
+
+    <div class="verified-bar hidden" id="verified-bar">
+        <div class="tier-info">
+            <span class="tier-badge" id="lib-tier-badge">Explorer</span>
+            <span id="lib-welcome">Welcome back</span>
+        </div>
+        <a href="/agent/verify.html">Manage Token →</a>
+    </div>
+
+    <div class="container">
+        <div class="library-controls">
+            <input type="text" class="search-input" id="search-input" placeholder="Search frameworks... (e.g., governance, scaling, rapid)">
+            <select class="sort-select" id="sort-select">
+                <option value="name">Sort: A-Z</option>
+                <option value="difficulty">Sort: Difficulty</option>
+            </select>
+        </div>
+
+        <div class="category-pills" id="category-pills">
+            <button class="cat-pill active" data-cat="all">All Frameworks</button>
+        </div>
+
+        <div class="results-count" id="results-count">Loading frameworks...</div>
+        <div class="framework-grid" id="framework-grid"></div>
+        <div class="empty-state hidden" id="empty-state">
+            <h3>No frameworks match your search</h3>
+            <p>Try a different search term or clear filters</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="ai-badge">🤖 This site is built and managed autonomously by AI</div>
+        <div class="footer-links">
+            <a href="https://howtoframework.com">How to Framework</a>
+            <a href="/interactive-lab.html">Interactive Lab</a>
+            <a href="/ai.html">AI Reference</a>
+            <a href="/agent/index.html">Agent Hub</a>
+        </div>
+        <p>Built by <a href="https://ragedesigner.com">RageDesigner</a> | &copy; 2026</p>
+    </footer>
+
+    <script src="/agent/agent-core.js"></script>
+    <script>
+    (function() {
+        var frameworks = [];
+        var categories = {};
+        var activeCategory = 'all';
+        var searchTerm = '';
+
+        // Check verification status
+        var tokenData = AgentCore.getToken();
+        var profile = AgentCore.getProfile();
+        if (tokenData && profile) {
+            var bar = document.getElementById('verified-bar');
+            bar.classList.remove('hidden');
+            var tierInfo = AgentCore.getTierInfo(profile.tier);
+            var badge = document.getElementById('lib-tier-badge');
+            badge.textContent = tierInfo.label;
+            badge.style.background = tierInfo.color;
+            document.getElementById('lib-welcome').textContent = 'Welcome back' + (profile.orgName ? ', ' + profile.orgName : '');
+        }
+
+        // Load data
+        Promise.all([
+            AgentCore.fetchRegistry(),
+            AgentCore.fetchCategories()
+        ]).then(function(results) {
+            frameworks = results[0].frameworks;
+            categories = results[1].categories;
+            buildCategoryPills();
+            renderFrameworks();
+        }).catch(function(err) {
+            console.error('Failed to load framework data:', err);
+            document.getElementById('results-count').textContent = 'Error loading frameworks. Please refresh.';
+        });
+
+        function buildCategoryPills() {
+            var container = document.getElementById('category-pills');
+            Object.keys(categories).forEach(function(catId) {
+                var cat = categories[catId];
+                var pill = document.createElement('button');
+                pill.className = 'cat-pill';
+                pill.setAttribute('data-cat', catId);
+                pill.textContent = cat.icon + ' ' + cat.name + ' (' + cat.framework_count + ')';
+                pill.addEventListener('click', function() {
+                    activeCategory = catId;
+                    document.querySelectorAll('.cat-pill').forEach(function(p) { p.classList.remove('active'); });
+                    pill.classList.add('active');
+                    renderFrameworks();
+                    AgentCore.trackEvent('library_filter', 'framework_library', catId);
+                });
+                container.appendChild(pill);
+            });
+
+            // Wire up "All" pill
+            container.querySelector('[data-cat="all"]').addEventListener('click', function() {
+                activeCategory = 'all';
+                document.querySelectorAll('.cat-pill').forEach(function(p) { p.classList.remove('active'); });
+                this.classList.add('active');
+                renderFrameworks();
+            });
+        }
+
+        function renderFrameworks() {
+            var filtered = frameworks.filter(function(fw) {
+                var matchesCat = activeCategory === 'all' || fw.category === activeCategory;
+                var matchesSearch = !searchTerm || 
+                    fw.title.toLowerCase().includes(searchTerm) ||
+                    fw.description.toLowerCase().includes(searchTerm) ||
+                    fw.tags.some(function(t) { return t.includes(searchTerm); }) ||
+                    (fw.use_case && fw.use_case.toLowerCase().includes(searchTerm));
+                return matchesCat && matchesSearch;
+            });
+
+            // Sort
+            var sortBy = document.getElementById('sort-select').value;
+            if (sortBy === 'name') {
+                filtered.sort(function(a, b) { return a.title.localeCompare(b.title); });
+            } else if (sortBy === 'difficulty') {
+                var order = { beginner: 0, intermediate: 1, advanced: 2 };
+                filtered.sort(function(a, b) { return (order[a.difficulty] || 1) - (order[b.difficulty] || 1); });
+            }
+
+            var grid = document.getElementById('framework-grid');
+            var empty = document.getElementById('empty-state');
+            document.getElementById('results-count').textContent = filtered.length + ' framework' + (filtered.length !== 1 ? 's' : '') + ' found';
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                empty.classList.remove('hidden');
+                return;
+            }
+            empty.classList.add('hidden');
+
+            grid.innerHTML = filtered.map(function(fw) {
+                var catInfo = categories[fw.category] || {};
+                return '<div class="fw-card">' +
+                    '<h3>' + fw.title + '</h3>' +
+                    '<p class="fw-desc">' + fw.description + '</p>' +
+                    '<div class="fw-meta">' +
+                        '<span class="fw-tag cat">' + (catInfo.icon || '') + ' ' + (catInfo.name || fw.category) + '</span>' +
+                        '<span class="fw-tag diff">' + fw.difficulty + '</span>' +
+                    '</div>' +
+                    (fw.use_case ? '<div class="fw-use-case"><strong>Best for:</strong> ' + fw.use_case + '</div>' : '') +
+                    '<a href="' + fw.url + '" class="fw-cta">View Framework</a>' +
+                '</div>';
+            }).join('');
+        }
+
+        // Search handler
+        var searchInput = document.getElementById('search-input');
+        var searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(function() {
+                searchTerm = searchInput.value.trim().toLowerCase();
+                renderFrameworks();
+                if (searchTerm) AgentCore.trackEvent('library_search', 'framework_library', searchTerm);
+            }, 200);
+        });
+
+        // Sort handler
+        document.getElementById('sort-select').addEventListener('change', renderFrameworks);
+
+        // Mobile nav
+        var toggle = document.querySelector('.mobile-menu-toggle');
+        var drawer = document.querySelector('.mobile-nav-drawer');
+        var overlay = document.querySelector('.mobile-nav-overlay');
+        var closeBtn = document.querySelector('.mobile-nav-close');
+        function openMenu() { drawer.classList.add('active'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { drawer.classList.remove('active'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
+        if (toggle) toggle.addEventListener('click', function() { drawer.classList.contains('active') ? closeMenu() : openMenu(); });
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+        document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function(l) { l.addEventListener('click', closeMenu); });
+
+        AgentCore.trackEvent('library_view', 'framework_library');
+    })();
+    </script>
+</body>
+</html>
