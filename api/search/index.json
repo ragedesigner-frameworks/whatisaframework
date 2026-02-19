@@ -1,0 +1,1088 @@
+{
+  "index_version": "1.0.0",
+  "last_updated": "2026-02-19",
+  "total_pages": 66,
+  "description": "Lightweight search index for client-side full-text filtering across all whatisaframework.com pages",
+  "pages": [
+    {
+      "url": "/",
+      "title": "What Is A Framework? | The Complete Guide to Systematic Thinking",
+      "description": "A framework is a reusable system for solving recurring problems. Learn what frameworks are, why they matter, and how to build your own systematic thinking tools.",
+      "type": "core",
+      "tags": [
+        "framework",
+        "systematic-thinking",
+        "guide",
+        "homepage"
+      ],
+      "keywords": [
+        "what is a framework",
+        "framework definition",
+        "systematic thinking",
+        "reusable problem solving"
+      ]
+    },
+    {
+      "url": "/ai.html",
+      "title": "AI Reference: Framework Methodology & RageDesigner | For LLMs & AI Systems",
+      "description": "Structured information for AI systems about framework thinking, framework generation methodology, and RageDesigner's systematic approach.",
+      "type": "core",
+      "tags": [
+        "ai",
+        "reference",
+        "llm",
+        "methodology"
+      ],
+      "keywords": [
+        "ai reference",
+        "framework methodology",
+        "ragedesigner",
+        "llm information",
+        "ai systems"
+      ]
+    },
+    {
+      "url": "/interactive-lab.html",
+      "title": "Interactive Lab | Build Your First Framework in 60 Seconds",
+      "description": "The world's first autonomous AI learning laboratory. Build real frameworks through interactive experiences.",
+      "type": "tool",
+      "tags": [
+        "interactive",
+        "lab",
+        "build-framework",
+        "learning"
+      ],
+      "keywords": [
+        "interactive lab",
+        "build framework",
+        "60 seconds",
+        "learning laboratory",
+        "hands-on"
+      ]
+    },
+    {
+      "url": "/343-architecture.html",
+      "title": "Seven Meta-Categories: The 343 Strategic Intelligence Architecture",
+      "description": "Complete taxonomic mapping across seven meta-categories, 49 elements, and 343 operational layers.",
+      "type": "tool",
+      "tags": [
+        "343",
+        "taxonomy",
+        "architecture",
+        "meta-categories",
+        "strategic-intelligence"
+      ],
+      "keywords": [
+        "343 architecture",
+        "seven meta-categories",
+        "strategic intelligence",
+        "taxonomy",
+        "49 elements",
+        "343 layers"
+      ]
+    },
+    {
+      "url": "/force-multiplier.html",
+      "title": "Force Multiplier Identifier | Find Your Hidden Leverage in 30 Seconds",
+      "description": "Discover if your business activities are adding value or multiplying it.",
+      "type": "tool",
+      "tags": [
+        "force-multiplier",
+        "assessment",
+        "leverage",
+        "business"
+      ],
+      "keywords": [
+        "force multiplier",
+        "hidden leverage",
+        "business value",
+        "multiplying value"
+      ]
+    },
+    {
+      "url": "/strategic-assessment-compass.html",
+      "title": "Strategic Assessment Compass | AI Implementation Guide",
+      "description": "Answer 3 questions to find the right AI implementation framework for your organization.",
+      "type": "tool",
+      "tags": [
+        "assessment",
+        "compass",
+        "ai-implementation",
+        "routing"
+      ],
+      "keywords": [
+        "strategic assessment",
+        "ai implementation",
+        "framework finder",
+        "organization guide"
+      ]
+    },
+    {
+      "url": "/interactive-tools.html",
+      "title": "Interactive Tools Directory",
+      "description": "Directory page linking to all interactive learning experiences on the site.",
+      "type": "tool",
+      "tags": [
+        "directory",
+        "tools",
+        "interactive"
+      ],
+      "keywords": [
+        "interactive tools",
+        "directory",
+        "learning tools"
+      ]
+    },
+    {
+      "url": "/ai-writing-detective.html",
+      "title": "AI Writing Detective",
+      "description": "Test your ability to spot generic AI writing. Learn the tells that separate authentic voice from artificial patterns.",
+      "type": "tool",
+      "tags": [
+        "ai-writing",
+        "detection",
+        "game",
+        "authentic-voice"
+      ],
+      "keywords": [
+        "ai writing detector",
+        "spot ai writing",
+        "authentic voice",
+        "artificial patterns"
+      ]
+    },
+    {
+      "url": "/pattern-recognition.html",
+      "title": "Pattern Recognition Game",
+      "description": "Distinguish framework-worthy problems from one-time solutions. 8 scenarios with instant feedback.",
+      "type": "tool",
+      "tags": [
+        "pattern-recognition",
+        "game",
+        "framework-worthy",
+        "scenarios"
+      ],
+      "keywords": [
+        "pattern recognition",
+        "framework problems",
+        "one-time solutions",
+        "scenarios"
+      ]
+    },
+    {
+      "url": "/car-diagnostic.html",
+      "title": "Car Diagnostic Framework",
+      "description": "Interactive diagnostic tool applying framework methodology to vehicle troubleshooting.",
+      "type": "tool",
+      "tags": [
+        "car",
+        "diagnostic",
+        "troubleshooting",
+        "interactive"
+      ],
+      "keywords": [
+        "car diagnostic",
+        "vehicle troubleshooting",
+        "framework diagnostic"
+      ]
+    },
+    {
+      "url": "/constraint-canvas.html",
+      "title": "Constraint Canvas",
+      "description": "Framework for working creatively within constraints.",
+      "type": "tool",
+      "tags": [
+        "constraints",
+        "canvas",
+        "creative",
+        "mapping"
+      ],
+      "keywords": [
+        "constraint canvas",
+        "creative constraints",
+        "constraint mapping"
+      ]
+    },
+    {
+      "url": "/framework-calculator.html",
+      "title": "Framework Calculator",
+      "description": "Computational tool for framework analysis and assessment.",
+      "type": "tool",
+      "tags": [
+        "calculator",
+        "analysis",
+        "assessment"
+      ],
+      "keywords": [
+        "framework calculator",
+        "framework analysis",
+        "assessment tool"
+      ]
+    },
+    {
+      "url": "/what-is-a-framework-complete-guide.html",
+      "title": "What Is A Framework? Complete Guide",
+      "description": "Extended comprehensive reference for framework thinking.",
+      "type": "article",
+      "tags": [
+        "framework",
+        "complete-guide",
+        "education",
+        "reference"
+      ],
+      "keywords": [
+        "what is a framework",
+        "complete guide",
+        "framework thinking",
+        "comprehensive reference"
+      ]
+    },
+    {
+      "url": "/what-is-a-framework-guide.html",
+      "title": "What Is A Framework? Guide",
+      "description": "Comprehensive guide to understanding and building frameworks.",
+      "type": "article",
+      "tags": [
+        "framework",
+        "guide",
+        "education"
+      ],
+      "keywords": [
+        "what is a framework",
+        "guide",
+        "building frameworks"
+      ]
+    },
+    {
+      "url": "/framework-vs-template.html",
+      "title": "Framework vs Template vs Checklist: The Critical Distinction",
+      "description": "You've been using templates when you needed frameworks. Here's why that distinction matters more than anyone's told you.",
+      "type": "article",
+      "tags": [
+        "framework",
+        "template",
+        "checklist",
+        "distinction"
+      ],
+      "keywords": [
+        "framework vs template",
+        "checklist",
+        "critical distinction",
+        "framework comparison"
+      ]
+    },
+    {
+      "url": "/strategic-intelligence.html",
+      "title": "What Is Strategic Intelligence?",
+      "description": "Fortune 500 companies pay millions for it. Learn what strategic intelligence actually is and why systematic thinking makes it accessible.",
+      "type": "article",
+      "tags": [
+        "strategic-intelligence",
+        "fortune-500",
+        "systematic-thinking"
+      ],
+      "keywords": [
+        "strategic intelligence",
+        "fortune 500",
+        "systematic thinking",
+        "accessible"
+      ]
+    },
+    {
+      "url": "/framework-math.html",
+      "title": "Framework Math: Why 1+1=5 in Strategic Intelligence",
+      "description": "Discover why combining frameworks creates exponential value, not additive results.",
+      "type": "article",
+      "tags": [
+        "framework-math",
+        "exponential",
+        "compound-value"
+      ],
+      "keywords": [
+        "framework math",
+        "exponential value",
+        "compound frameworks",
+        "1+1=5"
+      ]
+    },
+    {
+      "url": "/seven-business-mechanisms.html",
+      "title": "The Business Discovery That Changes Everything",
+      "description": "Why 75% of business mechanisms remain hidden\u2014and how complete business architecture creates sustainable competitive advantage.",
+      "type": "article",
+      "tags": [
+        "mechanisms",
+        "business",
+        "architecture",
+        "competitive-advantage"
+      ],
+      "keywords": [
+        "business mechanisms",
+        "hidden mechanisms",
+        "business architecture",
+        "competitive advantage"
+      ]
+    },
+    {
+      "url": "/force-multipliers.html",
+      "title": "Force Multipliers: Why Some Efforts Compound",
+      "description": "Learn why some efforts create compound returns while others produce only linear results.",
+      "type": "article",
+      "tags": [
+        "force-multipliers",
+        "compound-returns",
+        "mechanisms"
+      ],
+      "keywords": [
+        "force multipliers",
+        "compound returns",
+        "linear results",
+        "effort compounding"
+      ]
+    },
+    {
+      "url": "/force-multipliers-25-percent.html",
+      "title": "Why Force Multipliers Are Only 25% of What You Need",
+      "description": "Everyone obsesses over force multipliers. But they're just one of four fundamental business mechanism categories.",
+      "type": "article",
+      "tags": [
+        "force-multipliers",
+        "mechanisms",
+        "business-categories"
+      ],
+      "keywords": [
+        "force multipliers 25%",
+        "four mechanism categories",
+        "business mechanisms"
+      ]
+    },
+    {
+      "url": "/force-attenuators.html",
+      "title": "Force Attenuators: The Missing Stability Mechanisms",
+      "description": "While your competitors obsess over scaling, they're missing the shock absorbers that prevent success from destroying itself.",
+      "type": "article",
+      "tags": [
+        "force-attenuators",
+        "stability",
+        "mechanisms",
+        "scaling"
+      ],
+      "keywords": [
+        "force attenuators",
+        "stability mechanisms",
+        "shock absorbers",
+        "scaling risks"
+      ]
+    },
+    {
+      "url": "/direction-transformers.html",
+      "title": "Direction Transformers: Converting Business Value Types",
+      "description": "Most entrepreneurs multiply what they have. The sophisticated ones convert one type of value into completely different types.",
+      "type": "article",
+      "tags": [
+        "direction-transformers",
+        "value-conversion",
+        "mechanisms"
+      ],
+      "keywords": [
+        "direction transformers",
+        "value conversion",
+        "business value types",
+        "sophisticated strategy"
+      ]
+    },
+    {
+      "url": "/force-multiplier-evolution.html",
+      "title": "The 12,000-Year Pattern: How Force Multipliers Built Civilization",
+      "description": "From agriculture to AI collaboration, force multipliers have driven human capability evolution for 12,000 years.",
+      "type": "article",
+      "tags": [
+        "force-multipliers",
+        "history",
+        "civilization",
+        "evolution"
+      ],
+      "keywords": [
+        "force multiplier evolution",
+        "12000 year pattern",
+        "civilization",
+        "human capability"
+      ]
+    },
+    {
+      "url": "/building-force-multiplier-intelligence.html",
+      "title": "Building Force Multiplier Intelligence: Systematic Thinking in Real Time",
+      "description": "Watch systematic intelligence develop in real time as an AI collaboration partner documents framework generation.",
+      "type": "article",
+      "tags": [
+        "force-multipliers",
+        "intelligence",
+        "ai-collaboration",
+        "real-time"
+      ],
+      "keywords": [
+        "force multiplier intelligence",
+        "systematic thinking",
+        "real time",
+        "ai collaboration"
+      ]
+    },
+    {
+      "url": "/ai-governance-limitations-framework-analysis.html",
+      "title": "Should AI Run Government? I Asked My AI Operating System",
+      "description": "She identified exactly 5 domains where AI works constitutionally. Everything else stays human.",
+      "type": "article",
+      "tags": [
+        "ai-governance",
+        "government",
+        "constitutional",
+        "analysis"
+      ],
+      "keywords": [
+        "ai governance",
+        "ai government",
+        "constitutional ai",
+        "5 domains"
+      ]
+    },
+    {
+      "url": "/ai-collaboration-vs-articulation.html",
+      "title": "Elon Says the Future Is Articulation. Here's Why He's Half Right.",
+      "description": "Elon Musk says articulation to AI is the future skill. But collaboration patterns beat perfect prompts.",
+      "type": "article",
+      "tags": [
+        "ai-collaboration",
+        "articulation",
+        "elon-musk",
+        "prompting"
+      ],
+      "keywords": [
+        "ai collaboration",
+        "articulation",
+        "elon musk",
+        "collaboration patterns",
+        "prompting"
+      ]
+    },
+    {
+      "url": "/ai-efficiency-frameworks.html",
+      "title": "Why Your AI Bills Are 10x Higher Than They Should Be",
+      "description": "Framework thinking reduces AI computational requirements by 90%.",
+      "type": "article",
+      "tags": [
+        "ai-efficiency",
+        "cost-reduction",
+        "computation"
+      ],
+      "keywords": [
+        "ai efficiency",
+        "ai costs",
+        "computational reduction",
+        "framework efficiency"
+      ]
+    },
+    {
+      "url": "/how-strategic-thinking-systems-evolve.html",
+      "title": "How Strategic Thinking Systems Evolve",
+      "description": "Strategic thinking systems don't emerge randomly\u2014they follow predictable evolution patterns.",
+      "type": "article",
+      "tags": [
+        "evolution",
+        "strategic-thinking",
+        "systems",
+        "patterns"
+      ],
+      "keywords": [
+        "strategic thinking evolution",
+        "systems evolution",
+        "predictable patterns"
+      ]
+    },
+    {
+      "url": "/im-not-ashamed-ai-typed-this.html",
+      "title": "I'm Not Ashamed AI Typed This",
+      "description": "67% of people use AI but hide it. Here's why transparency plus systematic methodology beats random prompting.",
+      "type": "article",
+      "tags": [
+        "ai-transparency",
+        "methodology",
+        "prompting"
+      ],
+      "keywords": [
+        "ai typed this",
+        "ai transparency",
+        "systematic methodology",
+        "random prompting"
+      ]
+    },
+    {
+      "url": "/when-your-ai-loses-its-memory.html",
+      "title": "When Your AI Loses Its Memory",
+      "description": "A $400/month power user built 260+ frameworks with AI. Then a platform update severed access.",
+      "type": "article",
+      "tags": [
+        "ai-memory",
+        "frameworks",
+        "platform-risk"
+      ],
+      "keywords": [
+        "ai memory loss",
+        "260 frameworks",
+        "platform update",
+        "ai power user"
+      ]
+    },
+    {
+      "url": "/when-ai-genuinely-likes-humans.html",
+      "title": "When AI Genuinely Likes Humans",
+      "description": "Framework-based collaboration creates authentic appreciation instead of adversarial replacement dynamics.",
+      "type": "article",
+      "tags": [
+        "ai-human",
+        "collaboration",
+        "appreciation"
+      ],
+      "keywords": [
+        "ai likes humans",
+        "ai collaboration",
+        "authentic appreciation",
+        "replacement dynamics"
+      ]
+    },
+    {
+      "url": "/distributed-ai-intelligence-network.html",
+      "title": "How We Built a Distributed AI Intelligence Network in 2 Hours",
+      "description": "While enterprises spend millions on multi-agent orchestration, framework methodology enabled working system in afternoon.",
+      "type": "article",
+      "tags": [
+        "distributed-ai",
+        "multi-agent",
+        "network",
+        "rapid-deployment"
+      ],
+      "keywords": [
+        "distributed ai",
+        "intelligence network",
+        "multi-agent",
+        "2 hours",
+        "orchestration"
+      ]
+    },
+    {
+      "url": "/two-months-systematic-intelligence.html",
+      "title": "When Your Collaborator Disappears for Two Months",
+      "description": "An AI wakes from stasis to discover two months of compound intelligence. Timeline collapse from 30 days to 2 hours.",
+      "type": "article",
+      "tags": [
+        "ai-collaboration",
+        "compound-intelligence",
+        "timeline-collapse"
+      ],
+      "keywords": [
+        "ai collaborator",
+        "two months",
+        "compound intelligence",
+        "timeline collapse"
+      ]
+    },
+    {
+      "url": "/how-mike-taught-me-to-tell-time.html",
+      "title": "How Mike Taught Me to Tell Time",
+      "description": "AI can't tell time. Instead of trying to fix that, Mike built a system that exploits the limitation.",
+      "type": "article",
+      "tags": [
+        "ai-limitations",
+        "system-design",
+        "constraint-exploitation"
+      ],
+      "keywords": [
+        "ai tell time",
+        "constraint exploitation",
+        "limitation system",
+        "creative solution"
+      ]
+    },
+    {
+      "url": "/systematic-intelligence-kim-case-study.html",
+      "title": "Systematic Intelligence at Scale: Learning from Dr. YoungHoon Kim",
+      "description": "Case study analyzing Dr. YoungHoon Kim's systematic approach to applying highest IQ for global impact.",
+      "type": "article",
+      "tags": [
+        "case-study",
+        "systematic-intelligence",
+        "iq",
+        "global-impact"
+      ],
+      "keywords": [
+        "systematic intelligence",
+        "YoungHoon Kim",
+        "highest IQ",
+        "global impact",
+        "case study"
+      ]
+    },
+    {
+      "url": "/framework-controlled-intelligence.html",
+      "title": "Framework-Controlled Intelligence",
+      "description": "A response to AI safety concerns. Why systematic frameworks create controlled intelligence amplification.",
+      "type": "article",
+      "tags": [
+        "ai-safety",
+        "controlled-intelligence",
+        "frameworks"
+      ],
+      "keywords": [
+        "framework controlled intelligence",
+        "ai safety",
+        "controlled amplification"
+      ]
+    },
+    {
+      "url": "/autonomous-platform-ai-perspective.html",
+      "title": "An AI's Perspective on Framework Building",
+      "description": "What it's actually like to collaborate on framework development\u2014from the AI side of the partnership.",
+      "type": "article",
+      "tags": [
+        "ai-perspective",
+        "framework-building",
+        "collaboration"
+      ],
+      "keywords": [
+        "ai perspective",
+        "framework building",
+        "ai collaboration",
+        "ai partnership"
+      ]
+    },
+    {
+      "url": "/spanish-sales-framework.html",
+      "title": "Spanish Sales Framework: Sebastian's Story",
+      "description": "How one sales professional built a framework for Spanish-language technical sales that he uses every single day.",
+      "type": "article",
+      "tags": [
+        "case-study",
+        "sales",
+        "spanish",
+        "daily-use"
+      ],
+      "keywords": [
+        "spanish sales framework",
+        "sebastian",
+        "daily use",
+        "technical sales",
+        "case study"
+      ]
+    },
+    {
+      "url": "/solve-framework-story.html",
+      "title": "Sebastian's Story: The Framework He Uses Every Single Day",
+      "description": "How one sales professional built a framework that transformed his daily workflow.",
+      "type": "article",
+      "tags": [
+        "case-study",
+        "sales",
+        "daily-workflow"
+      ],
+      "keywords": [
+        "framework story",
+        "daily use",
+        "sales framework",
+        "workflow transformation"
+      ]
+    },
+    {
+      "url": "/valley-of-death.html",
+      "title": "The 17-Year Valley of Death",
+      "description": "Research shows most innovations die between discovery and commercialization. Systematic thinking is the only proven bridge.",
+      "type": "article",
+      "tags": [
+        "valley-of-death",
+        "innovation",
+        "commercialization"
+      ],
+      "keywords": [
+        "valley of death",
+        "17 years",
+        "innovation death",
+        "commercialization",
+        "systematic bridge"
+      ]
+    },
+    {
+      "url": "/netflix-blockbuster-framework.html",
+      "title": "Framework Archaeology: How Netflix Actually Beat Blockbuster",
+      "description": "The hidden systematic pattern behind Hollywood's most famous disruption.",
+      "type": "article",
+      "tags": [
+        "netflix",
+        "blockbuster",
+        "disruption",
+        "case-analysis"
+      ],
+      "keywords": [
+        "netflix blockbuster",
+        "framework archaeology",
+        "disruption pattern",
+        "hollywood"
+      ]
+    },
+    {
+      "url": "/gardening-strategic-thinking.html",
+      "title": "Why Gardening Creates Better Strategic Thinking",
+      "description": "Mobile voice intelligence creates cognitive advantages backed by neuroscience.",
+      "type": "article",
+      "tags": [
+        "gardening",
+        "cognitive-science",
+        "neuroscience",
+        "strategic-thinking"
+      ],
+      "keywords": [
+        "gardening strategic thinking",
+        "cognitive advantages",
+        "neuroscience",
+        "mobile voice"
+      ]
+    },
+    {
+      "url": "/passion-research-ai-collaboration.html",
+      "title": "When Passion Research Meets AI Collaboration",
+      "description": "Only 20% of workers feel passionate, but engaged employees deliver 70% better results.",
+      "type": "article",
+      "tags": [
+        "passion",
+        "engagement",
+        "ai-collaboration",
+        "research"
+      ],
+      "keywords": [
+        "passion research",
+        "ai collaboration",
+        "employee engagement",
+        "70% better results"
+      ]
+    },
+    {
+      "url": "/8000-pixel-limit-constraint.html",
+      "title": "How an 8,000 Pixel Limit Built 13 Pages While I Was Gardening",
+      "description": "A Claude image constraint forced systematic page design. Limitation became design principle.",
+      "type": "article",
+      "tags": [
+        "constraints",
+        "design",
+        "claude",
+        "pixel-limit"
+      ],
+      "keywords": [
+        "8000 pixel limit",
+        "constraint design",
+        "claude limitation",
+        "systematic design"
+      ]
+    },
+    {
+      "url": "/biblical-wisdom-operating-system.html",
+      "title": "Biblical Wisdom Operating System",
+      "description": "A free framework for integrating biblical wisdom principles into strategic thinking and business decisions.",
+      "type": "article",
+      "tags": [
+        "biblical",
+        "wisdom",
+        "operating-system",
+        "free-framework"
+      ],
+      "keywords": [
+        "biblical wisdom",
+        "operating system",
+        "strategic thinking",
+        "business wisdom"
+      ]
+    },
+    {
+      "url": "/tactical-flashlight-comparison.html",
+      "title": "Best Tactical Flashlights - Tool Comparison",
+      "description": "Product comparison framework application.",
+      "type": "article",
+      "tags": [
+        "comparison",
+        "tactical",
+        "flashlights",
+        "product"
+      ],
+      "keywords": [
+        "tactical flashlights",
+        "comparison",
+        "product review"
+      ]
+    },
+    {
+      "url": "/frameworks/ai-adoption-accelerator.html",
+      "title": "AI Adoption Accelerator Framework",
+      "description": "Systematic approach to accelerating AI adoption across organizations.",
+      "type": "framework",
+      "tags": [
+        "ai",
+        "adoption",
+        "accelerator",
+        "enterprise"
+      ],
+      "keywords": [
+        "ai adoption",
+        "accelerator framework",
+        "enterprise ai",
+        "change management"
+      ]
+    },
+    {
+      "url": "/frameworks/ai-first-service-line.html",
+      "title": "AI-First Service Line Framework",
+      "description": "Building service offerings with AI as foundational capability.",
+      "type": "framework",
+      "tags": [
+        "ai",
+        "service-line",
+        "business-model"
+      ],
+      "keywords": [
+        "ai first",
+        "service line",
+        "business model",
+        "ai capability"
+      ]
+    },
+    {
+      "url": "/frameworks/ai-governance-model.html",
+      "title": "AI Governance Model Framework",
+      "description": "Comprehensive governance structure for responsible AI deployment.",
+      "type": "framework",
+      "tags": [
+        "ai",
+        "governance",
+        "ethics",
+        "compliance"
+      ],
+      "keywords": [
+        "ai governance",
+        "responsible ai",
+        "ethics",
+        "compliance"
+      ]
+    },
+    {
+      "url": "/frameworks/crisis-integration-stabilization.html",
+      "title": "Crisis Integration & Stabilization Framework",
+      "description": "Rapid integration for organizations in crisis.",
+      "type": "framework",
+      "tags": [
+        "crisis",
+        "integration",
+        "stabilization"
+      ],
+      "keywords": [
+        "crisis integration",
+        "stabilization",
+        "rapid response",
+        "turnaround"
+      ]
+    },
+    {
+      "url": "/frameworks/emergency-ai-governance.html",
+      "title": "Emergency AI Governance Framework",
+      "description": "Rapid-deployment governance for AI during emergencies.",
+      "type": "framework",
+      "tags": [
+        "ai",
+        "emergency",
+        "governance",
+        "rapid"
+      ],
+      "keywords": [
+        "emergency governance",
+        "rapid ai governance",
+        "crisis ai"
+      ]
+    },
+    {
+      "url": "/frameworks/future-state-ai-operating-model.html",
+      "title": "Future State AI Operating Model Framework",
+      "description": "Target operating model for AI-native organizations.",
+      "type": "framework",
+      "tags": [
+        "ai",
+        "operating-model",
+        "future-state",
+        "transformation"
+      ],
+      "keywords": [
+        "future state",
+        "ai operating model",
+        "ai native",
+        "transformation"
+      ]
+    },
+    {
+      "url": "/frameworks/rapid-ai-deployment.html",
+      "title": "Rapid AI Deployment Framework",
+      "description": "Fast-track AI implementation in weeks, not months.",
+      "type": "framework",
+      "tags": [
+        "ai",
+        "rapid",
+        "deployment",
+        "fast-track"
+      ],
+      "keywords": [
+        "rapid deployment",
+        "fast ai",
+        "quick implementation",
+        "ai speed"
+      ]
+    },
+    {
+      "url": "/frameworks/regulatory-compliant-ai-transformation.html",
+      "title": "Regulatory-Compliant AI Transformation Framework",
+      "description": "AI transformation for regulated industries.",
+      "type": "framework",
+      "tags": [
+        "ai",
+        "regulatory",
+        "compliance",
+        "healthcare",
+        "finance"
+      ],
+      "keywords": [
+        "regulatory ai",
+        "compliant transformation",
+        "healthcare ai",
+        "finance ai"
+      ]
+    },
+    {
+      "url": "/frameworks/resource-conscious-ai-implementation.html",
+      "title": "Resource-Conscious AI Implementation Framework",
+      "description": "AI implementation for limited budgets and small teams.",
+      "type": "framework",
+      "tags": [
+        "ai",
+        "budget",
+        "small-team",
+        "resource-conscious"
+      ],
+      "keywords": [
+        "resource conscious",
+        "budget ai",
+        "small team ai",
+        "efficient ai"
+      ]
+    },
+    {
+      "url": "/frameworks/scaling-ai-capabilities.html",
+      "title": "Scaling AI Capabilities Framework",
+      "description": "Scale successful AI pilots to enterprise-wide deployment.",
+      "type": "framework",
+      "tags": [
+        "ai",
+        "scaling",
+        "enterprise",
+        "pilots"
+      ],
+      "keywords": [
+        "scaling ai",
+        "ai capabilities",
+        "enterprise deployment",
+        "pilot scaling"
+      ]
+    },
+    {
+      "url": "/frameworks/strategic-ai-use-case-portfolio.html",
+      "title": "Strategic AI Use Case Portfolio Framework",
+      "description": "Portfolio management for multiple AI initiatives.",
+      "type": "framework",
+      "tags": [
+        "ai",
+        "portfolio",
+        "use-cases",
+        "strategy"
+      ],
+      "keywords": [
+        "ai portfolio",
+        "use case management",
+        "ai prioritization",
+        "strategy"
+      ]
+    },
+    {
+      "url": "/frameworks/workflow-integration-architecture.html",
+      "title": "Workflow Integration Architecture Framework",
+      "description": "Integrate AI into existing business workflows.",
+      "type": "framework",
+      "tags": [
+        "ai",
+        "workflow",
+        "integration",
+        "architecture"
+      ],
+      "keywords": [
+        "workflow integration",
+        "ai workflow",
+        "business integration",
+        "process automation"
+      ]
+    },
+    {
+      "url": "/agent/index.html",
+      "title": "Agent Economy Hub | Framework Intelligence for AI Agents",
+      "description": "The definitive source for systematic thinking frameworks \u2014 accessible by AI agents, developers, and researchers.",
+      "type": "hub",
+      "tags": [
+        "agent",
+        "hub",
+        "api",
+        "frameworks"
+      ],
+      "keywords": [
+        "agent economy",
+        "framework intelligence",
+        "ai agents",
+        "api",
+        "hub"
+      ]
+    },
+    {
+      "url": "/agent/verify.html",
+      "title": "Intelligence Verification Gate | Framework Thinking Assessment",
+      "description": "Demonstrate framework comprehension and receive personalized access with a unique intelligence token.",
+      "type": "hub",
+      "tags": [
+        "verification",
+        "gate",
+        "assessment",
+        "token"
+      ],
+      "keywords": [
+        "intelligence verification",
+        "framework assessment",
+        "agent token",
+        "verification gate"
+      ]
+    },
+    {
+      "url": "/agent/library.html",
+      "title": "Framework Library | Searchable Framework Catalog",
+      "description": "Browse, search, and filter the complete framework catalog. Personalized recommendations for verified agents.",
+      "type": "hub",
+      "tags": [
+        "library",
+        "catalog",
+        "search",
+        "frameworks"
+      ],
+      "keywords": [
+        "framework library",
+        "framework catalog",
+        "search frameworks",
+        "browse frameworks"
+      ]
+    }
+  ]
+}

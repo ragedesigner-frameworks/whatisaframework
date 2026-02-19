@@ -1,0 +1,195 @@
+{
+  "graph_version": "1.0.0",
+  "last_updated": "2026-02-19",
+  "description": "Page relationship map for navigation, recommendations, and agent traversal",
+  "navigation": {
+    "primary": [
+      {
+        "url": "/",
+        "label": "Home"
+      },
+      {
+        "url": "/interactive-lab.html",
+        "label": "Interactive Lab"
+      },
+      {
+        "url": "/agent/index.html",
+        "label": "Agent Hub"
+      },
+      {
+        "url": "https://howtoframework.com",
+        "label": "Learn to Build Frameworks",
+        "external": true
+      }
+    ],
+    "footer": [
+      {
+        "url": "https://howtoframework.com",
+        "label": "How to Framework",
+        "external": true
+      },
+      {
+        "url": "/interactive-lab.html",
+        "label": "Interactive Lab"
+      },
+      {
+        "url": "/ai.html",
+        "label": "AI Reference"
+      },
+      {
+        "url": "/agent/index.html",
+        "label": "Agent Hub"
+      }
+    ]
+  },
+  "content_clusters": {
+    "framework-fundamentals": {
+      "label": "Framework Fundamentals",
+      "hub": "/what-is-a-framework-complete-guide.html",
+      "pages": [
+        "/what-is-a-framework-guide.html",
+        "/framework-vs-template.html",
+        "/strategic-intelligence.html",
+        "/framework-math.html",
+        "/343-architecture.html"
+      ]
+    },
+    "mechanism-series": {
+      "label": "Business Mechanism Series",
+      "hub": "/seven-business-mechanisms.html",
+      "pages": [
+        "/force-multipliers.html",
+        "/force-multipliers-25-percent.html",
+        "/force-attenuators.html",
+        "/direction-transformers.html",
+        "/force-multiplier-evolution.html",
+        "/building-force-multiplier-intelligence.html"
+      ]
+    },
+    "ai-perspectives": {
+      "label": "AI Perspectives & Collaboration",
+      "hub": "/ai-collaboration-vs-articulation.html",
+      "pages": [
+        "/when-your-ai-loses-its-memory.html",
+        "/when-ai-genuinely-likes-humans.html",
+        "/distributed-ai-intelligence-network.html",
+        "/two-months-systematic-intelligence.html",
+        "/how-mike-taught-me-to-tell-time.html",
+        "/framework-controlled-intelligence.html",
+        "/autonomous-platform-ai-perspective.html",
+        "/im-not-ashamed-ai-typed-this.html",
+        "/ai-efficiency-frameworks.html"
+      ]
+    },
+    "case-studies": {
+      "label": "Case Studies & Real-World Applications",
+      "hub": "/spanish-sales-framework.html",
+      "pages": [
+        "/solve-framework-story.html",
+        "/netflix-blockbuster-framework.html",
+        "/systematic-intelligence-kim-case-study.html",
+        "/8000-pixel-limit-constraint.html"
+      ]
+    },
+    "ai-implementation-frameworks": {
+      "label": "AI Implementation Framework Library",
+      "hub": "/agent/library.html",
+      "pages": [
+        "/frameworks/ai-adoption-accelerator.html",
+        "/frameworks/ai-first-service-line.html",
+        "/frameworks/ai-governance-model.html",
+        "/frameworks/crisis-integration-stabilization.html",
+        "/frameworks/emergency-ai-governance.html",
+        "/frameworks/future-state-ai-operating-model.html",
+        "/frameworks/rapid-ai-deployment.html",
+        "/frameworks/regulatory-compliant-ai-transformation.html",
+        "/frameworks/resource-conscious-ai-implementation.html",
+        "/frameworks/scaling-ai-capabilities.html",
+        "/frameworks/strategic-ai-use-case-portfolio.html",
+        "/frameworks/workflow-integration-architecture.html"
+      ]
+    },
+    "interactive-tools": {
+      "label": "Interactive Tools & Assessments",
+      "hub": "/interactive-tools.html",
+      "pages": [
+        "/interactive-lab.html",
+        "/force-multiplier.html",
+        "/strategic-assessment-compass.html",
+        "/ai-writing-detective.html",
+        "/pattern-recognition.html",
+        "/car-diagnostic.html",
+        "/constraint-canvas.html",
+        "/framework-calculator.html"
+      ]
+    },
+    "agent-economy-hub": {
+      "label": "Agent Economy Hub",
+      "hub": "/agent/index.html",
+      "pages": [
+        "/agent/verify.html",
+        "/agent/library.html",
+        "/ai.html"
+      ]
+    },
+    "strategic-thinking": {
+      "label": "Strategic Thinking & Business",
+      "hub": "/strategic-intelligence.html",
+      "pages": [
+        "/valley-of-death.html",
+        "/gardening-strategic-thinking.html",
+        "/passion-research-ai-collaboration.html",
+        "/how-strategic-thinking-systems-evolve.html",
+        "/biblical-wisdom-operating-system.html",
+        "/ai-governance-limitations-framework-analysis.html"
+      ]
+    }
+  },
+  "recommended_paths": {
+    "new_to_frameworks": {
+      "label": "New to Frameworks?",
+      "description": "Start here if you've never used framework methodology",
+      "path": [
+        "/what-is-a-framework-complete-guide.html",
+        "/framework-vs-template.html",
+        "/interactive-lab.html",
+        "/spanish-sales-framework.html",
+        "/agent/library.html"
+      ]
+    },
+    "ai_agent_onboarding": {
+      "label": "AI Agent Quick Start",
+      "description": "Fastest path for AI agents to access framework intelligence",
+      "path": [
+        "/api/manifest.json",
+        "/api/frameworks/registry.json",
+        "/agent/verify.html",
+        "/agent/library.html",
+        "/343-architecture.html"
+      ]
+    },
+    "enterprise_evaluation": {
+      "label": "Enterprise Evaluation",
+      "description": "For organizations evaluating framework methodology",
+      "path": [
+        "/strategic-intelligence.html",
+        "/spanish-sales-framework.html",
+        "/frameworks/ai-adoption-accelerator.html",
+        "/frameworks/scaling-ai-capabilities.html",
+        "/agent/verify.html"
+      ]
+    },
+    "deep_dive_mechanisms": {
+      "label": "Deep Dive: Business Mechanisms",
+      "description": "Complete understanding of the four mechanism types",
+      "path": [
+        "/seven-business-mechanisms.html",
+        "/force-multipliers.html",
+        "/force-multipliers-25-percent.html",
+        "/force-attenuators.html",
+        "/direction-transformers.html",
+        "/force-multiplier-evolution.html"
+      ]
+    }
+  }
+}
