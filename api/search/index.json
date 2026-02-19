@@ -1,7 +1,7 @@
 {
   "index_version": "1.0.0",
   "last_updated": "2026-02-19",
-  "total_pages": 66,
+  "total_pages": 62,
   "description": "Lightweight search index for client-side full-text filtering across all whatisaframework.com pages",
   "pages": [
     {
@@ -1082,6 +1082,28 @@
         "framework catalog",
         "search frameworks",
         "browse frameworks"
+      ]
+    },
+    {
+      "url": "/agent/subscribe.html",
+      "title": "Framework Intelligence for Humans | Connect with the Methodology Team",
+      "description": "Access the most comprehensive systematic thinking methodology. 343 strategic intelligence components, 12 AI implementation frameworks, and expert guidance for your organization.",
+      "type": "hub",
+      "tags": [
+        "subscribe",
+        "contact",
+        "human",
+        "enterprise",
+        "methodology"
+      ],
+      "keywords": [
+        "framework intelligence",
+        "systematic thinking",
+        "enterprise",
+        "consulting",
+        "methodology",
+        "strategic intelligence",
+        "human"
       ]
     }
   ]

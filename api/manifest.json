@@ -27,7 +27,8 @@
     "verification_gate": "/agent/verify.html",
     "framework_library": "/agent/library.html",
     "interactive_lab": "/interactive-lab.html",
-    "taxonomy_explorer": "/343-architecture.html"
+    "taxonomy_explorer": "/343-architecture.html",
+    "subscribe": "/agent/subscribe.html"
   },
   "capabilities": {
     "framework_access": "Public JSON endpoints - no authentication required",
