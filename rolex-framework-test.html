@@ -31,23 +31,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Design Token System - 2 Color Palette */
+        /* ═══════════════════════════════════════════════
+           PRECISION INTERFACE ARCHITECTURE v1.0
+           Framework 2001-006 applied to this article
+           ═══════════════════════════════════════════════ */
+
+        /* LAYER 1: Component Geometry — 8px grid, 1.25 Major Third */
         :root {
-            /* Core Colors - Only Orange & Charcoal Blue */
+            /* Core Materials — not colors, materials with state properties */
             --primary: #E67E50;
+            --primary-hover: #eb9470;
+            --primary-pressed: #d06a3e;
+            --primary-surface: rgba(230, 126, 80, 0.06);
+            --primary-tint: rgba(230, 126, 80, 0.1);
+
             --dark: #1A2332;
             --charcoal-blue: #1A2332;
             --logo-blue: #325d74;
             --white: #ffffff;
             --text-medium: #5a5a5a;
 
-            /* Tints & Shades Generated from Core Colors */
+            /* Tints & Shades — material under different light */
             --primary-light: rgba(230, 126, 80, 0.1);
             --primary-medium: rgba(230, 126, 80, 0.8);
             --dark-medium: rgba(26, 35, 50, 0.85);
             --dark-light: rgba(26, 35, 50, 0.6);
 
-            /* Typography Scale - 1.25 Major Third Ratio */
+            /* Typography Scale — 1.25 Major Third (editorial) */
             --text-xs: 0.8rem;
             --text-sm: 1rem;
             --text-base: 1.125rem;
@@ -57,12 +67,13 @@
             --text-3xl: 2.441rem;
             --text-4xl: 3.052rem;
 
-            /* Line Heights - Optimized for Reading */
+            /* Line Heights — per-size tuning (Layer 5: text precision) */
+            --leading-display: 1.1;
             --leading-tight: 1.25;
             --leading-normal: 1.6;
             --leading-relaxed: 1.75;
 
-            /* Spacing - 8px Base Unit System */
+            /* Spacing — 8px base unit, no exceptions */
             --space-1: 8px;
             --space-2: 16px;
             --space-3: 24px;
@@ -73,10 +84,29 @@
             --space-10: 80px;
             --space-12: 96px;
 
-            /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.1);
-            --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.08);
-            --shadow-lg: 0 8px 24px rgba(26, 35, 50, 0.12);
+            /* LAYER 2: Elevation Shadow System — mathematical, not decorative */
+            --elevation-0: none;
+            --elevation-1: 0 0.5px 1.5px rgba(26, 35, 50, 0.14);
+            --elevation-2: 0 1px 3px rgba(26, 35, 50, 0.16);
+            --elevation-3: 0 1.5px 4.5px rgba(26, 35, 50, 0.18);
+            --elevation-4: 0 2px 6px rgba(26, 35, 50, 0.20);
+            --elevation-5: 0 2.5px 7.5px rgba(26, 35, 50, 0.22);
+
+            /* Legacy shadow aliases for backward compat */
+            --shadow-sm: var(--elevation-1);
+            --shadow-md: var(--elevation-2);
+            --shadow-lg: var(--elevation-4);
+
+            /* LAYER 4: Timing Curves — mass-appropriate, not universal */
+            --ease-snappy: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-responsive: cubic-bezier(0.2, 0, 0, 1);
+            --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-gentle: cubic-bezier(0.33, 1, 0.68, 1);
+
+            --duration-micro: 80ms;
+            --duration-small: 150ms;
+            --duration-medium: 250ms;
+            --duration-large: 400ms;
         }
 
         * {
@@ -95,30 +125,32 @@
         }
 
         /* Dynamic Header System */
+        /* LAYER 2+4: Header — elevation-3 on scroll, responsive timing */
         nav#main-header {
             background: var(--white);
             padding: 16px 48px;
-            border-bottom: 1px solid rgba(230, 126, 80, 0.1);
+            border-bottom: 1px solid rgba(230, 126, 80, 0.08);
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s ease;
+            transition: padding var(--duration-medium) var(--ease-smooth),
+                        box-shadow var(--duration-medium) var(--ease-smooth);
         }
-        nav#main-header.scrolled { padding: 12px 48px; box-shadow: 0 2px 20px rgba(26, 35, 50, 0.08); }
-        .logo-link { display: inline-block; transition: transform 0.3s ease; }
+        nav#main-header.scrolled { padding: 12px 48px; box-shadow: var(--elevation-3); }
+        .logo-link { display: inline-block; transition: transform var(--duration-small) var(--ease-snappy); }
         .logo-link:hover { transform: scale(1.05); }
-        .logo-icon { height: 68px; width: auto; transition: height 0.3s ease; }
+        .logo-icon { height: 68px; width: auto; transition: height var(--duration-medium) var(--ease-smooth); }
         nav#main-header.scrolled .logo-icon { height: 56px; }
         .nav-links { display: flex; align-items: center; gap: 32px; }
-        .nav-link { color: var(--text-medium); text-decoration: none; font-weight: 500; transition: color 0.3s ease; position: relative; }
-        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease; }
+        .nav-link { color: var(--text-medium); text-decoration: none; font-weight: 500; transition: color var(--duration-small) var(--ease-responsive); position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width var(--duration-medium) var(--ease-snappy); }
         .nav-link:hover { color: var(--primary); }
         .nav-link:hover::after { width: 100%; }
-        .nav-cta { background: var(--primary); color: white !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid var(--primary); }
-        .nav-cta:hover { background: transparent; color: var(--primary) !important; transform: translateY(-2px); }
+        .nav-cta { background: var(--primary); color: white !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background var(--duration-small) var(--ease-responsive), color var(--duration-small) var(--ease-responsive), transform var(--duration-small) var(--ease-snappy), box-shadow var(--duration-small) var(--ease-responsive); border: 2px solid var(--primary); box-shadow: var(--elevation-1); }
+        .nav-cta:hover { background: transparent; color: var(--primary) !important; transform: translateY(-2px); box-shadow: var(--elevation-2); }
 
         .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
         .hamburger-line { width: 28px; height: 3px; background: var(--charcoal-blue); border-radius: 2px; transition: all 0.3s ease; }
@@ -199,6 +231,7 @@
         }
 
         /* Twitter Share Button */
+        /* LAYER 2+4: Twitter card — elevation-aware, snappy hover */
         .twitter-share-card {
             background: #1DA1F2;
             color: var(--white);
@@ -210,8 +243,10 @@
             text-decoration: none;
             font-weight: 600;
             font-size: var(--text-base);
-            transition: all 0.3s ease;
             box-shadow: 0 4px 16px rgba(29, 161, 242, 0.3);
+            transition: background var(--duration-small) var(--ease-responsive),
+                        transform var(--duration-small) var(--ease-snappy),
+                        box-shadow var(--duration-medium) var(--ease-smooth);
         }
 
         .twitter-share-card:hover {
@@ -405,19 +440,23 @@
             text-transform: uppercase;
         }
 
-        /* Round Comparison Cards */
+        /* LAYER 2: Round Cards — anglage edge treatment, elevation shift on hover */
         .round-card {
             background: var(--white);
-            border: 2px solid rgba(26, 35, 50, 0.1);
+            border: 1px solid rgba(26, 35, 50, 0.1);
             border-radius: 12px;
             padding: var(--space-4);
             margin: var(--space-4) 0;
-            transition: all 0.3s ease;
+            box-shadow: var(--elevation-1);
+            transition: border-color var(--duration-small) var(--ease-responsive),
+                        box-shadow var(--duration-medium) var(--ease-smooth),
+                        transform var(--duration-small) var(--ease-snappy);
         }
 
         .round-card:hover {
-            border-color: var(--primary);
-            box-shadow: var(--shadow-md);
+            border-color: rgba(230, 126, 80, 0.3);
+            box-shadow: var(--elevation-3);
+            transform: translateY(-2px);
         }
 
         .round-card h3 {
@@ -487,6 +526,7 @@
             margin: var(--space-5) 0;
         }
 
+        /* LAYER 2+4: Framework layers — edge treatment, stagger-ready, snappy hover */
         .framework-layer {
             display: flex;
             align-items: center;
@@ -495,11 +535,16 @@
             margin-bottom: var(--space-1);
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
+            border-left: 2px solid transparent;
+            transition: background var(--duration-small) var(--ease-responsive),
+                        border-color var(--duration-small) var(--ease-responsive),
+                        transform var(--duration-micro) var(--ease-snappy);
         }
 
         .framework-layer:hover {
-            background: rgba(230, 126, 80, 0.15);
+            background: rgba(230, 126, 80, 0.12);
+            border-left-color: var(--primary);
+            transform: translateX(4px);
         }
 
         .framework-layer .layer-num {
@@ -556,7 +601,7 @@
             color: var(--primary);
         }
 
-        /* Buttons */
+        /* LAYER 2+3+4: Buttons — metal material, elevation shift, snappy overshoot */
         .btn-primary {
             display: inline-block;
             background: var(--primary);
@@ -566,14 +611,24 @@
             font-weight: 600;
             text-decoration: none;
             border-radius: 8px;
-            transition: all 0.3s ease;
             border: 2px solid var(--primary);
+            box-shadow: var(--elevation-1);
+            transition: background var(--duration-small) var(--ease-responsive),
+                        color var(--duration-small) var(--ease-responsive),
+                        transform var(--duration-small) var(--ease-snappy),
+                        box-shadow var(--duration-small) var(--ease-responsive);
         }
 
         .btn-primary:hover {
-            background: transparent;
-            color: var(--primary);
+            background: var(--primary-hover);
             transform: translateY(-2px);
+            box-shadow: var(--elevation-3);
+        }
+
+        .btn-primary:active {
+            background: var(--primary-pressed);
+            transform: translateY(0px);
+            box-shadow: var(--elevation-1);
         }
 
         .btn-secondary {
@@ -585,15 +640,25 @@
             font-weight: 600;
             text-decoration: none;
             border-radius: 8px;
-            transition: all 0.3s ease;
             border: 2px solid var(--primary);
+            box-shadow: none;
             margin-left: var(--space-2);
+            transition: background var(--duration-small) var(--ease-responsive),
+                        color var(--duration-small) var(--ease-responsive),
+                        transform var(--duration-small) var(--ease-snappy),
+                        box-shadow var(--duration-small) var(--ease-responsive);
         }
 
         .btn-secondary:hover {
             background: var(--primary);
             color: var(--white);
             transform: translateY(-2px);
+            box-shadow: var(--elevation-2);
+        }
+
+        .btn-secondary:active {
+            background: var(--primary-pressed);
+            transform: translateY(0px);
         }
 
         /* Related Articles */
@@ -616,20 +681,24 @@
             margin: 0 auto;
         }
 
+        /* LAYER 2: Related cards — anglage resting edge, elevation shift hover */
         .related-card {
             background: var(--white);
             padding: var(--space-3);
             border-radius: 8px;
             text-decoration: none;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
+            border: 1px solid rgba(26, 35, 50, 0.08);
+            box-shadow: var(--elevation-1);
             display: block;
+            transition: border-color var(--duration-small) var(--ease-responsive),
+                        transform var(--duration-small) var(--ease-snappy),
+                        box-shadow var(--duration-medium) var(--ease-smooth);
         }
 
         .related-card:hover {
-            border-color: var(--primary);
+            border-color: rgba(230, 126, 80, 0.3);
             transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--elevation-4);
         }
 
         .related-card h4 {
@@ -696,16 +765,207 @@
             font-weight: 600;
         }
 
-        /* Inline Links */
+        /* LAYER 3: Inline links — material state, not opacity hack */
         article a {
             color: var(--primary);
             font-weight: 600;
             text-decoration: none;
-            transition: opacity 0.2s ease;
+            background-image: linear-gradient(var(--primary), var(--primary));
+            background-size: 0% 2px;
+            background-position: 0% 100%;
+            background-repeat: no-repeat;
+            padding-bottom: 1px;
+            transition: background-size var(--duration-medium) var(--ease-snappy),
+                        color var(--duration-small) var(--ease-responsive);
         }
 
         article a:hover {
-            opacity: 0.8;
+            color: var(--primary-pressed);
+            background-size: 100% 2px;
+        }
+
+        /* ═══════════════════════════════════════════════
+           LAYER 4: Scroll-Triggered Entrance Animations
+           — Cascade timing, not simultaneous
+           ═══════════════════════════════════════════════ */
+
+        /* Entrance system — elements start invisible, animate in on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity var(--duration-large) var(--ease-smooth),
+                        transform var(--duration-large) var(--ease-smooth);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger children inside framework stacks */
+        .framework-stack .framework-layer {
+            opacity: 0;
+            transform: translateX(-16px);
+            transition: opacity var(--duration-medium) var(--ease-smooth),
+                        transform var(--duration-medium) var(--ease-smooth),
+                        background var(--duration-small) var(--ease-responsive),
+                        border-color var(--duration-small) var(--ease-responsive);
+        }
+
+        .framework-stack.visible .framework-layer {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .framework-stack.visible .framework-layer:nth-child(2) { transition-delay: 40ms; }
+        .framework-stack.visible .framework-layer:nth-child(3) { transition-delay: 75ms; }
+        .framework-stack.visible .framework-layer:nth-child(4) { transition-delay: 105ms; }
+        .framework-stack.visible .framework-layer:nth-child(5) { transition-delay: 130ms; }
+        .framework-stack.visible .framework-layer:nth-child(6) { transition-delay: 150ms; }
+        .framework-stack.visible .framework-layer:nth-child(7) { transition-delay: 165ms; }
+        .framework-stack.visible .framework-layer:nth-child(8) { transition-delay: 175ms; }
+
+        /* Spec grid items stagger */
+        .round-card .spec-item {
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity var(--duration-medium) var(--ease-smooth),
+                        transform var(--duration-medium) var(--ease-smooth);
+        }
+
+        .round-card.visible .spec-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .round-card.visible .spec-item:nth-child(1) { transition-delay: 50ms; }
+        .round-card.visible .spec-item:nth-child(2) { transition-delay: 90ms; }
+        .round-card.visible .spec-item:nth-child(3) { transition-delay: 125ms; }
+        .round-card.visible .spec-item:nth-child(4) { transition-delay: 155ms; }
+        .round-card.visible .spec-item:nth-child(5) { transition-delay: 180ms; }
+        .round-card.visible .spec-item:nth-child(6) { transition-delay: 200ms; }
+
+        /* Insight box — subtle glow on scroll */
+        .insight-box {
+            border: 1px solid rgba(230, 126, 80, 0.0);
+            transition: border-color 1s var(--ease-gentle);
+        }
+
+        .insight-box.visible {
+            border-color: rgba(230, 126, 80, 0.2);
+        }
+
+        /* Pullquote entrance — slide from left */
+        .pullquote {
+            opacity: 0;
+            transform: translateX(-24px);
+            transition: opacity var(--duration-large) var(--ease-smooth),
+                        transform var(--duration-large) var(--ease-smooth);
+        }
+
+        .pullquote.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* First-shot callout — scale entrance */
+        .first-shot-callout {
+            opacity: 0;
+            transform: scale(0.97);
+            transition: opacity var(--duration-large) var(--ease-smooth),
+                        transform var(--duration-large) var(--ease-snappy);
+        }
+
+        .first-shot-callout.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Thesis statement — fade up dramatically */
+        .thesis-statement {
+            opacity: 0;
+            transition: opacity 800ms var(--ease-gentle);
+        }
+
+        .thesis-statement.visible {
+            opacity: 1;
+        }
+
+        .thesis-statement .thesis-text {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 600ms var(--ease-smooth) 200ms,
+                        transform 600ms var(--ease-smooth) 200ms;
+        }
+
+        .thesis-statement.visible .thesis-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .thesis-statement .thesis-sub {
+            opacity: 0;
+            transition: opacity 500ms var(--ease-gentle) 500ms;
+        }
+
+        .thesis-statement.visible .thesis-sub {
+            opacity: 0.5;
+        }
+
+        /* Related cards — stagger entrance */
+        .related-card {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        .related-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity var(--duration-medium) var(--ease-smooth),
+                        transform var(--duration-medium) var(--ease-smooth),
+                        border-color var(--duration-small) var(--ease-responsive),
+                        box-shadow var(--duration-medium) var(--ease-smooth);
+        }
+
+        .related-card.visible:nth-child(1) { transition-delay: 0ms; }
+        .related-card.visible:nth-child(2) { transition-delay: 80ms; }
+        .related-card.visible:nth-child(3) { transition-delay: 150ms; }
+
+        /* ═══════════════════════════════════════════════
+           LAYER 2: Perlage — subtle background texture
+           on large flat surfaces (>400px)
+           ═══════════════════════════════════════════════ */
+        article {
+            background-image: radial-gradient(circle at 1px 1px, rgba(26, 35, 50, 0.015) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        /* ═══════════════════════════════════════════════
+           LAYER 5: Heading tracking — display text tighter
+           ═══════════════════════════════════════════════ */
+        .hero h1 {
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            letter-spacing: -0.015em;
+        }
+
+        /* ═══════════════════════════════════════════════
+           Reduce motion for accessibility
+           ═══════════════════════════════════════════════ */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal, .pullquote, .first-shot-callout, .thesis-statement,
+            .thesis-statement .thesis-text, .thesis-statement .thesis-sub,
+            .framework-stack .framework-layer, .round-card .spec-item,
+            .related-card {
+                opacity: 1 !important;
+                transform: none !important;
+            }
         }
 
         /* Mobile Responsiveness */
@@ -1250,6 +1510,62 @@
         document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function(link) {
             link.addEventListener('click', closeMobileMenu);
         });
+    })();
+    </script>
+
+    <!-- LAYER 4: Scroll-Triggered Entrance Animation System -->
+    <script>
+    (function() {
+        // IntersectionObserver — triggers .visible class on scroll
+        const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Once visible, stop observing (entrance animation is one-shot)
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all reveal-eligible elements
+        const selectors = [
+            '.round-card',
+            '.framework-stack',
+            '.pullquote',
+            '.insight-box',
+            '.first-shot-callout',
+            '.thesis-statement',
+            '.related-card',
+            'article h2',
+            'article figure'
+        ];
+
+        // Add .reveal to h2s and figures for subtle entrance
+        document.querySelectorAll('article h2, article figure').forEach(function(el) {
+            el.classList.add('reveal');
+        });
+
+        selectors.forEach(function(sel) {
+            document.querySelectorAll(sel).forEach(function(el) {
+                observer.observe(el);
+            });
+        });
+
+        // Hero content — immediate cascade on load (no scroll needed)
+        var heroContent = document.querySelector('.hero-content');
+        if (heroContent) {
+            heroContent.style.opacity = '0';
+            heroContent.style.transform = 'translateY(20px)';
+            heroContent.style.transition = 'opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1)';
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    heroContent.style.opacity = '1';
+                    heroContent.style.transform = 'translateY(0)';
+                });
+            });
+        }
     })();
     </script>
 
