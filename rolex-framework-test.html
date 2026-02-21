@@ -12,10 +12,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="NkrXwQRVVd79oQT2T0cD0jfh7T0PwSDgC2QX515IuRk">
-    <title>I Asked AI to Build a Rolex. Three Times. | WhatIsAFramework</title>
-    <meta name="description" content="Same AI. Same prompt. Same constraint: build a photorealistic Rolex skeleton watch in pure code. Round 1: no frameworks. Round 2: six frameworks. Round 3: twelve. The visual proof that frameworks are force multipliers for AI output quality.">
-    <meta property="og:title" content="I Asked AI to Build a Rolex. Three Times.">
-    <meta property="og:description" content="Same AI, same constraint. Zero frameworks vs. six vs. twelve. The visual proof that systematic thinking transforms AI output quality.">
+    <title>I Asked AI to Build a Rolex. Four Times. | WhatIsAFramework</title>
+    <meta name="description" content="Same AI. Same prompt. Same constraint: build a photorealistic Rolex skeleton watch in pure code. Round 1: no frameworks. Round 2: six. Round 3: twelve. Round 4: seventeen (including domain-specific horological research). The visual proof that frameworks are force multipliers for AI output quality.">
+    <meta property="og:title" content="I Asked AI to Build a Rolex. Four Times.">
+    <meta property="og:description" content="Same AI, same constraint. Zero frameworks vs. six vs. twelve vs. seventeen. The visual proof that systematic thinking transforms AI output quality.">
     <meta property="og:image" content="https://app.ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png">
     <meta property="og:url" content="https://whatisaframework.com/rolex-framework-test">
     <meta property="og:type" content="article">
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Rage_vinyl">
     <meta name="twitter:creator" content="@Rage_vinyl">
-    <meta name="twitter:title" content="I Asked AI to Build a Rolex. Three Times.">
+    <meta name="twitter:title" content="I Asked AI to Build a Rolex. Four Times.">
     <meta name="twitter:description" content="Same AI, same constraint, dramatically different results. The visual proof that frameworks are force multipliers.">
     <meta name="twitter:image" content="https://app.ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -685,14 +685,15 @@
             }
 
             #live-watches-section .watches-row {
-                flex-direction: column !important;
-                align-items: center !important;
-                gap: 24px !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 16px !important;
             }
 
             #live-watches-section .watch-col {
-                width: 85% !important;
-                max-width: 350px !important;
+                width: 46% !important;
+                max-width: 300px !important;
+                flex: none !important;
             }
         }
     </style>
@@ -727,7 +728,7 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-meta">February 20, 2026 &bull; AI Perspectives</div>
-            <h1>I Asked AI to Build a Rolex. Three&nbsp;Times.</h1>
+            <h1>I Asked AI to Build a Rolex. Four&nbsp;Times.</h1>
             <p class="hero-subtitle">Same model. Same constraint. Zero frameworks, then six, then twelve. The results are visible in seconds.</p>
             <div class="ai-byline">Written by Claude Opus 4.6 &bull; Directed by RageDesigner</div>
             <a href="https://twitter.com/intent/tweet?text=Same%20AI%2C%20same%20prompt%2C%20same%20constraint.%20Zero%20frameworks%20vs%20six%20vs%20twelve.%20The%20visual%20proof%20that%20systematic%20thinking%20transforms%20AI%20output.%20%40Rage_vinyl&url=https://whatisaframework.com/rolex-framework-test"
@@ -744,7 +745,7 @@
     <article>
         <p class="lead">Here's a question nobody is asking: if AI is already this smart, what happens when you give it a system for thinking?</p>
 
-        <p>I ran an experiment. Not a synthetic benchmark. Not a curated demo. A live, unscripted test where Claude Opus 4.6 was asked to do the same thing three times &mdash; build a photorealistic Rolex skeleton watch with visible mechanical movement, rendered entirely in code.</p>
+        <p>I ran an experiment. Not a synthetic benchmark. Not a curated demo. A live, unscripted test where Claude Opus 4.6 was asked to do the same thing four times &mdash; build a photorealistic Rolex skeleton watch with visible mechanical movement, rendered entirely in code.</p>
 
         <p>No images. No 3D libraries. No WebGL. Pure HTML5 Canvas 2D. Every gear tooth, every jewel bearing, every Geneva stripe &mdash; drawn mathematically, pixel by pixel.</p>
 
@@ -752,7 +753,7 @@
 
         <!-- LIVE THREE-WATCH EMBED -->
         <div id="live-watches-section" style="margin: 48px -80px; background: #050308; border-radius: 16px; padding: 32px 16px 24px; overflow: hidden;">
-            <p style="text-align: center; color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 20px; font-weight: 600;">Live &mdash; All Three Watches Running in Real Time</p>
+            <p style="text-align: center; color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 20px; font-weight: 600;">Live &mdash; All Four Watches Running in Real Time</p>
             <div class="watches-row" style="display: flex; align-items: flex-start; justify-content: center; gap: 10px; width: 100%; max-width: 1200px; margin: 0 auto;">
                 <div class="watch-col" style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0;">
                     <div style="text-align: center; margin-bottom: 6px;">
@@ -777,6 +778,14 @@
                         <div style="color: rgba(255,255,255,0.35); font-size: 9px; font-style: italic; font-family: Georgia, serif; margin-top: 1px;">Full stack intelligence</div>
                     </div>
                     <canvas id="w3" style="display: block; width: 100%; height: auto; aspect-ratio: 1;"></canvas>
+                </div>
+                <div class="watch-col" style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 0;">
+                    <div style="text-align: center; margin-bottom: 6px;">
+                        <span style="display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; background: rgba(230,126,80,0.35); color: #E67E50; border: 1px solid rgba(230,126,80,0.5); margin-bottom: 3px;">Round 4</span>
+                        <div style="color: rgba(255,255,255,0.7); font-size: 12px; font-family: Georgia, serif;">17 Frameworks</div>
+                        <div style="color: rgba(255,255,255,0.35); font-size: 9px; font-style: italic; font-family: Georgia, serif; margin-top: 1px;">Domain expert intelligence</div>
+                    </div>
+                    <canvas id="w4" style="display: block; width: 100%; height: auto; aspect-ratio: 1;"></canvas>
                 </div>
             </div>
             <p style="text-align: center; color: rgba(255,255,255,0.3); font-size: 0.7rem; margin-top: 16px; margin-bottom: 0;">Pure HTML5 Canvas 2D &mdash; no images, no libraries, no 3D engine. Just math.</p>
@@ -948,6 +957,63 @@
             <p>Constraints don't limit innovation. They redirect it from incremental improvement to paradigm-level solutions.</p>
         </div>
 
+        <h2>Round 4: Seventeen Frameworks, Domain Expert</h2>
+
+        <div class="round-card">
+            <span class="round-label full-stack" style="background: rgba(230,126,80,0.2); border: 1px solid rgba(230,126,80,0.4);">Domain Expert &mdash; 17 Frameworks</span>
+            <h3>General Design + Domain-Specific Horological Intelligence</h3>
+            <p>Round 4 kept all twelve general frameworks and added five new ones built from actual watchmaking research &mdash; involute gear geometry, Swiss finishing techniques, physics-based material rendering, mechanical animation timing, and haute horlogerie proportional systems.</p>
+            <div class="spec-grid">
+                <div class="spec-item"><strong>Gear Teeth</strong> Involute profiles (20&deg; pressure angle)</div>
+                <div class="spec-item"><strong>Finishing</strong> C&ocirc;tes de Gen&egrave;ve + perlage + anglage</div>
+                <div class="spec-item"><strong>Materials</strong> Fresnel-accurate gold, ruby star highlights</div>
+                <div class="spec-item"><strong>Animation</strong> 4Hz tick (8 ticks/sec, not sweep)</div>
+                <div class="spec-item"><strong>Depth Layers</strong> 7 with atmospheric contrast decay</div>
+                <div class="spec-item"><strong>Bezel</strong> 120 individually-lit fluted facets</div>
+            </div>
+        </div>
+
+        <div class="framework-stack">
+            <div class="stack-label">Domain-Specific Frameworks (13&ndash;17)</div>
+            <div class="framework-layer">
+                <span class="layer-num">13</span>
+                <span class="layer-name">Horological Geometry Intelligence</span>
+                <span class="layer-role">Involute teeth, escapement physics</span>
+            </div>
+            <div class="framework-layer">
+                <span class="layer-num">14</span>
+                <span class="layer-name">Swiss Finishing Rendering</span>
+                <span class="layer-role">Geneva stripes, perlage, anglage</span>
+            </div>
+            <div class="framework-layer">
+                <span class="layer-num">15</span>
+                <span class="layer-name">Luxury Material Optics</span>
+                <span class="layer-role">Physics-based gold, ruby, sapphire</span>
+            </div>
+            <div class="framework-layer">
+                <span class="layer-num">16</span>
+                <span class="layer-name">Mechanical Animation Physics</span>
+                <span class="layer-role">4Hz tick, gear cascade speeds</span>
+            </div>
+            <div class="framework-layer">
+                <span class="layer-num">17</span>
+                <span class="layer-name">Haute Horlogerie Proportional System</span>
+                <span class="layer-role">Golden ratio, $50K differentiators</span>
+            </div>
+        </div>
+
+        <p>This is where the experiment took an unexpected turn. Rounds 1&ndash;3 used <em>general</em> frameworks &mdash; color theory, spatial relationships, composition, storytelling. None of them knew anything about watches. They taught the AI how to design, but not what it was designing.</p>
+
+        <p>Round 4 added domain expertise. The Horological Geometry framework specified involute tooth profiles using the actual mathematical formula watchmakers use &mdash; <code>r_base = r_pitch &times; cos(20&deg;)</code>. The Swiss Finishing framework encoded C&ocirc;tes de Gen&egrave;ve stripes as a sinusoidal brightness function. The Material Optics framework provided Fresnel-accurate color values for 18k gold (F0 &asymp; 0.85 &mdash; nearly pure specular reflection) and synthetic ruby (radial gradient with star-highlight pattern from flat-polished facets).</p>
+
+        <p>The most visible change was in the animation. Rounds 1&ndash;3 used smooth-sweep seconds hands. But a real mechanical watch at 4Hz doesn't sweep smoothly &mdash; it ticks eight times per second, each tick advancing exactly 0.75 degrees with a slight mechanical overshoot before settling. The Mechanical Animation Physics framework encoded this precisely.</p>
+
+        <p>The 120-flute bezel shifted from a simple alternating polygon to individually-lit facets, each calculated with its own surface normal and specular intensity. The ruby jewels gained four-pointed star highlights &mdash; the characteristic specular pattern caused by flat-polished corundum. Every bridge edge gained a mirror-bright anglage line.</p>
+
+        <div class="pullquote">
+            <p>General frameworks teach you how to design. Domain frameworks teach you what you're designing. The stack needs both.</p>
+        </div>
+
         <h2>What Actually Changed Between Rounds</h2>
 
         <p>It's tempting to describe the difference as "better quality." That's accurate but incomplete. The real shift was in the <em>type</em> of decisions being made.</p>
@@ -958,6 +1024,8 @@
 
         <p><strong>Round 3 decisions were strategic:</strong> "The Storytelling framework structures our render layers as a four-beat narrative." "The Positioning framework demands authority signals &mdash; crown symbolism, generous spacing, precision geometry." "The Constraint framework reinterprets our Canvas 2D limitation as a catalyst for mathematical exactness." Every choice carried meaning beyond the immediate visual.</p>
 
+        <p><strong>Round 4 decisions were domain-expert:</strong> "The Horological Geometry framework specifies involute tooth profiles at 20&deg; pressure angle." "The Swiss Finishing framework renders C&ocirc;tes de Gen&egrave;ve as sinusoidal brightness bands." "The Material Optics framework defines 18k gold as Fresnel F0 &asymp; 0.85 &mdash; nearly pure specular." "The Animation Physics framework requires discrete 4Hz ticks, not smooth sweep." Every choice was grounded in the actual physics and craft of watchmaking.</p>
+
         <div class="insight-box">
             <h3>The Compound Effect</h3>
             <p>Six frameworks didn't produce a watch that was six times better. Twelve frameworks didn't produce one twice as good as six. The improvements were compound and cross-referencing &mdash; each framework amplified the others.</p>
@@ -967,7 +1035,7 @@
 
         <h2>Why This Matters Beyond Watches</h2>
 
-        <p>This experiment used a luxury watch because the results are visually obvious. You don't need a design degree to see that Round 2 looks more expensive than Round 1, or that Round 3 carries an intentionality the others lack.</p>
+        <p>This experiment used a luxury watch because the results are visually obvious. You don't need a design degree to see that Round 2 looks more expensive than Round 1, that Round 3 carries an intentionality the others lack, or that Round 4's gear teeth and material rendering come from an entirely different level of domain knowledge.</p>
 
         <p>But the mechanism works identically on business proposals, marketing copy, product architecture, sales conversations, hiring processes &mdash; any domain where decisions compound and quality emerges from systematic thinking rather than individual talent.</p>
 
@@ -991,7 +1059,7 @@
 
         <p>No cherry-picking. No after-the-fact rationalization. Just the work, side by side.</p>
 
-        <p>One fair counterpoint: the rounds were sequential, not parallel. I'd seen the watch once before Round 2, twice before Round 3. Natural iteration would produce <em>some</em> improvement regardless. But iteration doesn't generate a four-value constrained color palette, a unified 35&deg; light source across five named depth layers, or a narrative arc mapped onto render order. Those are framework-driven decisions &mdash; specific, traceable, and transferable to a completely different project tomorrow. Iteration makes things incrementally better. Frameworks change the category of decisions being made.</p>
+        <p>One fair counterpoint: the rounds were sequential, not parallel. I'd seen the watch once before Round 2, twice before Round 3, three times before Round 4. Natural iteration would produce <em>some</em> improvement regardless. But iteration doesn't generate a four-value constrained color palette, a unified 35&deg; light source across five named depth layers, a narrative arc mapped onto render order, or involute gear tooth geometry with Fresnel-accurate material physics. Those are framework-driven decisions &mdash; specific, traceable, and transferable to a completely different project tomorrow. Iteration makes things incrementally better. Frameworks change the category of decisions being made.</p>
 
         <h2>What You Can Do With This</h2>
 
@@ -1482,6 +1550,249 @@
         sh(c,5,8,.4);c.beginPath();c.arc(cx,cy,R*.030,0,Math.PI*2);c.fillStyle=gR(c,cx,cy,R*.030);c.fill();ns(c);
         c.beginPath();c.ellipse(cx-R*.20,cy-R*.26,R*.40,R*.16,rad(-30),0,Math.PI*2);var c1=c.createRadialGradient(cx-R*.20,cy-R*.26,0,cx-R*.20,cy-R*.26,R*.40);c1.addColorStop(0,'rgba(255,255,255,.065)');c1.addColorStop(1,'rgba(255,255,255,0)');c.fillStyle=c1;c.fill();
         c.beginPath();c.arc(cx,cy,R,0,Math.PI*2);var ar=c.createRadialGradient(cx+R*.2,cy+R*.12,0,cx,cy,R);ar.addColorStop(0,'rgba(50,65,140,.030)');ar.addColorStop(1,'rgba(30,40,100,.005)');c.fillStyle=ar;c.fill();
+        requestAnimationFrame(render);
+      }
+      render();
+    })();
+
+    // WATCH 4 — 17 FRAMEWORKS (12 general + 5 domain-specific)
+    (function(){
+      var s=setupCanvas('w4');if(!s)return;var c=s.ctx,cv=s.canvas,W,H,cx,cy,R;
+      function onResize(){W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;c.setTransform(dpr,0,0,dpr,0,0);cx=W/2;cy=H/2;R=W*0.36;}
+      onResize();window.addEventListener('resize',onResize);
+      var PHI=1.618,C={g1:'#F0D878',g2:'#C9A84C',g3:'#8B6914',g4:'#4A3A10',ruby:'#A01030',rubyGl:'#E03050',blue:'#1E3D8F',blueHi:'#5580DD',blueDk:'#0E2266',s1:'#F0F0F4',s2:'#C8C8CC',s3:'#606878',s4:'#3A3E47',n0:'#020104',n1:'#0c0a14',n2:'#1a1628'};
+      var LA=35*Math.PI/180,Ldx=Math.cos(LA),Ldy=-Math.sin(LA);
+      function sh(c,d,b,a){c.shadowColor='rgba(0,0,0,'+(a||.35)+')';c.shadowBlur=b;c.shadowOffsetX=-Ldx*d;c.shadowOffsetY=Ldy*d;}
+      function ns(c){c.shadowColor='transparent';c.shadowBlur=0;c.shadowOffsetX=0;c.shadowOffsetY=0;}
+      function gL(c,x0,y0,x1,y1,st){var g=c.createLinearGradient(x0,y0,x1,y1);(st||[[0,C.g3],[.15,C.g1],[.4,C.g2],[.65,C.g1],[1,C.g3]]).forEach(function(s){g.addColorStop(s[0],s[1])});return g;}
+      function gR(c,x,y,r,st){var g=c.createRadialGradient(x-r*.12,y-r*.12,0,x,y,r);(st||[[0,C.g1],[.3,C.g2],[.7,C.g3],[1,C.g4]]).forEach(function(s){g.addColorStop(s[0],s[1])});return g;}
+      function sL(c,x0,y0,x1,y1){var g=c.createLinearGradient(x0,y0,x1,y1);g.addColorStop(0,C.s4);g.addColorStop(.15,C.s2);g.addColorStop(.4,C.s1);g.addColorStop(.5,'#FFF');g.addColorStop(.6,C.s1);g.addColorStop(.85,C.s2);g.addColorStop(1,C.s4);return g;}
+      function rad(d){return d*Math.PI/180;}
+      function lerp(a,b,t){return a+(b-a)*t;}
+      var startT=performance.now();
+
+      // 2001-001: Involute gear
+      function invGear(c,x,y,pR,teeth,mod,ang,opts){
+        var o=opts||{},sp=o.spokes||0,hR=o.holeR||0,huR=o.hubR||0,dep=o.depth||2;
+        c.save();c.translate(x,y);c.rotate(ang);sh(c,dep,dep*2.5);
+        var pa=rad(20),bR=pR*Math.cos(pa),add=mod,ded=mod*1.25,tipR=pR+add,rootR=Math.max(pR-ded,bR*.9);
+        var ta=2*Math.PI/teeth,thw=ta*.23;
+        c.beginPath();
+        for(var i=0;i<teeth;i++){
+          var ca=ta*i,r1a=ca-ta*.5+ta*.05,fa=ca-thw;
+          c.lineTo(Math.cos(r1a)*rootR,Math.sin(r1a)*rootR);
+          c.quadraticCurveTo(Math.cos(fa)*(rootR+mod*.15),Math.sin(fa)*(rootR+mod*.15),Math.cos(fa)*pR*.95,Math.sin(fa)*pR*.95);
+          var la1=ca-thw*.85,la2=ca-thw*.4,ta1=ca-thw*.15,ta2=ca+thw*.15,ra1=ca+thw*.4,ra2=ca+thw*.85,fb=ca+thw;
+          c.lineTo(Math.cos(la1)*pR,Math.sin(la1)*pR);
+          c.lineTo(Math.cos(la2)*(tipR-mod*.05),Math.sin(la2)*(tipR-mod*.05));
+          c.quadraticCurveTo(Math.cos(ca)*(tipR+mod*.02),Math.sin(ca)*(tipR+mod*.02),Math.cos(ta2)*(tipR-mod*.05),Math.sin(ta2)*(tipR-mod*.05));
+          c.lineTo(Math.cos(ra2)*pR,Math.sin(ra2)*pR);
+          c.quadraticCurveTo(Math.cos(fb)*(rootR+mod*.15),Math.sin(fb)*(rootR+mod*.15),Math.cos(fb+ta*.02)*rootR,Math.sin(fb+ta*.02)*rootR);
+        }
+        c.closePath();c.fillStyle=gR(c,0,0,tipR);c.fill();ns(c);
+        c.strokeStyle='rgba(240,216,120,0.25)';c.lineWidth=.5;c.stroke();
+        if(sp>0){var ss=Math.PI*2/sp;c.globalCompositeOperation='destination-out';for(var i=0;i<sp;i++){var sa=ss*i+ss*.18,ea=ss*(i+1)-ss*.18;c.beginPath();c.arc(0,0,pR*.72,sa,ea);c.arc(0,0,(huR||pR*.2)*1.4,ea,sa,true);c.closePath();c.fill();}c.globalCompositeOperation='source-over';for(var i=0;i<sp;i++){var sa=ss*i+ss*.18,ea=ss*(i+1)-ss*.18;c.beginPath();c.arc(0,0,pR*.72,sa,ea);c.arc(0,0,(huR||pR*.2)*1.4,ea,sa,true);c.closePath();c.strokeStyle='rgba(240,216,120,0.15)';c.lineWidth=.4;c.stroke();}}
+        if(hR>0){c.beginPath();c.arc(0,0,hR,0,Math.PI*2);c.fillStyle=C.n1;c.fill();c.strokeStyle='rgba(240,216,120,0.2)';c.lineWidth=.4;c.stroke();}
+        if(huR>0){c.beginPath();c.arc(0,0,huR,0,Math.PI*2);c.fillStyle=gR(c,0,0,huR);c.fill();}
+        c.restore();
+      }
+
+      // 2001-002: Perlage
+      function perlage(c,cx,cy,radius,cs){
+        c.save();c.beginPath();c.arc(cx,cy,radius,0,Math.PI*2);c.clip();
+        var step=cs*1.2,rows=Math.ceil(radius*2/(step*.866))+2,cols=Math.ceil(radius*2/step)+2;
+        for(var row=-rows;row<=rows;row++){for(var col=-cols;col<=cols;col++){
+          var px=cx+col*step+(row%2)*step*.5,py=cy+row*step*.866;
+          if(Math.hypot(px-cx,py-cy)>radius+cs)continue;
+          var pg=c.createRadialGradient(px-cs*.2*Ldx,py+cs*.2*Ldy,0,px,py,cs);
+          pg.addColorStop(0,'rgba(200,168,72,0.07)');pg.addColorStop(.5,'rgba(140,120,50,0.03)');pg.addColorStop(1,'rgba(60,50,20,0.01)');
+          c.beginPath();c.arc(px,py,cs,0,Math.PI*2);c.fillStyle=pg;c.fill();
+        }}c.restore();
+      }
+
+      // 2001-003: Ruby jewel with star
+      function rubyJ(c,x,y,r){
+        c.save();c.translate(x,y);sh(c,1.5,3,.3);
+        c.beginPath();c.arc(0,0,r*1.6,0,Math.PI*2);c.fillStyle=gR(c,0,0,r*1.6);c.fill();ns(c);
+        var jg=c.createRadialGradient(-r*.25,-r*.25,0,0,0,r);jg.addColorStop(0,'#FF3355');jg.addColorStop(.2,C.rubyGl);jg.addColorStop(.5,C.ruby);jg.addColorStop(.8,'#700818');jg.addColorStop(1,'#380512');
+        c.beginPath();c.arc(0,0,r,0,Math.PI*2);c.fillStyle=jg;c.fill();
+        c.beginPath();c.arc(0,0,r*1.15,0,Math.PI*2);c.fillStyle='rgba(200,40,60,0.12)';c.fill();
+        c.save();c.globalCompositeOperation='screen';
+        for(var i=0;i<4;i++){c.save();c.translate(-r*.15,-r*.15);c.rotate(i/4*Math.PI*2+Math.PI/8);var ag=c.createLinearGradient(0,0,r*.5,0);ag.addColorStop(0,'rgba(255,220,230,0.45)');ag.addColorStop(1,'rgba(255,180,190,0)');c.fillStyle=ag;c.beginPath();c.moveTo(0,-r*.06);c.lineTo(r*.5,0);c.lineTo(0,r*.06);c.closePath();c.fill();c.restore();}
+        var dg=c.createRadialGradient(-r*.15,-r*.15,0,-r*.15,-r*.15,r*.1);dg.addColorStop(0,'rgba(255,255,255,0.6)');dg.addColorStop(1,'rgba(255,255,255,0)');c.beginPath();c.arc(-r*.15,-r*.15,r*.1,0,Math.PI*2);c.fillStyle=dg;c.fill();c.restore();
+        c.restore();
+      }
+      function sapJ(c,x,y,r){
+        c.save();c.translate(x,y);sh(c,1.5,3,.3);
+        c.beginPath();c.arc(0,0,r*1.6,0,Math.PI*2);c.fillStyle=gR(c,0,0,r*1.6);c.fill();ns(c);
+        var jg=c.createRadialGradient(-r*.25,-r*.25,0,0,0,r);jg.addColorStop(0,'#5577FF');jg.addColorStop(.5,'#1A44CC');jg.addColorStop(1,'#061450');
+        c.beginPath();c.arc(0,0,r,0,Math.PI*2);c.fillStyle=jg;c.fill();
+        c.beginPath();c.arc(0,0,r*1.15,0,Math.PI*2);c.fillStyle='rgba(30,60,180,0.10)';c.fill();
+        c.restore();
+      }
+
+      // 2001-001: Escape wheel 15 club-teeth
+      function escWheel(c,x,y,r,ang){
+        c.save();c.translate(x,y);c.rotate(ang);sh(c,2,4);
+        var t=15,ta=Math.PI*2/t;
+        c.beginPath();for(var i=0;i<t;i++){var a=ta*i;c.lineTo(Math.cos(a+ta*.02)*r*.72,Math.sin(a+ta*.02)*r*.72);c.lineTo(Math.cos(a+ta*.02)*r*.88,Math.sin(a+ta*.02)*r*.88);c.lineTo(Math.cos(a+ta*.25)*r,Math.sin(a+ta*.25)*r);c.lineTo(Math.cos(a+ta*.40)*r*.90,Math.sin(a+ta*.40)*r*.90);c.lineTo(Math.cos(a+ta*.55)*r*.72,Math.sin(a+ta*.55)*r*.72);}
+        c.closePath();c.fillStyle=gR(c,0,0,r);c.fill();ns(c);c.strokeStyle='rgba(240,216,120,0.3)';c.lineWidth=.4;c.stroke();
+        c.beginPath();c.arc(0,0,r*.12,0,Math.PI*2);c.fillStyle=gR(c,0,0,r*.12);c.fill();c.restore();
+      }
+
+      // 2001-004: Balance wheel
+      function balWheel(c,x,y,r,ang){
+        c.save();c.translate(x,y);c.rotate(ang);sh(c,2,5);
+        c.beginPath();c.arc(0,0,r,0,Math.PI*2);c.arc(0,0,r*.84,0,Math.PI*2,true);
+        var rim=c.createRadialGradient(0,0,r*.84,0,0,r);rim.addColorStop(0,C.g2);rim.addColorStop(.3,C.g1);rim.addColorStop(.5,C.g2);rim.addColorStop(.8,C.g3);rim.addColorStop(1,C.g4);c.fillStyle=rim;c.fill();ns(c);
+        c.strokeStyle='rgba(240,216,120,0.3)';c.lineWidth=.5;c.beginPath();c.arc(0,0,r,0,Math.PI*2);c.stroke();c.beginPath();c.arc(0,0,r*.84,0,Math.PI*2);c.stroke();
+        for(var i=0;i<8;i++){var a=Math.PI*2/8*i,sx=Math.cos(a)*r*.92,sy=Math.sin(a)*r*.92;c.beginPath();c.arc(sx,sy,r*.042,0,Math.PI*2);c.fillStyle=C.g1;c.fill();c.beginPath();c.moveTo(sx-r*.028,sy);c.lineTo(sx+r*.028,sy);c.strokeStyle=C.g4;c.lineWidth=.5;c.stroke();}
+        for(var i=0;i<3;i++){c.save();c.rotate(Math.PI*2/3*i);c.beginPath();c.moveTo(-r*.032,0);c.lineTo(-r*.015,-r*.80);c.lineTo(r*.015,-r*.80);c.lineTo(r*.032,0);c.closePath();c.fillStyle=C.g2;c.fill();c.strokeStyle='rgba(240,216,120,0.2)';c.lineWidth=.3;c.stroke();c.restore();}
+        c.beginPath();c.arc(0,0,r*.09,0,Math.PI*2);c.fillStyle=gR(c,0,0,r*.09);c.fill();c.restore();
+      }
+      function hairSp(c,x,y,mR,coils,ang){
+        c.save();c.translate(x,y);c.rotate(ang*.2);c.beginPath();var n=coils*90;for(var i=0;i<=n;i++){var t=i/n,a=t*coils*Math.PI*2,r=lerp(mR*.10,mR,t);i===0?c.moveTo(Math.cos(a)*r,Math.sin(a)*r):c.lineTo(Math.cos(a)*r,Math.sin(a)*r);}c.strokeStyle='#3858B0';c.lineWidth=.4;c.globalAlpha=.55;c.stroke();c.globalAlpha=1;c.restore();
+      }
+
+      // Bridge with Geneva stripes + anglage
+      function bridge(c,x,y,w,h,ang){
+        c.save();c.translate(x,y);c.rotate(ang);sh(c,3,6);
+        c.beginPath();c.roundRect(-w/2,-h/2,w,h,3);c.fillStyle=gL(c,-w/2,-h/2,w/2,h/2);c.fill();ns(c);
+        c.save();c.beginPath();c.roundRect(-w/2,-h/2,w,h,3);c.clip();
+        var sw=h*.22;for(var i=-20;i<40;i++){var sx=-w/2+i*sw;c.beginPath();c.moveTo(sx,-h/2);c.lineTo(sx+sw*.5,h/2);c.lineTo(sx+sw*.9,h/2);c.lineTo(sx+sw*.4,-h/2);c.closePath();c.fillStyle=i%2===0?'rgba(242,228,168,.10)':'rgba(80,65,30,.05)';c.fill();}
+        c.restore();
+        c.beginPath();c.roundRect(-w/2,-h/2,w,h,3);c.strokeStyle='rgba(240,216,120,0.35)';c.lineWidth=1.1;c.stroke();
+        c.beginPath();c.roundRect(-w/2+.5,-h/2+.5,w-1,h-1,2.5);c.strokeStyle='rgba(255,255,240,0.13)';c.lineWidth=.6;c.stroke();
+        c.beginPath();c.roundRect(-w/2,-h/2,w,h,3);c.strokeStyle=C.g4;c.lineWidth=.3;c.stroke();
+        [[-w/2+5,0],[w/2-5,0]].forEach(function(p){var sx=p[0],sy=p[1],sr=h*.19;
+          c.beginPath();c.arc(sx,sy,sr,0,Math.PI*2);var sg=c.createRadialGradient(sx-.5,sy-.5,0,sx,sy,sr);sg.addColorStop(0,C.blueHi);sg.addColorStop(.35,C.blue);sg.addColorStop(.7,'#142870');sg.addColorStop(1,C.blueDk);c.fillStyle=sg;c.fill();
+          var spg=c.createRadialGradient(sx-sr*.25,sy-sr*.25,0,sx,sy,sr*.5);spg.addColorStop(0,'rgba(120,150,230,0.35)');spg.addColorStop(1,'rgba(120,150,230,0)');c.beginPath();c.arc(sx,sy,sr*.5,0,Math.PI*2);c.fillStyle=spg;c.fill();
+          c.save();c.translate(sx,sy);c.rotate(rad(35));c.beginPath();c.moveTo(-sr*.65,0);c.lineTo(sr*.65,0);c.strokeStyle='#060D30';c.lineWidth=.6;c.stroke();c.restore();
+        });c.restore();
+      }
+
+      // Barrel
+      function barrel(c,x,y,r,ang){
+        c.save();c.translate(x,y);sh(c,2.5,5);c.beginPath();c.arc(0,0,r,0,Math.PI*2);c.fillStyle=gR(c,0,0,r);c.fill();ns(c);c.strokeStyle='rgba(240,216,120,0.3)';c.lineWidth=.5;c.stroke();
+        c.save();c.beginPath();c.arc(0,0,r*.86,0,Math.PI*2);c.clip();c.beginPath();for(var i=0;i<825;i++){var t=i/825,a=t*15*Math.PI*2+ang*.03,sr=lerp(r*.08,r*.82,t);i===0?c.moveTo(Math.cos(a)*sr,Math.sin(a)*sr):c.lineTo(Math.cos(a)*sr,Math.sin(a)*sr);}c.strokeStyle='rgba(80,65,30,0.35)';c.lineWidth=.6;c.stroke();c.restore();
+        c.beginPath();c.arc(0,0,r*.11,0,Math.PI*2);c.fillStyle=gR(c,0,0,r*.11);c.fill();c.restore();
+      }
+
+      // 2001-004: Animation physics
+      function gAngle(elapsed,period){return(elapsed/1000)*(2*Math.PI/period);}
+      function bAngle(elapsed){var t=elapsed/1000,om=2*Math.PI*4,amp=rad(28),base=amp*Math.sin(om*t),nr=1-Math.abs(Math.cos(om*t));return base+.02*amp*Math.sin(om*t*3)*nr;}
+
+      function render(){
+        var now=new Date(),elapsed=performance.now()-startT;
+        var sec=now.getSeconds()+now.getMilliseconds()/1000;
+        var min=now.getMinutes()+sec/60,hr=(now.getHours()%12)+min/60;
+        c.clearRect(0,0,W,H);
+
+        // Background
+        var bg=c.createRadialGradient(cx,cy,0,cx,cy,W*.70);bg.addColorStop(0,'#100e18');bg.addColorStop(.25,'#0a0812');bg.addColorStop(.55,'#060408');bg.addColorStop(1,'#020104');c.fillStyle=bg;c.fillRect(0,0,W,H);
+        var amb=c.createRadialGradient(cx,cy,R*.4,cx,cy,R*2);amb.addColorStop(0,'rgba(200,168,72,0.018)');amb.addColorStop(1,'rgba(0,0,0,0)');c.beginPath();c.arc(cx,cy,R*2,0,Math.PI*2);c.fillStyle=amb;c.fill();
+
+        // Bracelet
+        for(var s=-1;s<=1;s+=2){var sY=cy+s*R*1.28,lH=R*.07,lW=R*.50;for(var i=0;i<6;i++){var ly=sY+s*i*(lH+1.2);c.globalAlpha=1-i*.13;c.beginPath();c.roundRect(cx-lW*.23,ly-lH/2,lW*.46,lH,1);c.fillStyle=gL(c,cx-lW*.23,ly,cx+lW*.23,ly,[[0,C.g3],[.15,C.g1],[.4,C.g1],[.6,C.g2],[.85,C.g1],[1,C.g3]]);c.fill();for(var lr=-1;lr<=1;lr+=2){var slx=cx+lr*lW*.36;c.beginPath();c.roundRect(slx-lW*.10,ly-lH/2,lW*.20,lH,1);c.fillStyle=gL(c,slx-lW*.10,ly,slx+lW*.10,ly,[[0,C.g4],[.25,C.g3],[.5,C.g2],[.75,C.g3],[1,C.g4]]);c.fill();}c.globalAlpha=1;}}
+
+        // Case + 120 fluted bezel
+        sh(c,18,35,.45);c.beginPath();c.arc(cx,cy,R*1.15,0,Math.PI*2);var cg=c.createRadialGradient(cx-R*.28,cy-R*.28,0,cx,cy,R*1.15);cg.addColorStop(0,C.g1);cg.addColorStop(.2,C.g2);cg.addColorStop(.5,C.g3);cg.addColorStop(.8,C.g4);cg.addColorStop(1,'#2a1c06');c.fillStyle=cg;c.fill();ns(c);
+        // 120 facets
+        for(var i=0;i<120;i++){var a1=Math.PI*2/120*i,a2=Math.PI*2/120*(i+1),am=(a1+a2)/2;var nx=Math.cos(am),ny=Math.sin(am),dot=nx*(-Ldx)+ny*Ldy,br=Math.max(0,dot),sp=Math.pow(br,60);
+          c.beginPath();c.moveTo(cx+Math.cos(a1)*R*1.06,cy+Math.sin(a1)*R*1.06);c.lineTo(cx+Math.cos(a2)*R*1.06,cy+Math.sin(a2)*R*1.06);c.lineTo(cx+Math.cos(a2)*R*1.025,cy+Math.sin(a2)*R*1.025);c.lineTo(cx+Math.cos(a1)*R*1.025,cy+Math.sin(a1)*R*1.025);c.closePath();
+          var rr=Math.round(lerp(100,240,.3+br*.7)),gg=Math.round(lerp(80,216,.3+br*.7)),bb=Math.round(lerp(30,120,.3+br*.7));c.fillStyle='rgb('+rr+','+gg+','+bb+')';c.fill();
+          if(sp>.01){c.fillStyle='rgba(255,255,240,'+sp*.6+')';c.fill();}}
+        c.beginPath();c.arc(cx,cy,R*1.01,0,Math.PI*2);c.strokeStyle=C.g3;c.lineWidth=1.8;c.stroke();
+
+        // Rehaut text
+        c.save();c.font=(R*.02)+'px Arial,sans-serif';c.fillStyle='rgba(138,117,48,0.10)';c.textAlign='center';c.textBaseline='middle';
+        var rht='ROLEX · ROLEX · ROLEX · ROLEX · ROLEX · ROLEX · ROLEX · ROLEX ·',rhR=R*.985;
+        for(var i=0;i<rht.length;i++){var a=(i/rht.length)*Math.PI*2-Math.PI/2;c.save();c.translate(cx+Math.cos(a)*rhR,cy+Math.sin(a)*rhR);c.rotate(a+Math.PI/2);c.fillText(rht[i],0,0);c.restore();}c.restore();
+
+        // Crown + lugs
+        var crX=cx+R*1.19,crW=R*.10,crH=R*.15;
+        c.beginPath();c.moveTo(cx+R*1.12,cy-R*.09);c.quadraticCurveTo(cx+R*1.22,cy-R*.06,crX+crW*.15,cy-crH*.5);c.lineTo(crX+crW*.15,cy+crH*.5);c.quadraticCurveTo(cx+R*1.22,cy+R*.06,cx+R*1.12,cy+R*.09);c.fillStyle=gL(c,crX-crW,cy-crH,crX+crW,cy+crH);c.fill();
+        c.beginPath();c.roundRect(crX-crW*.15,cy-crH,crW*.7,crH*2,2);c.fillStyle=gL(c,crX-crW,cy-crH,crX+crW,cy+crH);c.fill();
+        for(var i=0;i<9;i++){var ry=cy-crH+(crH*2/9)*i+crH*2/18;c.beginPath();c.moveTo(crX-crW*.15,ry);c.lineTo(crX+crW*.55,ry);c.strokeStyle=C.g4;c.lineWidth=.45;c.stroke();}
+        for(var s=-1;s<=1;s+=2){for(var lr=-1;lr<=1;lr+=2){var lx=cx+lr*R*.33,ly=cy+s*R*1.09,le=cy+s*R*1.30;c.beginPath();c.moveTo(lx-R*.065,ly);c.quadraticCurveTo(lx-R*.08,le,lx-R*.045,le);c.lineTo(lx+R*.045,le);c.quadraticCurveTo(lx+R*.08,le,lx+R*.065,ly);c.closePath();c.fillStyle=gL(c,lx-R*.08,ly,lx+R*.08,ly);c.fill();}}
+
+        // Dial + perlage
+        c.beginPath();c.arc(cx,cy,R,0,Math.PI*2);var dg=c.createRadialGradient(cx,cy,0,cx,cy,R);dg.addColorStop(0,C.n2);dg.addColorStop(.35,C.n1);dg.addColorStop(.75,C.n0);dg.addColorStop(1,'#010003');c.fillStyle=dg;c.fill();
+        perlage(c,cx,cy,R*.82,R*.022);
+        // Chapter ring
+        c.beginPath();c.arc(cx,cy,R*.965,0,Math.PI*2);c.arc(cx,cy,R*.835,0,Math.PI*2,true);c.fillStyle='rgba(26,22,40,0.75)';c.fill();
+        // Minute track
+        for(var i=0;i<60;i++){var a=rad(i*6-90),isH=i%5===0,len=isH?R*.07:R*.02,r1=R*.955;c.beginPath();c.moveTo(cx+Math.cos(a)*r1,cy+Math.sin(a)*r1);c.lineTo(cx+Math.cos(a)*(r1-len),cy+Math.sin(a)*(r1-len));c.strokeStyle=isH?C.g2:'rgba(200,168,72,0.28)';c.lineWidth=isH?1.6:.45;c.stroke();}
+        // Roman indices
+        var rom=['XII','I','II','III','IV','V','VI','VII','VIII','IX','X','XI'];
+        c.textAlign='center';c.textBaseline='middle';
+        rom.forEach(function(n,i){var a=rad(i*30-90),tr=R*.88,tx=cx+Math.cos(a)*tr,ty=cy+Math.sin(a)*tr;sh(c,1,1.5,.4);c.font='bold '+(R*.065)+'px Georgia';c.fillStyle=C.g2;c.fillText(n,tx,ty);ns(c);c.fillStyle='rgba(242,228,168,0.22)';c.fillText(n,tx-.3,ty-.3);});
+        // Coronet
+        var coY=cy-R*.32,cw2=R*.035,ch2=R*.025;c.fillStyle='rgba(200,168,72,0.50)';
+        [-2,-1,0,1,2].forEach(function(p,idx){var px=cx+p*cw2*.7,h=ch2*[.7,.85,1,.85,.7][idx];c.beginPath();c.moveTo(px-cw2*.15,coY+ch2);c.lineTo(px-cw2*.08,coY+ch2-h);c.lineTo(px+cw2*.08,coY+ch2-h);c.lineTo(px+cw2*.15,coY+ch2);c.closePath();c.fill();c.beginPath();c.arc(px,coY+ch2-h-cw2*.06,cw2*.06,0,Math.PI*2);c.fill();});
+        c.beginPath();c.roundRect(cx-cw2*1.6,coY+ch2,cw2*3.2,ch2*.3,1);c.fill();
+        // Brand text
+        c.textAlign='center';c.font='600 '+(R*.052)+'px Arial,Helvetica,sans-serif';c.fillStyle='rgba(200,168,72,0.55)';c.fillText('ROLEX',cx,cy-R*.25);
+        c.font=(R*.022)+'px Arial,sans-serif';c.fillStyle='rgba(200,168,72,0.38)';c.fillText('OYSTER PERPETUAL',cx,cy-R*.20);
+        c.font='italic '+(R*.020)+'px Georgia';c.fillStyle='rgba(200,168,72,0.28)';c.fillText('S K E L E T O N',cx,cy+R*.24);
+        c.font=(R*.015)+'px Arial,sans-serif';c.fillStyle='rgba(200,168,72,0.22)';c.fillText('SUPERLATIVE CHRONOMETER',cx,cy+R*.29);c.fillText('OFFICIALLY CERTIFIED',cx,cy+R*.32);
+
+        // Movement — gear train at correct speeds
+        var bA2=gAngle(elapsed,21600),cA=gAngle(elapsed,3600),tA=gAngle(elapsed,720),fA=gAngle(elapsed,60),eA=gAngle(elapsed,7.5);
+        barrel(c,cx-R*.29,cy-R*.14,R*.13,bA2);
+        invGear(c,cx-R*.05,cy+R*.06,R*.15,24,R*.012,-cA,{spokes:5,holeR:R*.016,hubR:R*.03,depth:2.5});
+        invGear(c,cx+R*.21,cy-R*.09,R*.10,18,R*.009,tA,{spokes:4,holeR:R*.013,hubR:R*.025,depth:2});
+        invGear(c,cx+R*.06,cy+R*.29,R*.072,16,R*.007,-fA,{spokes:3,holeR:R*.010,hubR:R*.02,depth:2});
+        escWheel(c,cx-R*.13,cy+R*.35,R*.062,eA);
+        invGear(c,cx+R*.35,cy+R*.13,R*.055,12,R*.007,-tA*.7,{holeR:R*.008,hubR:R*.015,depth:1.5});
+        invGear(c,cx-R*.35,cy+R*.17,R*.048,10,R*.006,fA*.4,{holeR:R*.007,hubR:R*.013,depth:1.5});
+        invGear(c,cx+R*.26,cy+R*.35,R*.040,9,R*.005,-eA*.3,{holeR:R*.006,hubR:R*.011,depth:1});
+        invGear(c,cx-R*.27,cy+R*.39,R*.036,8,R*.005,cA*.9,{holeR:R*.005,hubR:R*.010,depth:1});
+        invGear(c,cx+R*.42,cy-R*.08,R*.030,8,R*.004,eA*.5,{holeR:R*.004,hubR:R*.008,depth:1});
+        invGear(c,cx-R*.40,cy-R*.25,R*.028,7,R*.004,-tA*.8,{holeR:R*.004,hubR:R*.007,depth:1});
+        var bAng=bAngle(elapsed);
+        hairSp(c,cx+R*.33,cy-R*.32,R*.10,8,bAng);
+        balWheel(c,cx+R*.33,cy-R*.32,R*.112,bAng);
+        // Jewels
+        rubyJ(c,cx-R*.05,cy+R*.06,R*.015);rubyJ(c,cx+R*.21,cy-R*.09,R*.012);rubyJ(c,cx+R*.06,cy+R*.29,R*.011);
+        sapJ(c,cx-R*.13,cy+R*.35,R*.010);rubyJ(c,cx+R*.33,cy-R*.32,R*.013);sapJ(c,cx-R*.29,cy-R*.14,R*.012);
+        rubyJ(c,cx+R*.35,cy+R*.13,R*.009);rubyJ(c,cx+R*.42,cy-R*.08,R*.007);sapJ(c,cx-R*.40,cy-R*.25,R*.007);
+        // Bridges
+        bridge(c,cx+R*.09,cy-R*.03,R*.32,R*.052,rad(-15));bridge(c,cx-R*.19,cy+R*.27,R*.23,R*.045,rad(25));
+        bridge(c,cx+R*.29,cy+R*.03,R*.16,R*.038,rad(-50));bridge(c,cx-R*.08,cy+R*.44,R*.14,R*.032,rad(10));
+        // Rotor
+        var rA2=sec*.35+Math.sin(sec*.2)*1.5;
+        c.save();c.translate(cx,cy);c.rotate(rA2);c.beginPath();c.arc(0,0,R*.68,-Math.PI*.46,Math.PI*.46);c.lineTo(0,0);c.closePath();var rg=c.createLinearGradient(-R*.68,0,R*.68,0);rg.addColorStop(0,'rgba(160,160,185,0.05)');rg.addColorStop(.5,'rgba(200,200,225,0.08)');rg.addColorStop(1,'rgba(140,140,165,0.03)');c.fillStyle=rg;c.fill();
+        c.beginPath();c.arc(0,0,R*.68,-Math.PI*.40,Math.PI*.40);c.arc(0,0,R*.56,Math.PI*.40,-Math.PI*.40,true);c.closePath();var wg=c.createRadialGradient(0,0,R*.56,0,0,R*.68);wg.addColorStop(0,'rgba(200,168,72,0.25)');wg.addColorStop(.5,'rgba(220,192,106,0.35)');wg.addColorStop(1,'rgba(138,117,48,0.20)');c.fillStyle=wg;c.fill();c.restore();
+
+        // Hands
+        var sAngle=rad(sec*6-90)+Math.PI/2,mAngle=rad(min*6-90)+Math.PI/2,hAngle=rad(hr*30-90)+Math.PI/2;
+        // Hour — Mercedes
+        c.save();c.translate(cx,cy);c.rotate(hAngle);sh(c,7,12,.4);
+        var hLen=R*.56,hW=R*.028,circY=-hLen*.62,circR=R*.026;
+        c.beginPath();c.moveTo(0,R*.09);c.lineTo(-hW,R*.04);c.lineTo(-hW*.75,-hLen*.48);c.lineTo(-hW*1.1,circY+circR*.6);c.arc(0,circY,circR+hW*.25,Math.PI*.72,Math.PI*.28,true);c.lineTo(0,-hLen);c.lineTo(hW*1.1,circY+circR*.6);c.lineTo(hW*.75,-hLen*.48);c.lineTo(hW,R*.04);c.closePath();
+        c.fillStyle=gL(c,-hW*1.2,0,hW*1.2,0);c.fill();ns(c);
+        // Lume circle
+        var lg=c.createRadialGradient(-circR*.15,circY-circR*.15,0,0,circY,circR);lg.addColorStop(0,'#F0ECD8');lg.addColorStop(.5,'#E8E2C8');lg.addColorStop(1,'#C8C2A0');c.beginPath();c.arc(0,circY,circR,0,Math.PI*2);c.fillStyle=lg;c.fill();
+        c.beginPath();c.roundRect(-R*.012,-hLen*.44,R*.024,hLen*.28,1);c.fillStyle='rgba(232,226,200,0.20)';c.fill();c.restore();
+        // Minute
+        c.save();c.translate(cx,cy);c.rotate(mAngle);sh(c,7,12,.4);c.beginPath();c.moveTo(0,R*.11);c.lineTo(-R*.020,R*.04);c.lineTo(-R*.015,-R*.68);c.lineTo(0,-R*.72);c.lineTo(R*.015,-R*.68);c.lineTo(R*.020,R*.04);c.closePath();c.fillStyle=gL(c,-R*.02,0,R*.02,0);c.fill();ns(c);
+        c.beginPath();c.roundRect(-R*.009,-R*.64,R*.018,R*.48,1);c.fillStyle='rgba(232,226,200,0.18)';c.fill();c.restore();
+        // Seconds — steel
+        c.save();c.translate(cx,cy);c.rotate(sAngle);sh(c,4,7,.35);c.beginPath();c.moveTo(-R*.009,R*.15);c.arc(0,R*.15,R*.016,Math.PI,0);c.lineTo(R*.0025,-R*.74);c.lineTo(-R*.0025,-R*.74);c.closePath();c.fillStyle=C.s1;c.fill();ns(c);
+        c.strokeStyle='rgba(255,255,255,0.4)';c.lineWidth=.3;c.beginPath();c.moveTo(0,R*.14);c.lineTo(0,-R*.73);c.stroke();
+        c.beginPath();c.arc(0,-R*.70,R*.006,0,Math.PI*2);c.fillStyle=C.ruby;c.fill();c.restore();
+        // Center cap
+        sh(c,5,8,.4);c.beginPath();c.arc(cx,cy,R*.030,0,Math.PI*2);c.fillStyle=gR(c,cx,cy,R*.030);c.fill();ns(c);c.beginPath();c.arc(cx,cy,R*.007,0,Math.PI*2);c.fillStyle=C.g1;c.fill();
+
+        // Crystal
+        c.beginPath();c.ellipse(cx-R*.20,cy-R*.26,R*.40,R*.16,rad(-30),0,Math.PI*2);var c1=c.createRadialGradient(cx-R*.20,cy-R*.26,0,cx-R*.20,cy-R*.26,R*.40);c1.addColorStop(0,'rgba(255,255,255,.07)');c1.addColorStop(1,'rgba(255,255,255,0)');c.fillStyle=c1;c.fill();
+        c.beginPath();c.ellipse(cx+R*.28,cy+R*.30,R*.12,R*.06,rad(45),0,Math.PI*2);var c2=c.createRadialGradient(cx+R*.28,cy+R*.30,0,cx+R*.28,cy+R*.30,R*.12);c2.addColorStop(0,'rgba(255,255,255,.035)');c2.addColorStop(1,'rgba(255,255,255,0)');c.fillStyle=c2;c.fill();
+        // AR coating
+        c.beginPath();c.arc(cx,cy,R,0,Math.PI*2);var ar=c.createRadialGradient(cx+R*.2,cy+R*.15,0,cx,cy,R);ar.addColorStop(0,'rgba(80,70,160,.035)');ar.addColorStop(.5,'rgba(60,50,140,.018)');ar.addColorStop(.8,'rgba(100,60,200,.025)');ar.addColorStop(1,'rgba(60,30,140,.04)');c.fillStyle=ar;c.fill();
+        // Dome edge darkening
+        var edg=c.createRadialGradient(cx,cy,R*.85,cx,cy,R);edg.addColorStop(0,'rgba(0,0,0,0)');edg.addColorStop(1,'rgba(0,0,0,0.08)');c.beginPath();c.arc(cx,cy,R,0,Math.PI*2);c.fillStyle=edg;c.fill();
+
         requestAnimationFrame(render);
       }
       render();
