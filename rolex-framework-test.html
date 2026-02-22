@@ -714,6 +714,89 @@
             margin-bottom: 0;
         }
 
+        /* Real-World Application — Before/After Section */
+        .real-world-section {
+            background: var(--dark);
+            color: var(--white);
+            padding: var(--space-8) var(--space-3);
+        }
+
+        .real-world-section h2 {
+            text-align: center;
+            color: var(--white);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-1);
+        }
+
+        .real-world-intro {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto var(--space-5);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: var(--text-base);
+            line-height: var(--leading-normal);
+        }
+
+        .before-after-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3);
+            max-width: 1100px;
+            margin: 0 auto var(--space-4);
+        }
+
+        .before-after-figure {
+            margin: 0;
+            text-align: center;
+        }
+
+        .before-after-figure img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            transition: transform var(--duration-medium) var(--ease-smooth),
+                        box-shadow var(--duration-medium) var(--ease-smooth);
+        }
+
+        .before-after-figure img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+        }
+
+        .before-after-figure figcaption {
+            margin-top: var(--space-2);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .before-after-figure.before figcaption {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .before-after-figure.after figcaption {
+            color: var(--primary);
+        }
+
+        .real-world-closing {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: var(--text-sm);
+            line-height: var(--leading-normal);
+        }
+
+        @media (max-width: 768px) {
+            .before-after-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+        }
+
         /* Footer */
         footer {
             padding: var(--space-6) var(--space-3) var(--space-4);
@@ -1435,6 +1518,22 @@
 
         <p><a href="https://howtoframework.com">Learn more at How to Framework &rarr;</a></p>
     </article>
+
+    <section class="real-world-section reveal">
+        <h2>Beyond Watches: The Operating System</h2>
+        <p class="real-world-intro">The same Precision Interface Architecture framework used in this experiment was applied to the SIOS operating system interface itself. Same methodology, different domain. Here's what the framework did to a real production interface.</p>
+        <div class="before-after-container">
+            <figure class="before-after-figure before reveal">
+                <img src="https://app.ragedesigner.com/wp-content/uploads/2026/02/Screenshot-2026-02-11-at-8.30.54-PM-scaled.png" alt="SIOS operating system interface before Precision Interface Architecture framework — ad-hoc shadows, ambient glow animations, inflated button presence" loading="lazy">
+                <figcaption>Before Framework</figcaption>
+            </figure>
+            <figure class="before-after-figure after reveal">
+                <img src="https://app.ragedesigner.com/wp-content/uploads/2026/02/Screenshot-2026-02-21-at-7.17.22-PM-scaled.png" alt="SIOS operating system interface after Precision Interface Architecture framework — mathematical elevation system, mass-appropriate timing, refined edge treatment" loading="lazy">
+                <figcaption>After Framework</figcaption>
+            </figure>
+        </div>
+        <p class="real-world-closing">Same interface. Same layout. Same colors. The framework didn't change what it is &mdash; it changed how precisely every surface is finished. Five layers of craft, compounding silently.</p>
+    </section>
 
     <section class="related-articles">
         <h3>Continue Exploring</h3>
