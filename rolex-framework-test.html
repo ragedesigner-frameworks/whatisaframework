@@ -145,10 +145,10 @@
         .logo-icon { height: 68px; width: auto; transition: height var(--duration-medium) var(--ease-smooth); }
         nav#main-header.scrolled .logo-icon { height: 56px; }
         .nav-links { display: flex; align-items: center; gap: 32px; }
-        .nav-link { color: var(--text-medium); text-decoration: none; font-weight: 500; transition: color var(--duration-small) var(--ease-responsive); position: relative; }
-        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width var(--duration-medium) var(--ease-snappy); }
-        .nav-link:hover { color: var(--primary); }
-        .nav-link:hover::after { width: 100%; }
+        .nav-links a:not(.nav-cta) { color: var(--text-medium); text-decoration: none; font-weight: 500; transition: color var(--duration-small) var(--ease-responsive); position: relative; }
+        .nav-links a:not(.nav-cta)::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width var(--duration-medium) var(--ease-snappy); }
+        .nav-links a:not(.nav-cta):hover { color: var(--primary); }
+        .nav-links a:not(.nav-cta):hover::after { width: 100%; }
         .nav-cta { background: var(--primary); color: white !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background var(--duration-small) var(--ease-responsive), color var(--duration-small) var(--ease-responsive), transform var(--duration-small) var(--ease-snappy), box-shadow var(--duration-small) var(--ease-responsive); border: 2px solid var(--primary); box-shadow: var(--elevation-1); }
         .nav-cta:hover { background: transparent; color: var(--primary) !important; transform: translateY(-2px); box-shadow: var(--elevation-2); }
 
